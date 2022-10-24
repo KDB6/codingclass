@@ -3,7 +3,7 @@
 ### 메인 페이지 github
 https://kdb6.github.io/codingclass/index.html   
 
-### 자바스크립트 메인 페이지
+### 자바스크립트 메인 페이지wwww
 https://kdb6.github.io/codingclass/javascript/index.html   
 
 ### 자바스크립트 정리 페이지

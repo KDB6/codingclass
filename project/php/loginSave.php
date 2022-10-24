@@ -5,9 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .errCenter {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
 <?php
+                        include "../include/header.php";
                         include "../connect/connect.php";
                         include "../connect/session.php";
 
@@ -40,8 +48,8 @@
 
                             if($count == 0){
                                 // msg("아이디 또는 비밀번호가 틀렸습니다.");
-                                echo "<h2>아이디 또는 비밀번호가 틀렸습니다!!</h2>";
-                                echo "<a href='../php/main.php'>메인으로</a>";
+                                echo "<h2 class='errCenter'>아이디 또는 비밀번호가 틀렸습니다!!</h2>";
+                                echo "<p class='errCenter'><a href='../php/main.php'>메인으로</a><p>";
                             } else {
                                 $info = $result -> fetch_array(MYSQLI_ASSOC);
 
@@ -53,7 +61,7 @@
                                 // var_dump($info);
                                 // echo "</pre>";
 
-                                Header("Location: ../php/main.php");
+                                Header("Location: main.php");
                             }
                         } else {
                             msg("에러발생 - 관리자에게 문의하세요!");

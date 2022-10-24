@@ -160,8 +160,16 @@
         $viewNum = 10;
         $viewLimit = ($viewNum * $page) - $viewNum;
 
-        $sql = "SELECT b.myBoardID, b.boardTitle, m.youName, b.regTime, b.boardView FROM myBoard b JOIN myMember m ON (b.myMemberID = m.myMemberID) ORDER BY myBoardID DESC LIMIT {$viewLimit}, {$viewNum}";
+
+
+        $sql = "SELECT * FROM myBoard b JOIN myMember m ON (b.myMemberID = m.myMemberID) ORDER BY myBoardID DESC LIMIT {$viewLimit}, {$viewNum}";
         $result = $connect -> query($sql);
+
+        $count = $result -> num_rows;
+
+
+
+
 
         if($result){
             $count = $result -> num_rows;

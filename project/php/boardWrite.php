@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../asset/css/board/boardLoginBanner.css">
     <link rel="stylesheet" href="../asset/css/board/boardImageType.css">
     <link rel="stylesheet" href="../asset/css/board/boardWriteModify.css">
+    <!-- <link rel="stylesheet" href="../asset/css/footer.css"> -->
 </head>
 
 <!-- header -->
@@ -69,16 +70,17 @@
                     </div>
                     <div class="border_titleCate">
                         <div class="selectBox">
+                            <label for="boardCate"></label>
                             <select name="boardCate" id="boardCate">
-                                <option value="CATEGORY01">CATEGORY</option>
-                                <option value="CATEGORY02">CATEGORY</option>
-                                <option value="CATEGORY03">CATEGORY</option>
+                                <option value="카테고리1">카테고리1</option>
+                                <option value="카테고리2">카테고리2</option>
+                                <option value="카테고리3">카테고리3</option>
                             </select>
                         </div>
-                        <div class="imgAttachBox">
+                        <!-- <div class="imgAttachBox">
                             <label for="boardImg">Image</label>
                             <input type="file" name="boardImg" id="boardImg" accept=".jpg, .jpeg, .png, .gif, .webp" placeholder="jpg, jpeg, png, gif, webp 파일만 첨부해주세요.">
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="board_writeBox">

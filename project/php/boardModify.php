@@ -3,6 +3,7 @@
     include "../connect/session.php";
 ?>
 
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -14,10 +15,12 @@
     <link rel="stylesheet" href="../asset/css/reset.css">
     <link rel="stylesheet" href="../asset/css/common.css">
     <link rel="stylesheet" href="../asset/css/font.css">
-
+    
+    <link rel="stylesheet" href="../asset/css/header.css">
     <link rel="stylesheet" href="../asset/css/board/boardLoginBanner.css">
     <link rel="stylesheet" href="../asset/css/board/boardImageType.css">
     <link rel="stylesheet" href="../asset/css/board/boardWriteModify.css">
+    <link rel="stylesheet" href="../asset/css/footer.css">
 </head>
 
 <!-- header -->
@@ -77,8 +80,7 @@
                                 echo "<div style='display:none'><label for='myBoardID'>번호</label><input type='text' name='myBoardID' id='myBoardID' value ='".$info['myBoardID']."'></div>";
                                 echo "<label for='boardTitle'>제목 : </label><input type='text' name='boardTitle' id='boardTitle' maxlength='30' value='".$info['boardTitle']."' required></div>";
                                 echo "<div class='border_titleCate'><div class='selectBox'><select name='boardCate' id='boardCate'>";
-                                echo "<option value='카테고리1'>카테고리1</option><option value='카테고리2'>카테고리2</option><option value='카테고리3'>카테고리3</option></select></div>";
-                                echo "<div class='imgAttachBox'><label for='boardImg'>Image</label><input type='file' name='boardImg' id='boardImg' accept='.jpg, .jpeg, .png, .gif, .webp' placeholder='jpg, jpeg, png, gif, webp 파일만 첨부해주세요.'></div></div></div>";
+                                echo "<option value=''>카테고리1</option><option value='카테고리2'>카테고리2</option><option value='카테고리3'>카테고리3</option></select></div></div></div>";
                                 echo "<div class='board_writeBox'><label for='boardWriteCont' class='ir'>내용</label><textarea name='boardWriteCont' id='boardWriteCont' placeholder='글을 작성해주세요.' required>".$info['boardContents']."</textarea></div>";
                                 echo "<div class='board_btn'><div><label for='youPass' class='ir'>비밀번호</label><input type='password' name='youPass' id='boardPass' placeholder='비밀번호를 입력해주세요.' autocomplete='off' minlength='8' required></div>";
                             }
@@ -90,9 +92,9 @@
                     <div class="border_titleCate">
                         <div class="selectBox">
                             <select name="boardCate" id="boardCate">
-                                <option value="CATEGORY01">CATEGORY</option>
-                                <option value="CATEGORY02">CATEGORY</option>
-                                <option value="CATEGORY03">CATEGORY</option>
+                                <option value="카테고리1">카테고리1</option>
+                                <option value="카테고리2">카테고리2</option>
+                                <option value="카테고리3">카테고리3</option>
                             </select>
                         </div>
                         <div class="imgAttachBox">
@@ -111,11 +113,11 @@
                     <div>
                         <label for="boardPass"></label>
                         <input type="password" name="boardPass" id="boardPass" placeholder="비밀번호를 입력해주세요." autocomplete="pff" minlength="8" required>
-                    </div>
+                    </div> -->
                     <button type="submit" value="저장하기">수정 완료</button>
                     <span>|</span>
                     <span><a href="boardMain.html">취소</a></span>
-                </div> -->
+                </div>
             </form>
 
         </div>        

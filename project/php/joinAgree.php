@@ -5,18 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>약관 동의</title>
+
     <!-- 공통 CSS -->
     <link rel="stylesheet" href="../asset/css/reset.css">
     <link rel="stylesheet" href="../asset/css/common.css">
     <link rel="stylesheet" href="../asset/css/font.css">
     <link rel="stylesheet" href="../asset/css/login/idPassCommon.css">
-    
+
     <!-- 약관 동의 CSS -->
     <link rel="stylesheet" href="../asset/css/login/Agree.css">
 </head>
 <body>
     <?php include "../include/header.php"?>
-    <div class="agree__popup">
+    
+    <div class="agree__popup">            
         <div class="agree__inner">
             <div class="agree__header">
                 <h2>회원가입</h2>
@@ -40,7 +42,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div>                
             <div>
                 <div class="check">
                     <input type="checkbox" name="agreeCheck" id="agreeCheck2" value="agreeCheck2" required>
@@ -82,12 +84,12 @@
                 <label for="agreeCheckAll">전체 동의하기</label>
             </div>
             <div class="agree__footer">
-                <li class="cancel_btn">취소</li>
+                <li class="cancel_btn"><a href="main.php">취소</a></li>
                 <li class="confirm_btn">확인</li>
             </div>
-            <div class="close_btn"><a href="board.php">
+            <div class="close_btn"><a href="main.php">
                 <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z" fill="#FFFFFF"/>
+                    <path d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z" fill="#ffffff"/>
                     <path d="M5.33334 4.66675L14.6667 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
                     <path d="M14.6667 4.66675L5.33333 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
                 </svg>
@@ -100,18 +102,22 @@
             </div>
         </div>
     </div>
+
     <script>
         // 공통 선택자
         const agree_checkAll = document.querySelector("#agreeCheckAll");
         const agree_check = document.querySelectorAll(".check input");
+
         const aggre_checkArray = [...agree_check];
-        // 전체 동의 on일시 전부 on, off일시 전부 off
-        function selectAll(selectAll){
+
+        // 전체 동의 on일시 전부 on, off일시 전부 off 
+        function selectAll(selectAll){  
             agree_check.forEach((checkbox) => {
                 checkbox.checked = selectAll.checked;
             })
             confirmButton(selectAll);
         };
+
         // 각각 개별적으로 전부 선택시 전체 동의 on 하나라도 아닐시 off
         aggre_checkArray.forEach((e, i) => {
             aggre_checkArray[i].addEventListener("click", () => {
@@ -123,6 +129,7 @@
                     confirmButton();
             });
         });
+
         // 필수 동의 체크시 확인 버튼 활성화
         function confirmButton(){
             const agree_conBtn = document.querySelector(".confirm_btn");
@@ -130,6 +137,8 @@
             if(aggre_checkArray[0].checked == true && aggre_checkArray[1].checked){
                 agreeBtnContents = "<a href='../php/join.php'>" + agreeBtnContents + "</a>";
                 agree_conBtn.innerHTML = agreeBtnContents
+                
+
             } else if(aggre_checkArray[0].checked == false || aggre_checkArray[1].checked == false){
                 agreeBtnContents.replace("<a href='join.html'>", "");
                 agree_conBtn.innerHTML = agreeBtnContents
@@ -160,6 +169,7 @@
         //         agree_require.classList.add("close");
         //     });
         // }
+
     </script>
 </body>
 </html>

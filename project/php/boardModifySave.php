@@ -19,21 +19,25 @@
         $youPass = $_POST['youPass'];
         $myMemberID = $_SESSION['myMemberID'];
 
+
         
 
         $boardTitle = $connect -> real_escape_string($boardTitle);
         $boardContents = $connect -> real_escape_string($boardContents);
 
-        $sql = "SELECT youPass, myMemberID FROM myMember WHERE myMemberID = {$myMemberID}";
+        // $sql = "SELECT youPass, myMemberID FROM myMember WHERE myMemberID = {$myMemberID}";
+        $sql = "SELECT * FROM myBoard b JOIN myMember m ON(m.MymemberID = b.myMemberID) WHERE b.myBoardID = {$myBoardID}";
         $result = $connect -> query($sql);
 
+
         $memberInfo = $result -> fetch_array(MYSQLI_ASSOC);
+
 
         if($memberInfo['youPass'] === $youPass && $memberInfo['myMemberID'] === $myMemberID){
             $sql = "UPDATE myBoard SET boardTitle = '{$boardTitle}', boardContents = '{$boardContents}' WHERE myBoardID = '{$myBoardID}'";
             $connect -> query($sql);
         } else {
-            echo "<script>alert('비밀번호가 일치하지 않습니다. 다시 한번 확인해주세요!!')</script>";
+            echo "<script>alert('작성자만 수정 가능합니다! 비밀번호가 일치하지 않습니다. 다시 한번 확인해주세요!!')</script>";
         }
 
         

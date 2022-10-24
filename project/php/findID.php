@@ -1,32 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입 정보 입력 페이지</title>
+    <title>로그인 팝업 : 아이디 : 인증 방법</title>
 
     <!-- 공통 CSS -->
     <link rel="stylesheet" href="../asset/css/reset.css">
     <link rel="stylesheet" href="../asset/css/common.css">
-    <link rel="stylesheet" href="../asset/css/font.css">
     <link rel="stylesheet" href="../asset/css/login/idPassCommon.css">
-
+    
     <!-- 아이디찾기 CSS -->
     <link rel="stylesheet" href="../asset/css/login/findID.css">
 
-    <style>
-        /* .join__inner {
-            margin: 0 auto;
-        }
-        .join__inner > h2 {
-            margin-bottom: 20px !important;
-        } */
-    </style>
-
 </head>
 <body>
-<?php include "../include/header.php"?>
     <div class="login__popup score">
         <div class="login__inner">
             <div class="login__header">
@@ -67,19 +57,21 @@
                     </div>
                 </div>
                 <div class="certify_confirm">선택완료</div>
+
             </div>
-            <div class="close_btn"><a href="main.php">
+            <div class="close_btn">
                 <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z" fill="#ffffff"/>
                     <path d="M5.33334 4.66675L14.6667 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
                     <path d="M14.6667 4.66675L5.33333 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
                 </svg>
-            </a></div>
+            </div>
         </div>
     </div>
 
     <!-- 모달 및 탭메뉴 -->
-    <script src="../asset/js/tab_modal.js"></script>
+    <script src="../../asset/js/tab_modal.js"></script>
+    <script src="../../asset/js/close_modal.js"></script>
 
     <script>
         // 공통 선택자
@@ -130,8 +122,8 @@
         // 비밀번호 찾기 선택
         const PASSemailChoice = document.querySelector(".search_PASScontents .email_choice");
         const PASSphoneChoice = document.querySelector(".search_PASScontents .phone_choice");
-        const PASSemailLink = "<a href='findPW_email.php' type='sumbmit'>"
-        const PASSphoneLink = "<a href='findPW_phone.php' type='sumbmit'>"
+        const PASSemailLink = "<a href='findPW_email.html' type='sumbmit'>"
+        const PASSphoneLink = "<a href='findPW_phone.html' type='sumbmit'>"
 
         function searchPass(){
             PASSemailChoice.addEventListener("click", () => {
@@ -166,5 +158,6 @@
 
 
     </script>
+
 </body>
 </html>

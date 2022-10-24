@@ -1,6 +1,15 @@
 <?php
     include "../connect/connect.php";
     include "../connect/session.php";
+
+    $myBoardID = $_GET['myBoardID'];
+
+
+    $commentSql = "SELECT * FROM myComment WHERE myBoardID = {$myBoardID} ORDER BY myCommentID";
+    $commentResult = $connect -> query($commentSql);
+    $commentInfo = $commentResult -> fetch_array(MYSQLI_ASSOC);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +29,30 @@
     <link rel="stylesheet" href="../asset/css/board/boardView.css">
     <link rel="stylesheet" href="../asset/css/board/boardComment.css">
     <link rel="stylesheet" href="../asset/css/board/boardViewType.css">
+
+    <style>
+        .btn-like {
+            width: 50px;
+            background: #fff;
+        }
+        .com_table {
+            width: 100%;
+        }
+        .comment {
+            float: left;
+            margin: 20px 0;
+            height: 40px;
+            width: 100%;
+        }
+        .btn {
+            margin: 20px 0;
+            height: 40px;
+            width: 20%;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 1.5;
+        }
+    </style>
 </head>
 
 <!-- header -->
@@ -68,14 +101,20 @@
                     
                     // echo $myBoardID;
 
-                    $sql = "SELECT b.boardTitle, m.youName, b.regTime, b.boardView, b.boardContents FROM myBoard b JOIN myMember m ON(m.MymemberID = b.myMemberID) WHERE b.myBoardID = {$myBoardID}";
+                    $sql = "SELECT * FROM myBoard b JOIN myMember m ON(m.MymemberID = b.myMemberID) WHERE b.myBoardID = {$myBoardID}";
+
+                    
                     
                         
                     $boardView = "UPDATE myBoard SET boardView = boardView + 1 WHERE myBoardID = {$myBoardID}";
                     $connect -> query($boardView);
                     
                     
+                    
                     $result = $connect -> query($sql);
+
+
+
 
                     if($result){
                         $info = $result -> fetch_array(MYSQLI_ASSOC);
@@ -84,14 +123,17 @@
                         echo "<div class='view__top'>";
                         echo "<h2>제목 : ".$info['boardTitle']."</h2>";
                         echo "<div class='view__top__right'><h3 class='like'><img src='../asset/img/like.svg' alt=''>";
-                        echo "추천 수 : 20개</h3>";
+                        echo "추천 수 : ".$info['boardLike']. "</h3>";
                         echo "<h3>조회 수 : ".$info['boardView']."개</h3>";
                         echo "<h3 class='date'>".date('Y-m-d', $info['regTime'])."</h3></div></div>";
                         echo "<div class='view__bot'>";
                         echo "<p>".$info['boardContents']."</p>";
                         echo "</div>";
+                        
                     }
+
                 ?>
+                
             </div>
             
 
@@ -138,8 +180,7 @@
             <button type="submit" value="수정하기"><a href="boardModify.php?myBoardID=<?=$myBoardID?>">수정하기<span>|</span></a></button>
             <button type="submit" value="삭제하기"><a href="boardRemove.php?myBoardID=<?=$myBoardID?>" onClick = "alert('정말 삭제하시겠습니까?')">삭제하기<span>|</span></a></button> 
             <button type="submit" value="목록보기"><a href="board.php">목록보기</a></button>
-        </div>
-        
+        </div>       
     </section>
     
     <!-- //boardView -->
@@ -147,9 +188,42 @@
     <!-- boardComment -->
     <section id="boardComment" class="container">
         <h2 class="comment__h2">COMMENT</h2>
+        <!-- 댓글 -->
         <table>
             <tbody>
+                <?php
+                    foreach($commentResult as $comment){ ?>
+                        <tr>
+                            <td class="com__td">
+                                <div id="Comment<?=$comment['myCommentID']?>">
+                                    <div class="com__top">
+                                        <?=$comment['commentName']?>
+                                        <em><?=date('Y-m-d', $comment['regTime'])?></em>
+                                        <div class="com__like">
+                                            <img src="../asset/img/like.svg" alt="">
+                                            <p>5</p>
+                                            <img src="../asset/img/dislike.svg" alt="">
+                                            <p>0</p>
+                                        </div>
+                                    </div>
+                                    <div class="com__table__p">
+                                        <p><?=$comment['commentMsg']?></p>
+                                    </div>
+                                    <div class="comment__del">
+                                        <a href="#" class="comment__del__del">댓글 삭제</a>
+                                        <a href="#" class="comment__del__mod">댓글 수정</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                <?php } ?>
                 <tr>
+                    <td>
+                        
+                    </td>
+                </tr>
+
+                <!-- <tr>
                     <td class="com__td">
                         <div class="com__top">
                             누군가님
@@ -165,43 +239,42 @@
                             <p>정말 좋은 글이네여!</p>
                         </div>
                     </td>
-                </tr>
-                <tr>
-                    <td class="com__td">
-                        <div class="com__top">
-                            누군가님
-                            <em>2020 / 10 / 05</em>
-                            <div class="com__like">
-                                <img src="../asset/img/like.svg" alt="">
-                                <p>5</p>
-                                <img src="../asset/img/dislike.svg" alt="">
-                                <p>0</p>
-                            </div>
-                        </div>
-                        <div class="com__table__p">
-                            <p>정말 좋은 글이네여!</p>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="com__td">
-                        <div class="com__top">
-                            누군가님
-                            <em>2020 / 10 / 05</em>
-                            <div class="com__like">
-                                <img src="../asset/img/like.svg" alt="">
-                                <p>5</p>
-                                <img src="../asset/img/dislike.svg" alt="">
-                                <p>0</p>
-                            </div>
-                        </div>
-                        <div class="com__table__p">
-                            <p>정말 좋은 글이네여!</p>
-                        </div>
-                    </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
+        <div id="boardViewComment">
+            <div class="comment__top">
+                <div class="comment__write">
+                    <div class="comment__write__msg">
+                        <label for="commentWrite" style="display: none;">댓글 쓰기</label>
+                        <input type="text" id="commentWrite" name="commentWrite" placeholder="좋은 댓글 부탁드려요!" required>
+                    </div>
+                    <div class="comment__write__info">
+                        <label for="commentName" class="blind">이름</label>
+                        <input type="text" id="commentName" name="commentName" placeholder="이름" required>
+                        <label for="commentPass" style="display: none;">비밀번호</label>
+                        <input type="text" id="commentPass" id="commentPass" placeholder="비밀번호" required>
+                        <button type="submit" id="commentBtn">댓글 쓰기</button>
+                    </div>
+                </div>
+            </div>
+            <div class="comment__bottom">
+                <div class="comment__delete" style="display: none;">
+                    <label for="commentDeletePass" style="display: none;">비밀번호</label>
+                    <input type="text" id="commentDeletePass" name="commentDeletePass" placeholder="비밀번호" required>
+                    <button id="commentDeleteCancel">취소</button>
+                    <button id="commentDeleteButton">삭제</button>
+                </div>
+                <div class="comment__modify" style="display: none;">
+                    <label for="commentModifyMsg" style="display: none;">수정 내용</label>
+                    <input type="text" id="commentModifyMsg" name="commentModifyMsg" placeholder="수정 내용" required>
+                    <label for="commentModifyMsg" style="display: none;">비밀번호</label>
+                    <input type="text" id="commentModifyPass" name="commentModifyPass" placeholder="비밀번호" required>
+                    <button id="commentModifyCancel">취소</button>
+                    <button id="commentModifyButton">수정</button>
+                </div>
+            </div>
+        </div>
     </section>
     <!-- //boardComment -->
 
@@ -328,15 +401,149 @@
     
 </body>
 
-<!-- footer -->
-<footer id="footer" class="footer">
-    <h2>
-        winimal Copyright 2022. All Rights Reserved
-        <button><a href="">문의하기</a></button>
-    </h2>
-</footer>
-<!-- //footer -->
+<!-- header -->
+<?php include "../include/footer.php"?>
+<!-- //header -->
 
 <script src="../../asset/js/header_hamburger.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+    const commentName = $("#commentName");    // 댓글 이름
+    const commentPass = $("#commentPass");    // 댓글 비밀번호
+    const commentWrite = $("#commentWrite");  // 댓글
+
+    let commentID = "";
+
+
+
+
+    // 댓글 삭제 버튼 클릭시
+    $(".comment__del__del").click(function(e){
+        e.preventDefault();
+        // alert("댓글 삭제 버튼 클릭시");
+        $(".comment__delete").show();
+        
+        // 클릭한 ID값 가져오기
+        commentID = $(this).parent().parent().attr('id');
+    })
+
+    // 댓글 삭제 버튼 --> 취소 버튼 클릭
+    $("#commentDeleteCancel").click(function(){
+        $(".comment__delete").hide();
+    })
+
+    console.log(commentID)
+    // 댓글 삭제 버튼 --> 삭제 버튼 클릭
+
+    $("#commentDeleteButton").click(function(){
+
+        let number = commentID.replace(/[^0-9]/g, "");
+
+        if($("#commentDeletePass").val() == ''){
+            alert("댓글 작성시 비밀번호를 적어주세요!");
+            $("#commentDeletePass").focus();
+        } else {
+            $.ajax({
+                url: "boardCommentDelete.php",
+                method: "POST",
+                dataType: "json",
+                data: {
+                    "pass": $("#commentDeletePass").val(),
+                    "commentID": number
+                },
+                success: function(data){
+                    console.log(data);
+                    location.reload();              //데이터 받아오고 깜빡이면서 바로 받기
+                },
+                error: function(request, status, error){
+                    console.log("request" + request);
+                    console.log("status" + status);
+                    console.log("error" + error);
+                }
+            })
+        }
+
+    })
+
+    // 댓글 수정 버튼 클릭시
+    $(".comment__del__mod").click(function(e){
+        e.preventDefault();
+        // alert("댓글 수정 버튼 클릭시");
+        $(".comment__modify").show();
+
+        commentID = $(this).parent().parent().attr('id');
+    })
+
+    // 댓글 수정 버튼 --> 취소 버튼 클릭
+    $("#commentModifyCancel").click(function(){
+        $(".comment__modify").hide();
+    })
+
+    // 댓글 수정 버튼 --> 수정 버튼 클릭
+    $("#commentModifyButton").click(function(){
+
+        let number = commentID.replace(/[^0-9]/g, "");
+
+        if($("#commentModify").val() == '' || $("#commentModifyPass").val() == ''){
+            alert("수정 내용 및 비밀번호를 입력해주세요!");
+            $("#commentModifyPass").focus();
+
+        } else {
+            $.ajax({
+                url: "boardCommentModify.php",
+                method: "POST",
+                dataType: "json",
+                data: {
+                    "pass": $("#commentModifyPass").val(),
+                    "commentID": number,
+                    "commentmsg": $("#commentModifyMsg").val()
+                },
+                success: function(data){
+                    console.log(data);
+                    location.reload();              //데이터 받아오고 깜빡이면서 바로 받기
+                },
+                error: function(request, status, error){
+                    console.log("request" , request);
+                    console.log("status" , status);
+                    console.log("error" , error);
+                }
+            })
+        }
+    })
+
+    // 댓글 쓰기 버튼
+    $("#commentBtn").click(function(){
+            if($("#commentWrite").val() == ""){
+                alert("댓글을 써주세요!!");
+                $("#commentWrite").focus();
+            } else {
+                $.ajax({
+                    url: "boardCommentWrite.php",
+                    method: "POST",
+                    dataType : "json",
+                    data: {
+                        "boardID": <?=$myBoardID?>,
+                        "name": commentName.val(),
+                        "pass": commentPass.val(),
+                        "msg": commentWrite.val()
+                    },
+                    success: function(data){
+                        console.log(data);
+                        location.reload();              //데이터 받아오고 깜빡이면서 바로 받기
+                    },
+                    error: function(request, status, error){
+                        console.log("request" + request);
+                        console.log("status" + status);
+                        console.log("error" + error);
+                    }
+                })
+            }
+        })
+
+
+</script>
 
 </html>

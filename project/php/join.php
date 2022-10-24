@@ -28,8 +28,7 @@
 </head>
 <body>
 <?php include "../include/header.php"?>
-    <div class="join__popup">
-        <div class="join__inner">
+    <div class="join__inner">
             <h2>회원 가입</h2>
             <form action="join_complete.php" name="join" method="post" onSubmit="return joinChecks()">
                 <fieldset>
@@ -39,19 +38,19 @@
                             <div>
                                 <label class="blind" for="youName">이름</label>
                                 <input type="text" id="youName" name="youName" placeholder="이름" required>
-                                <p class="msg" id="youNameComment"><!-- * 이름 한글 --></p>
+                                <p class="msg" id="youNameComment"><!-- * 이름은 한글로만. --></p>
                             </div>
                             <div class="choice_gender">
                                 <p class="blind" for="youGender">성별</p>
                                 <span>
                                     <input type="radio" id="youGenderMale" name="youGender" value="male" required>
                                     <label class="gender" for="youGenderMale">남자</label>
-                                    <p class="msg" id="youGenderMaleComment"><!-- * 성별 남자 --></p>
+                                    <p class="msg" id="youGenderMaleComment"><!-- * 이메일이 존재합니다. --></p>
                                 </span>
                                 <span>
                                     <input type="radio" id="youGenderFemale" name="youGender" value="female" required>
                                     <label class="gender" for="youGenderFemale">여자</label>
-                                    <p class="msg" id="youGenderFemaleComment"><!-- * 성별 여자 --></p>
+                                    <p class="msg" id="youGenderFemaleComment"><!-- * 이메일이 존재합니다. --></p>
                                 </span>
                             </div>
                             <div class="id_box">
@@ -68,7 +67,7 @@
                             <div class="info_youPassc">
                                 <label class="blind" for="youPassC">비밀번호 확인</label>
                                 <input type="password" id="youPassC" name="youPassC" placeholder="비밀번호 확인" required>
-                                <p class="msg" id="youPassCComment"><!-- * 비밀번호 확인이 동일하지 않습니다. --></p>
+                                <p class="msg" id="youPassCComment"><!-- * 이메일이 존재합니다. --></p>
                             </div>
                             <h3>E-mail</h3>
                             <div>
@@ -79,14 +78,14 @@
                             <h3>Phone</h3>
                             <div>
                                 <label class="blind" for="youPhone">휴대폰번호</label>
-                                <input type="text" id="youPhone" name="youPhone" placeholder="Phone" required>
-                                <p class="msg" id="youPhoneComment"><!-- * 휴대 번호를 제대로 입력해주세요. --></p>
+                                <input type="text" id="youPhone" name="youPhone" placeholder="전화번호를 입력해주세요." required>
+                                <p class="msg" id="youPhoneComment"><!-- * 이메일이 존재합니다. --></p>
                             </div>
                         </div>
                 </fieldset>                                  
                 <button class="join__btn" type="submit">가입하기</button>
             </form>
-            <div class="close_btn"><a href="board.php">
+            <div class="close_btn"><a href="main.php">
                 <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z" fill="#ffffff"/>
                     <path d="M5.33334 4.66675L14.6667 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
@@ -94,7 +93,6 @@
                 </svg>
             </a></div>
         </div>
-    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
 
@@ -107,7 +105,7 @@
             console.log(youID)
 
             if(youID == null || youID == ''){
-                $("#youIDComment").text("아이디를 입력해주세요.");
+                $("#youIDComment").text("아이디를 입력해주세요!!");
             } else {
                 $.ajax({
                     type : "POST",
@@ -142,7 +140,7 @@
 
             // 이름 공백 확인
             if($("#youName").val() == ""){
-                $("#youNameComment").text("이름을 입력해주세요.");
+                $("#youNameComment").text("이름을 입력해주세요");
                 return false;
             }
 
@@ -156,27 +154,27 @@
 
             // 아이디 공백 검사
             if($("#youID").val() == ""){
-                $("#youIDComment").text("아이디를 입력해주세요.");
+                $("#youIDComment").text("아이디를 입력해주세요!");
                 return false;
             }
 
             // 아이디 유효성 검사
             let getyouID = RegExp(/^[A-Za-z0-9_\.\-]/);
             if(!getyouID.test($("#youID").val())){
-                $("#youIDComment").text("아이디를 형식에 맞게 작성해주세요.");
+                $("#youIDComment").text("아이디를 형식에 맞게 작성해주세요!");
                 $("#youID").val("");
                 return false;
             }
 
             // 아이디 중복 검사
             if(IDCheck == false){
-                $("#youIDComment").text("아이디 중복 검사를 해주세요.");
+                $("#youIDComment").text("아이디 중복 검사를 해주세요!");
                 return false;
             }
 
             // 비밀번호 공백 검사
             if($("#youPass").val() == ""){
-                $("#youPassComment").text("비밀번호를 입력해주세요.");
+                $("#youPassComment").text("비밀번호를 입력해주세요!");
                 return false;
             }
 
@@ -187,19 +185,19 @@
             let getYouPassSpe = getYouPass.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
 
             if(getYouPass.length < 8 || getYouPass.length > 20){
-                $("#youPassComment").text("8자리 ~ 20자리 이내로 입력해주세요.");
+                $("#youPassComment").text("8자리 ~ 20자리 이내로 입력해주세요~");
                 return false;
             } else if (getYouPass.search(/\s/) != -1){
-                $("#youPassComment").text("비밀번호는 공백없이 입력해주세요.");
+                $("#youPassComment").text("비밀번호는 공백없이 입력해주세요!");
                 return false;
             } else if (getYouPassNum < 0 || getYouPassEng < 0 || getYouPassSpe < 0 ){
-                $("#youPassComment").text("영문, 숫자, 특수문자를 혼합하여 입력해주세요.");
+                $("#youPassComment").text("영문, 숫자, 특수문자를 혼합하여 입력해주세요!");
                 return false;
             }
 
             // 확인 비밀번호 공백 확인
             if($("#youPassC").val() == ""){
-                $("#youPassCComment").text("확인 비밀번호를 입력해주세요.");
+                $("#youPassCComment").text("확인 비밀번호를 입력해주세요!");
                 return false;
             }
 
@@ -211,28 +209,28 @@
 
             // 이메일 공백 검사
             if($("#youEmail").val() == ""){
-                $("#youEmailComment").text("이메일을 입력해주세요.");
+                $("#youEmailComment").text("이메일을 입력해주세요!");
                 return false;
             }
 
             // 이메일 유효성 검사
             let getYouEmail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
             if(!getYouEmail.test($("#youEmail").val())){
-                $("#youEmailComment").text("이메일 형식에 맞게 작성해주세요.");
+                $("#youEmailComment").text("이메일 형식에 맞게 작성해주세요!");
                 $("#youEmail").val("");
                 return false;
             }
 
             // 휴대폰 번호 공백 확인
             if($("#youPhone").val() == ""){
-                $("#youPhoneComment").text("휴대폰 번호(000-0000-0000) 입력해주세요.");
+                $("#youPhoneComment").text("휴대폰번호(000-0000-0000) 입력해주세요");
                 return false;
             }
 
             // 휴대폰 번호 유효성 검사
             let getYouPhone = RegExp(/01[016789]-[^0][0-9]{2,3}-[0-9]{3,4}/);
             if(!getYouPhone.test($("#youPhone").val())){
-                $("#youPhoneComment").text("휴대폰 번호가 정확하지 않습니다. 올바른 휴대폰 번호(000-0000-0000)를 입력해주세요.");
+                $("#youPhoneComment").text("휴대폰 번호가 정확하지 않습니다. 올바른 휴대폰번호(000-0000-0000)를 입력해주세요!");
                 $("#youPhone").val("");
                 return false;
             }

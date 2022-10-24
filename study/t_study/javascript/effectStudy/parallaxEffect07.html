@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페럴랙스 이펙트 07</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">페럴랙스 이펙트 : 리빌 효과</h2>
+            <p class="t_desc2">
+                이번에는 페럴랙스 이펙트 중에 리빌 효과를 넣는 방법을 코딩해봤습니다.
+            </p>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc2">
+                HTML 코드는 사용해 줄 섹션 구간을 나눠주고 CSS와 스크립트를 이용하기위해 각각에 class로 이름을 지정해줍니다.<br>
+                이번에는 리빌 효과를 적용하기 위해서 각 적용할 구간에 reveal 클래스 이름을 집어넣어주세요!<br>
+                텍스트는 자신이 좋아하는 말이나..명언을...? 집어넣어주세여..
+            </p>
+            <details>
+                <summary>HTML CODE</summary>
+            <div class="t_code">
+<pre><code class="language.js">&lt;main id="parallax__cont">
+    &lt;div id="contents">
+        &lt;!-- section1 -->
+        &lt;section id="section1" class="content__item">
+            &lt;span class="content__item__num">01&lt;/span>
+            &lt;h2 class="content__item__title">section1&lt;/h2>
+            &lt;figure class="content__item__imgWrap reveal">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc reveal">니 인생은 너가 바꾸는거다.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section2 -->
+        &lt;section id="section2" class="content__item">
+            &lt;span class="content__item__num">02&lt;/span>
+            &lt;h2 class="content__item__title">section2&lt;/h2>
+            &lt;figure class="content__item__imgWrap reveal reveal-RTL">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc reveal" data-delay="500">남 탓 하기 전에 너 자신을 봐라.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section3 -->
+        &lt;section id="section3" class="content__item">
+            &lt;span class="content__item__num">03&lt;/span>
+            &lt;h2 class="content__item__title">section3&lt;/h2>
+            &lt;figure class="content__item__imgWrap reveal reveal-TTB">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc reveal">알면서도 안하고 가만히 있으면 거지가 되면 된다.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section4 -->
+        &lt;section id="section4" class="content__item">
+            &lt;span class="content__item__num">04&lt;/span>
+            &lt;h2 class="content__item__title">section4&lt;/h2>
+            &lt;figure class="content__item__imgWrap reveal reveal-BTT">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc reveal" data-delay="500">남들은 너한테 큰 관심이 없다.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section5 -->
+        &lt;section id="section5" class="content__item">
+            &lt;span class="content__item__num">05&lt;/span>
+            &lt;h2 class="content__item__title">section5&lt;/h2>
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO" data-delay="1500">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc reveal">너 혼자 알아서 해라.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section6 -->
+        &lt;section id="section6" class="content__item">
+            &lt;span class="content__item__num">06&lt;/span>
+            &lt;h2 class="content__item__title">section6&lt;/h2>
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-RTL">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc reveal">돈이 세상에 다는 아니지만 세상은 돈으로 굴러간다.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section7 -->
+        &lt;section id="section7" class="content__item">
+            &lt;span class="content__item__num">07&lt;/span>
+            &lt;h2 class="content__item__title">section7&lt;/h2>
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-TTB">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc reveal">사회는 널 기다려주지 않는다.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section8 -->
+        &lt;section id="section8" class="content__item">
+            &lt;span class="content__item__num">08&lt;/span>
+            &lt;h2 class="content__item__title">section8&lt;/h2>
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-BTT">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc reveal">힘 없는 정의는 무능이다.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section9 -->
+        &lt;section id="section9" class="content__item">
+            &lt;span class="content__item__num">09&lt;/span>
+            &lt;h2 class="content__item__title">section9&lt;/h2>
+            &lt;figure class="content__item__imgWrap reveal">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc">객관적으로 너 자신을 봐라&lt;/p>
+        &lt;/section>
+    &lt;/div>
+    &lt;section id="parallaxType">
+    &lt;/section>
+&lt;/main>
+&lt;!-- //main -->
+
+&lt;aside id="parallax__info">
+    &lt;div class="scroll">scrollTop : &lt;span>0&lt;/span>px&lt;/div>
+&lt;/aside>
+&lt;!-- aside -->
+</code></pre>
+            </div>
+            </details>
+
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc2">
+                CSS는 각자가 원하는 디자인 스타일에 맞게 지정해줍시다.<br>
+                이번 단위는 px가 아닌 vw를 사용해줬는데 vw는 반응형에서 px와는 맞게 작동하기에 vw를 사용해줬습니다.<br>
+                vw : 웹에서 보이는 부분에만 값을 준 것이다.<br>
+                또한, 각가 이미지에 nth-child를 이용해 이미지를 지정해줍니다.<br>
+                nth-child : 형제 사이에 순서에 따라 요소를 선택할 수 있게 해줍니다.<br>
+                이번에는 reveal 효과를 주었기 때문에 각각 원하는 효과에 가상효과를 집어주고 또 그에 맞는 애니메이션 효과를 넣었습니다.
+            </p>
+            <details>
+                <summary>CSS CODE</summary>
+            <div class="t_code">
+<pre><code class="language.js">/* parallax__nav */
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+    transition: top, .4s ease;
+}
+#parallax__nav li {
+    display: inline;
+    margin: 0 5px;
+}
+#parallax__nav li a {
+    display: inline-block;
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
+}
+#parallax__nav li.active a {
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    box-sizing: content-box;
+}
+#parallax__cont {
+    max-width: 1600px;
+    width: 98%;
+    margin: 0 auto;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+}
+.content__item {
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    text-align: left;
+    margin-right: 0;
+    position: relative;
+    padding-top: 14vw;
+}
+.content__item:nth-child(even) {
+    margin-left: 0;
+    text-align: right;
+}
+.content__item__num {
+    font-size: 35vw;
+    font-family: "Lato";
+    font-weight: 100;
+    position: absolute;
+    left: -5vw;
+    top: -10vw;
+    opacity: 0.2;
+    z-index: -2;
+}
+.content__item:nth-child(even) .content__item__num {
+    left: auto;
+    right: -5vw;
+}
+.content__item__title {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.content__item__imgWrap {
+    width: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+}
+.content__item__img {
+    position: absolute;
+    background: url(../assets/img/slide10.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 125%;
+    height: 125%;
+    left: -5%;
+    top: -5%;
+    filter: saturate(0%);
+    transition: all 1s;
+}
+.content__item:nth-child(1) .content__item__img {
+    background-image: url(../assets/img/slide01.jpg);
+}
+.content__item:nth-child(2) .content__item__img {
+    background-image: url(../assets/img/slide02.jpg);
+}
+.content__item:nth-child(3) .content__item__img {
+    background-image: url(../assets/img/slide03.jpg);
+}
+.content__item:nth-child(4) .content__item__img {
+    background-image: url(../assets/img/slide04.jpg);
+}
+.content__item:nth-child(5) .content__item__img {
+    background-image: url(../assets/img/slide05.jpg);
+}
+.content__item:nth-child(6) .content__item__img {
+    background-image: url(../assets/img/slide06.jpg);
+}
+.content__item:nth-child(7) .content__item__img {
+    background-image: url(../assets/img/slide07.jpg);
+}
+.content__item:nth-child(8) .content__item__img {
+    background-image: url(../assets/img/slide08.jpg);
+}
+.content__item:nth-child(9) .content__item__img {
+    background-image: url(../assets/img/slide09.jpg);
+}
+.content__item__desc {
+    font-size: 4vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
+}
+.content__item:nth-child(even) .content__item__desc {
+    margin-left: auto;
+    margin-right: -4vw;
+}
+#parallax__info {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+.parallax__info li, .scrollTop {
+    line-height: 1.4;
+}
+
+@media (max-width: 800px) {
+    #parallax__cont {
+        margin-top: 70vw;
+    }
+    #parallax__nav {
+        padding: 10px;
+        right: auto;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    #parallax__nav li {
+        display: block;
+        margin: 5px;
+    }
+    #parallax__nav li a {
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
+        height: auto;
+        line-height: 1.4;
+    }
+    #parallax__nav li.active a {
+        border-radius: 10px;
+    }
+    #parallax__info {
+        left: 10px;
+        bottom: 10px;
+    }
+}
+
+/* option */
+.reveal > div,
+.reveal > span {
+    opacity: 0;
+}
+.reveal.show > div,
+.reveal.show > span {
+    animation: opacity 1s linear forwards;
+}
+.reveal {
+    position: relative;
+}
+.reveal::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #000;
+    z-index: 1;
+}
+.reveal.reveal-TWO::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    z-index: 1;
+    background: #ccc;
+}
+
+/* 1개 */
+.reveal.show::before {
+    animation: reveal 1s;
+}
+.reveal.reveal-RTL.show::before {
+    animation: reveal-RTL 1s;
+}
+.reveal.reveal-TTB.show::before {
+    animation: reveal-TTB 1s;
+}
+.reveal.reveal-BTT.show::before {
+    animation: reveal-BTT 1s;
+}
+
+/* 2개 */
+.reveal.show::after {
+    animation: reveal 1s 0.3s;
+}
+.reveal.reveal-RTL.show::after {
+    animation: reveal-RTL 1s 0.3s;
+}
+.reveal.reveal-TTB.show::after {
+    animation: reveal-TTB 1s 0.3s;
+}
+.reveal.reveal-BTT.show::after {
+    animation: reveal-BTT 1s 0.3s;
+}
+
+@keyframes opacity {
+    0%   {opacity: 0;}
+    60%  {opacity: 0;}
+    70%  {opacity: 1;}
+    100% {opacity: 1;}
+}
+@keyframes reveal {
+    0%   {width: 0;    left: 0;}
+    50%  {width: 100%; left: 0;}
+    80%  {width: 100%; left: 0;}
+    100% {width: 0;    left: 100%;}
+}
+@keyframes reveal-RTL {
+    0%   {width: 0;    right: 0; left: auto;}
+    50%  {width: 100%; right: 0; left: auto;}
+    80%  {width: 100%; right: 0; left: auto;}
+    100% {width: 0;    right: 100%; left: auto;}
+}
+@keyframes reveal-TTB {
+    0%   {width: 100%; height: 0;    top: 0;}
+    50%  {width: 100%; height: 100%; top: 0;}
+    80%  {width: 100%; height: 100%; top: 0;}
+    100% {width: 100%; height: 0;    top: 100%;}
+}
+@keyframes reveal-BTT {
+    0%   {width: 100%; height: 0;    bottom: 0;    top: auto;}
+    50%  {width: 100%; height: 100%; bottom: 0;    top: auto;}
+    80%  {width: 100%; height: 100%; bottom: 0;    top: auto;}
+    100% {width: 100%; height: 0;    bottom: 100%; top: auto;}
+}
+</code></pre>
+            </div>
+        </details>
+
+            <h3 class="t_tit2">SCRIPT</h3>
+            <p class="t_desc2">
+                이번 스크립트는 reveal 효과를 적용하기 위한 어느정도에 스크립트를 짰습니다.
+            </p>
+            <details>
+                <summary>SCRIPT CODE</summary>
+            <div class="t_code">
+<pre><code class="language-js">const reveal = document.querySelectorAll(".reveal");
+
+    reveal.forEach(e => {
+    const splitSpan = e.innerText;
+
+        if(splitSpan) {
+            e.innerHTML = "&lt;span>" + splitSpan + "&lt;/span>";
+        };
+    });
+
+function scroll() {
+    let scrollTop = window.scrollY;
+
+    const reveal = document.querySelectorAll(".reveal");
+
+    reveal.forEach(el => {
+        let revealOffset = el.offsetTop + el.parentElement.offsetTop;
+        let revealDelay = el.dataset.delay;
+
+        // if(scrollTop >  revealOffset - window.innerHeight) {
+        //     el.classList.add("show");
+        // }
+
+        if(scrollTop >= revealOffset - window.innerHeight) {
+            if(revealDelay == undefined) {
+                el.classList.add("show");
+            } else {
+                setTimeout(() => {
+                    el.classList.add("show");
+                }, revealDelay)
+            }
+        }
+    })
+
+    document.querySelector(".scroll span").innerText = Math.round(scrollTop);
+    requestAnimationFrame(scroll);
+}
+scroll();
+</code></pre>
+            </div>
+            </details>
+
+            <div class="t_link">
+                <a href="https://github.com/KDB6/ck/blob/main/javascript/effect/parallaxEffect07.html" target="_blank">CODE GO</a>
+            </div>
+
+            <br><br>
+
+            <h3 class="t_tit2">RESULT</h3>
+            <div class="t_iframe" style="min-height: 920px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/javascript/effect/parallaxEffect07.html" frameborder="0"></iframe>
+            </div>
+    
+            <div class="t_link">
+                <a href="https://kdb6.github.io/ck/javascript/effect/parallaxEffect07.html" target="_blank">SITE GO</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

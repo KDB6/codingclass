@@ -1,0 +1,90 @@
+/* cardType */
+#textType02 {
+    background-color: #f6f8fd;
+}
+.text02__inner {
+    display: flex;
+    justify-content: space-between;
+}
+.text02 {
+    width: 32%;
+    background: #fff;
+    border-radius: 10px;
+    height: 430px;
+}
+.text02__body {
+    padding: 30px;
+}
+.text02__body .tit02 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.text02__body .desc02 {
+    font-size: 20px;
+    line-height: 1.4;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7; 
+    -webkit-box-orient: vertical;
+}
+.desc02 {
+    height: 196px;
+    display: flex;
+}
+.circle02 {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #e7f2ff;
+    margin-right: 10px;
+}
+.circle02 > img {
+    width: 28px;
+    height: 28px;
+    margin-top: 7px;
+    margin-left: 7px;
+}
+.desc202 {
+    width: 373px;
+    height: 41px;
+    display: flex;
+    margin-left: 30px;
+    padding-bottom: 60px;
+}
+.desc202 > h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #666666;
+    height: 41px;
+    width: 70px;
+}
+.desc202 > p {
+    font-size: 18px;
+    color: #666666;
+    padding-top: 5px;
+    margin-left: 10px;
+    height: 25px;
+}
+.good02 {
+    width: 120px;
+    height: 24px;
+    background: #c3edff;
+    color: #fff;
+    border-radius: 20px;
+    margin-left: 130px;
+}
+.good02 > p {
+    padding-top: 4px;
+    padding-left: 26px;
+    font-size: 14px;
+}
+.star02 {
+    margin-bottom: 3px;
+}

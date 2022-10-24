@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제</title>
+    <style>
+        @import url('https://webfontworld.github.io/SCoreDream/SCoreDream.css');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "SCoreDream";
+        }
+        h2 {
+            font-weight: normal;
+            font-size: 20px;
+        }
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        /* header */
+        header {
+            height: 170px;
+            background-color: rgb(136, 177, 255);
+            border-radius: 10px;
+        }
+        .heaLeft {
+            width: 130px;
+            height: 130px;
+            margin: 20px 10px 20px 20px;
+            background-color: rgb(169, 199, 255);
+            border-radius: 10px;
+            float: left;
+        }
+        .heaLeft > h2 {
+            background: rgb(125, 160, 226);
+            margin: 0 20px 5px 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px;
+        }
+        .heaLeft > p {
+            text-align: center;
+            color: #fff;
+            line-height: 80px;
+        }
+        .heaRight {
+            width: 1000px;
+            height: 80px;
+            background-color: rgb(169, 199, 255);
+            border-radius: 10px;
+            float: right;
+            margin: 70px 20px 20px 20px;
+        }
+        .heaRight > h2 {
+            background: rgb(125, 160, 226);
+            margin: 0 900px 5px 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px;
+        }
+        .heaRight > p {
+            margin-left: 110px;
+            display: inline-block;
+            color: #fff;
+        }
+
+        /* section */
+        section{
+            height: 520px;
+            background-color: rgb(136, 177, 255);
+            border-radius: 10px;
+        }
+        .sb01 {
+            width: 380px;
+            height: 480px;
+            background-color: rgb(169, 199, 255);
+            margin: 20px;
+            float: left;
+            border-radius: 10px;
+        }
+        .sb01 > h2 {
+            background: rgb(125, 160, 226);
+            margin: 10px 250px 10px 10px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px;
+        }
+        .sb01 > p {
+            text-align: center;
+            line-height: 380px;
+            color: #fff;
+        }
+        .sb02 {
+            width: 380px;
+            height: 480px;
+            margin-top: 20px;
+            background-color: rgb(169, 199, 255);
+            float: left;
+            border-radius: 10px;
+        }
+        .sb02 > h2 {
+            background: rgb(125, 160, 226);
+            margin: 10px 250px 10px 10px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px;
+        }
+        .sb02 > p {
+            text-align: center;
+            line-height: 380px;
+            color: #fff;
+        }
+        .article {
+            width: 360px;
+            height: 230px;
+            background-color: rgb(169, 199, 255);
+            margin: 20px 0 0 20px;
+            float: left;
+            border-radius: 10px;
+        }
+        .article > h2 {
+            background: rgb(125, 160, 226);
+            margin: 10px 250px 10px 10px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px;
+        }
+        .article > p {
+            text-align: center;
+            line-height: 140px;
+            color: #fff;
+        }
+        .aside {
+            width: 360px;
+            height: 230px;
+            background-color: rgb(169, 199, 255);
+            margin: 20px;
+            float: left;
+            border-radius: 10px;
+        }
+        .aside > h2 {
+            background: rgb(125, 160, 226);
+            margin: 10px 250px 10px 10px;
+            text-align: center;
+            color: #fff;
+            border-radius: 10px;
+        }
+        .aside > p {
+            text-align: center;
+            line-height: 140px;
+            color: #fff;
+        }
+
+        /* footer */
+        footer {
+            height: 110px;
+            background-color: rgb(136, 177, 255);
+            border-radius: 10px;
+        }
+        .address {
+            width: 600px;
+            height: 40px;
+            background-color: rgb(169, 199, 255);
+            margin: 10px 10px 5px 200px;
+            display: flex;
+            border-radius: 10px;
+        }
+        .address > h2 {
+            background: rgb(125, 160, 226);
+            padding: 0 10px 0 10px;
+            margin: 0 0 10px 0;
+            color: #fff;
+            border-radius: 10px 0 10px 0;
+        }
+        .address > p {
+            background: rgb(169, 199, 255);
+            margin: 7px 0 10px 170px;
+            color: #fff;
+        }
+        .pbox {
+            width: 600px;
+            height: 40px;
+            background-color: rgb(169, 199, 255);
+            margin: 10px 10px 5px 200px;
+            display: flex;
+            border-radius: 10px;
+        }
+        .pbox > h2 {
+            background: rgb(125, 160, 226);
+            padding: 0 42px 0 42px;
+            margin: 0 0 10px 0;
+            color: #fff;
+            border-radius: 10px 0 10px 0;
+        }
+        .pbox > p {
+            background: rgb(169, 199, 255);
+            margin: 7px 0 10px 170px;
+            color: #fff;
+        }
+    </style>
+</head>
+    <header class="container">
+        <div class="heaLeft">
+            <h2>h1</h2>
+            <p>반응형 웹</p>
+        </div>
+        <div class="heaRight">
+            <h2>nav</h2>
+            <p>MENU01</p>
+            <p>MENU02</p>
+            <p>MENU03</p>
+            <p>MENU04</p>
+            <p>MENU05</p>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="sb01">
+            <h2>section</h2>
+            <p>콘텐츠 그룹01</p>
+        </div>
+        <div class="sb02">
+            <h2>section</h2>
+            <p>콘텐츠 그룹02</p>
+        </div>
+        <div class="article">
+            <h2>article</h2>
+            <p>주요 기사</p>
+        </div>
+        <div class="aside">
+            <h2>aside</h2>
+            <p>광고</p>
+        </div>
+    </section>
+    
+    <footer class="container">
+        <div class="address">
+            <h2>address</h2>
+            <p>경기도 시흥시</p>
+        </div>
+        <div class="pbox">
+            <h2>p</h2>
+            <p>저작권</p>
+        </div>
+    </footer>
+<body>
+    
+</body>
+</html>

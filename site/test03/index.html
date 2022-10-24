@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test03</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .score {
+            font-family: 'SCoreDream';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        .blind {
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden
+        }
+        body {
+            overflow-x: hidden;
+        }
+
+        /* common */
+        .container {
+            width: 1100px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1100px;
+        }
+        .container02 {
+            width: 1920px;
+            margin: 0 auto;
+            min-width: 1920px;
+        }
+        .section {
+            padding: 10px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* headerType */
+        #headerType {
+        }
+        .header__inner {
+            display: flex;
+            margin-top: 15px;
+        }
+        .header__inner figure > img {
+            width: 120px;
+            height: 30px;
+        }
+        .hea__h3 {
+            margin: 5px 0 20px 495px;
+        }
+        .hea__h3 li{
+            display: inline;
+            padding: 20px;
+        }
+
+        /* sliderType */
+        .slider__wrap {
+            display: flex;
+            overflow: hidden;
+        }
+        .slider__inner {
+            width: 5760px;
+            height: 580px;
+            
+        }
+        .slider__desc {
+            position: absolute;
+        }
+        .slider__desc em {
+            font-style: normal;
+            font-size: 14px;
+        }
+        .imgs .slider__desc {
+            color: #fff;
+            background-color: #00000040;
+            padding: 30px;
+            border-radius: 10px;
+            font-size: 20px;
+            top: 450px;
+            left: 400px;
+        }
+        .slider img {
+        }
+        .imgs {
+            background-image: url(img/slider.jpg);
+        }
+        .slider__wrap .imgs {
+            width: 1920px;
+            height: 580px;
+        }
+        
+        /* cardType */
+        #cardType {
+            background-color: #f5f5f5;
+        }
+        .card__inner {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+        .card__inner > h2 {
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            margin-left: 430px;
+        }
+        .cardAll {
+            display: flex;
+            align-items: center;
+            justify-content: space-between ;
+        }
+        .card {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 250px;
+            height: 160px;
+        }
+        .card1 {
+            margin-top: 10px;
+        }
+        .card1 > h3 {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .card1 > h2 {
+            font-size: 16px;
+        }
+        .card1_btn {
+            width: 90px;
+            height: 20px;
+            border: 2px solid #b6bbff;
+            padding: 0 5px 0 10px;
+            border-radius: 5px;
+        }
+        .card__p {
+            margin-top: 10px;
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .card__p > p {
+            font-size: 14px;
+            align-items: center;
+            color: #666;
+        }
+        .card__p .card__btn {
+            background: #8b89ff;
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        /* infoType */
+        .info__inner {
+        }
+        .info__left {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .info1 {
+            width: 29%;
+            height: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .info1 em {
+            font-style: normal;
+            color: #979797;
+        }
+        .info1 > h3 {
+            margin-top: 20px;
+            margin-left: 20px;
+            font-size: 18px;
+        }
+        .info__p1 {
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .info__p1__p {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .info2 {
+            width: 69%;
+            height: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .info2 > h2 {
+            margin-top: 20px;
+            margin-left: 20px;
+            font-size: 18px;
+        }
+        .info__p2 {
+            display: flex;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .info__0p3 {
+            color: #666;
+            font-size: 15px;
+            margin-left: 5px;
+            
+        }
+        .info__btn {
+            margin-right: 20px;
+            font-size: 14px;
+            padding: 2px 20px;
+            background-color: #8b89ff;
+            border-radius: 5px;
+            color: #fff;
+        }
+        .info_p2 {
+            margin-right: 250px;
+        }
+        
+        .info__right {
+            display: flex;
+            justify-content: space-between;
+        }
+        .info3 {
+            width: 29%;
+            height: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .info3 > h2 {
+            margin-top: 20px;
+            margin-left: 20px;
+            font-size: 18px;
+            color: #fff;
+        }
+        .info3 > p {
+            margin-top: 25px;
+            margin-left: 20px;
+            color: #fff;
+            font-size: 15px;
+        }
+        .info3__btn {
+            width: 80px;
+            height: 20px;
+            margin-top: 25px;
+            margin-left: 20px;  
+            padding: 2px 20px 7px 20px;
+            border: 2px solid #fff;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .info3__img {
+            background-image: url(img/adss.jpg);
+            background-position: center center;
+        }
+
+        .info4 {
+            width: 69%;
+            height: 200px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .info4 > h2 {
+            margin-top: 20px;
+            margin-left: 20px;
+            font-size: 18px;
+        }
+        .info4__boxLe {
+            border-right: 1px solid #ccc;
+            width: 350px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .info4__le > p {
+        }
+        .info4__le2 {
+            margin-top: 20px;
+        }
+        .info4__boxRi {
+            width: 350px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .info4__Ri > p {
+        }
+        .info4__ri2 {
+            margin-top: 20px;
+        }
+        .info__flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .info4__pp {
+            margin-top: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* footer */
+        #footer {
+            margin-top: 60px;
+            background: #263F5F;
+            width: 1920px;
+        }
+        .footer__top {
+            padding-top: 20px;
+            display: flex;
+            color: #fff;
+            margin-left: 400px;
+            width: 1100px;
+            height: 50px;
+            border-bottom: 1px solid #fff;
+            color: #a8a8a8;
+            font-size: 14px;
+        }
+        .foologo {
+            width: 150px;
+            height: 60px;
+        }
+        .fooicon {
+            width: 100px;
+            height: 40px;
+            margin-left: 20px;
+            margin-top: 6px;
+        }
+        .ft {
+            margin-left: 430px;
+            width: 75px;
+            height: 20px;
+            border: 1px solid #a8a8a8;
+            padding: 5px 10px 5px 10px;
+            border-radius: 5px;
+            color: #a8a8a8;
+            font-size: 14px;
+        }
+        .footer__bom {
+            width: 1100px;
+            margin-top: 20px;
+            display: flex;
+            margin-left: 400px;
+        }
+        .fb1 {
+            color: #fff;
+            font-size: 14px;
+            margin-left: 20px;
+            margin-top: 9px;
+            color: #a8a8a8;
+        }
+        .fb2 {
+            margin-left: 420px;
+            font-size: 10px;
+            color: #fff;
+            margin-top: 5px;
+            color: #a8a8a8;
+        }
+        .plus {
+            width: 30px;
+            height: 30px;
+            padding-left: 420px;
+        }
+        .plus2 {
+            width: 20px;
+            height: 20px;
+            padding-left: 100px;
+        }
+        .plus3 {
+            width: 20px;
+            height: 20px;
+            padding-left: 565px;
+        }
+        .plus4 {
+            width: 20px;
+            height: 20px;
+            padding-left: 585px;
+        }
+        .footer__bom em {
+            font-style: normal;
+            font-size: 18px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- headerType -->
+    <header id="headerType" class="score section">
+        <div class="header__inner container">
+            <figure>
+                <img src="img/logo.jpg" alt="로고">
+            </figure>
+            <div class="hea__h3">
+                <ul>
+                    <li><a href="#">무역통상정보</a></li>
+                    <li><a href="#">회사업무지원</a></li>
+                    <li><a href="#">무역통계</a></li>
+                    <li><a href="#">협회안내</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- main -->
+    <main id="main">
+        <!-- sliderType -->
+        <slider id="sliderType" class="score section">
+            <div class="slider__inner">
+                <div class="slider__wrap">
+
+                    <div class="slider__img">
+                        <div class="slider imgs">
+                            <div class="slider__desc">
+                                <h3>STARTUP Germany<br>2019 참가업체 모집</h3>
+                                <p><em>사업기간 2019-07-02 ~ 2019-08-09</em></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider__img">
+                        <div class="slider imgs">
+                            <div class="slider__desc">
+                                <h3>STARTUP Germany<br>2019 참가업체 모집</h3>
+                                <p><em>사업기간 2019-07-02 ~ 2019-08-09</em></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider__img">
+                        <div class="slider imgs">
+                            <div class="slider__desc">
+                                <h3>STARTUP Germany<br>2019 참가업체 모집</h3>
+                                <p><em>사업기간 2019-07-02 ~ 2019-08-09</em></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider__img">
+                        <div class="slider imgs">
+                            <div class="slider__desc">
+                                <h3>STARTUP Germany<br>2019 참가업체 모집</h3>
+                                <p><em>사업기간 2019-07-02 ~ 2019-08-09</em></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </slider>
+
+        <!-- cardType -->
+        <card id="cardType" class="score section">
+            <div class="card__inner container">
+                <h2>KITA 사업 일정
+                    <img class="plus" src="img/plus.JPG" alt="">
+                </h2>
+
+                <div class="cardAll">
+                    <div class="card">
+                        <div class="card1">
+                            <h3 class="card1_btn">모집마감 -4일</h3>
+                            <h2>[2019] 태국 국제식품전시회 업체모집</h2>
+                        </div>
+                        <div class="card__p">
+                            <p class="card__btn">사업기간</p>
+                            <p>2000-00-00 ~ 2000-00-00</p>
+                        </div>
+                        <div class="card__p">
+                            <p class="card__btn">모집기간</p>
+                            <p>2000-00-00 ~ 2000-00-00</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card1">
+                            <h3 class="card1_btn">모집마감 -4일</h3>
+                            <h2>[2019] 태국 국제식품전시회 업체모집</h2>
+                        </div>
+                        <div class="card__p">
+                            <p class="card__btn">사업기간</p>
+                            <p>2000-00-00 ~ 2000-00-00</p>
+                        </div>
+                        <div class="card__p">
+                            <p class="card__btn">모집기간</p>
+                            <p>2000-00-00 ~ 2000-00-00</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card1">
+                            <h3 class="card1_btn">모집마감 -4일</h3>
+                            <h2>[2019] 태국 국제식품전시회 업체모집</h2>
+                        </div>
+                        <div class="card__p">
+                            <p class="card__btn">사업기간</p>
+                            <p>2000-00-00 ~ 2000-00-00</p>
+                        </div>
+                        <div class="card__p">
+                            <p class="card__btn">모집기간</p>
+                            <p>2000-00-00 ~ 2000-00-00</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card1">
+                            <h3 class="card1_btn">모집마감 -4일</h3>
+                            <h2>[2019] 태국 국제식품전시회 업체모집</h2>
+                        </div>
+                        <div class="card__p">
+                            <p class="card__btn">사업기간</p>
+                            <p>2000-00-00 ~ 2000-00-00</p>
+                        </div>
+                        <div class="card__p">
+                            <p class="card__btn">모집기간</p>
+                            <p>2000-00-00 ~ 2000-00-00</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </card>
+
+        <!-- info -->
+        <info id="infoType" class="score section">
+            <div class="info__inner container">
+                <div class="info__left">
+                    <div class="info1">
+                        <h3>보도언론 | <em>언론기고</em>
+                            <img class="plus2" src="img/plus.JPG" alt="">
+                        </h3>
+                        <div class="info__p1">
+                            <p>민관합동 협동중심 수출활력촉진단 가동</p>
+                            <p class="info__p1__p">2000-00-00</p>
+                        </div>
+                        <div class="info__p1">
+                            <p>민관합동 협동중심 수출활력촉진단 가동</p>
+                            <p class="info__p1__p">2000-00-00</p>
+                        </div>
+                    </div>
+                    <div class="info2">
+                        <h2>KITA 연구보고서
+                            <img class="plus3" src="img/plus.JPG" alt="">
+                        </h2>
+                        <div class="info__p2">
+                            <p class="info__btn">[KITA]</p>
+                            <p class="info_p2">2019년 수출 기업의 경영환경 전망 조사</p>
+                            <p class="info__0p3">2000-00-00</p>
+                        </div>
+                        <div class="info__p2">
+                            <p class="info__btn">[KITA]</p>
+                            <p class="info_p2">2019년 수출 기업의 경영환경 전망 조사</p>
+                            <p class="info__0p3">2000-00-00</p>
+                        </div>
+                        <div class="info__p2">
+                            <p class="info__btn">[KITA]</p>
+                            <p class="info_p2">2019년 수출 기업의 경영환경 전망 조사</p>
+                            <p class="info__0p3">2000-00-00</p>
+                        </div>
+                        <div class="info__p2">
+                            <p class="info__btn">[KITA]</p>
+                            <p class="info_p2">2019년 수출 기업의 경영환경 전망 조사</p>
+                            <p class="info__0p3">2000-00-00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="info__right">
+                    <div class="info3 info3__img">
+                        <h2>온라인 세미나</h2>
+                        <p>무역협회에서 실시하는 국내 무역 관련 세미나, 설명회 등을 vod서비스로 제공</p>
+                        <h3 class="info3__btn">바로가기</h3>
+                    </div>
+                    <div class="info4">
+                        <h2>KITA 통상정보
+                            <img class="plus4" src="img/plus.JPG" alt="">
+                        </h2>
+                        <div class="info__flex">
+                            <div class="info4__boxLe">
+                                <div class="info4__le">
+                                    <p>한미 통상현안 사례분석집</p>
+                                    <p class="info4__pp">2000-00-00</p>
+                                </div>
+                                <div class="info4__le">
+                                    <p class="info4__le2">한미 통상현안 사례분석집</p>
+                                    <p class="info4__pp">2000-00-00</p>
+                                </div>
+                            </div>
+                            <div class="info4__boxRi">
+                                <div class="info4__Ri">
+                                    <p>한미 통상현안 사례분석집</p>
+                                    <p class="info4__pp">2000-00-00</p>
+                                </div>
+                                <div class="info4__Ri">
+                                    <p class="info4__ri2">한미 통상현안 사례분석집</p>
+                                    <p class="info4__pp">2000-00-00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </info>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer" class="score section">
+        <div class="footer__inner">
+            <div class="footer__top">
+                <p>이용약관 | 개인정보처리방침 | 저작권정책 | 이메일주소무단수집거부 | 온라인고객상담 | 신문고</p>
+                <p class="ft">국내 외지부</p>
+            </div>
+            <div class="footer__bom">
+                <img src="img/footerlogo.JPG" class="foologo" alt="">
+                <p class="fb1">(06164) 서울시 강남구 영동대로 511 (삼성동)<br>copyrights resserved</p>
+                <img src="img/footericon.JPG" class="fooicon" alt="">
+                <p class="fb2">트레이드 콜센터<br><em>1566-5114<em></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const sliderWrap = document.querySelector(".slider__inner");
+        const sliderImg = document.querySelector(".slider__img");
+        const sliderInner = document.querySelector(".slider__wrap");
+        const slider = document.querySelectorAll(".imgs");
+
+        let currentIndex = 0;
+        let sliderCount = slider.length;
+        let sliderWidth = sliderImg.offsetWidth;
+        let sliderClone = sliderInner.firstElementChild.cloneNode(true);
+        sliderInner.appendChild(sliderClone);
+
+        function sliderEffect() {
+            currentIndex++;
+            sliderInner.style.transition = "all 0.8s";
+            sliderInner.style.transform = "translateX(-"+ sliderWidth*currentIndex+ "px)";
+            if(currentIndex == sliderCount) {
+                setTimeout(() => {
+                    sliderInner.style.transition = "0s";
+                    sliderInner.style.transform = "translateX(0px)";
+                }, 1000);
+                currentIndex = 0;
+            }
+        }
+        setInterval(sliderEffect, 3000);
+    </script>
+</body>
+</html>

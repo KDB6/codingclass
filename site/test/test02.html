@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test02</title>
+
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .score {
+            font-family: 'SCoreDream';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #fff;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        .blind {
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden
+        }
+
+        /* common */
+        .container {
+            width: 1000px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1000px;
+        }
+        .section {
+            padding: 10px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* all */
+        .all {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* sideHeader */        
+        #sideHeader {
+            width: 150px;
+        }
+        .sideHeader {
+            margin-top: 60px;
+            width: 150px;
+        }
+        .logo img {
+            width: 100px;
+            height: 40px;
+        }
+        .desch2 {
+            margin-top: 40px;
+        }
+        .descp {
+            margin-top: 10px;
+        }
+        .descp > p {
+            width: 150px;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+        .desch3 {
+            margin-top: 20px;
+        }
+        .desch3 > h3 {
+            margin-bottom: 10px;
+        }
+
+        /* slider */
+        .sliderWrap {
+            margin-top: 25px;
+            width: 700px;
+            height: 400px;
+            height: 100%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin-left: 70px;
+        }
+        .sliderImg {
+            width: 700px;
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+        .sliderInner {
+            display: flex;
+            flex-wrap: wrap;
+            width: 700px;  
+            height: 2000px;
+        }
+        .slider {
+            position: relative;
+            width: 700px;
+            height: 400px;
+        }
+        .slider::before {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.4);
+            left: 5px;
+            top: 5px;
+            color: #fff;
+            padding: 5px 10px;
+        }
+        
+        /* card */
+        #card {
+            width: 960px;
+            margin-top: 10px;
+            margin-left: 235px;
+        }
+        .cardh2 {
+            display: flex;
+            color: #252525;
+            font-weight: 400;
+            text-align: center;
+            font-size: 15px;
+            margin-bottom: 30px;
+            margin-left: 180px;
+        }
+        .cardh22 {
+            margin-left: 5px;
+            color: #757575;
+        }
+        .cardImg {
+            display: flex;
+        }
+        .cardImg figure > img {
+            width: 110px;
+            height: 100px;
+            padding: 0 12px;
+        }
+        .cardp {
+            display: flex;
+            font-size: 14px;
+        }
+        .cardp > p {
+            padding: 0 15px;
+            text-align: center;
+        }
+
+        /* content */
+        #content {
+            width: 700px;
+            height: 300px;
+            background-color: #f5f5f5;
+            margin-left: 225px;
+            margin-top: 50px;
+            border-radius: 2px;
+        }
+        .con_box {
+            display: flex;
+            padding: 20px 20px;
+        }
+        .con__box01 {
+            width: 250px;
+            height: 260px;
+            background-color: #fff;
+            border: 1px solid #b8b8b8;
+        }
+        .con__box01 > h2 {
+            font-size: 18px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            text-align: center;
+            margin-left: 50px;
+        }
+        .con__box01 h2 > img {
+            width: 20px;
+            height: 20px;
+            padding-left: 20px;
+        }
+        .con__box01 figure > img {
+            width: 100px;
+            height: 90px;
+            margin-left: 50px;
+        }
+        .con__box01 ul {
+            width: 190px;
+        }
+        .con__box01 li {
+            font-size: 14px;
+            margin: 12px 8px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+        .con__box02 {
+            width: 250px;
+            height: 260px;
+            background-color: #fff;
+            margin-left: 30px;
+            border: 1px solid #b8b8b8;
+        }
+        .con__box02 > h2 {
+            font-size: 18px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            text-align: center;
+            margin-left: 50px;
+        }
+        .con__box02 h2 > img {
+            width: 20px;
+            height: 20px;
+            padding-left: 20px;
+        }
+        .con__box02 figure > img {
+            width: 110px;
+            height: 90px;
+            margin-left: 50px;
+        }
+        .con__box02 ul {
+            width: 190px;
+        }
+        .con__box02 li {
+            font-size: 14px;
+            margin: 12px 8px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+        .con__box03 > h2 {
+            font-size: 18px;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            text-align: center;
+            margin-left: 50px;
+        }
+        .con__box03 h2 > img {
+            width: 20px;
+            height: 20px;
+            padding-left: 20px;
+        }
+        .con__box03 {
+            width: 250px;
+            height: 260px;
+            background-color: #fff;
+            margin-left: 30px;
+            border: 1px solid #b8b8b8;
+        }
+        .con__box03 figure > img {
+            width: 100px;
+            height: 90px;
+            margin-left: 50px;
+        }
+        .con__box03 ul {
+            width: 190px;
+        }
+        .con__box03 li {
+            font-size: 14px;
+            margin: 12px 8px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+
+        /* footer */
+        #footer {
+            width: 930px;
+            height: 100px;
+            background-color: #EDF2F8;
+            margin-top: 50px;
+            margin-bottom: 60px;
+        }
+        .footer__all {
+            display: flex;
+        }
+        .foo_logo{
+            margin-left: 20px;
+        }
+        .foo_logo figure > img {
+            width: 60px;
+            height: 80px;
+            margin-top: 11px;
+        }
+        .descFoo {
+            margin-top: 23px;
+            margin-left: 20px;
+            font-size: 14px;
+            color: #757575;
+        }
+        .foo_sns {
+            margin-top: 30px;
+            margin-left: 180px;
+        }
+        .foo_sns figure > img {
+            width: 200px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="all container section score">
+
+    <!-- sideHeader -->
+    <sideHeader id="sideHeader">
+        <div class="sideHeader">
+            <div class="logo">
+                <figure>
+                    <img src="testImg/logo.jpg" alt="logo">
+                </figure>
+            </div>
+            <div class="desch2">
+                <h2>서비스</h2>
+            </div>
+            <div class="descp">
+                <p>분야별 정책정보</p>
+                <p>정책뉴스</p>
+                <p>연구보고서</p>
+                <p>간행물</p>
+                <p>정책자료</p>
+            </div>
+            <div class="desch3">
+                <h3>정책정보</h3>
+                <h3>기관정보</h3>
+                <h3>고객센터</h3>
+            </div>
+        </div>
+    </sideHeader>
+
+    <!-- slider -->
+    <slider id="slider">
+        <div class="sliderWrap">
+            <div class="sliderImg">
+                <div class="sliderInner">
+                    <img class="slider" src="testImg/banner01.jpg" alt="slider">
+                    <img class="slider" src="testImg/banner01.jpg" alt="slider">
+                    <img class="slider" src="testImg/banner01.jpg" alt="slider">
+                    <img class="slider" src="testImg/banner01.jpg" alt="slider">
+                    <img class="slider" src="testImg/banner01.jpg" alt="slider">
+                </div>
+            </div>
+        </div>
+    </slider>
+
+    <!-- card -->
+    <card id="card">
+        <div class="cardh2">
+            <h2>자주 찾는 서비스 |</h2>
+            <h2 class="cardh22">키워드 서비스</h2>
+        </div>
+        <div class="cardImg">
+            <figure>
+                <img src="testImg/icon01.jpg" alt="card01">
+                <img src="testImg/icon02.jpg" alt="card02">
+                <img src="testImg/icon03.jpg" alt="card03">
+                <img src="testImg/icon04.jpg" alt="card04">
+                <img src="testImg/icon05.jpg" alt="card05">
+            </figure>
+        </div>
+        <div class="cardp">
+            <p>주민등록표등본<br>(초본)교부</p>
+            <p>토지(임야)대장<br>열람/등본 발급신청</p>
+            <p>건축물대장 등/초본<br>발급(열람)신청</p>
+            <p>지방세 납세증명</p>
+            <p>지적도(임야도)등본<br>발급 및 열람</p>
+        </div>
+    </card>
+
+    <!-- content -->
+    <content id="content">
+        <div class="content__box">
+            <div class="con_box">
+                <div class="con__box01">
+                    <h2>공지사항
+                        <img src="testimg/plus.jpg" alt="더보기">
+                    </h2>
+                    <figure>
+                        <img src="testImg/icon06.jpg" alt="contentImg01">
+                    </figure>
+                    <ul>
+                        <li>[광물] 기타 중요한 지하자원·수산자원·수력과 경제상 이용</li>
+                        <li>[광물] 기타 중요한 지하자원·수산자원·수력과 경제상 이용</li>
+                        <li>[광물] 기타 중요한 지하자원·수산자원·수력과 경제상 이용</li>
+                    </ul>
+                </div>
+                <div class="con__box02">
+                    <h2>자료실
+                        <img src="testimg/plus.jpg" alt="더보기">
+                    </h2>
+                    <figure>
+                        <img src="testImg/icon07.jpg" alt="contentImg02">
+                    </figure>
+                    <ul>
+                        <li>[광물] 기타 중요한 지하자원·수산자원·수력과 경제상 이용</li>
+                        <li>[광물] 기타 중요한 지하자원·수산자원·수력과 경제상 이용</li>
+                        <li>[광물] 기타 중요한 지하자원·수산자원·수력과 경제상 이용</li>
+                    </ul>
+                </div>
+                <div class="con__box03">
+                    <h2>FAQ
+                        <img src="testimg/plus.jpg" alt="더보기">
+                    </h2>
+                    <figure>
+                        <img src="testImg/icon08.jpg" alt="contentImg03">
+                    </figure>
+                    <ul>
+                        <li>[광물] 기타 중요한 지하자원·수산자원·수력과 경제상 이용</li>
+                        <li>[광물] 기타 중요한 지하자원·수산자원·수력과 경제상 이용</li>
+                        <li>[광물] 기타 중요한 지하자원·수산자원·수력과 경제상 이용</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </content>
+
+    <!-- footer -->
+    <footer id="footer">
+        <div class="footer__all">
+            <div class="foo_logo">
+                <figure>
+                    <img src="testImg/footer.jpg" alt="푸터로고">
+                </figure>
+            </div>
+            <div class="descFoo">
+                <p>03171 서울특별시 세종대로 209 (세종로) 행정안전부</p>
+                <p>정부24 콜센터 1588-2188 정부민원안내콜센터 국번없이 110</p>
+                <p>Copytight Ministry of the Interior and Safety. All Rights reserved.</p>
+            </div>
+            <div class="foo_sns">
+                <figure>
+                    <img src="testimg/twi.jpg" alt="푸터sns">
+                </figure>
+            </div>
+        </div>
+    </footer>
+
+    </div>
+
+    <script>
+        // slider
+        const sliderWrap = document.querySelector(".sliderWrap");
+        const sliderInner = document.querySelector(".sliderInner");
+        const sliderImg = document.querySelector(".sliderImg");
+        const slider = document.querySelectorAll(".slider");
+
+        let sliderCount = slider.length;
+        let sliderClone = sliderInner.firstElementChild.cloneNode(true);
+        let sliderHeight = sliderImg.offsetHeight;
+        let currentIndex = 0;
+        
+        sliderInner.appendChild(sliderClone);
+
+        function sliderEffect() {
+
+            currentIndex++;
+            sliderInner.style.transition = "all 0.6s";
+            sliderInner.style.transform = "translateY(-"+ sliderHeight * currentIndex +"px)";
+            
+            if(currentIndex == sliderCount) {
+                setTimeout(() => {
+                    sliderInner.style.transform = "translateY(0px)";
+                    sliderInner.style.transition = "0s";
+                }, 700);
+                currentIndex = 0;
+            }
+        }
+        setInterval(sliderEffect, 4000);
+    </script>
+
+    <script>
+        // tab
+        const tab = document.querySelector(".cardh22");
+
+        let tabC = tab
+
+        tabC.forEach(() => {
+            tabC.addEventListener(".click", () => {
+                
+            })
+        })
+    </script>
+
+    <script>
+        // popup
+        const con01C = document.querySelector(".con__box01");
+        const con02C = document.querySelector(".con__box02");
+        const con03C = document.querySelector(".con__box03");
+
+        
+    </script>
+</body>
+</html>

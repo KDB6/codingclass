@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트 06</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">마우스 이펙트 : 텍스트 효과</h2>
+            <p class="t_desc2">
+                이번에는 마우스에 텍스트 효과를 넣은 이펙트를 코딩해봤습니다.
+            </p>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc2">
+                HTML 코드는 이번엔 조큼 다릅니나. 이건 약간의 편법을 썼기에 기존 큰 네모를 반으로 나누고 그 위에 텍스트를 얹은 뒤에<br>
+                <i>overflow: hidden</i>으로 반씩 나오는 식으로 진행 할 예정입니다. 나머지 들을 기존에 class로 이름을 지정해 주면 됩니다.
+            </p>
+            <details>
+                <summary>HTML CODE</summary>
+            <div class="t_code">
+<pre><code class="language.js">&lt;main id="main">
+    &lt;section id="mouseType">
+        &lt;div class="mouse__cursor">&lt;/div>
+        &lt;div class="mouse__wrap">
+            &lt;div class="mouse__img">
+                &lt;figure>
+                    &lt;img src="../assets/img/slide03.jpg" alt="">
+                &lt;/figure>
+                &lt;div class="mouse__text">
+                    &lt;div class="line">
+                        &lt;div class="left">
+                            &lt;div class="spanWrap">
+                                &lt;span class="spanSlow">one two&lt;/span>
+                            &lt;/div>
+                        &lt;/div>
+                        &lt;div class="right">
+                            &lt;div class="spanWrap">
+                                &lt;span class="spanSlow">one two&lt;/span>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+
+                    &lt;div class="line">
+                        &lt;div class="left">
+                            &lt;div class="spanWrap">
+                                &lt;span class="spanFast">three four&lt;/span>
+                            &lt;/div>
+                        &lt;/div>
+                        &lt;div class="right">
+                            &lt;div class="spanWrap">
+                                &lt;span class="spanFast">three four&lt;/span>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+
+                    &lt;div class="line">
+                        &lt;div class="left">
+                            &lt;div class="spanWrap">
+                                &lt;span class="spanSlow">five six&lt;/span>
+                            &lt;/div>
+                        &lt;/div>
+                        &lt;div class="right">
+                            &lt;div class="spanWrap">
+                                &lt;span class="spanSlow">five six&lt;/span>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+
+                    &lt;div class="line">
+                        &lt;div class="left">
+                            &lt;div class="spanWrap">
+                                &lt;span class="spanFast">seven eight&lt;/span>
+                            &lt;/div>
+                        &lt;/div>
+                        &lt;div class="right">
+                            &lt;div class="spanWrap">
+                                &lt;span class="spanFast">seven eight&lt;/span>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/section>
+&lt;/main>
+</code></pre>
+            </div>
+            </details>
+
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc2">
+                CSS는 위 HTML에서 말했듯이 각각의 각 left와 right에다가 50vw로 반만 지정해 준 뒤 서로 교차 됐을 때 가려지도록<br>
+                <i>overflow: hidden</i>을 사용해줍니다. ex. vw는 반응형에도 잘 작동하기 위해 사용<br>
+                그리고 이번 transform은 평소와는 다르게 skew를 사용해줬습니다. skew란 2d 평면 위에서 기울기를 설정할 수 있도록 해줍니다.
+            </p>
+            <details>
+                <summary>CSS CODE</summary>
+            <div class="t_code">
+<pre><code class="language.js">/* mouseType */
+.mouse__wrap {
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    cursor: none;
+}
+.mouse__img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.mouse__text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -20%);
+    font-size: 3vw;
+    line-height: 1.5;
+}
+.mouse__text .line {
+    width: 100%;
+    display: flex;
+}
+.mouse__text .line .left {
+    width: 50vw;
+    color: orange;
+    overflow: hidden;
+    transform: skew(0deg, -15deg);
+}
+.mouse__text .line .left .spanWrap {
+    width: 100vw;
+    text-align: center;
+}
+.mouse__text .line .right {
+    width: 50vw;
+    overflow: hidden;
+    transform: skew(0deg, 15deg);
+}
+.mouse__text .line .right .spanWrap {
+    width: 100vw;
+    text-align: center;
+    transform: translateX(-50%);
+}
+.mouse__text span {
+    display: inline-block;
+}
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    z-index: 9999;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    user-select: none;
+    pointer-events: none;
+}
+</code></pre>
+            </div>
+        </details>
+
+            <h3 class="t_tit2">SCRIPT</h3>
+            <p class="t_desc2">
+                이번 스크립트 전 스크립트들과는 다르게 적습니다.<br><br>
+
+                1. mouseMove로 변수를 지정해 줍니다.<br>
+                2. positionSlow, positionSlow로 움직임 정도를 지정하기위해 각각의 마우스 x좌표에 브라우저 가로값의 1/2를 하여 빼주고 나머지 0*1 곱해 지정해줍니다.<br>
+                3.나머지는 평소에 사용하던 gsap는 사용해줍니다. 움직임은 css 사용했던 skew를 기준으로 움직입니다. 
+            </p>
+            <details>
+                <summary>SCRIPT CODE</summary>
+            <div class="t_code">
+<pre><code class="language-js">const mouseMove = (e) => {
+    let positionSlow = (e.pageX - (window.innerWidth/2)) * 0.1;
+    let positionFast = (e.pageX - (window.innerWidth/2)) * 0.2;
+
+    gsap.to(".spanSlow", {duration: 0.4, x: positionSlow});
+    gsap.to(".spanFast", {duration: 0.4, x: -positionFast});
+    gsap.to(".mouse__cursor", {duration: 0.3, left: e.pageX - 5, top: e.pageY - 5});
+}
+window.addEventListener("mousemove", mouseMove);
+
+
+// 마우스 오버시
+const mouseHover = document.querySelectorAll(".mouse__text span");
+const mouse = document.querySelector(".mouse__cursor");
+
+mouseHover.forEach((e) => {
+    
+    e.addEventListener("mouseover", ()=>{
+        mouse.classList.add("style");
+    });
+    
+    e.addEventListener("mouseout", ()=>{
+        mouse.classList.remove("style");
+    });
+});
+</code></pre>
+            </div>
+            </details>
+
+            <div class="t_link">
+                <a href="https://github.com/KDB6/ck/blob/main/javascript/effect/mouseEffect06.html" target="_blank">CODE GO</a>
+            </div>
+
+            <br><br>
+
+            <h3 class="t_tit2">RESULT</h3>
+            <div class="t_iframe" style="min-height: 920px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/javascript/effect/mouseEffect06.html" frameborder="0"></iframe>
+            </div>
+    
+            <div class="t_link">
+                <a href="https://kdb6.github.io/ck/javascript/effect/mouseEffect06.html" target="_blank">SITE GO</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

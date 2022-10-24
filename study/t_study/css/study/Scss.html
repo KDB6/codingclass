@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scss</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+
+            <!-- 01 -->
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">Scss</h3>
+                <p class="t_desc2">
+                    SCSS는 CSS 구문과 완전히 호환되도록 새로운 구문을 도입해 만든 Sass의 모든 기능을 지원하는 CSS의 상위집합이다.
+                </p>
+                <p class="t_box">
+                    장점<br>
+                    1. 가독성과 재사용이을 높여주어 유지 보수를 쉽개 해줍니다.<br>
+                    2. CSS보다 심플한 표기법으로 CSS를 구조화하여 표현이 가능하다.
+                </p>
+
+                <h3 class="t_tit2">Scss와 CSS의 차이점을 확인해보세요.</h3>
+                <div class="t_code">
+<pre><code class="language.js">    // Scss
+    $font-stack: Helvetica, sans-serif;
+    $primary-color: #333;
+    
+    body {
+      font: 100% $font-stack;
+      color: $primary-color;
+    }
+</code></pre>
+                </div>
+            </div>
+            <div class="t_code">
+<pre><code class="language.js">    // css
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    nav li {
+      display: inline-block;
+    }
+    nav a {
+      display: block;
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+</code></pre>
+                </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script>
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 타입 사이트 만들기 01</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">푸터 타입 구조 01</h2>
+            <p class="t_desc2">
+                사이트에 기초적인 구조를 가진 푸터 타입 구조를 만들어 봤습니다.
+            </p>
+            <div class="t_iframe">
+                <iframe width="650" height="400" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FoLRt8dyA3nlh2tlGzhrd3y%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D1625%253A1846" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2">Site HTML</h3>
+            <p class="t_desc2">
+                사이트를 코딩하는 데에 필요한 HTML의 구조를 잡아줍니다.
+            </p>
+            <div class="t_code">
+<pre><code>    &lt;footer id="footerType" class="footer__wrap nexon section gray">
+        &lt;h2 class="blind">푸터 영역&lt;/h2>
+        &lt;div class="footer__inner container">
+            &lt;div class="footer__menu">
+                &lt;div>
+                    &lt;h3>사이트&lt;/h3>
+                    &lt;ul>
+                        &lt;li>&lt;a href="#">웹표준 사이트&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">반응형 사이트&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">패럴랙스 사이트&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">포트폴리오 사이트&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/div>
+                &lt;div>
+                    &lt;h3>헤더 영역&lt;/h3>
+                    &lt;ul>
+                        &lt;li>&lt;a href="#">메뉴 유형01&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">메뉴 유형02&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/div>
+                &lt;div>
+                    &lt;h3>슬라이드 영역&lt;/h3>
+                    &lt;ul>
+                        &lt;li>&lt;a href="#">슬라이드 유형01&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">슬라이드 유형02&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/div>
+                &lt;div>
+                    &lt;h3>이미지 영역&lt;/h3>
+                    &lt;ul>
+                        &lt;li>&lt;a href="#">이미지 유형01&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">이미지 유형02&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">이미지/텍스트 유형01&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">이미지/텍스트 유형02&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">텍스트 유형01&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/div>
+                &lt;div>
+                    &lt;h3>컨텐츠 영역&lt;/h3>
+                    &lt;ul>
+                        &lt;li>&lt;a href="#">카드 유형01&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">카드 유형02&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">카드 유형03&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/div>
+                &lt;div>
+                    &lt;h3>푸터 영역&lt;/h3>
+                    &lt;ul>
+                        &lt;li>&lt;a href="#">푸터 메뉴 유형01&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">푸터 컨택트 유형02&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">푸터 이메일 유형03&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="footer__right">
+                2022 Pottery.&lt;br>
+                All rights reserved.
+            &lt;/div>
+        &lt;/div>
+    &lt;/footer>
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">Site CSS</h3>
+            <p class="t_desc2">
+                사이트를 코딩하는 데에 필요한 css의 구조를 잡아줍니다.
+            </p>
+            <div class="t_code">
+<pre><code>    .footer__menu {
+        display: flex;
+        margin-bottom: 70px;
+    }
+    .footer__menu > div {
+        width: 16%;
+    }
+    .footer__menu > div h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .footer__menu li {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+        display: block;
+    }
+    .footer__right {
+        border-top: 1px solid #d9d9d9;
+        text-align: center;
+        padding-top: 40px;
+        color: #666;
+        line-height: 1.5;
+    }
+</code></pre>
+                <div class="t_link">
+                    <a href="https://github.com/KDB6/ck/blob/main/site/footerType/footerType01.html" target="_blank">코드 원본 보기</a>
+                </div>
+            </div>
+
+            <h3 class="t_tit2">결과물</h3>
+            <div class="t_iframe" style="min-height: 575px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/site/footerType/footerType01.html" frameborder="0"></iframe>
+            </div>
+    
+            <div class="t_link">
+                <a href="https://kdb6.github.io/ck/site/footerType/footerType01.html" target="_blank">원본 사이트 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

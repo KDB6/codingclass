@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 타입 01</title>
+    
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: "NexonLv1Gothic";
+            font-weight: 300;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        .section > h3 {
+            font-size: 16px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* textType01 */
+        .text {
+            width: 346px;
+            height: 224px;
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .text:hover {
+            background: #f1f1f1;
+            border-radius: 15px;
+            transition: all 0.3s ease-in;
+        }
+        .text__inner {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .circle {
+            width: 24px;
+            height: 24px;
+            padding: 18px;
+        }
+        .desc {
+        }
+        .desc > h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .desc > p {
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+        .one01 {
+            width: 60px;
+            height: 60px;
+            background: #FFFADD;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .one02 {
+            width: 60px;
+            height: 60px;
+            background: #DAFFEF;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .one03 {
+            width: 60px;
+            height: 60px;
+            background: #E4F2FF;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .one04 {
+            width: 60px;
+            height: 60px;
+            background: #FFE2E2;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .one05 {
+            width: 60px;
+            height: 60px;
+            background: #E1FAFF;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .one06 {
+            width: 60px;
+            height: 60px;
+            background: #FDEFFF;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .the {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <section id="textType" class="text__wrap nexon section">
+        <h3>텍스트 유형</h3>
+        <h2>POTTERY</h2>
+        <div class="container text__inner">
+            <article class="text">
+                <div class="one01">
+                    <figure class="circle">
+                        <img src="img/Dribbble.svg" alt="Dribbble">
+                    </figure>
+                </div>
+                <div class="desc">
+                    <h2>포터리</h2>
+                    <p>
+                        우리는 옷을 만들기 위해 최선의 노력을 다합니다.
+                        특정한 상황에 필요한 제품을 구상하고, 정말 그 상황에 필요한 것일지 생각합니다.
+                    </p>
+                </div>
+                <div class="the">
+                    <p><a href="">더보기</a></p>
+                </div>
+            </article>
+
+            <article class="text">
+                <div class="one02">
+                    <figure class="circle">
+                        <img src="img/Discord.svg" alt="Discord">
+                    </figure>
+                </div> 
+                <div class="desc">
+                    <h2>TPO</h2>
+                    <p>
+                        우리는 옷을 만들기 위해 최선의 노력을 다합니다.
+                        특정한 상황에 필요한 제품을 구상하고, 정말 그 상황에 필요한 것일지 생각합니다.
+                    </p>
+                </div>
+                <div class="the">
+                    <p><a href="">더보기</a></p>
+                </div>
+            </article>
+
+            <article class="text">
+                <div class="one03">
+                    <figure class="circle">
+                        <img src="img/Facebook.svg" alt="Facebook">
+                    </figure>
+                </div> 
+                <div class="desc">
+                    <h2>원단</h2>
+                    <p>
+                        우리는 옷을 만들기 위해 최선의 노력을 다합니다.
+                        특정한 상황에 필요한 제품을 구상하고, 정말 그 상황에 필요한 것일지 생각합니다.
+                    </p>
+                </div>
+                <div class="the">
+                    <p><a href="">더보기</a></p>
+                </div>
+            </article>
+
+            <article class="text">
+                <div class="one04">
+                    <figure class="circle">
+                        <img src="img/Twiiter.svg" alt="Twiiter">
+                    </figure>
+                </div> 
+                <div class="desc">
+                    <h2>Brand</h2>
+                    <p>
+                        우리는 옷을 만들기 위해 최선의 노력을 다합니다.
+                        특정한 상황에 필요한 제품을 구상하고, 정말 그 상황에 필요한 것일지 생각합니다.
+                    </p>
+                </div>
+                <div class="the">
+                    <p><a href="">더보기</a></p>
+                </div>
+            </article>
+
+            <article class="text">
+                <div class="one05">
+                    <figure class="circle">
+                        <img src="img/Instagram.svg" alt="Instagram">
+                    </figure>
+                </div> 
+                <div class="desc">
+                    <h2>ADVOCACY</h2>
+                    <p>
+                        우리는 옷을 만들기 위해 최선의 노력을 다합니다.
+                        특정한 상황에 필요한 제품을 구상하고, 정말 그 상황에 필요한 것일지 생각합니다.
+                    </p>
+                </div>
+                <div class="the">
+                    <p><a href="">더보기</a></p>
+                </div>
+            </article>
+
+            <article class="text">
+                <div class="one06">
+                    <figure class="circle">
+                        <img src="img/YouTube.svg" alt="YouTube">
+                    </figure>
+                </div> 
+                <div class="desc">
+                    <h2>Our Progress</h2>
+                    <p>
+                        우리는 옷을 만들기 위해 최선의 노력을 다합니다.
+                        특정한 상황에 필요한 제품을 구상하고, 정말 그 상황에 필요한 것일지 생각합니다.
+                    </p>
+                </div>
+                <div class="the">
+                    <p><a href="">더보기</a></p>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

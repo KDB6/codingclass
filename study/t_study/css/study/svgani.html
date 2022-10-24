@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svgAni</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">SVG</h2>
+            <p class="t_desc2">
+                스케일러블 벡터 그래픽스(Scalable Vector Graphics, SVG)는 2차원 벡터 그래픽을 표현하기 위한 XML 기반의 파일 형식으로, 1999년 W3C(World Wide Web Consortium)의 주도하에 개발된 오픈 표준의 벡터 그래픽 파일 형식이다. SVG 형식의 이미지와 그 작동은 XML 텍스트 파일들로 정의 되어 검색화·목록화·스크립트화가 가능하며 필요하다면 압축도 가능하다.
+            </p>
+            <p class="t_box">
+                1. 인터넷 익스플로러9 버전 이상부터 지원됩니다.<br>
+                2. XML을 이용하여 라인, 곡선, 기하학적인 그래픽 표현이 가능합니다.<br>
+                3. 벡터 방식이기 때문에 확대하거나 축소가 가능합니다.<br>
+                4. DOM 단위로 컨트롤이 가능하지만 문서 복잡도가 증가되면 렌더링이 느려집니다.
+            </p>
+
+            <hr>
+
+            <div class="t_code">
+<pre><code class="language-js">    &lt;div class="svgBox svg1">
+       &lt;svg>
+           &lt;rect width="100" height="100" fill="000000" x="30" y="30"/>&lt;/rect>
+       &lt;/svg>
+       &lt;svg>
+           &lt;rect width="100" height="100" fill="000000" x="30" y="30" stroke="#888e4f" stroke-width="5"/>&lt;/rect>
+       &lt;/svg>
+       &lt;svg>
+           &lt;rect fill="#F48FB1" width="100" height="100" x="30" y="30" rx="20" ry="20" />
+       &lt;/svg>
+       &lt;svg>
+           &lt;rect fill="#F48FB1" width="100" height="100" x="30" y="30" rx="20" ry="20" stroke="#880E4F" stroke-width="5" />
+       &lt;/svg>
+       &lt;svg>
+           &lt;rect fill="#F48FB1" width="100" height="100" x="30" y="30" rx="60" ry="60" />
+       &lt;/svg>
+       &lt;svg>
+           &lt;rect fill="#F48FB1" width="100" height="100" x="30" y="30" rx="60" ry="60" stroke="#880E4F" stroke-width="5" />
+       &lt;/svg>
+    lt;/div>
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    &lt;div class="svgBox svg1"&gt;
+        &lt;svg&gt;
+            &lt;circle fill="#F48FB1" r="60" cx="80" cy="80" /&gt;
+        &lt;/svg&gt;
+        &lt;svg&gt;
+            &lt;circle fill="#F48FB1" r="60" cx="80" cy="80" stroke="#880E4F" stroke-width="5" /&gt;
+        &lt;/svg&gt;
+        &lt;svg&gt;
+            &lt;ellipse fill="#F48FB1" rx="60" ry="40" cx="80" cy="80" /&gt;
+        &lt;/svg&gt;
+        &lt;svg&gt;
+            &lt;ellipse fill="#F48FB1" rx="60" ry="40" cx="80" cy="80" stroke="#880E4F" stroke-width="5" /&gt;
+        &lt;/svg&gt;
+        &lt;svg&gt;
+            &lt;ellipse fill="#F48FB1" rx="40" ry="60" cx="80" cy="80" /&gt;
+        &lt;/svg&gt;
+        &lt;svg&gt;
+            &lt;ellipse fill="#F48FB1" rx="40" ry="60" cx="80" cy="80" stroke="#880E4F" stroke-width="5" /&gt;
+        &lt;/svg&gt;
+    &lt;/div&gt;
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    &lt;div class="svgBox svg3">
+        &lt;svg>
+            &lt;polygon points="140.66,140.66 108.15,19.34 19.34,108.15" fill="#f48fb1"/>
+        &lt;/svg>
+        &lt;svg>
+            &lt;polygon points="142.67,63.21 96.79,17.33 34.12,34.12 17.33,96.79 63.21,142.67 125.88,125.88" fill="#f48fb1"/>
+        &lt;/svg>
+        &lt;svg>
+            &lt;polygon points="147.39,82.94 129.73,34.43 82.94,12.61 34.43,30.27 12.61,77.06 30.27,125.57 77.06,147.39 
+            125.57,129.73" fill="#f48fb1"/>
+        &lt;/svg>
+        &lt;svg>
+            &lt;polygon points="142.47,99.39 98.89,102.83 77.03,140.68 60.28,100.3 17.53,91.2 50.76,62.8 46.2,19.32 83.48,42.15 
+            123.42,24.38 113.23,66.89" fill="#f48fb1"/>
+        &lt;/svg>
+        &lt;svg>
+            &lt;polygon points="106.4,133.14 87.86,108.61 85.4,139.26 76.97,109.68 63.61,137.39 66.44,106.76 43.97,127.76 
+            57.67,100.23 29.13,111.69 51.85,90.96 21.1,91.35 49.77,80.23 20.95,69.48 51.71,69.46 28.72,49.03 57.41,60.13 43.36,32.77 
+            66.09,53.48 62.87,22.9 76.59,50.42 84.64,20.74 87.49,51.36 105.71,26.59 97.31,56.17 123.25,39.66 104.73,64.21 134.89,58.18 
+            108.75,74.38 139.05,79.65 108.82,85.31 135.16,101.18 104.93,95.54 123.77,119.85 97.62,103.67" fill="#f48fb1"/>
+        &lt;/svg>
+        &lt;svg>
+            &lt;polygon points="135.71,117.63 94.25,93.99 118.47,135.11 88.36,98.09 96.09,145.18 81.38,99.78 71.57,146.49 
+            74.26,98.84 48.25,138.85 67.97,95.39 29.25,123.3 63.34,89.9 17.16,101.94 61.01,83.1 13.6,77.65 61.29,75.93 19.05,53.72 
+            64.15,69.34 32.78,33.37 69.19,64.23 52.94,19.36 75.74,61.28 76.79,13.57 82.91,60.9 101.13,16.79 89.73,63.14 122.65,28.59 
+            95.28,67.69 138.47,47.36 98.82,73.93 146.43,70.58 99.86,81.04 145.47,95.11 98.27,88.04" fill="#f48fb1"/>
+        &lt;/svg>
+    &lt;/div>
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    &lt;div class="svgBox svg3"&gt;
+        &lt;svg class="svg"&gt;
+            &lt;path fill="none" stroke="#880E4F" stroke-width="2" d="M7,154.667c0-82.358,65.152-149,145.667-149"/&gt;
+        &lt;/svg&gt;
+        &lt;svg class="svg"&gt;
+            &lt;path fill="none" stroke="#880E4F" stroke-width="2" d="M151.534,123.547c-33.711,33.711-88.369,33.711-122.08,0
+            c-26.97-26.969-26.97-70.695,0-97.665c21.575-21.576,56.556-21.576,78.131,0c17.261,17.26,17.261,45.245,0.001,62.504
+            c-13.809,13.809-36.196,13.809-50.005,0c-11.046-11.046-11.046-28.956,0-40.002c8.837-8.837,23.166-8.837,32.003,0
+            c7.069,7.07,7.07,18.532,0,25.602c-5.656,5.657-14.826,5.657-20.482,0c-4.524-4.524-4.524-11.86,0-16.385"/&gt;
+        &lt;/svg&gt;
+        &lt;svg class="svg"&gt;
+            &lt;path fill="none" stroke="#880E4F" stroke-width="2" d="M82.671,81.243c50.565,48.259,14.182,69.191-2.135,1.229
+            c16.316,67.962-25.611,65.895-2.46-0.122c-23.151,66.017-57.304,41.617-2.004-1.432c-55.3,43.049-70.84,4.057-0.912-2.288
+            c-69.929,6.345-61.919-34.86,0.47-2.417c-62.389-32.442-33.374-62.777,1.703-1.78c-35.076-60.997,5.73-70.826,2.395-0.577
+            c3.335-70.249,42.981-56.458,2.326,0.81c40.655-57.268,66.554-24.232,1.521,1.938c65.033-26.17,68.953,15.62,0.23,2.452
+            C152.526,92.225,133.236,129.502,82.671,81.243z"/&gt;
+        &lt;/svg&gt;
+        &lt;svg class="svg"&gt;
+            &lt;path fill="none" stroke="#880E4F" stroke-width="2" d="M131.502,129.683c-44.4-42.871-49.621-39.867-34.943,20.102
+            c-14.678-59.969-20.694-60.265-40.261-1.983c19.566-58.281,14.666-61.783-32.799-23.436C70.963,86.018,68.733,80.421,8.573,86.918
+            c60.16-6.497,61.31-12.409,7.692-39.569c53.617,27.16,57.781,22.808,27.864-29.131c29.917,51.938,35.772,50.527,39.189-9.441
+            c-3.417,59.969,2.272,61.948,38.075,13.245c-35.803,48.703-32.086,53.443,24.869,31.726C89.308,75.465,89.87,81.462,150.03,93.884
+            C89.87,81.462,87.102,86.812,131.502,129.683z"/&gt;
+        &lt;/svg&gt;
+        &lt;svg class="svg"&gt;
+            &lt;path fill="none" stroke="#880E4F" stroke-width="2" d="M58.665,139.312c0-6.873,42-6.873,42-13.747s-42-6.874-42-13.748
+            s42-6.874,42-13.748c0-6.872-42-6.872-42-13.744c0-6.874,42-6.874,42-13.747c0-6.877-42-6.877-42-13.753
+            c0-6.874,42-6.874,42-13.748c0-6.878-42-6.878-42-13.757s42-6.879,42-13.758"/&gt;
+        &lt;/svg&gt;
+        &lt;svg class="svg"&gt;
+            &lt;path fill="none" stroke="#880E4F" stroke-width="2" d="M93.108,91.478c42.049,30.58-13.048,57.425-13.347,6.503
+            c0.299,50.922-55.041,24.58-13.405-6.381c-41.636,30.961-55.545-28.728-3.37-14.458c-52.176-14.27-14.181-62.359,9.204-11.649
+            c-23.385-50.71,37.901-50.989,14.846-0.067c23.055-50.922,61.484-3.179,9.309,11.565C148.521,62.245,135.157,122.058,93.108,91.478
+            z"/&gt;
+        &lt;/svg&gt;
+    &lt;/div&gt;
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    &lt;div class="svgBox svg3"&gt;
+        &lt;svg&gt;
+            &lt;line x1="0" y1="0" x2="200" y2="200" stroke="#0D47A1" stroke-width="2" fill="none" /&gt;
+        &lt;/svg&gt;
+        &lt;svg&gt;
+            &lt;line x1="50" y1="50" x2="200" y2="200" stroke="#0D47A1" stroke-width="2" fill="none" /&gt;
+        &lt;/svg&gt;
+        &lt;svg&gt;
+            &lt;line x1="100" y1="100" x2="200" y2="200" stroke="#0D47A1" stroke-width="2" fill="none" /&gt;
+        &lt;/svg&gt;
+        &lt;svg&gt;
+            &lt;polyline points="21,17.2 21,139.2 117,52.2" stroke="#0D47A1" stroke-width="2" fill="none" /&gt;
+        &lt;/svg&gt;
+        &lt;svg&gt;
+            &lt;polyline points="21,17.2 21,139.2 122,28.2 141,139.2" stroke="#0D47A1" stroke-width="2" fill="none" /&gt;
+        &lt;/svg&gt;
+        &lt;svg&gt;
+            &lt;polyline points="21,17.2 21,139.2 122,28.2 141,139.2 23.5,11.7" stroke="#0D47A1" stroke-width="2" fill="none" /&gt;
+        &lt;/svg&gt;
+    &lt;/div&gt;
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    &lt;div class="svgBox svg3">
+        &lt;svg>
+            &lt;image xlink:href="img/bg.jpg" width="160" height="160"/>
+        &lt;/svg>
+        &lt;svg>
+            &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="circle(60px at center)"/>
+        &lt;/svg>
+        &lt;svg>
+            &lt;clipPath id="clipPath01">
+                &lt;polygon points="140.66,140.66 108.15,19.34 19.34,108.15">
+            &lt;/clipPath>
+            &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="url(#clipPath01)"/>
+        &lt;/svg>
+        &lt;svg>
+            &lt;clipPath id="clipPath02">
+                &lt;polygon points="142.67,63.21 96.79,17.33 34.12,34.12 17.33,96.79 63.21,142.67 125.88,125.88">
+            &lt;/clipPath>
+            &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="url(#clipPath02)"/>
+        &lt;/svg>
+        &lt;svg>
+            &lt;clipPath id="clipPath03">
+                &lt;polygon points="147.39,82.94 129.73,34.43 82.94,12.61 34.43,30.27 12.61,77.06 30.27,125.57 77.06,147.39 
+                125.57,129.73">
+            &lt;/clipPath>
+            &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="url(#clipPath03)"/>
+        &lt;/svg>
+        &lt;svg>
+            &lt;clipPath id="clipPath04">
+                &lt;polygon points="142.47,99.39 98.89,102.83 77.03,140.68 60.28,100.3 17.53,91.2 50.76,62.8 46.2,19.32 83.48,42.15 
+                123.42,24.38 113.23,66.89">
+            &lt;/clipPath>
+            &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="url(#clipPath04)"/>
+        &lt;/svg>
+    &lt;/div>
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    &lt;div class="svgBox svg3">
+        &lt;svg>
+            &lt;text fill="#212730" x="7" y="110" font-family="SCoreDream" font-size="70" font-weight="900">SVG&lt;/text>
+            &lt;svg>
+                &lt;pattern id="pattern1" patternunites="useSpaceOuUse" width="100%" height="100%">
+                    &lt;image xlink:href="img/bg.jpg" width="160" height="160" />
+                &lt;/pattern>
+                &lt;text fill="url(#pattern1)" x="7" y="110" font-family="SCoreDream" font-size="70" font-weight="900">SVG&lt;/text>
+            &lt;/svg>
+            &lt;div class="text-wrap">
+                &lt;div class="text-clip">SVG&lt;/div>
+            &lt;/div>
+            &lt;div class="text-wrap">
+                &lt;div class="text-clip c2">SVG&lt;/div>
+            &lt;/div>
+            &lt;div class="text-wrap">
+                &lt;div class="text-clip c3">SVG&lt;/div>
+            &lt;/div>
+            &lt;div class="text-wrap">
+                &lt;div class="text-clip c4">SVG&lt;/div>
+            &lt;/div>
+            &lt;div class="text-wrap">
+                &lt;div class="text-clip c5">SVG&lt;/div>
+            &lt;/div>
+        &lt;/svg>
+    &lt;/div>
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    &lt;div class="svgBox svg8">
+        &lt;svg>
+            &lt;rect class="ani1">&lt;/rect>
+        &lt;/svg>
+        &lt;svg>
+            &lt;rect class="ani2">&lt;/rect>
+        &lt;/svg>
+        &lt;svg style="background: #E3F3FD">
+            &lt;path class="ani3" fill="none" stroke="#0D47A1" stroke-width="2" d="M7,154.667c0-82.358,65.152-149,145.667-149"/>
+        &lt;/svg>
+        &lt;svg style="background: #E3F3FD">
+            &lt;path class="ani4" fill="none" stroke="#0D47A1" stroke-width="2" d="M151.534,123.547c-33.711,33.711-88.369,33.711-122.08,0
+            c-26.97-26.969-26.97-70.695,0-97.665c21.575-21.576,56.556-21.576,78.131,0c17.261,17.26,17.261,45.245,0.001,62.504
+            c-13.809,13.809-36.196,13.809-50.005,0c-11.046-11.046-11.046-28.956,0-40.002c8.837-8.837,23.166-8.837,32.003,0
+            c7.069,7.07,7.07,18.532,0,25.602c-5.656,5.657-14.826,5.657-20.482,0c-4.524-4.524-4.524-11.86,0-16.385"/>
+        &lt;/svg>
+        &lt;svg style="background: #E3F3FD">
+            &lt;path class="ani5" fill="none" stroke="#0D47A1" stroke-width="2" d="M58.665,139.312c0-6.873,42-6.873,42-13.747s-42-6.874-42-13.748
+            s42-6.874,42-13.748c0-6.872-42-6.872-42-13.744c0-6.874,42-6.874,42-13.747c0-6.877-42-6.877-42-13.753
+            c0-6.874,42-6.874,42-13.748c0-6.878-42-6.878-42-13.757s42-6.879,42-13.758"/>
+        &lt;/svg>
+        &lt;svg style="background: #E3F3FD">
+            &lt;path class="ani6" fill="none" stroke="#0D47A1" stroke-width="2" d="M93.108,91.478c42.049,30.58-13.048,57.425-13.347,6.503
+            c0.299,50.922-55.041,24.58-13.405-6.381c-41.636,30.961-55.545-28.728-3.37-14.458c-52.176-14.27-14.181-62.359,9.204-11.649
+            c-23.385-50.71,37.901-50.989,14.846-0.067c23.055-50.922,61.484-3.179,9.309,11.565C148.521,62.245,135.157,122.058,93.108,91.478
+            z"/>
+        &lt;/svg>
+    &lt;/div>
+</code></pre>
+            </div>
+        </div>
+    </main>
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

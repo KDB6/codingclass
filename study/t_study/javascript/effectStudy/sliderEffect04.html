@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트 04</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">슬라이드 이펙트 04 (슬라이드 버튼)</h2>
+            <p class="t_desc2">
+                이번에는 이미지 슬라이드 형태를 가진 이펙트를 코딩해봤습니다.
+            </p>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc2">
+                HTML은 기본적인 섹션안에 div 클래스를 잡아줍니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language.js">    &lt;main id="main">
+        &lt;section id="sliderType03">
+            &lt;div class="slider__wrap">
+                &lt;div class="slider__img">
+                    &lt;div class="slider__inner">
+                        &lt;div class="slider">&lt;img src="../assets/img/slide01.jpg" alt="이미지1">&lt;/div>
+                        &lt;div class="slider">&lt;img src="../assets/img/slide02.jpg" alt="이미지2">&lt;/div>
+                        &lt;div class="slider">&lt;img src="../assets/img/slide03.jpg" alt="이미지3">&lt;/div>
+                        &lt;div class="slider">&lt;img src="../assets/img/slide04.jpg" alt="이미지4">&lt;/div>
+                        &lt;div class="slider">&lt;img src="../assets/img/slide05.jpg" alt="이미지5">&lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="slider__btn">
+                    &lt;a href="#" class="prev">prev&lt;/a>
+                    &lt;a href="#" class="next">next&lt;/a>
+                &lt;/div>
+            &lt;/div>
+        &lt;/section>
+    &lt;/main>
+</code></pre>
+            </div>
+            </details>
+
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc2">
+                css는 기본적인 형태와 스타일을 잡아주지만, 이미지 개개인에 <i>nth-child</i>를 이용해여 개별 구역을 잡아줍니다.<br>
+                또한, <i>z-index</i>를 사용하여 각 위치를 잡아줍니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language.js">    /* slider */
+    .slider__wrap {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .slider__img {      /* 이미지를 보이는 영역 */
+        position: relative;
+        width: 800px;
+        height: 450px;
+        overflow: hidden;
+    }
+    .slider__inner {    /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+        display: flex;
+        flex-wrap: wrap;
+        width: 4800px;      /* 총 이미지 6개 */
+        height: 450px;
+    }
+    .slider {   /* 개별적인 이미지 */
+        position: relative;
+        width: 800px;
+        height: 450px;
+    }
+    .slider::before {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        padding: 5px 10px;
+    }
+    .slider:nth-child(1)::before {content: "이미지1";}
+    .slider:nth-child(2)::before {content: "이미지2";}
+    .slider:nth-child(3)::before {content: "이미지3";}
+    .slider:nth-child(4)::before {content: "이미지4";}
+    .slider:nth-child(5)::before {content: "이미지5";}
+    .slider:nth-child(6)::before {content: "이미지1";}
+
+    @media(max-width: 800px) {
+        .slider__img {
+        position: relative;
+        width: 400px;
+        height: 225px;
+        }
+    }
+
+    .slider__btn a {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        background: rgba(0,0,0,0.4);
+        text-align: center;
+        line-height: 48px;
+        transition: all 0.2s;
+        display: block;
+        color: #fff;
+    }
+    .slider__btn a:hover {
+        border-radius: 50%;
+        background: #3b3d6350;
+    }
+    .slider__btn a.prev{
+        left: 0;
+    }
+    .slider__btn a.next{
+        right: 0;
+    }
+</code></pre>
+            </div>
+        </details>
+
+            <h3 class="t_tit2">script</h3>
+            <p class="t_desc2">
+                각 영역을 상수와 변수로 선언해주며, 움직이는 영역인 sliderInner에 스타일을 잡아줍니다.<br>
+                첫 번째. 이미지는 움직이는 영역은 sliderInner 영역에 -sliderWidth * num로 지정해준 좌표만큼 이동하도록 지정해줍니다.<br>
+                두 번째. 왼쪽 버튼은 4 3 2 1 0... 순으로 계속해서 반복해야하기 때문에 저장해둔 currentIndex값에 sliderCount더해주고 1를 뺀 값을 나누주며 좌표 값을 저장합니다.<br>
+                세 번째. 오른쪽 버튼은 0 1 2 3 4... 순으로 계속해서 반복해야하기 때문에 저장해둔 currentIndex값에 1만을 더하여 좌표 값을 저장합니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language-js">    const sliderWrap = document.querySelector(".slider__wrap");
+    const sliderImg = document.querySelector(".slider__img");               // 보여지는 영역
+    const sliderInner = document.querySelector(".slider__inner");           // 움직이는 영역
+    const slider = document.querySelectorAll(".slider");                    
+    const sliderBtn = document.querySelector(".slider__btn");            // 버튼
+    const sliderBtnPrev = document.querySelector(".prev");               // 왼쪽 버튼
+    const sliderBtnNext = document.querySelector(".next");               // 오른쪽 버튼
+
+    let currentIndex = 0;                       // 현재 이미지
+    let sliderCount = slider.length;            // 이미지 갯수
+    let sliderWidth = sliderImg.offsetWidth;    // 이미지 가로값
+
+    // 이미지 움직이는 영역
+    function gotoSlider(num) {
+        sliderInner.style.transition = "all 400ms";
+        sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
+        currentIndex = num;
+    }
+
+    function beforeSlider(num) {
+        sliderInner.style.transition = "all 400ms";
+        sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
+        currentIndex = num;
+    }
+
+    // 왼쪽 버튼 클릭
+    sliderBtnPrev.addEventListener("click", () => {
+        let prevIndex = (currentIndex + sliderCount - 1) % sliderCount
+        beforeSlider(prevIndex);
+        // 4 3 2 1 0
+    });
+
+    // 오른쪽 버튼 클릭
+    sliderBtnNext.addEventListener("click", () => {
+        let nextIndex = (currentIndex + 1) % sliderCount
+        gotoSlider(nextIndex);
+        // 0 1 2 3 4
+    });
+</code></pre>
+                <div class="t_link">
+                    <a href="https://github.com/KDB6/ck/blob/main/javascript/effect/sliderEffect04.html" target="_blank">코드 원본 보기</a>
+                </div>
+            </div>
+            </details>
+
+            <br><br>
+
+            <h3 class="t_tit2">결과물</h3>
+            <div class="t_iframe" style="min-height: 920px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/javascript/effect/sliderEffect04.html" frameborder="0"></iframe>
+            </div>
+    
+            <div class="t_link">
+                <a href="https://kdb6.github.io/ck/javascript/effect/sliderEffect04.html" target="_blank">원본 사이트 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

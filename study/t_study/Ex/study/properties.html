@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>properties</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">속성 관련 메서드</h2>
+            <p class="t_desc2">이번 시간에는 속성 관련 메서드를 알아보겠습니다.</p>
+
+            <hr>
+
+            <h3 class="t_tit2">attr() 메서드</h3>
+            <p>선택한 요소의 attribute(속성)를 선택, 생성, 변경할 수 있습니다.</p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th class="ce">실행 분류</th>
+                        <th class="ce">형식</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">취득</td>
+                        <td>$("a").attr("href");</td>
+                    </tr>
+                    <tr>
+                        <td class="ce" rowspan="2">생성, 변경</td>
+                        <td>$("a").attr("href", "http://icoxpublish.com").attr("target", "_blank");</td>
+                    </tr>
+                    <tr>
+                        <td>$("a").attr({href: "http://icoxpublish.com", target: "_blank"});</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">콜백 함수</td>
+                        <td>
+                            $("a").attr(<i>"href"</i>, function(<i>index</i>, h) {<br>
+                                &ensp;&ensp;&ensp;// <i>index</i>는 각 a 요소의 index 0, 1, 2<br>
+                                &ensp;&ensp;&ensp;// <i>h</i>는 각 a 요소 href 속성<br>
+                                &ensp;&ensp;&ensp;<i>return</i> attribute(속성) // 각 a 요소의 속성을 생성 및 변경합니다.<br>
+                            });<br>
+                            ....<br>
+                            &lt;a href="http://www.daum.net" target="_blank" title="새창">다음&lt;/a><br>
+                            &lt;a href="http://www.naver.net" target="_blank" title="새창">네이버&lt;/a><br>
+                            &lt;a href="http://www.nate.net" target="_blank" title="새창">네이트&lt;/a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table><br>
+            <p class="codepen" data-height="200" data-default-tab="js,result" data-slug-hash="zYjxrbE" data-user="kdb6" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+              <span>See the Pen <a href="https://codepen.io/kdb6/pen/zYjxrbE">
+              attr() 메서드</a> by KDB6 (<a href="https://codepen.io/kdb6">@kdb6</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+            <h3 class="t_tit2">prop() 메서드</h3>
+            <p>
+                attr() 가 html attribute(속성)에 관련된 메서드라면 prop()는 자바스크립트 property(프로퍼티)에 관련된 메서드입니다.<br>
+                prop() 메서드는 요소의 속성을 true, false로 제어할 수 있습니다.
+            </p><br>
+            <p class="codepen" data-height="250" data-default-tab="js,result" data-slug-hash="QWrwyPy" data-user="kdb6" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+              <span>See the Pen <a href="https://codepen.io/kdb6/pen/QWrwyPy">
+              prop() 메서드</a> by KDB6 (<a href="https://codepen.io/kdb6">@kdb6</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </div>
+    </main>
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

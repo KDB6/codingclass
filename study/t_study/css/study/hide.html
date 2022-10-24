@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hide</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">CSS 숨김 요소</h2>
+            <p class="t_desc2">
+                이번 시간은 요소를 숨겨지는 여러가지 CSS 요소들이 있는데 해당 요소들을 알아보겠습니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">.sr-only</h3>
+            <p class="t_desc2">
+                페이지에서는 가리지만, 스크린 리더에서는 접근 가능하도록 하는 일종의 CSS 선언이다.
+            </p>
+
+            <h3 class="t_tit2">aria-hidden</h3>
+            <p class="t_desc2">
+                <i>true</i>로 설정되면, accessibility tree에서 해당 콘텐츠를 가리지만,<br>
+                시각적으로는 볼 수 있으며, aria-hidden="true" 엘리먼트에 기본 스타일을 적용하는 브라우저는 없다.<br>
+                주의 할 점은 , aria-hidden="true"가 focusable한 요소가 되어서는 안된다는 것이다.<br>
+                스크린리더에는 보이지 않지만, focus가 되기 때문이다.
+            </p>
+
+            <h3 class="t_tit2">display: none / hidden</h3>
+            <p class="t_desc2">
+                두 가지 방법은 모두 렌더링트리와 접근성 트리에서 사라지게 하며,<br>
+                hidden은 별도의 CSS가 없이도 HTML을 통해서 완전히 마스킹할 수 있어서 편리한 점이 있다.
+            </p>
+
+            <h3 class="t_tit2">visibility :hidden</h3>
+            <p class="t_desc2">
+                레이아웃에 영향을 미치지 않고 엘리먼트를 감춘다. 사라진 공간은 빈 공간으로 남으며,<br>
+                리플로우가 일어나지 않으며, 접근성 관점에서 보았을 때는 위의 display:none과 동일하다.
+            </p>
+
+            <h3 class="t_tit2">opacity:0 / clip-path: circle(0)</h3>
+            <p class="t_desc2">
+                엘리먼트의 요소를 안보이게 하지만, visibility: hidden과 마찬가지로 빈공간이 남아 있게 된다.<br>
+                이 콘텐츠에 접근할 수 있는지 여부는 접근성 기술에 따라 다르다.<br>
+                따라서 일관되게 숨기려면 이것을 사용하지 않는 것이 좋다.
+            </p>
+            
+            <h3 class="t_tit2">transform: scale(0)</h3>
+            <p class="t_desc2">
+                시각적으로 엘리먼트를 감추지만, 빈 공간이 남는다.<br>
+                그러나 스크린 리더에서는 이 요소에 접근할 수가 있다.
+            </p>
+
+            <h3 class="t_tit2">width: 0, height: 0</h3>
+            <p class="t_desc2">
+                특정 요소의 너비와 높이를 0으로 설정하여 숨기는 방식으로, 스크린리더<br>
+                또한, 이 엘리먼트가 접근 가능하지 않은 것으로 간주하고 건너뛴다.
+            </p>
+
+            <h3 class="t_tit2">content-visibility: hidden</h3>
+            <p class="t_desc2">
+                이 속성은 크롬브라우저에서 특정 요소의 렌더링을 뷰포트내에 있기전까지는 가리는 방법으로 도입되었다.<br>
+                이 속성은 display: none과 마찬가지로 접근성 트리에서 사라진다.<br>
+                접근성차원에서 봤을 때는 그다지 좋은 기술은 아니므로 쓰지 않는 것이 좋다.
+            </p><br><br>
+
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th class="ce">method</th>
+                        <th class="ce">Visible</th>
+                        <th class="ce">Accessible</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">.sr-only</td>
+                        <td class="ce">X</td>
+                        <td class="ce">O</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">aria-hidden="true"</td>
+                        <td class="ce">O</td>
+                        <td class="ce">X</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">hidden=""</td>
+                        <td class="ce">X</td>
+                        <td class="ce">X</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">display: none</td>
+                        <td class="ce">X</td>
+                        <td class="ce">X</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">visibility: hidden</td>
+                        <td class="ce">X</td>
+                        <td class="ce">X</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">opacity: 0</td>
+                        <td class="ce">X</td>
+                        <td class="ce">-</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">clip-path: circle(0)</td>
+                        <td class="ce">X</td>
+                        <td class="ce">-</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">transform: scale(0)</td>
+                        <td class="ce">X</td>
+                        <td class="ce">O</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">width: 0 / height: 0</td>
+                        <td class="ce">X</td>
+                        <td class="ce">X</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">content-visibility: hidden</td>
+                        <td class="ce">X</td>
+                        <td class="ce">X</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

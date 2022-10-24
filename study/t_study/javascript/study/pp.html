@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>padStart() / padEnd()</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+
+            <!-- 01 -->
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">padStart(), padEnd()</h3>
+                <p class="t_desc2">주어진 길이에 맞게 앞/뒤 문자열을 채우고, 새로운 문자열을 반환한다.</p>
+                <div class="t_code">
+<pre><code class="language-js">    const str1 = "123"
+    const currentStr1 = str1.padStart(1, "0");                 // 123
+    const currentStr2 = str1.padStart(2, "0");                 // 123
+    const currentStr3 = str1.padStart(3, "0");                 // 123
+    const currentStr4 = str1.padStart(4, "0");                 // 0123     // 길이가 4자리로 늘어나기에 0추가
+    const currentStr5 = str1.padStart(5, "0");                 // 00123
+    const currentStr6 = str1.padStart(6, "0");                 // 000123
+    const currentStr7 = str1.padStart(6, "1");                 // 111123
+    const currentStr8 = str1.padStart(6, "12");               // 121123
+    const currentStr9 = str1.padStart(6, "123");             // 123123
+    const currentStr10 = str1.padStart(6, "1234");         // 123123
+    const currentStr11 = str1.padStart(6);                      //    123
+    
+    const currentStr12 = str1.padEnd(1, "0");             // 123
+    const currentStr13 = str1.padEnd(2, "0");             // 123
+    const currentStr14 = str1.padEnd(3, "0");             // 123
+    const currentStr15 = str1.padEnd(4, "0");             // 1230     // 길이가 4자리로 늘어나기에 0추가
+    const currentStr16 = str1.padEnd(5, "0");             // 12300
+    const currentStr17 = str1.padEnd(6, "0");             // 123000
+    const currentStr18 = str1.padEnd(6, "1");             // 123111
+    const currentStr19 = str1.padEnd(6, "12");           // 123121
+    const currentStr20 = str1.padEnd(6, "123");         // 123123
+    const currentStr21 = str1.padEnd(6, "1234");       // 123123
+    const currentStr22 = str1.padEnd(6);                    // 123___   //_은 공백를 의미
+</code></pre>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script>
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트 02</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">마우스 이펙트 02 (마우스 따라다니기 : GSAP)</h2>
+            <p class="t_desc2">
+                이번에는 마우스에 효과를 넣은 이펙트를 코딩해봤습니다.
+            </p>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc2">
+                HTML은 기본적인 섹션안에 div 클래스를 잡아줍니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language.js">    &lt;main id="main">
+        &lt;section id="mouseType">
+            &lt;div class="mouse__cursor">&lt;/div>
+            &lt;div class="mouse__cursor2">&lt;/div>
+            &lt;div class="mouse__wrap">
+                &lt;p>Money is not everything in the &lt;span class="style1">world,&lt;/span> &lt;span class="style2">but the world&lt;/span>&lt;span class="style3"> runs on money.&lt;/span>&lt;/p>
+                &lt;p>돈이 &lt;span class="style4">세상에&lt;/span> 다는 아니지만&lt;span class="style5">세상은&lt;/span> &lt;span class="style6">돈으로&lt;/span> 굴러간다.&lt;/p>
+            &lt;/div>
+        &lt;/section>
+    &lt;/main>
+</code></pre>
+            </div>
+            </details>
+
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc2">
+                css는 기본적인 형태와 스타일을 잡아주지만, 이미지 개개인에 <i>nth-child</i>를 이용해여 개별 구역을 잡아줍니다.<br>
+                또한, <i>z-index</i>를 사용하여 각 위치를 잡아줍니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language.js">    /* mouseType */
+    .mouse__wrap {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        overflow: hidden;
+        flex-direction: column;
+        cursor: none;
+    }
+    .mouse__wrap p {
+        font-size: 2vw;
+        line-height: 2;
+        font-weight: 300;
+    }
+    .mouse__wrap p:last-child {
+        font-size: 3vw;
+        font-weight: 300;
+    }
+    .mouse__wrap p span {
+            border-bottom: 0.15vw dashed #666;
+            color: #b0aaff;
+        }
+    @media(max-width: 800px) {
+        .mouse__wrap p {
+            padding: 0 20px;
+            font-size: 20px;
+            line-height: 1.5;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .mouse__wrap p:last-child {
+            font-size: 40px;
+            line-height: 1.2;
+            text-align: center;
+            word-break: keep-all;
+        }
+    }
+    .mouse__cursor {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        z-index: 9999;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.1);
+        user-select: none;
+        pointer-events: none;
+        transition: transform 0.3s, opacity 0.2s;
+    }
+    .mouse__cursor2 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        z-index: 9998;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.3);
+        user-select: none;
+        pointer-events: none;
+        transition: transform 0.5s, opacity 0.2s;
+    }
+    .mouse__cursor.active {
+        transform: scale(0);
+    }
+    .mouse__cursor2.active {
+        transform: scale(2);
+        background: #3b3d6350;
+    }
+</code></pre>
+            </div>
+        </details>
+
+            <h3 class="t_tit2">script</h3>
+            <p class="t_desc2">
+                이번에는 GSAP를 사용해주었으며, 마우스 오버 시에 mouseenter를 사용하여 작용하도록 했습니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language-js">    const cursor = document.querySelector(".mouse__cursor");
+    const cursor2 = document.querySelector(".mouse__cursor2");
+    const span = document.querySelectorAll(".mouse__wrap span")
+
+    window.addEventListener("mousemove", e => {
+        // 커서 좌표값 할당
+        // cursor.style.left = e.pageX -5+ "px";
+        // cursor.style.top = e.pageY -5+ "px";
+        // cursor2.style.left = e.pageX -15+ "px";
+        // cursor2.style.top = e.pageY -15+ "px";
+
+        // GSAP
+        gsap.to(cursor, {duration: 0.3, left: e.pageX -5, top:e.pageY -5});
+        gsap.to(cursor2, {duration: 0.8, left: e.pageX -15, top:e.pageY -15});
+
+        // 오버 효과
+        // mouseenter / mouseover / 이벤트 버블링
+        span.forEach(span => {
+            span.addEventListener("mouseenter", () => {
+                cursor.classList.add("active");
+                cursor2.classList.add("active");
+            });
+            span.addEventListener("mouseleave", () => {
+                cursor.classList.remove("active");
+                cursor2.classList.remove("active");
+            });
+        });
+    });
+</code></pre>
+                <div class="t_link">
+                    <a href="https://github.com/KDB6/ck/blob/main/javascript/effect/mouseEffect02.html" target="_blank">코드 원본 보기</a>
+                </div>
+            </div>
+            </details>
+
+            <br><br>
+
+            <h3 class="t_tit2">결과물</h3>
+            <div class="t_iframe" style="min-height: 920px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/javascript/effect/mouseEffect02.html" frameborder="0"></iframe>
+            </div>
+    
+            <div class="t_link">
+                <a href="https://kdb6.github.io/ck/javascript/effect/mouseEffect02.html" target="_blank">원본 사이트 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

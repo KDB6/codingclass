@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cssAni</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">CSS Animation</h2>
+            <p class="t_desc2">이번 시간에는 CSS내에 있는 여러 종류에 애니메션에 대해 알아보겠습니다.</p>
+
+            <hr>
+
+            <h3 class="t_tit2">Animation</h3>
+            <p class="t_desc2" style="margin-top: 45px;">
+                Animation : name | duration | timing-function | delay | iteration | direction | fill-mode | play-state
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>종류</th>
+                        <th>예시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>animation-name</td>
+                        <td>@keyframe에 지정된 이름을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>animation-duration</td>
+                        <td>애니메이션이 실행되는 시간을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>animation-timing-function</td>
+                        <td>애니메이션 키프레임 움직임을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>animation-delay</td>
+                        <td>애니메이션이 시작되기 전까지 시간을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>animation-iteration</td>
+                        <td>애니메이션 반복 횟수를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>animation-derection</td>
+                        <td>애니메이션 방향을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>animation-fill-mode</td>
+                        <td>애니메이션 끝나고 난 뒤 어떤 값을 적용할지 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>animation-play-state</td>
+                        <td>애니메이션 실행 상태를 설정합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2">Transtion</h3>
+            <p class="t_desc2">
+                Transtion : property | durtion | timing-function | delay
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>종류</th>
+                        <th>예시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>transition-property</td>
+                        <td>트렌지션을 적용할 CSS 속성 대상을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>transition-druation</td>
+                        <td>트렌지션 작동시간을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>transition-timing-function</td>
+                        <td>트렌지션 움직임 효과를 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>transition-delay</td>
+                        <td>트렌지션이 시작되기 전까지 시간을 설정합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="t_tit2">Timing-function</h3>
+            <p class="t_desc2">
+                Timing-function의 종류와 예시를 나타낸 표입니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>종류</th>
+                        <th>예시</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>linear</td>
+                        <td>일정한 간격으로 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>ease</td>
+                        <td>처음에는 서서히 가속하고 마지막 부분에서 급격히 감속합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>ease-in</td>
+                        <td>처음에는 천천히 시작하고 마지막에 가속합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>ease-out</td>
+                        <td>처음에는 최대 속도로 시작하고 마지막에 감속합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>ease-in-out</td>
+                        <td>처음에는 제로 속도로 시작하고, 중간 지점에서 최고 속도로 움직이고, 마지막 부분에서 서서히 감속합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>step-start</td>
+                        <td>애니메이션을 시작점에서 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>step-end</td>
+                        <td>애니메이션을 끝점에서 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>steps(int, start/end)</td>
+                        <td>애니메이션을 단계별을 설정합니다.</td>
+                    </tr>
+                    <tr>
+                        <td>cubic-bezier(n,n,n,n)</td>
+                        <td>버지니아 곡선 값을 만들어서 설정합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="t_code">
+<pre><code class="language-js">    .timing1.show {animation: move 2s 1 linear;}
+    .timing2.show {animation: move 2s 1 ease;}
+    .timing3.show {animation: move 2s 1 ease-in;}
+    .timing4.show {animation: move 2s 1 ease-out;}
+    .timing5.show {animation: move 2s 1 ease-in-out;}
+    
+    @keyframes move {
+        0% {left: 0%;}
+        50% {left: 100%;}
+        100% {left: 0%;}
+    }
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    .timing6.show {animation: move 4s 1 step-start;}
+    .timing7.show {animation: move 4s 1 step-end;}
+    .timing8.show {animation: move 4s 1 steps(4, start);}
+    .timing9.show {animation: move 4s 1 steps(4, end);}
+    .timing10.show {animation: move 4s 1 steps(10, start);}
+    .timing11.show {animation: move 4s 1 steps(10, end);}
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    .timing12.show {animation: move 3s 2 cubic-bezier(0,.71,0,1);}
+    .timing13.show {animation: move 3s 2 cubic-bezier(0,.71,1,-0.28);}
+    .timing14.show {animation: move 3s 2 cubic-bezier(1,-0.52,1,-0.28);}
+    .timing15.show {animation: move 3s 2 cubic-bezier(1,.02,0,1.01);}
+    .timing16.show {animation: move 3s 2 cubic-bezier(.33,2.04,1,2.05);}
+    
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    .timing17.show {animation: move 3s 0.1s 2 ease;}
+    .timing18.show {animation: move 3s 0.2s 2 ease;}
+    .timing19.show {animation: move 3s 0.3s 2 ease;}
+    .timing20.show {animation: move 3s 0.4s 2 ease;}
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    .timing21.show {animation: move 1s 1 ease;}
+    .timing22.show {animation: move 1s 2 ease;}
+    .timing23.show {animation: move 1s 3 ease;}
+    .timing24.show {animation: move 1s infinite ease;}
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    .timing25.normal {animation: move2 4s 5 ease normal;}
+    .timing26.reverse {animation: move2 4s 5 ease reverse;}
+    .timing27.alternate {animation: move2 4s 5 ease alternate;}
+    .timing28.alternate-reverse {animation: move2 4s 5 ease alternate-reverse;}
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    .timing26.show {animation: move3 3s 1 ease; animation-fill-mode: none;}
+    .timing27.show {animation: move3 3s 1 ease; animation-fill-mode: forwards;}
+    .timing28.show {animation: move3 3s 1 ease; animation-fill-mode: backwards;}
+    .timing29.show {animation: move3 3s 1 ease; animation-fill-mode: both;}
+    @keyframes move3 {
+        0% {left: 0%;}
+        100% {left: calc(100% - 120px);}
+    }
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    .timing30.running {animation: move2 4s 100 ease; animation-play-state: running;}
+    .timing30.paused {animation: move2 4s 100 ease; animation-play-state: paused;}
+</code></pre>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    .timing.bg9 {display: flex; justify-content: space-between; min-height: 400px;}
+    .timing.bg9 > div.ani1 {animation: slideOutRight 1s ease;}
+    .timing.bg9 > div.ani2 {animation: headShake 1s 10 ease;}
+    .timing.bg9 > div.ani3 {}
+    .timing.bg9 > div.ani4 {}
+    .timing.bg9 > div.ani5 {}
+    .timing.bg9 > div.ani6 {}
+    .timing.bg9 > div.ani7 {}
+
+    @keyframes slideOutRight {
+        from {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+
+        to {
+            visibility: hidden;
+            -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+        }
+    }
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

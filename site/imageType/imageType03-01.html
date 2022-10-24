@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형 03</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .score {
+            font-family: "SCoreDream";
+        }
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        /* common */
+        .container {
+            width: 1720px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1720px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #303030;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* imageType */
+        .image__inner {
+            display: flex;
+        }
+        .img01 {
+            width: 850px;
+            height: 500px;
+        }
+        .img02 {
+            width: 415px;
+            height: 240px;
+        }
+        .img {
+        }
+        .image01 {
+            width: 850px;
+            height: 500px;
+            position: relative;
+        }
+        .image02 {
+            width: 415px;
+            height: 240px;
+            position: relative;
+        }
+        .desc01 {
+            bottom: 0;
+            position: absolute;
+            margin: 0 0 20px 20px;
+        }
+        .desc02 {
+            bottom: 0;
+            position: absolute;
+            margin: 0 0 20px 20px;
+        }
+        .desc01 > h3 {
+            font-size: 20px;
+            color: #757575;
+        } 
+        .desc01 > p {
+            font-size: 14px;
+            color: #757575;
+        }
+        .desc02 > h3 {
+            font-size: 20px;
+            color: #757575;
+            margin-bottom: 5px;
+        } 
+        .desc02 > p {
+            font-size: 14px;
+            color: #757575;
+        }
+        .box01 {
+            width: 850px;
+            height: 500px;
+        }
+        .box02 {
+            width: 850px;
+            height: 500px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <section id="imageType03" class="image__wrap section score">
+        <h2>wynd</h2>
+        <p>사전적 의미로 골목길이라는 뜻을 가지고 있습니다.</p>
+        <div class="image__inner container">
+            <div class="box01">
+                <article class="image01 img">
+                    <figure class="box01">
+                        <img class="img01" src="img/image03_01.jpg" alt="어바웃어스">
+                    </figure>
+                    <div class="desc01">
+                        <h3>About us</h3>
+                        <p>슬로우한 캐주얼 웨어</p>
+                    </div>
+                </article>
+            </div>
+            <div class="box02">
+                <article class="image02 img">
+                    <figure>
+                        <img classs="img02" src="img/image03_02.jpg" alt="비얼디드 키드">
+                    </figure>
+                    <div class="desc02">
+                        <h3>Bearded Kid</h3>
+                        <p>다양성의 존중이라는 슬로건</p>
+                    </div>
+                </article>
+                <article class="image02 img">
+                    <figure>
+                        <img classs="img02" src="img/image03_03.jpg" alt="폴브레이크">
+                    </figure>
+                    <div class="desc02">
+                        <h3>Fall Break</h3>
+                        <p>가벼운 휴식 뒤 리프레시되는 느낌의 의류</p>
+                    </div>
+                </article>
+                <article class="image02 img">
+                    <figure>
+                        <img classs="img02" src="img/image03_04.jpg" alt="포터리">
+                    </figure>
+                    <div class="desc02">
+                        <h3>Pottery</h3>
+                        <p>현대사회에 알맞는 유니폼을 제안</p>
+                    </div>
+                </article>
+                <article class="image02 img">
+                    <figure>
+                        <img classs="img02" src="img/image03_05.jpg" alt="셔터">
+                    </figure>
+                    <div class="desc02">
+                        <h3>Shirter</h3>
+                        <p>가치를 잃지 않는 변화</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

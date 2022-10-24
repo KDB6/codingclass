@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페럴랙스 이펙트 05</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">페럴랙스 이펙트 : 이질감 효과</h2>
+            <p class="t_desc2">
+                이번 시간에는 페럴랙스 형태를 가진 이펙트를 코딩해봤습니다.
+            </p>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc2">
+                사이트를 코딩하는 데에 필요한 HTML의 구조를 잡아줍니다.<br>
+                각 태그에 클래스 이름을 설정하여 각 구역을 잡아줍니다.
+            </p>
+            <div class="t_code">
+            <details>
+                <summary>코드보기</summary>
+<pre><code class="language-js">    &lt;main id="parallax__cont">
+    &lt;div id="contents">
+        &lt;!-- section1 -->
+        &lt;section id="section1" class="content__item">
+            &lt;span class="content__item__num">01&lt;/span>
+            &lt;h2 class="content__item__title">section1&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc">니 인생은 너가 바꾸는거다.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section2 -->
+        &lt;section id="section2" class="content__item">
+            &lt;span class="content__item__num">02&lt;/span>
+            &lt;h2 class="content__item__title">section2&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc">남 탓 하기 전에 너 자신을 봐라.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section3 -->
+        &lt;section id="section3" class="content__item">
+            &lt;span class="content__item__num">03&lt;/span>
+            &lt;h2 class="content__item__title">section3&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc">알면서도 안하고 가만히 있으면 거지가 되면 된다.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section4 -->
+        &lt;section id="section4" class="content__item">
+            &lt;span class="content__item__num">04&lt;/span>
+            &lt;h2 class="content__item__title">section4&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc">남들은 너한테 큰 관심이 없다.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section5 -->
+        &lt;section id="section5" class="content__item">
+            &lt;span class="content__item__num">05&lt;/span>
+            &lt;h2 class="content__item__title">section5&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc">너 혼자 알아서 해라.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section6 -->
+        &lt;section id="section6" class="content__item">
+            &lt;span class="content__item__num">06&lt;/span>
+            &lt;h2 class="content__item__title">section6&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc">돈이 세상에 다는 아니지만 세상은 돈으로 굴러간다.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section7 -->
+        &lt;section id="section7" class="content__item">
+            &lt;span class="content__item__num">07&lt;/span>
+            &lt;h2 class="content__item__title">section7&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc">사회는 널 기다려주지 않는다.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section8 -->
+        &lt;section id="section8" class="content__item">
+            &lt;span class="content__item__num">08&lt;/span>
+            &lt;h2 class="content__item__title">section8&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc">힘 없는 정의는 무능이다.&lt;/p>
+        &lt;/section>
+
+        &lt;!-- section9 -->
+        &lt;section id="section9" class="content__item">
+            &lt;span class="content__item__num">09&lt;/span>
+            &lt;h2 class="content__item__title">section9&lt;/h2>
+            &lt;figure class="content__item__imgWrap">
+                &lt;div class="content__item__img">&lt;/div>
+            &lt;/figure>
+            &lt;p class="content__item__desc">객관적으로 너 자신을 봐라&lt;/p>
+        &lt;/section>
+    &lt;/div>
+    &lt;section id="parallaxType">
+    &lt;/section>
+&lt;/main>
+&lt;!-- //main -->
+
+&lt;aside id="parallax__info">
+    &lt;div class="scroll">scrollTop : &lt;span>0&lt;/span>px&lt;/div>
+&lt;/aside>
+&lt;!-- aside -->
+</code></pre>
+            </details>
+            </div>
+
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc2">
+                사이트를 코딩하는 데에 필요한 css의 구조를 잡아줍니다.<br>
+                각 이미지를 지정하기 위해 nth-child를 사용하여 각각의 이미지를 삽입해줍니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language.js">    /* parallax__nav */
+    #parallax__nav {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        z-index: 2000;
+        background-color: rgba(0, 0, 0, 0.4);
+        padding: 20px 30px;
+        border-radius: 50px;
+        transition: top, .4s ease;
+    }
+    #parallax__nav li {
+        display: inline;
+        margin: 0 5px;
+    }
+    #parallax__nav li a {
+        display: inline-block;
+        height: 30px;
+        padding: 5px 20px;
+        text-align: center;
+        line-height: 30px;
+    }
+    #parallax__nav li.active a {
+        background: #fff;
+        color: #000;
+        border-radius: 20px;
+        box-sizing: content-box;
+    }
+    #parallax__cont {
+        max-width: 1600px;
+        width: 98%;
+        margin: 0 auto;
+        /* background-color: rgba(255, 255, 255, 0.1); */
+    }
+    .content__item {
+        width: 1000px;
+        max-width: 70vw;
+        margin: 30vw auto;
+        /* background-color: rgba(255, 255, 255, 0.3); */
+        text-align: left;
+        margin-right: 0;
+        position: relative;
+        padding-top: 14vw;
+    }
+    .content__item:nth-child(even) {
+        margin-left: 0;
+        text-align: right;
+    }
+    .content__item__num {
+        font-size: 35vw;
+        font-family: "Lato";
+        font-weight: 100;
+        position: absolute;
+        left: -5vw;
+        top: -10vw;
+        opacity: 0.2;
+        z-index: -2;
+    }
+    .content__item:nth-child(even) .content__item__num {
+        left: auto;
+        right: -5vw;
+    }
+    .content__item__title {
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+    .content__item__imgWrap {
+        width: 100%;
+        padding-bottom: 56.25%;
+        background-color: #fff;
+        position: relative;
+        overflow: hidden;
+        z-index: -1;
+    }
+    .content__item__img {
+        position: absolute;
+        background: url(../assets/img/slide10.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 115%;
+        height: 115%;
+        left: -5%;
+        top: -5%;
+        filter: saturate(0%);
+        transition: all 1s;
+    }
+    .content__item:nth-child(1) .content__item__img {
+        background-image: url(../assets/img/slide01.jpg);
+    }
+    .content__item:nth-child(2) .content__item__img {
+        background-image: url(../assets/img/slide02.jpg);
+    }
+    .content__item:nth-child(3) .content__item__img {
+        background-image: url(../assets/img/slide03.jpg);
+    }
+    .content__item:nth-child(4) .content__item__img {
+        background-image: url(../assets/img/slide04.jpg);
+    }
+    .content__item:nth-child(5) .content__item__img {
+        background-image: url(../assets/img/slide05.jpg);
+    }
+    .content__item:nth-child(6) .content__item__img {
+        background-image: url(../assets/img/slide06.jpg);
+    }
+    .content__item:nth-child(7) .content__item__img {
+        background-image: url(../assets/img/slide07.jpg);
+    }
+    .content__item:nth-child(8) .content__item__img {
+        background-image: url(../assets/img/slide08.jpg);
+    }
+    .content__item:nth-child(9) .content__item__img {
+        background-image: url(../assets/img/slide09.jpg);
+    }
+    .content__item__desc {
+        font-size: 4vw;
+        line-height: 1.4;
+        margin-top: -5vw;
+        margin-left: -4vw;
+        word-break: keep-all;
+    }
+    .content__item:nth-child(even) .content__item__desc {
+        margin-left: auto;
+        margin-right: -4vw;
+    }
+    #parallax__info {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 2000;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    .parallax__info li, .scrollTop {
+        line-height: 1.4;
+    }
+
+    @media (max-width: 800px) {
+        #parallax__cont {
+            margin-top: 70vw;
+        }
+        #parallax__nav {
+            padding: 10px;
+            right: auto;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        #parallax__nav li {
+            display: block;
+            margin: 5px;
+        }
+        #parallax__nav li a {
+            font-size: 14px;
+            padding: 5px;
+            border-radius: 5px;
+            height: auto;
+            line-height: 1.4;
+        }
+        #parallax__nav li.active a {
+            border-radius: 10px;
+        }
+        #parallax__info {
+            left: 10px;
+            bottom: 10px;
+        }
+    }
+</code></pre>
+            </div>
+            </details>
+
+            <h3 class="t_tit2">script</h3>
+            <p class="t_desc2">
+                1. 처음으로는 id로 지정한 #parallax__info span에 요소로써 scrollTop을 지정해줍니다.<br>
+                이 때, scrollTop 소수점이 안나오도록 Math.ceil(올림해주는 함수)를 사용해줍니다.<br><br>
+
+                2. 공통요소 클래스인 content__item에 querySelectorAll를 사용하고 forEach문을 사용해줍니다.<br>
+                각 효과를 줄 클래스들을 정한 후에 마찬가지로 상수로써 이름을 정해준 뒤 요소를 지정해줍니다.<br><br>
+
+                3. offset 1~3을 지정해 줄 시에는 scrollTop만 존재하면 이미지가 전체가 내려가므로<br>
+                scrollTop에 item.offsetTop을 빼주어 해당 섹션에 도달했을 시에 초기화 해줍니다.<br><br>
+
+                4. GSAP를 사용해주어 어떤 위치 도달할 지에 대하여 스크립트를 작성해줍니다.<br>
+                ease에는 GSAP가 만들어둔 여러 효과들을 한 가지 정하여 적용해줍니다.
+            </p>
+            <p class="t_box">
+                scrollTo의 좌표 값을 지정해주는 법은 개별적으로 사용하는 방법이 있지만, || 를 이용해 여러가지를 한번에 사용할 수도 있다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language-js">    function scroll() {
+        let scrollTop = window.pageYoffset || document.documentElement.scrollTop;
+
+        document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);    // 1
+
+        document.querySelectorAll(".content__item").forEach(item => {    // 2
+            const target1 = item.querySelector(".content__item__img");
+            const target2 = item.querySelector(".content__item__desc");
+            const target3 = item.querySelector(".content__item__num");
+
+            let offset1 = (scrollTop - item.offsetTop) * 0.05;    // 3
+            let offset2 = (scrollTop - item.offsetTop) * 0.15;
+            let offset3 = (scrollTop - item.offsetTop) * 0.2;
+
+            // target1.style.transform = `translateY(${offset1}px)`;
+            // target2.style.transform = `translateX(${offset2}px)`;
+
+            gsap.to(target1, {duration: .3, y: offset1, ease: "power4.out"})    //4
+            gsap.to(target2, {duration: .3, y: offset2})
+            gsap.to(target3, {duration: .3, y: offset3, ease: "expo.out"})
+        })
+
+        requestAnimationFrame(scroll);
+    }
+    scroll();
+</code></pre>
+                <div class="t_link">
+                    <a href="https://github.com/KDB6/ck/blob/main/javascript/effect/parallaxEffect05.html" target="_blank">코드 원본 보기</a>
+                </div>
+            </div>
+            </details>
+
+            <br><br>
+
+            <h3 class="t_tit2">결과물</h3>
+            <div class="t_iframe" style="min-height: 800px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/javascript/effect/parallaxEffect05.html" frameborder="0"></iframe>
+            </div>
+    
+            <div class="t_link">
+                <a href="https://kdb6.github.io/ck/javascript/effect/parallaxEffect05.html" target="_blank">원본 사이트 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

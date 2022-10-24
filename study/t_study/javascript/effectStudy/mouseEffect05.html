@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트 05</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">마우스 이펙트 : 기울기 효과 / 글씨 반전 효과</h2>
+            <p class="t_desc2">
+                이번에는 마우스에 이미지 효과를 넣은 이펙트를 코딩해봤습니다.
+            </p>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc2">
+                HTML 코드는 뭐.. 다른 것들과 거의 비슷하죠..? 추가적인 mouse__info의 좌표 값만 따로 몇 개만 추가하시면 됩니다.<br>
+                각 CSS로 이용할 클래스 이름 지정과 스크립트에 이용할 클래스 이름<i>mouse__cursor</i> 미리 지정해둡니다.<br>
+                또한, 현재 마우스 좌표 값을 스크립트 적용하기 위해 <i>mouse__info</i> 클래스에 각각에 좌표 값에 맞는 클래스를 따로 지정해줍니다.<br>
+                글은..여러분이 평소에 가진 가치관을 기준으로...?
+            </p>
+            <details>
+                <summary>HTML CODE</summary>
+            <div class="t_code">
+<pre><code class="language.js">&lt;main id="main">
+    &lt;section id="mouseType">
+        &lt;div class="mouse__cursor">&lt;/div>
+        &lt;div class="mouse__wrap">
+            &lt;div class="mouse__img">
+                &lt;figure>
+                    &lt;img src="../assets/img/slide02.jpg" alt="이미지">
+                &lt;/figure>
+                &lt;figcaption>
+                    &lt;p>Do it yourself.&lt;/p>
+                    &lt;p>너 혼자 알아서 해라.&lt;/p>
+                &lt;/figcaption>
+            &lt;/div>
+        &lt;/div>
+    &lt;/section>
+
+    &lt;div class="mouse__info">
+        &lt;ul>
+            &lt;li>mousePageX : &lt;span class="mousePageX">0&lt;/span>px&lt;/li>
+            &lt;li>mousePageY : &lt;span class="mousePageY">0&lt;/span>px&lt;/li>
+            &lt;li>centerPageX : &lt;span class="centerPageX">0&lt;/span>px&lt;/li>
+            &lt;li>centerPageY : &lt;span class="centerPageY">0&lt;/span>px&lt;/li>
+            &lt;li>maxPageX : &lt;span class="maxPageX">0&lt;/span>px&lt;/li>
+            &lt;li>maxPageY : &lt;span class="maxPageY">0&lt;/span>px&lt;/li>
+            &lt;li>anglePageX : &lt;span class="anglePageX">0&lt;/span>px&lt;/li>
+            &lt;li>anglePageY : &lt;span class="anglePageY">0&lt;/span>px&lt;/li>
+        &lt;/ul>
+    &lt;/div>
+&lt;/main>
+</code></pre>
+            </div>
+            </details>
+
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc2">
+                이번 CSS는 3d 효과 느낌을 주기 위해 공간감을 추가해주는 <i>preserve-3d</i>을 사용했습니다.<br>
+                해당 preserve-3d를 주면 <i>자식 요소</i>에 <i>3D</i>효과를 추가해주는 기능이 있습니다.<br>
+                3D효과를 추가 해줬다면 또 다른 위치 값을 줘야하기에 mouse__img에 따로 공간감을 더 주기 위해 <i>perspective</i>를 사용해줍니다.<br>
+                또한, 따로 글에도 마찬가지로 3D효과를 위해 <i>translate3d</i>를 추가해서 사용해줍니다.
+            </p>
+            <details>
+                <summary>CSS CODE</summary>
+            <div class="t_code">
+<pre><code class="language.js">/* mouseType */
+.mouse__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    cursor: none;
+}
+.mouse__wrap figure {
+    width: 40vw;
+}
+.mouse__img {
+    transform: perspective(600px) rotateX(0deg) rotateY(0deg);
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+.mouse__img figure {
+    width: 50vw;
+    position: relative;
+}
+.mouse__img figure::before {
+    content: '';
+    position: absolute;
+    left: 5%;
+    bottom: -20px;
+    width: 90%;
+    height: 40px;
+    background: url(../assets/img/slide02.jpg) center no-repeat;
+    background-size: 100% 40px;
+    filter: blur(15px) grayscale(50%);
+    z-index: -1;
+    opacity: 0.4;
+}
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    z-index: 1000;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.7;
+    mix-blend-mode: difference;
+}
+.mouse__img figcaption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 1vw;
+    line-height: 1.6;
+    transform: translate3d(-50%, -50%, 150px);
+    padding: 1vw;
+    white-space: nowrap;
+    text-align: center;
+    background: #00000040;
+}
+.mouse__info {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+    list-style: none;
+}
+</code></pre>
+            </div>
+        </details>
+
+            <h3 class="t_tit2">SCRIPT</h3>
+            <p class="t_desc2">
+                이번 스크립트는 좌표를 중심적으로 짜봤습니다.<br><br>
+
+                1. 마우스의 좌표 값은 앞선 다른 마우스 이펙트과 마찬가지로 똑같이 써줍니다.<br>
+                2. 마찬가지로 마우스 좌표의 중앙 기준점을 다른 마우스 이펙트와 같은 형식으로 써줍니다.<br>
+                3. 이젠 마우스의 움직임을 <i>미친듯이</i> 따라가는.. 것들의 움직임의 제한을 줘야합니다..<br>
+                4. 우선 해당 주석 : 이미지 움직이기와 같이 요소를 잡아주고 해당 값에 스타일을 지정해주며, 언제든 해당 값만 넣으면 변할 수 있도록 설정해줍니다.<br>
+                5. 첫 번째로 이젠.. 각 좌표 값을 정해줘야 하는데, maxPageX / Y의 움직임을 제한을 주기위해 <i>Math.max / min()</i> 함수를 사용해줍니다.<br>
+                6. 두 번째는 anglePageX / Y에다가 maxPageX / Y의 <i>0.1</i>만 곱해주는 형식으로 대입하여 각도의 제한을 줍니다.<br>
+                7. 마지막으로 언제나 사용하던 gsap를 사용하여 기존 마우스 커서 스타일을 대체해줍니다.
+            </p>
+            <p class="t_box">
+                Math.max() / min()는 각각에 주어진 값에 최대 값과 최소 값을 구할 수 있습니다.
+            </p><br>
+            <details>
+                <summary>SCRIPT CODE</summary>
+            <div class="t_code">
+<pre><code class="language-js">const mouseMove = (e) => {
+    
+    // 마우스 좌표값
+    let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
+
+    // 마우스 좌표 기준점을 가운데로 변경
+    let centerPageX = window.innerWidth / 2 - mousePageX;
+    let centerPageY = window.innerHeight / 2 - mousePageY;
+
+    // 최소값 -100 최대값 100   // 중요
+    let maxPageX = Math.max(-200, Math.min(100, centerPageX));
+    let maxPageY = Math.max(-200, Math.min(100, centerPageY));
+
+    // 각도 줄이는 설정
+    let anglePageX = maxPageX * 0.1;
+    let anglePageY = maxPageY * 0.1;
+
+    // 부드럽게 설정
+    let softPageX = 0, softPageY = 0;
+    softPageX += (anglePageX - softPageX) * 0.4;
+    softPageY += (anglePageY - softPageY) * 0.4;
+    
+    // 이미지 움직이기
+    const imgMove = document.querySelector(".mouse__img");
+    imgMove.style.transform = "perspective(600px) rotateX("+ softPageY +"deg) rotateY("+ -softPageX +"deg)";
+
+    // 커서
+    gsap.to(".mouse__cursor", {duration: .3, left: mousePageX - 25, top: mousePageY - 25})
+
+    // 출력
+    document.querySelector(".mousePageX").textContent = mousePageX;
+    document.querySelector(".mousePageY").textContent = mousePageY;
+    document.querySelector(".centerPageX").textContent = centerPageX;
+    document.querySelector(".centerPageY").textContent = centerPageY;
+    document.querySelector(".maxPageX").textContent = maxPageX;
+    document.querySelector(".maxPageY").textContent = maxPageY;
+    document.querySelector(".anglePageX").textContent = Math.round(anglePageX);
+    document.querySelector(".anglePageY").textContent = Math.round(anglePageY);
+};
+
+window.addEventListener("mousemove", mouseMove);
+</code></pre>
+            </div>
+            </details>
+
+            <div class="t_link">
+                <a href="https://github.com/KDB6/ck/blob/main/javascript/effect/mouseEffect05.html" target="_blank">CODE GO</a>
+            </div>
+
+            <br><br>
+
+            <h3 class="t_tit2">RESULT</h3>
+            <div class="t_iframe" style="min-height: 920px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/javascript/effect/mouseEffect05.html" frameborder="0"></iframe>
+            </div>
+    
+            <div class="t_link">
+                <a href="https://kdb6.github.io/ck/javascript/effect/mouseEffect05.html" target="_blank">SITE GO</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

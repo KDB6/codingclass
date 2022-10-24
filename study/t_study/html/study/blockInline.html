@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블록 인라인</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">블록 / 인라인 구조</h2>
+            <p class="t_desc">
+                이번 시간은 블록 / 인라인 구조에 대해 알아 보겠습니다.
+            </p>
+
+            <hr>
+
+            <h2 class="t_tit2">블록 구조</h2>
+            <p class="t_desc">
+                블록 구조는 모든 인라인 구조를 포함할 수 있고 다른 블록 구조도 일부 포함 할 수 있다.<br>
+                가로폭 전체의 넓이를 가지는 직사각형 형태가 되며 width, height, margin, padding 등을 사용해<br>
+                형태를 변형하여 레이아웃을 수정할 수 있으며, 블록 구조 다음에는 줄바꿈이 이루어 질 수 있다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th class="ce">블록 구조 종류</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">
+                            address, article, aside, audio, blockquote, canvas, dd, div, dl, fieldset, figcaption, figure, footer,<br>
+                            form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, noscript, ol, output, p, pre, section, table, ul, video
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 class="t_tit2">인라인 구조</h2>
+            <p class="t_desc">
+                인라인 구조는 인라인 구조안에 다른 인라인 구조가 포함될 수 있다.<br>
+                기본적으로 컨텐츠가 끝나는 지점까지를 넓이로 가지게 되며, 그로 인해 임의로 width, height로<br>
+                변형을 줄 수가 없다. 또한, 인라인 요소 다음에는 줄바꿈이 이루어 질 수 없다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th class="ce">인라인 구조 종류</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">
+                            a, abbr, acronym, b, bdo, big, br, button, cite, code, dfn, em, i, img, input, kbd, label,<br>
+                            map, object, q, samp, small, script, select, span, strong, sub, sup, textarea, tt, var
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

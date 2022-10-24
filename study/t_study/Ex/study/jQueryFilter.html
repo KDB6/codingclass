@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 필터 선택자</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">jQuery 필터 선택자</h2>
+            <p class="t_desc2">선택자에 ':'이 붙은 선택자를 필터 선택자라고 합니다.</p>
+            
+            <h3 class="t_tit2">필터 선택자의 종류</h3>
+            <table class="t_table" style="margin-bottom: 10px; margin-top: 10px;">
+                <thead>
+                    <tr>
+                        <th class="ce">선택자 종류</th>
+                        <th class="ce" colspan="2">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:even</td>
+                        <td class="ce">$("tr:even")</td>
+                        <td>tr 요소 중 짝수 행만 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:odd</td>
+                        <td class="ce">$("tr:odd")</td>
+                        <td>tr 요소 중 홀수 행만 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:first</td>
+                        <td class="ce">$("td:first")</td>
+                        <td>첫 번째 td 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:last</td>
+                        <td class="ce">$("td:last")</td>
+                        <td>
+                            마지막 td 요소를 선택합니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:header</td>
+                        <td class="ce">$(":header")</td>
+                        <td>헤딩(h1~h6) 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:eq()</td>
+                        <td class="ce">$("li:eq(0)")</td>
+                        <td>index가 0인 li 요소를 선택합니다. index는 0번이 첫 번째 요소입니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:gt()</td>
+                        <td class="ce">$("li:gt(0)")</td>
+                        <td>index가 0보다 큰 li요소들을 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">.lt()</td>
+                        <td class="ce">$("li:lt(2)")</td>
+                        <td>index가 2보다 작은 li 요소들을 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">.not()</td>
+                        <td class="ce">$("li:not(.bg)")</td>
+                        <td>li 요소 중에서 class명 bg가 아닌 li 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:root</td>
+                        <td class="ce">$(":root")</td>
+                        <td>html을 의미합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:animated</td>
+                        <td class="ce">$(":animated")</td>
+                        <td>움직이는 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="codepen" data-height="500" data-default-tab="js,result" data-slug-hash="NWYQERo" data-user="kdb6" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+              <span>See the Pen <a href="https://codepen.io/kdb6/pen/NWYQERo">
+              필터 선택자 종류</a> by KDB6 (<a href="https://codepen.io/kdb6">@kdb6</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+            <h3 class="t_tit2">자식 필터 선택자</h3>
+            <p class="t_desc">'child'가 붙은 선택자는 요소가 순차적으로 나열되어 있을 때 사용하며,'of-type'이 붙은 선택자는<br>요소가 순차적으로 나열 되어 있지 않아도 통일 요소이면 선택이 가능하다.</p>
+            <table class="t_table" style="margin-bottom: 10px; margin-top: 10px;">
+                <thead>
+                    <tr>
+                        <th class="ce">선택자 종류</th>
+                        <th class="ce" colspan="2">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:first-child</td>
+                        <td class="ce">$("span:first-child")</td>
+                        <td>첫 번째 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:last-child</td>
+                        <td class="ce">$("span:last-child")</td>
+                        <td>마지막 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:first-of-type</td>
+                        <td class="ce">$("span:first-of-type")</td>
+                        <td>span 요소 중에서 첫 번째 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:last-of-type</td>
+                        <td class="ce">$("span:last-of-type")	</td>
+                        <td>span 요소 중에서 마지막 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:nth-child()</td>
+                        <td class="ce">$("span:nth-child(2)")</td>
+                        <td>
+                            두 번째 span 요소를 선택합니다.
+                            nth-child(2n)은 2, 4, 6, ...번째 요소를 선택하고, nth-child(2n+1)은 1, 3, 5, ...번째 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:nth-last-child()</td>
+                        <td class="ce">$("li:eq(0)")</td>
+                        <td>마지막에서 두 번째 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:nth-of-type()</td>
+                        <td class="ce">$("span:nth-of-type(2)")</td>
+                        <td>span 요소 중에서 두 번째 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:nth-last-of-type()</td>
+                        <td class="ce">$("span:nth-last-of-type(2)")</td>
+                        <td>span 요소 중 마지막에서 두 번째 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:only-child</td>
+                        <td class="ce">$("div > span:only-child")</td>
+                        <td>div의 자식 요소에서 오직 span 요소가 하나만 있는 span 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:only-of-type</td>
+                        <td class="ce">$("div > span:only-of-type")</td>
+                        <td>div의 자식 요소에서 오직 span 요소가 하나만 있는 span 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="codepen" data-height="500" data-default-tab="js,result" data-slug-hash="qBoeQRm" data-user="kdb6" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+              <span>See the Pen <a href="https://codepen.io/kdb6/pen/qBoeQRm">
+              자식 선택 필터자</a> by KDB6 (<a href="https://codepen.io/kdb6">@kdb6</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+            <h3 class="t_tit2">콘텐츠 필터 선택자</h3>
+            <table class="t_table" style="margin-bottom: 10px; margin-top: 10px;">
+                <thead>
+                    <tr>
+                        <th class="ce">선택자 종류</th>
+                        <th class="ce" colspan="2">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:contains()</td>
+                        <td class="ce">$("p:contains('html')")</td>
+                        <td>p 요소 중에서 'html' 텍스트를 포함하고 있는 p요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:empty</td>
+                        <td class="ce">$("div:empty")</td>
+                        <td>div 요소 중에서 자식 요소가 없는 div 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:parent</td>
+                        <td class="ce">$("span:parent")</td>
+                        <td>span 요소 중에서 자식 요소가 있는 span요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:has()</td>
+                        <td class="ce">$("section:has(article)")</td>
+                        <td>section 요소 중에서 article을 하위 요소로 가지고 있는 section 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="codepen" data-height="500" data-default-tab="js,result" data-slug-hash="WNzVYRW" data-user="kdb6" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+              <span>See the Pen <a href="https://codepen.io/kdb6/pen/WNzVYRW">
+              콘텐츠 필터 선택자</a> by KDB6 (<a href="https://codepen.io/kdb6">@kdb6</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+            <h3 class="t_tit2">폼 필터 선택자</h3>
+            <table class="t_table" style="margin-bottom: 10px; margin-top: 10px;">
+                <thead>
+                    <tr>
+                        <th class="ce">선택자 종류</th>
+                        <th class="ce" colspan="2">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:text</td>
+                        <td class="ce">$("input:text")</td>
+                        <td>&lt;input type="text"> 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:password</td>
+                        <td class="ce">$("input:password")</td>
+                        <td>&lt;input type="password"> 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:image</td>
+                        <td class="ce">$("span:parent")</td>
+                        <td>&lt;input type="image"> 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:file</td>
+                        <td class="ce">$("input:file")</td>
+                        <td>&lt;input type="file"> 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:button</td>
+                        <td class="ce">$(":button")</td>
+                        <td>&lt;input type="button">, &lt;button> 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:checkbox</td>
+                        <td class="ce">$("input:checkbox")</td>
+                        <td>&lt;input type="checkbox"> 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:radio</td>
+                        <td class="ce">$("input:radio")</td>
+                        <td>&lt;input type="radio"> 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:submit</td>
+                        <td class="ce">$("input:submit")</td>
+                        <td>&lt;input type="submit"> 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:reset</td>
+                        <td class="ce">$("input:reset")</td>
+                        <td>&lt;input type="reset"> 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:input</td>
+                        <td class="ce">$(":input")</td>
+                        <td>모든 &lt;input> 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:checked</td>
+                        <td class="ce">$("input:checked")</td>
+                        <td>&lt;input> 요소에 checked 속성이 있는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:selected</td>
+                        <td class="ce">$("option:selected")</td>
+                        <td>&lt;option> 요소에 selected 속성이 있는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:focus</td>
+                        <td class="ce">$("input:focus")</td>
+                        <td>현재 &lt;input>에 포커스가 있는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:disabled</td>
+                        <td class="ce">$("input:disabled")</td>
+                        <td>&lt;input> 요소에 disabled 속성이 있는 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:enabled</td>
+                        <td class="ce">$("input:enabled")</td>
+                        <td>&lt;input> 요소 중 disabled가 아닌 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="codepen" data-height="500" data-default-tab="html,result" data-slug-hash="gOeVQWd" data-user="kdb6" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+              <span>See the Pen <a href="https://codepen.io/kdb6/pen/gOeVQWd">
+              폼 필터 선택자</a> by KDB6 (<a href="https://codepen.io/kdb6">@kdb6</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+            <h3 class="t_tit2">가시성 필터 선택자</h3>
+            <table class="t_table" style="margin-bottom: 10px; margin-top: 10px;">
+                <thead>
+                    <tr>
+                        <th class="ce">선택자 종류</th>
+                        <th class="ce" colspan="2">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">:hidden</td>
+                        <td class="ce">div:hidden</td>
+                        <td>div 요소 중 hidden인 요소를 선택합니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">:visible</td>
+                        <td class="ce">div:visible</td>
+                        <td>div 요소 중 visible인 요소를 선택합니다.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="VwXoVWy" data-user="kdb6" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+              <span>See the Pen <a href="https://codepen.io/kdb6/pen/VwXoVWy">
+              가시성 필터 선택자</a> by KDB6 (<a href="https://codepen.io/kdb6">@kdb6</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+        </div>
+    </main>
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

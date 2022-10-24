@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 타입 03</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: "NexonLv1Gothic";
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: #ecf2ff;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* cardType */
+        .text__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .text {
+            width: 32%;
+            background: #fff;
+            border-radius: 10px;
+            height: 390px;
+        }
+        .text__body {
+            padding: 30px;
+        }
+        .text__body .tit {
+            font-size: 24px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .text__body .desc {
+            font-size: 20px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 7; 
+            -webkit-box-orient: vertical;
+        }
+        .desc {
+            height: 196px;
+            display: flex;
+        }
+        .circle {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #e7f2ff;
+            margin-right: 10px;
+        }
+        .circle > img {
+            width: 14.4px;
+            height: 18px;
+            margin: 14px;
+        }
+        .desc2 {
+            width: 373px;
+            height: 41px;
+            display: flex;
+            margin-left: 30px;
+            margin-bottom: 19px;
+        }
+        .desc2 > h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #666666;
+            height: 41px;
+            width: 70px;
+        }
+        .desc2 > p {
+            font-size: 18px;
+            color: #666666;
+            padding-top: 5px;
+            margin-left: 10px;
+            height: 25px;
+        }
+        .good {
+            width: 120px;
+            height: 24px;
+            background: #c3edff;
+            color: #fff;
+            border-radius: 20px;
+            margin-left: 130px;
+        }
+        .good > p {
+            padding-top: 4px;
+            padding-left: 26px;
+            font-size: 14px;
+        }
+        .star {
+            margin-bottom: 3px;
+        }
+    </style>
+</head>
+<body>
+    <section id="textType" class="text__wrap nexon section">
+        <h2>Review</h2>
+        <p>이용하신 분들에 후기입니다.</p>
+        <div class="text__inner container">
+            <article class="text">
+                <div class="text__body">
+                    <p class="desc">
+                        이 디자인 나쁘지 않은 것 같아요! 첨에는 살까 말까 망설여 졌는데 나쁘지도 않고 계속 입다보니깐 맘에 듭니다. 역시 믿고 사길 잘했네여!
+                    </p>
+                </div>
+                <div class="desc2">
+                    <figure class="circle">
+                        <img src="img/Coffee.svg" alt="Coffee">
+                    </figure>
+                    <h2>
+                        안현규
+                        <img src="img/star.svg" class="star" alt="star">
+                    </h2>
+                    <p>지나가는 시민</p>
+                </div>
+                <div class="good">
+                    <p>자세히 보기</p>
+                </div>
+            </article>
+            <article class="text">
+                <div class="text__body">
+                    <p class="desc">
+                        아 이번에 춤을 춰야하는데, 뭘 춰야 할 지... 이거 떨어질거라 생각을 못해봤는데, 시간을 다시 돌릴 수 있을까라고 생각을 해봅니다. 첫 데뷔를 이렇게 하다니 너무 좋네여!
+                    </p>
+                </div>
+                <div class="desc2">
+                    <figure class="circle">
+                        <img src="img/Coffee.svg" alt="Coffee">
+                    </figure>
+                    <h2>
+                        이강현
+                        <img src="img/star.svg" class="star" alt="star">
+                    </h2>
+                    <p>마피아</p>
+                </div>
+                <div class="good">
+                    <p>자세히 보기</p>
+                </div>
+            </article>
+            <article class="text">
+                <div class="text__body">
+                    <p class="desc">
+                        오오! 너무 맘에 들어요. 이거 사이즈도 너무 잘 맞고 인생 핏을 찾은 것 같습니다..!! 조아요!
+                    </p>
+                </div>
+                <div class="desc2">
+                    <figure class="circle">
+                        <img src="img/Coffee.svg" alt="Coffee">
+                    </figure>
+                    <h2>
+                        서지우
+                        <img src="img/star.svg" class="star" alt="star">
+                    </h2>
+                    <p>조커</p>
+                </div>
+                <div class="good">
+                    <p>자세히 보기</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>

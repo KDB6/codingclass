@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트 02</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">슬라이드 이펙트 02 (좌로 움직이기)</h2>
+            <p class="t_desc2">
+                이번에는 이미지 슬라이드 형태를 가진 이펙트를 코딩해봤습니다.
+            </p>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc2">
+                HTML은 기본적인 섹션안에 div 클래스를 잡아줍니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language.js">    &lt;main id="main"&gt;
+        &lt;section id="sliderType01"&gt;
+            &lt;div class="slider__wrap"&gt;
+                &lt;div class="slider__img"&gt;
+                    &lt;div class="slider__inner"&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../assets/img/slide06.jpg" alt="이미지6"&gt;&lt;/div&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../assets/img/slide07.jpg" alt="이미지7"&gt;&lt;/div&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../assets/img/slide08.jpg" alt="이미지8"&gt;&lt;/div&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../assets/img/slide09.jpg" alt="이미지9"&gt;&lt;/div&gt;
+                        &lt;div class="slider"&gt;&lt;img src="../assets/img/slide10.jpg" alt="이미지10"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+</code></pre>
+            </div>
+            </details>
+
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc2">
+                css는 기본적인 형태와 스타일을 잡아주지만, 이미지 개개인에 <i>nth-child</i>를 이용해여 개별 구역을 잡아줍니다.<br>
+                또한, <i>z-index</i>를 사용하여 각 위치를 잡아줍니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language.js">    /* slider */
+    .slider__wrap {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .slider__img {      /* 이미지를 보이는 영역 */
+        position: relative;
+        width: 800px;
+        height: 450px;
+        overflow: hidden;
+    }
+    .slider__inner {    /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+        display: flex;
+        flex-wrap: wrap;
+        width: 4000px;
+        height: 450px;
+    }
+    .slider {   /* 개별적인 이미지 */
+        position: relative;
+        width: 800px;
+        height: 450px;
+    }
+    .slider::before {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        padding: 5px 10px;
+    }
+    .slider:nth-child(1)::before {content: "이미지6";}
+    .slider:nth-child(2)::before {content: "이미지7";}
+    .slider:nth-child(3)::before {content: "이미지8";}
+    .slider:nth-child(4)::before {content: "이미지9";}
+    .slider:nth-child(5)::before {content: "이미지10";}
+    .slider:nth-child(1) {z-index: 5;}
+    .slider:nth-child(2) {z-index: 4;}
+    .slider:nth-child(3) {z-index: 3;}
+    .slider:nth-child(4) {z-index: 2}
+    .slider:nth-child(5) {z-index: 1;}
+
+    @media(max-width: 800px) {
+        .slider__img {
+        position: relative;
+        width: 400px;
+        height: 225px;
+        }
+    }
+</code></pre>
+            </div>
+        </details>
+
+            <h3 class="t_tit2">script</h3>
+            <p class="t_desc2">
+                스크립트는 총 세 가지의 스크립트를 예시로 들었으며 <i>javascript, gsap, jQuery</i>를 사용하였습니다.<br>
+                <i>setInterval</i> 메서드를 사용하여 이미지의 슬라이드 형식을 잡았고 gsap와 jQuery는 각 <i>.min.js</i> 스크립트 주소를 사용하여 만들었습니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+            <div class="t_code">
+<pre><code class="language-js">    // javascript
+    const sliderInner = document.querySelector(".slider__inner");    // 움직이는 영역
+    const slider = document.querySelectorAll(".slider");                    // 이미지
+    let currentIndex = 0;
+
+    sliderInner.style.transition = "all 0.6s";
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % slider.length;
+
+        sliderInner.style.transform = "translateX("+ -800 * currentIndex +"px)";
+    },1500)
+
+    // gsap
+    &lt;script src="https:>//cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        const slider = document.querySelectorAll(".slider");
+
+        let currentIndex = 0;
+        
+        setInterval(() =&gt; {
+            currentIndex = (currentIndex + 1) % slider.length;
+
+            gsap.to(".slider__inner", {
+                duration : 0.6,
+                x: -800 * currentIndex
+            })
+        },1500);
+    &lt;/script&gt;
+
+    // jquery
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        let currentIndex = 0;
+        
+        setInterval(() =&gt; {
+            currentIndex = (currentIndex + 1) % $ (".slider").length
+
+            // $(".slider__inner").css(
+            //     "transform", "translateX("+ -800* currentIndex +" px)"
+            // );
+
+            $(".slider__inner").css("position", "relative");
+            $(".slider__inner"),animate({left : -800 * currentIndex},600)
+
+        },1500);
+    &lt;/script&gt;
+</code></pre>
+                <div class="t_link">
+                    <a href="https://github.com/KDB6/ck/blob/main/javascript/effect/sliderEffect02.html" target="_blank">코드 원본 보기</a>
+                </div>
+            </div>
+            </details>
+
+            <br><br>
+
+            <h3 class="t_tit2">결과물</h3>
+            <div class="t_iframe" style="min-height: 920px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/javascript/effect/sliderEffect02.html" frameborder="0"></iframe>
+            </div>
+    
+            <div class="t_link">
+                <a href="https://kdb6.github.io/ck/javascript/effect/sliderEffect02.html" target="_blank">원본 사이트 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

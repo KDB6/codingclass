@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오답노트 01</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+
+            <h2 class="t_tit">오답 노트...</h2>
+            <p class="t_desc2">나의 오답 노트 작성.. 여기 있는 것들은 대체로 이해가 가지만 좀 만 변형해서 나온다면 어떨까나..?(땀 좀 흘리겠습니다..)</p>
+
+            <hr>
+
+            <h3 class="t_tit2">첫 번째 문제</h3>
+            <div class="t_code">
+<pre><code class="language-js">function func(){
+    let i = 10, hap = 0;        // i는 10까지..
+    while(i > 1){
+        if(i % 3 == 1){            // i에 3을 나누고 1는 남는 값 (10, 7, 4)
+            hap += i;                // 나온 결과 값을 hap에 더하여 저장한다.
+        }
+        i--;        // 10부터 점점 작아진다.
+    }
+    document.write(hap);
+}
+func();         // 답은 21
+</code></pre>
+            </div>
+            <p class="t_desc2">
+                첫 문제 부터 틀렸습니다..
+            </p>
+
+            <h3 class="t_tit2">두 번째 문제</h3>
+            <div class="t_code">
+<pre><code class="language-js">function func(data, exp){        // func(1, 5);이니깐 각각 1, 5를 대입
+    let result = 1;                       // result는 1이고
+    for(i=1; i&lt;exp; i++){              // exp는 5이며 &lt;이니깐 4까지 반복
+        result = result * i;             // 1~4까지 나온 값에 계속 더해주며 1*1=1, 1*2=2, 2*3=6, 6*4=24
+    }
+    document.write(result + data);      // 답은 24+1 = 25
+}        
+func(1, 5);
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">세 번째 문제</h3>
+            <div class="t_code">
+<pre><code class="language-js">function func(){
+    let a = [2, 3, 2, 4, 5, 6, 7, 2, 3, 3, 2];
+    let value = 0;
+    for(i=0; i&lt;a.length; i++){       // a.length는 a의 갯수를 뜻함 총 11개이며 &lt;이니 10개까지..
+        if(a[i] != 2){                       // a안에 2가 아닌 값을 찾아라
+            value++;                        // 아닌 갯수 만큼 증가
+        }
+    }
+    document.write(value);        // 총 7개이니 답은 7
+}
+func();
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">네 번째 문제</h3>
+            <div class="t_code">
+<pre><code class="language-js">function func(){
+    let i, j = 0;
+
+    for(i=0; i&lt;=8; i++){         // i는 &lt;=8이니 8과 같은 값이 될 때 까지..
+        j += i;                         // +=이니깐 8까지 점점 더한다. i는 0부터 시작이니깐 0, 1, 2, 3 ,4 ,5 ,6 , 7, 8 = 36
+                                          // i의 갯수는 0~8이니 9개
+    }
+    document.write(j+i)      // 36 + 9 = 45
+}
+func();
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">다섯 번째 문제</h3>
+            <div class="t_code">
+<pre><code class="language-js">function func(){
+    let a = 12, b = 8, c = 2, d = 3;
+    a /= b - c * d;               // 단순 공식 각 숫자에 값을 대입 12 /= 8 - 2 * 3; 오른쪽에 있는 값은 2가 나오면 12 / 2를 해라 = 6
+
+    document.write(a);      // 답은 6
+}
+func();
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">여섯 번째 문제</h3>
+            <div class="t_code">
+<pre><code class="language-js">function func(){
+    let a = 0, sum = 0;
+    while(a &lt; 10){                           // a는 10까지
+        a++;                                      // a 값는 점점 증가한다
+        if(a % 2 == 1) continue;        // a값에 2를 나누고 1이 남는 수는? 1, 3, 5, 7, 9 하지만, continue는 나온 값은 건너뛰기~ 그러므로 2, 4, 6, 8, 10
+        sum += a;                              // 2 +4 + 6 +8 + 10 = 30
+    }
+    document.write(sum);              // 답은 30
+}
+func();
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">일곱 번째 문제</h3>
+            <div class="t_code">
+<pre><code class="language-js">function func(){         // 이 친구 쉽지않아.. 애초에 i = 0이기에 성립이 되지않는다
+    let i = 0, sum = 0;
+    while(0){
+        i++;
+        if(i > 10) break;
+        if(i % 5 == 0) continue;
+        sum += i;
+    }
+    document.write(sum);        답은 0
+}
+func();
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">여덟 번째 문제</h3>
+            <div class="t_code">
+<pre><code class="language-js">function test(arrData){
+    let result = 0;
+    for(let i=0; i&lt;arrSubject.length; i++){      //arrSubject의 갯수는 만큼 4이며, &lt;이니 0,1,2,3 점점 증가 4에서 캇뜨
+        result += Number(arrSubject[i]);        //arrSubject 의 for문 계속 실행되는 만큼 arrSubject의 0,1,2,3 순서만큼 계속 더해주기
+                                                                    // 100 + 90 + 80 + 70 = 340
+    }
+    let num = result
+    return num;
+}
+let arrSubject = ["100", "90", "80", "70"];
+let result = test(arrSubject);
+
+document.write(result);         // 답은 340
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">아홉 번째 문제</h3>
+            <div class="t_code">
+<pre><code class="language-js">function func(a, b, c){      각각 2, 5, 10
+    let answer;
+    if(a &lt; b) answer = a;                 // a, b에 값을 대입하고 참 과 것지에 따라 answer이 정해진다. 2 &lt; 5니깐 answer = 2
+    else answer = b;
+    if(c &lt; answer) answer = c;       // c는 10이며 위 결과는 2였다. 그러므로 10 &lt; 2는 성립되지않아 거짓 결국 answer = 2
+    document.write(answer);         // 답은 2
+}
+func(2, 5, 10)
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">열 번째 문제</h3>
+            <div class="t_code">
+<pre><code class="language-js">function func(n){                           // func(178)이니깐 178
+    let answer;         
+    answer = Math.floor(n/12);      // n이 178이었고 거기에 12를 나눠준다. 계산기를 두드리면... 음.. 14.83333...이 계속 나온다. 근데 Math.floor는 소수점을 버림 결국 14가 나온다.
+    return answer;                          // 답은 14
+}
+
+document.write(func(178));
+</code></pre>
+            </div>
+            
+            <h3 class="t_tit2">열한 번째 문제</h3>
+            <div class="t_code">
+<pre><code class="language-js">function func(s){         // s는 webstoryboy이다.
+    let answer = "";        // answer는 문자열
+    for(let x of s){
+        if(x != 'w') answer += '#';         // webstoryboy중 !=이니 w와 같지 않은 값은 #으로 변환 시킨다.
+        else answer += x;
+    }
+    return answer;          // 답은 w##########
+}
+
+let str = "webstoryboy";
+document.write(func(str));
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">열두 번째 문제</h3>
+            <div class="t_code">
+<pre><code class="language-js">function func(s, t){             // s는 webstoryboy이다.
+    let answer = 0;               // 숫자
+    for(let x of s){
+        if(x !== t) answer++;   // if문으로 t가아닌 값들이 존재한다면 증가해라~ 이 말이야~ 그러면..wbestoryboy이니깐.. 10개네?
+    }
+    return answer;               // 답은 10
+}
+
+let str = "wbestoryboy";
+document.write(func(str, 't'));
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">열세 번째 문제</h3>
+            <div class="t_code">
+<pre><code class="language-js">function solution(n) {
+    var answer = [];
+    answer = n.toString().split('').reverse().map(val => parseInt(val));
+    // toString는 문자열로 반환해주는 메서드, split()는 해당 문자열 원하는 값으로 반환, reverse()는 값의 순서를 반대로 정렬
+    // map()은 새로운 배열로 만듦, parseInt는 정수로 변환
+    // 12345를 문자열로 전환해주고 split('')이니 '1','2','3','4','5' 그 다음 reverse()이니깐 반대로 '5','4','3','2','1'
+    // 마지막으로 map(val => parseInt(val)이니 정수로 변환하고 새로운 배열로 만들어주니 5,4,3,2,1
+    return answer;      // 답은 5,4,3,2,1
+}
+
+document.write(solution(12345))
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">열네 번째 문제</h3>
+            <div class="t_code">
+<pre><code class="language-js">function solution(numbers) {       // solution 매개 변수를 numbers로 다시 설정
+    let answer = 0;
+    for(let i=0; i&lt;10; i++){               // 10까지 &lt; 이니깐 9까지 1씩 증가
+        if(!numbers.includes(i)){       // numbers안에 0~9까지 중 존재하지 않는 값 (5,9)
+            answer += i;                     // 나온 두 값 더하기 5+9
+        }
+    }
+    return answer;      // 답은 14
+}
+
+document.write(solution([1,2,3,4,6,7,8,0]))
+</code></pre>
+            </div>
+            <p class="t_desc2">
+                이 친구 아직 살짝 아직 이해 안감..
+            </p>
+
+        </div>
+    </main>
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 01</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">Quiz 01</h2>
+            <p class="t_desc2">
+                웹디자인기능사 필기 시험에 나오는 객관식 문제를 코딩으로 만들어 풀어보세요.<br>
+                자바스크립트를 이용해 퀴즈 형태 방식을 코딩
+            </p>
+
+            <div class="t_iframe" style="min-height: 850px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/javascript/effect/quizeffect01.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/KDB6/ck/blob/main/javascript/effect/quizeffect01.html" target="_blank">원본 사이트 보기</a>
+            </div>
+
+            <h3 class="t_tit2">자바스크립트</h3>
+            <p class="t_desc2">
+                데이터 값의 입력과 상수를 사용
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">    // 선택자
+    const quizType = document.querySelector(".quiz__type");                                      // 퀴즈 종류
+    const quizNumber = document.querySelector(".quiz__question .number");            // 퀴즈 번호
+    const quizAsk = document.querySelector(".quiz__question .ask");                          // 퀴즈 질문
+    const quizConfirm = document.querySelector(".quiz__answer .confirm");              // 정답 확인 버튼
+    const quizResult = document.querySelector(".quiz__answer .result");                    // 정답 결과
+    const quizDog = document.querySelector(".quiz__view .dog");                               // 강아지
+
+    // 문제 정보
+    const answerType = "웹디자인기능사";
+    const answerNum = 1;
+    const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을
+                                       무엇이라고 하는가?";
+    const answerResult = "연변대비";
+
+    // 문제 출력
+    quizType.innerText = answerType;
+    quizNumber.innerText = answerNum + ".";
+    quizAsk.innerText = answerAsk;
+    quizResult.innerText = answerResult;
+
+    // 정답 숨기기
+    quizResult.style.display = "none";
+    
+    // 정답 확인
+    // 정답 버튼 클릭 시 확인 버튼을 안보이게.. 숨겨지 정답은 보이게..
+    // 정답을 확인하면 강아지가 웃고 있어여 함  // 클래스 like를 추가
+    quizConfirm.addEventListener("click", function(){
+        quizConfirm.style.display = "none";
+        quizResult.style.display = "block";
+        quizDog.classList.add("like");
+    });
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    </script>
+</body>
+</html>

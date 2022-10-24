@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서치 이펙트 01</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">서치 이펙트 01</h2>
+            <p class="t_desc2">
+                검색 기능을 가진 이펙트를 코딩해봤습니다.
+            </p>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc2">
+                사이트를 코딩하는 데에 필요한 HTML의 구조를 잡아줍니다.<br>
+                data-name을 사용하여 각 li에 이름을 부여 해줍니다.<br>
+                해당 HTML에서 결과물에 맞게 li입력 시 보는데 불편해지기에 갯수를 제한했습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">    &lt;main id="main">
+        &lt;div class="search__wrap">
+            &lt;span>indexOf()를 이용하여 검색하기&lt;/span>
+            &lt;h1>CSS 속성 검색하기&lt;/h1>
+            
+            &lt;div class="search__box">
+                &lt;label for="search">검색하기&lt;/label>
+                &lt;input type="text" id="search" placeholder="CSS 속성을 입력해주세요.">
+            &lt;/div>
+            &lt;div class="search_info">
+                &lt;div>CSS 속성 갯수 : &lt;span class="num">0&lt;/span>&lt;/div>
+            &lt;/div>
+            &lt;div class="search__list">
+                &lt;div class="css">
+                    &lt;ul>
+                        &lt;li data-name="accent-color">&lt;strong>accent-color&lt;/strong> : href특성을 통해 다른 페이지나 같은페이지의 위치, 파일와 그 외 다른 URL로 연결할 수 있는 하이퍼 링크를 만듭니다.&lt;/li>
+                        &lt;li data-name="align-content">&lt;strong>align-content&lt;/strong> :  콘텐츠 아이템의 상하관계 정렬 상태를 설정&lt;/li>
+                        &lt;li data-name="align-items">&lt;strong>align-items&lt;/strong> : 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정&lt;/li>
+                        &lt;li data-name="align-self">&lt;strong>align-self&lt;/strong> : 개별적인 콘텐츠 아이템의 정렬 상태를 설정&lt;/li>
+                        &lt;li data-name="all">&lt;strong>all&lt;/strong> : 요소의 속성을 초기화 또는 상속을 설정&lt;/li>
+                        &lt;li data-name="animation">&lt;strong>animation&lt;/strong> : 애니메이션과 관련된 속성을 일괄적으로 설정&lt;/li>
+                        &lt;li data-name="animation-delay">&lt;strong>animation-delay&lt;/strong> : 애니메이션 지연 시간을 설정&lt;/li>
+                        &lt;li data-name="animation-direction">&lt;strong>animation-direction&lt;/strong> : 애니메이션 움직임 방향을 설정&lt;/li>
+                        &lt;li data-name="animation-duration">&lt;strong>animation-duration&lt;/strong> : 애니메이션 움직임 시간을 설정&lt;/li>
+                        &lt;li data-name="animation-fill-mode">&lt;strong>animation-fill-mode&lt;/strong> : 애니메이션이 끝난 후의 상태를 설정&lt;/li>
+                        &lt;li data-name="animation-iteration-count">&lt;strong>animation-iteration-count&lt;/strong> : 애니메이션의 반복 횟수를 설정	&lt;/li>
+                        &lt;li data-name="animation-name">&lt;strong>animation-name&lt;/strong> : 애니메이션 Keyframe 이름을 설정&lt;/li>
+                        &lt;li data-name="animation-play-state">&lt;strong>animation-play-state&lt;/strong> : 애니메이션 진행 상태를 설정&lt;/li>
+                        &lt;li data-name="animation-timeline">&lt;strong>animation-timeline&lt;/strong> : 애니메이션을 설명하는 하나 이상의 규칙과 이름을 설정&lt;/li>
+                        &lt;li data-name="animation-timing-function">&lt;strong>animation-timing-function&lt;/strong> : 애니메이션 움직임의 속도를 설정&lt;/li>
+                        &lt;li data-name="appearance">&lt;strong>appearance&lt;/strong> : 운영 체제의 테마를 기반으로 하는 UI 컨트롤의 기본 모양을 제어&lt;/li>
+                        &lt;li data-name="aspect-ratio">&lt;strong>aspect-ratio&lt;/strong> : 자동 크기 및 기타 레이아웃 기능 계산에 사용되는 상자의 기본 종횡비를 설정&lt;/li>
+                    &lt;/ul>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/main>
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc2">
+                사이트를 코딩하는 데에 필요한 css의 구조를 잡아줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language.js">    :root {
+        --htmlColor : #223547;
+        --cssColor : #0e3d2e;
+        --javascriptColor : #130744;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "SCoreDream";
+        color: #223547;
+    }
+
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+    li {
+        list-style: none;
+    }
+
+    /* header */
+    #header {
+        display: flex;
+    }
+    #header h1 {
+        margin: 10px;
+    }
+    #header nav {
+        margin: 10px;
+    }
+    #header nav li {
+        display: inline;
+        position: relative;
+    }
+    #header nav li a {
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--htmlColor);
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        line-height: 30px;
+        font-family: "SCoreDream";
+    }
+    #header nav ul li.active a {
+        background-color: var(--htmlColor);
+        color: #fff;
+    }
+    #header nav li .sub {
+        position: absolute;
+        left: 0;
+        top: 35px;
+        width: 400px;
+    }
+    #header nav li .sub li a {
+        width: auto;
+        background-color: transparent;
+        color: var(--htmColor);
+        border: 0;
+        text-align: left;
+        line-height: 1.2;
+    }
+    #header nav li .sub li.active a {
+        text-decoration: underline;
+    }
+
+    /* main */
+    #main{
+        margin: 50px 10px;
+    }
+    .search__wrap {
+        max-width: 1400px;
+        margin: 0 auto;
+        border: 3px solid var(--htmlColor);
+        border-radius: 20px;
+        background-color: #f1f3f6;
+        padding: 30px;
+        text-align: center;
+    }
+    .search__wrap > span {
+        font-size: 20px;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    .search__wrap > h1 {
+        font-family: 'Tmon';
+        color: var(--htmlColor);
+        font-size: 6vw;
+        margin-bottom: 10px;
+    }
+    .search__box {
+        margin-bottom: 20px;
+    }
+    .search__box label {
+        position:absolute;
+        clip:rect(0 0 0 0);
+        width:1px;
+        height:1px;
+        margin:-1px;
+        overflow:hidden
+    }
+    .search__box input{
+        border: 2px solid var(--htmlColor);
+        padding: 15px 40px;
+        width: 70%;
+        border-radius: 50px;
+        font-size: 20px;
+    }
+    .search__list li {
+        text-align: left;
+        line-height: 1.7;
+    }
+    .search__list li.hide {
+        display: none;
+    }
+
+    .search__list li.show {
+        display: block;
+    }
+    .search__info {
+        text-align: center;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--htmlColor);
+    }
+    .search__info .type {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+        .search__wrap {
+            padding: 20px;
+        }
+        .search__wrap > h1 {
+            font-size: 40px;
+        }
+        .search__box input {
+            font-size: 16px;
+            padding: 12px 30px;
+        }
+    }
+
+    /* footer */
+    #footer {
+        text-align: center;
+    }
+    .search__wrap > span {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    #footer a {
+        color: #000;
+        font-family: "SCoreDream";
+        padding-bottom: 50px;
+    }
+    footer a:hover {
+        text-decoration: underline;
+    }
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">script</h3>
+            <p class="t_desc2">
+                querySelector를 이용하여 배열을 불러와준 뒤에, forEach문을 사용해줍니다.
+                해당 script는 indexOf()를 사용하여 0(false)이 되는 값만 hide를 지워줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">    // 선택자
+    const searchBox = document.querySelector(".search__box input");         // input 박스
+    const searchList = document.querySelectorAll(".search__list ul li")           // 목록 리스트
+    const searchInfo = document.querySelector(".search_info .num")            // 전체 갯수 구하기
+
+    // 전체 갯수 구하기
+    searchInfo.textContent = searchList.length;
+    
+    // 검색 영역
+    searchBox.addEventListener("keyup", () => {
+        const searchWord = searchBox.value;         // 사용자가 입력한 키워드
+        
+        searchList.forEach(el => {
+            const cssName = el.dataset.name;
+
+            if(cssName.indexOf(searchWord)) {
+                el.classList.add("hide");
+            } else {
+                el.classList.remove("hide");    // indexOf 값이 0(false)이 되는 값만 hide를 지워줍니다.
+            }
+        });
+    });
+</code></pre>
+                <div class="t_link">
+                    <a href="https://github.com/KDB6/ck/blob/main/javascript/effect/searchEffect01.html" target="_blank">코드 원본 보기</a>
+                </div>
+            </div>
+
+            <br><br>
+
+            <h3 class="t_tit2">결과물</h3>
+            <div class="t_iframe" style="min-height: 920px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/javascript/effect/searchEffect01.html" frameborder="0"></iframe>
+            </div>
+    
+            <div class="t_link">
+                <a href="https://kdb6.github.io/ck/javascript/effect/searchEffect01.html" target="_blank">원본 사이트 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

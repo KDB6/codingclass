@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 04</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">Quiz 04</h2>
+            <p class="t_desc2">
+                웹디자인기능사 필기 시험에 나오는 객관식 문제를 코딩으로 만들어 풀어보세요.<br>
+                자바스크립트를 이용해 퀴즈 형태 방식을 코딩해봤습니다.
+            </p>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/javascript/effect/quizeffect04.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/KDB6/ck/blob/main/javascript/effect/quizeffect04.html" target="_blank">원본 사이트 보기</a>
+            </div>
+
+            <h3 class="t_tit2">자바스크립트</h3>
+            <p class="t_desc2">
+                데이터 값의 입력과 함수와 for문을 사용
+            </p>
+            <div class="t_code">
+<pre><code code="language-js">    // 선택자
+    const quizType = document.querySelector(".quiz__type");                                 // 퀴즈 종류
+    const quizNumber = document.querySelector(".quiz__question .number");       // 퀴즈 번호
+    const quizAsk = document.querySelector(".quiz__question .ask");                     // 퀴즈 질문
+    const quizConfirm = document.querySelector(".quiz__answer .confirm");         // 정답 확인 버튼
+    const quizResult = document.querySelector(".quiz__answer .result");               // 정답 결과
+    const quizView = document.querySelector(".quiz__view");                                 // 강아지
+    const quizSelects = document.querySelector(".quiz__selects");                         // 객관식 보기
+    const quizChoice = quizSelects.querySelectorAll(".choice");                               // 객관식 보기
+    const quizSelcet = quizSelects.querySelectorAll(".select");                                 // 객관식 보기
+
+    // 문제 정보
+    const quizInfo = [
+        {
+            answerType : "웹디자인기능사 0000년 01회",
+            answerNum : "1",
+            answerAsk : "먼셀의 표색게에서 색상을 표시하는 기호로 맞는 것은?",
+            answerChoice : ["C/HV", "HC/V", "HV/C", "CV/H"],
+            answerResult : "4",
+            answerEx : "먼셀의 표색계는 색의 3속성에 의한 방법이다. H : Hue 색상, V : Value 명도, C : Chroma 채도"
+        }
+    ]
+
+    // 문제 출력
+    // 함수로 출력
+    function updateQuiz() {
+        quizType.textContent = quizInfo[0].answerType;
+        quizNumber.textContent = quizInfo[0].answerNum + '. ';
+        quizAsk.textContent = quizInfo[0].answerAsk;
+        quizResult.textContent = quizInfo[0].answerEx;
+
+        for(let i=0; i&lt;4; i++) {    // 보기 출력
+            quizChoice[i].textContent = quizInfo[0].answerChoice[i]
+        }
+
+        // 해설 숨기기
+        quizResult.style.display = "none";
+    }
+    updateQuiz();   // 함수 실행문
+
+    // 정답 확인
+    function answerQuiz() {
+        // 사용자 선택 정답 == 문제 정답
+        // 사용자가 클릭한 input --> checked
+
+        for(let i=0; i&lt;quizSelcet.length; i++) {
+            if(quizSelcet[i].checked == true) {     // 보기에 체크가 된 상태
+                // 체크된 번호 == 문제 번호
+                if(quizSelcet[i].value == quizInfo[0].answerResult) {
+                    // alert("정답")
+                    quizView.classList.add("like");
+                } else {
+                    // alert("오답")
+                    quizView.classList.add("dislike");
+                    quizResult.style.display = "block";
+                    quizConfirm.style.display = "none";
+                }
+            }
+        }
+    }
+
+    // 정답 클릭
+    quizConfirm.addEventListener("click", answerQuiz);
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    </script>
+</body>
+</html>

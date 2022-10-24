@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toUpperCase() / toLowerCase()</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+
+            <!-- 01 -->
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">toUpperCase() / toLowerCase()</h3>
+                <p class="t_desc2">문자열을 대문자로 변경 : 반환(문자열) / 문자열을 소문자로 변경 : 반환(문자열)</p>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th class="ce">번호</th>
+                            <th class="ce">기본값</th>
+                            <th class="ce">메서드</th>
+                            <th class="ce">리턴값</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">1</td>
+                            <td class="ce">javascript</td>
+                            <td class="ce">toUpperCase</td>
+                            <td class="ce">JAVASCRIPT</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">2</td>
+                            <td class="ce">JAVASCRIPT</td>
+                            <td class="ce">toLowerCase</td>
+                            <td class="ce">javascript</td>
+                        </tr>
+                    </tbody>
+                </table><br>
+                <div class="t_code">
+<pre><code class="language-js">    const str1 = "javascript";
+    const currentStr1 = str1.toUpperCase();
+
+    document.querySelector(".sample02_N1").innerHTML = "1";
+    document.querySelector(".sample02_Q1").innerHTML = "javascript";
+    document.querySelector(".sample02_M1").innerHTML = "toUpperCase";
+    document.querySelector(".sample02_P1").innerHTML = currentStr1;
+
+    const str2 = "JAVASCRIPT";
+    const currentStr2 = str1.toLowerCase();
+
+    document.querySelector(".sample02_N2").innerHTML = "2";
+    document.querySelector(".sample02_Q2").innerHTML = "JAVASCRIPT";
+    document.querySelector(".sample02_M2").innerHTML = "toLowerCase";
+    document.querySelector(".sample02_P2").innerHTML = currentStr2;
+</code></pre>
+                </div>
+            </div>
+            
+            
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script>
+        
+    </script>
+</body>
+</html>

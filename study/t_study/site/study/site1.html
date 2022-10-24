@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>site1</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 완성본</h2>
+            <p class="t_desc2">
+                이번에는 기존 사이트 작업을 통한 사이트 완성본를 보여드리도록 할게요.
+                어느정도 CSS 작업과 반응형 작업을 해봤습니다.
+            </p>
+
+            <h3 class="t_tit2">headerType</h3>
+            <p class="t_box">
+                기본적인 구성으로 코드를 짜주고, 반응형 작업도 해줍니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">    &lt;section id="headerType" class="header__wrap nexon scroll">
+        &lt;div class="header__inner">
+            &lt;div class="header__logo">
+                &lt;a href="#">Pottery&lt;em>&lt;/em>&lt;/a>
+            &lt;/div>
+            &lt;div class="header__menu overlay">
+                &lt;ul>
+                    &lt;li class="active">&lt;a href="#headerType">Header&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#sliderType">22AW Lookbook&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#imgTextType">NEW ARRIVALS&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#cardType">HQ Service&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#bannerType">Pottery&lt;/a>&lt;/li>
+                &lt;/ul>
+            &lt;/div>
+            &lt;div class="header__member">
+                &lt;a href="#">Login&lt;/a>
+            &lt;/div>
+            &lt;div class="header__ham">
+                &lt;span>&lt;/span>
+                &lt;span>&lt;/span>
+                &lt;span>&lt;/span>
+            &lt;/div>
+        &lt;/div>
+    &lt;/section>
+</code></pre>
+<pre><code class="language-js">    .header__inner {
+        width: 100%;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #ccc;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 10000;
+        background: #fff;
+    }
+    .header__logo {
+        width: 20%;
+        font-size: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .header__logo em {
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .header__menu {
+        width: 60%;
+        text-align: center;
+    }
+    .header__menu li {
+        display: inline;
+    }
+    .header__menu li a {
+        padding: 13px 30px;
+        margin: 0 5px;
+        transition: background-color 0.3s;
+    }
+    .header__menu li a:hover {
+        background-color: #F1F1F1;
+        border-radius: 5px;
+    }
+    .header__member {
+        width: 20%;
+        text-align: right;
+    }
+    .header__member a {
+        font-size: 16px;
+        border: 1px solid #000;
+        padding: 10px 30px;
+        border-radius: 50px;
+        transition: all 0.3s;
+    }
+    .header__member a:hover {
+        background-color: #000;
+        color: #fff;
+    }
+    .header__ham {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 1000;
+        width: 50px;
+        height: 50px;
+        display: none;
+        cursor: pointer;
+    }
+    .header__ham span {
+        display: block;
+        background: #ccc;
+        width: 30px;
+        height: 2px;
+        border-radius: 5px;
+        margin-left: 10px;
+        margin-top: 5px;
+        transition: 0.25s margin 0.25s, 0.25s transform;
+    }
+    .header__ham span:nth-child(1){
+        margin-top: 18px;
+    }
+    .header__ham.active span {
+        transition: 0.25s margin, 0.25s transform 0.25s;
+    }
+    .header__ham.active span:nth-child(1){
+        margin-top: 25px;
+        margin-bottom: -7px;
+        transform: rotate(45deg);
+    }
+    .header__ham.active span:nth-child(2){
+        transform: rotate(45deg);
+    }
+    .header__ham.active span:nth-child(3){
+        margin-top: -2px;
+        transform: rotate(135deg);
+    }
+    /* media */
+    @media (max-width: 1300px){
+        .header__menu {
+            position: fixed;
+            right: -100%;
+            top: 69px;
+            background: #fff;
+            width: 50%;
+            height: 100vh;
+            padding: 20px;
+            text-align: right;
+            transition: right 0.4s ease-in;
+        }
+        .header__menu li {
+            display: block;
+            margin: 20px;
+        }
+        .header__menu li a {
+            padding: 10px;
+            white-space: nowrap;
+        }
+        .header__menu.active {
+            right: 0;
+        }
+        .header__member {
+            margin-right: 50px;
+        }
+        .header__ham {
+            display: block;
+        }
+    }
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">sliderType</h3>
+            <p class="t_box">
+                기존에 있던 슬라이드 코드는 놔두고 이번에는 swiper에 demos slide를 사용했습니다.<br>
+                css에 있던 기존 slider의 코드는 놔두며, 새로운 swiper의 css코드를 짜줍니다.<br>
+                우선 순위가 중요시되는 것들은 <i>!important</i>를 사용해줍니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">    &lt;section id="sliderType" class="slider__wrap nexon content">
+        &lt;h2 class="blind">슬라이드 영역&lt;/h2>
+        &lt;div class="slider__inner">
+            &lt;!-- &lt;div class="slider">
+                &lt;div class="slider__img">
+                    &lt;div class="desc">
+                        &lt;span>Brand&lt;/span>
+                        &lt;h3>22AW Lookbook&lt;/h3>
+                        &lt;p>
+                            포터리는 현대사회에 알맞는 유니폼을 제안하고자 합니다.
+                        &lt;/p>
+                        &lt;div class="btn">
+                            &lt;a href="#">Read more&lt;/a>
+                            &lt;a href="#" class="black">Site&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="slider__arrow">
+                    &lt;a href="#" class="left">&lt;span class="ir">이전 이미지&lt;/span>&lt;/a>
+                    &lt;a href="#" class="right">&lt;span class="ir">다음 이미지&lt;/span>&lt;/a>
+                &lt;/div>
+                &lt;div class="slider__dot">
+                    &lt;a href="#" class="dot active">&lt;span class="ir">1&lt;/span>&lt;/a>
+                    &lt;a href="#" class="dot">&lt;span class="ir">2&lt;/span>&lt;/a>
+                    &lt;a href="#" class="dot">&lt;span class="ir">3&lt;/span>&lt;/a>
+                    &lt;a href="#" class="play">&lt;span class="ir">플레이&lt;/span>&lt;/a>
+                    &lt;a href="#" class="stop">&lt;span class="ir">정지&lt;/span>&lt;/a>
+                &lt;/div>
+            &lt;/div> -->
+        
+            &lt;div class="swiper mySwiper">
+                &lt;div class="swiper-wrapper">
+                    &lt;div class="swiper-slide">
+                        &lt;div class="desc">
+                            &lt;span>Brand&lt;/span>
+                            &lt;h3>22AW Lookbook&lt;/h3>
+                            &lt;p>
+                                포터리는 현대사회에 알맞는 유니폼을 제안하고자 합니다.
+                            &lt;/p>
+                            &lt;div class="btn">
+                                &lt;a href="#">Read more&lt;/a>
+                                &lt;a href="#" class="black">Site&lt;/a>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="swiper-slide">
+                        &lt;div class="desc">
+                            &lt;span>Brand&lt;/span>
+                            &lt;h3>22AW Lookbook&lt;/h3>
+                            &lt;p>
+                                포터리는 현대사회에 알맞는 유니폼을 제안하고자 합니다.
+                            &lt;/p>
+                            &lt;div class="btn">
+                                &lt;a href="#">Read more&lt;/a>
+                                &lt;a href="#" class="black">Site&lt;/a>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="swiper-slide">&lt;div class="desc">
+                        &lt;span>Brand&lt;/span>
+                        &lt;h3>22AW Lookbook&lt;/h3>
+                        &lt;p>
+                            포터리는 현대사회에 알맞는 유니폼을 제안하고자 합니다.
+                        &lt;/p>
+                        &lt;div class="btn">
+                            &lt;a href="#">Read more&lt;/a>
+                            &lt;a href="#" class="black">Site&lt;/a>
+                        &lt;/div>
+                    &lt;/div>&lt;/div>
+                &lt;/div>
+                &lt;div class="swiper-pagination">&lt;/div>
+                &lt;div class="swiper-button">
+                    &lt;div class="swiper-button-play">&lt;span class="ir">play&lt;/span>&lt;/div>
+                    &lt;div class="swiper-button-stop">&lt;span class="ir">stop&lt;/span>&lt;/div>
+                &lt;/div>
+                &lt;div class="swiper-button-next">&lt;/div>
+                &lt;div class="swiper-button-prev">&lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/section>
+</code></pre>
+<pre><code class="language-js">    .slider {
+        position: relative;
+    }
+    .slider__img {
+        background: url(../img/slider_bg01.jpg) no-repeat center / cover;
+    }
+    .slider__img .desc {
+        width: 1160px;
+        margin: 0 auto;
+        padding: 100px 20px;
+    }
+    .slider__img .desc span {
+        font-size: 16px;
+        background-color: #fff;
+        padding: 1px 14px 0 14px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    .slider__img .desc h3 {
+        font-size: 110px;
+        font-weight: 300;
+        line-height: 1;
+        color: #fff;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        margin-left: -8px;
+    }
+    .slider__img .desc p {
+        font-size: 20px;
+        font-weight: 300;
+        color: #fff;
+        line-height: 1.35;
+        margin-bottom: 130px;
+    }
+    .slider__img .desc .btn {}
+    .slider__img .desc .btn a {
+        font-size: 16px;
+        background-color: #fff;
+        padding: 11px 50px;
+        display: inline-block;
+    }
+    .slider__img .desc .btn a.black {
+        background: #000;
+        color: #fff;
+    }
+    .slider__arrow a {
+        position: absolute;
+        top: 50%;
+        width: 30px;
+        height: 56px;
+        background-image: url(../img/slider_icon.svg);
+    }
+    .slider__arrow a.left {
+        left: 20px;
+    }
+    .slider__arrow a.right {
+        right: 20px;
+        background-position: -50px 0;
+    }
+    .slider__dot {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 25px;
+    }
+    .slider__dot a {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background-image: url(../img/slider_icon.svg);
+        background-position: -20px -70px;
+    }
+    .slider__dot a.active {
+        background-position: 0 -70px;
+    }
+    .slider__dot a.play {
+        background-position: -40px -70px;
+    }
+    .slider__dot a.stop {
+        background-position: -60px -70px;
+    }
+
+    /* swiper */
+    .swiper-slide {
+        background: url(../img/slider_bg01.jpg) no-repeat center / cover;
+    }
+    .swiper-slide .desc {
+        width: 1160px;
+        margin: 0 auto;
+        padding: 100px 20px;
+        box-sizing: border-box;
+    }
+    .swiper-slide .desc span {
+        font-size: 16px;
+        background-color: #fff;
+        padding: 1px 14px 0 14px;
+        border-radius: 30px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    .swiper-slide .desc h3 {
+        font-size: 110px;
+        font-weight: 300;
+        line-height: 1;
+        color: #fff;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+        margin-left: -8px;
+    }
+    .swiper-slide .desc p {
+        font-size: 20px;
+        font-weight: 300;
+        color: #fff;
+        line-height: 1.35;
+        margin-bottom: 130px;
+    }
+    .swiper-slide .desc .btn {}
+    .swiper-slide .desc .btn a {
+        font-size: 16px;
+        background-color: #fff;
+        padding: 11px 50px;
+        display: inline-block;
+    }
+    .swiper-slide .desc .btn a.black {
+        background: #000;
+        color: #fff;
+    }
+    .swiper-button-next, .swiper-button-prev {
+        width: 25px !important;
+        height: 50px !important;
+        background: url(../img/slider_icon.svg);
+    }
+    .swiper-button-next {
+        background-position: -55px 0;
+    }
+    .swiper-button-next::after, .swiper-button-prev::after {
+        opacity: 0;
+    }
+
+    .swiper-pagination-bullet {
+        width: 16px !important;
+        height: 16px !important;
+        background-image: url(../img/slider_icon.svg) !important;
+        background-position: -20px -70px !important;
+        background-color: transparent !important;
+        opacity: 1 !important;
+    }
+    .swiper-pagination-bullet-active {
+        background-position: 0px -70px !important;
+    }
+    .swiper-button {
+        position: absolute;
+        left: 50%;
+        margin-left: 40px;
+        bottom: 24px;
+        z-index: 1000;
+        display: flex;
+    }
+    .swiper-button-stop {
+        background-image: url(../img/slider_icon.svg);
+        background-position: -60px -70px;
+        width: 16px;
+        height: 16px;
+    }
+    .swiper-button-play {
+        background-image: url(../img/slider_icon.svg);
+        background-position: -40px -70px;
+        width: 16px;
+        height: 16px;
+    }
+
+    @media (max-width: 960px) {
+        .swiper-slide .desc {
+            width: 100%;
+            text-align: center;
+        }
+        .swiper-slide .desc h3 {
+            font-size: 70px;
+        }
+    }
+    @media (max-width: 600px) {
+        .swiper-slide .desc {
+            padding: 80px 0;
+        }
+        .swiper-slide .desc h3 {
+            font-size: 40px;
+        }
+        .swiper-slide .desc p {
+            font-size: 16px;
+            margin-bottom: 50px;
+        }
+        .swiper-slide .desc .btn a {
+            padding: 10px 25px;
+        }
+    }
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">imageType</h3>
+            <p class="t_box">
+                기본적인 구성으로 코드를 짜주고, 반응형 작업도 해줍니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">    &lt;section id="imageType" class="image__wrap nexon section content">
+        &lt;h2>POTTERY&lt;/h2>
+        &lt;p>포터리는 좋은 옷을 통해 삶을 더 좋게 빚어 나갑니다.&lt;/p>
+        &lt;div class="image__inner container">
+            &lt;article class="image img1">
+                &lt;h3 class="image__title">우리의 목적&lt;/h3>
+                &lt;p class="image__desc">포터리는 현대사회에 알맞는 유니폼을 제안하고자 합니다. 과거의 유니폼은 한 집단에 소속된 특징을 보여주는 옷이었다면, 현대의 유니폼은 개개인의 라이프스타일 또한 대변할 수 있는 옷이 되었습니다.&lt;/p>
+                &lt;a class="image__btn" href="/" title="자세히 보기">Read more&lt;/a>
+            &lt;/article>
+            &lt;article class="image img2">
+                &lt;h3 class="image__title">우리의 미션&lt;/h3>
+                &lt;p class="image__desc">
+                    COMPANY&lt;br>
+                    포터리는 다양한 직군을 관찰하고 그들의 문화와 환경에 맞는 소속감과 통일성이 있는 유니폼을 제공하는 서비스를 진행합니다.
+                &lt;/p>
+                &lt;a class="image__btn yellow" href="/" title="자세히 보기">Read more&lt;/a>
+            &lt;/article>
+        &lt;/div>
+    &lt;/section>
+</code></pre>
+<pre><code class="language-js">    #imageType {
+        background-color: #f9f9f9;
+    }
+    .image__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+    .image {
+        width: 49%;
+        height: 370px;
+        color: #fff;
+        padding: 200px 30px 30px 30px;
+        box-sizing: border-box;
+    }
+    .image.img1 {
+        background: url(../img/image01_01.jpg) no-repeat center;
+    }
+    .image.img2 {
+        background: url(../img/image01_02.jpg) no-repeat center;
+    }
+    .image__title {
+        font-size: 32px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .image__desc {
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 10px;
+        line-height: 1.5;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    .image__btn {
+        font-size: 16px;
+        color: #fff;
+        background-color: #cdcdcd40;
+        padding: 10px 20px;
+        display: inline-block;
+    }
+    .image__btn.yellow {
+        background-color: #cdcdcd40;
+    }
+
+    @media (max-width: 960px) {
+
+    }
+    @media (max-width: 600px) {
+        .image__inner {
+            flex-direction: column;
+        }
+        .image {
+            width: 100%;
+            padding: 205px 20px 20px 20px;
+        }
+        .image:first-child {
+            margin-bottom: 20px;
+        }
+        .image__title {
+            font-size: 24px;
+        }
+        .image__desc {
+            font-size: 16px;
+        }
+    }
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">imgTextType</h3>
+            <p class="t_box">
+                기본적인 구성으로 코드를 짜주고, 반응형 작업도 해줍니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">    &lt;section id="imgTextType" class="imgText__wrap nexon section content">
+        &lt;h2 class="blind">NEW ARRIVALS&lt;/h2>
+        &lt;div class="imgText__inner container">
+            &lt;div class="imgText__txt">
+                &lt;span>NEW ARRIVALS&lt;/span>
+                &lt;h3>NEW ARRIVALS&lt;/h3>
+                &lt;p>새로움의 시작&lt;/p>
+                &lt;ul>
+                    &lt;li>&lt;a href="#">All&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#">Shirt&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#">Knit&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#">T-Shirt&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#">Jacket&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="#">Pants&lt;/a>&lt;/li>
+                &lt;/ul>
+            &lt;/div>
+            &lt;div class="imgText__img img1">
+                &lt;a href="#">NEW ARRIVALS&lt;/a>
+            &lt;/div>
+            &lt;div class="imgText__img img2">
+                &lt;a href="#" class="blue">BEST&lt;/a>
+            &lt;/div>
+        &lt;/div>
+    &lt;/section>
+</code></pre>
+<pre><code class="language-js">    .imgText__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+    .imgText__inner > div {
+        width: 32%;
+        height: 500px;
+    }
+    .imgText__txt {
+        width: 32%;
+    }
+    .imgText__txt span {
+        font-size: 16px;
+        color: #666;
+        text-decoration: underline;
+        text-underline-position: under;
+        margin-bottom: 20px;
+        display: block;
+    }
+    .imgText__txt p {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.5;
+        color: #666;
+        margin-bottom: 10px;
+    }
+    .imgText__txt h3 {
+        font-size: 50px;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+    .imgText__txt ul li{
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.6;
+        margin-left: 20px;
+        color: #666;
+    }
+    .imgText__txt ul li a {
+        color: #666;
+    }
+    .imgText__txt ul li::before {
+        content: '';
+        width: 5px;
+        height: 3px;
+        border-radius: 50%;
+        position: absolute;
+        left: 5px;
+        top: 9px;
+    }
+    .imgText__img{
+        border-radius: 10px;
+        position: relative;
+    }
+    .imgText__img a {
+        position: absolute;
+        left: 30px;
+        bottom: 30px;
+        background-color: #64646470;
+        color: #fff;
+        font-size: 18px;
+        padding: 10px 30px;
+        border-radius: 30px;
+        display: inline-block;
+    }
+    .imgText__img a.blue {
+        background-color: #44444470;
+    }
+    .imgText__img.img1 {
+        background: url(../img/imgText_bg01.jpg) no-repeat center;
+    }
+    .imgText__img.img2 {
+        background: url(../img/imgText_bg02.jpg) no-repeat center;
+    }
+
+    @media (max-width: 960px) {
+        .imgText__inner {
+            flex-wrap: wrap;
+        }
+        .imgText__txt h3 {
+            font-size: 40px;
+        }
+        .imgText__txt p {
+            margin-bottom: 60px;
+        }
+        .imgText__inner > div.imgText__txt {
+            width: 100%;
+            height: auto;
+            text-align: center;
+        }
+        .imgText__inner > div.imgText__txt ul {
+            display: none;
+        }
+        .imgText__inner > div.imgText__img {
+            width: 49%;
+        }
+        .imgText__img a {
+            left: 11%;
+            bottom: 5%;
+        }
+    }
+    @media (max-width: 600px) {
+        .imgText__txt span {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .imgText__txt h3 {
+            font-size: 30px;
+        }
+        .imgText__txt p {
+            margin-bottom: 50px;
+            font-size: 16px;
+        }
+        .imgText__inner > div.imgText__img {
+            width: 100%;
+            height: 300px;
+        }
+        .imgText__inner > div.imgText__img.img1 {
+            margin-bottom: 20px;
+        }
+        .imgText__img a {
+            left: 5%;
+            bottom: 5%;
+        }
+    }
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">cardType</h3>
+            <p class="t_box">
+                기본적인 구성으로 코드를 짜주고, 반응형 작업도 해줍니다.<br>
+                타블렛과 모바일 형태에 맞는 레이아웃 구성으로 카드 반응영을 작업해줍니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">    &lt;section id="cardType" class="card__wrap nexon section content">
+        &lt;h2>HQ Service&lt;/h2>
+        &lt;p>Headquarter, Center of POTTERY&lt;/p>
+        &lt;div class="card__inner container">
+            &lt;article class="card">
+                &lt;figure class="card__header">
+                    &lt;img src="assets/img/card_bg01_01.jpg" alt="포터리">
+                &lt;/figure>
+                &lt;div class="card__body">
+                    &lt;h3 class="tit">COMPANY&lt;/h3>
+                    &lt;p class="desc">
+                        포터리는 다양한 직군을 관찰하고 그들의 문화와 환경에 맞는 소속감과 통일성이 있는 유니폼을 제공하는 서비스를 진행합니다.
+                    &lt;/p>
+                    &lt;a class="btn" href="/">
+                        Read more
+                        &lt;span aria-hidden="true">
+                            &lt;svg width="66" height="8" viewBox="0 0 66 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                &lt;path d="M1 3.5C0.723858 3.5 0.5 3.72386 0.5 4C0.5 4.27614 0.723858 4.5 1 4.5L1 3.5ZM65.3536 4.35356C65.5488 4.1583 65.5488 3.84171 65.3536 3.64645L62.1716 0.464471C61.9763 0.269209 61.6597 0.269209 61.4645 0.464471C61.2692 0.659734 61.2692 0.976316 61.4645 1.17158L64.2929 4.00001L61.4645 6.82843C61.2692 7.02369 61.2692 7.34028 61.4645 7.53554C61.6597 7.7308 61.9763 7.7308 62.1716 7.53554L65.3536 4.35356ZM1 4.5L65 4.50001L65 3.50001L1 3.5L1 4.5Z" fill="black"/>
+                            &lt;/svg>
+                        &lt;/span>
+                    &lt;/a>
+                &lt;/div>
+            &lt;/article>
+            &lt;article class="card">
+                &lt;figure class="card__header">
+                    &lt;img src="assets/img/card_bg01_02.jpg" alt="TPO">
+                &lt;/figure>
+                &lt;div class="card__body">
+                    &lt;h3 class="tit">HQ&lt;/h3>
+                    &lt;p class="desc">
+                        헤드 오피스는 포터리 고유의 문화를 지향하는 사람들의 모임입니다.
+                        창의적이고 생산적인 활동을 통해 영감을 주는 이들을 위해 한정적인 아이템 서비스를 진행합니다.
+                    &lt;/p>
+                    &lt;a class="btn" href="/">
+                        Read more
+                        &lt;span aria-hidden="true">
+                            &lt;svg width="66" height="8" viewBox="0 0 66 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                &lt;path d="M1 3.5C0.723858 3.5 0.5 3.72386 0.5 4C0.5 4.27614 0.723858 4.5 1 4.5L1 3.5ZM65.3536 4.35356C65.5488 4.1583 65.5488 3.84171 65.3536 3.64645L62.1716 0.464471C61.9763 0.269209 61.6597 0.269209 61.4645 0.464471C61.2692 0.659734 61.2692 0.976316 61.4645 1.17158L64.2929 4.00001L61.4645 6.82843C61.2692 7.02369 61.2692 7.34028 61.4645 7.53554C61.6597 7.7308 61.9763 7.7308 62.1716 7.53554L65.3536 4.35356ZM1 4.5L65 4.50001L65 3.50001L1 3.5L1 4.5Z" fill="black"/>
+                            &lt;/svg>
+                        &lt;/span>
+                    &lt;/a>
+                &lt;/div>
+            &lt;/article>
+            &lt;article class="card">
+                &lt;figure class="card__header">
+                    &lt;img src="assets/img/card_bg01_03.jpg" alt="원단">
+                &lt;/figure>
+                &lt;div class="card__body">
+                    &lt;h3 class="tit">SHARE OFFICE&lt;/h3>
+                    &lt;p class="desc">
+                        오피스 문화의 개선을 주도하는 포터리의 공유 오피스 프로그램입니다.
+                        창의적이고 생산적인 활동을 주도하는 이들의 커뮤니케이션과, 작업 환경의 주요 공간으로 활용됩니다.
+                    &lt;/p>
+                    &lt;a class="btn" href="/">
+                        Read more
+                        &lt;span aria-hidden="true">
+                            &lt;svg width="66" height="8" viewBox="0 0 66 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                &lt;path d="M1 3.5C0.723858 3.5 0.5 3.72386 0.5 4C0.5 4.27614 0.723858 4.5 1 4.5L1 3.5ZM65.3536 4.35356C65.5488 4.1583 65.5488 3.84171 65.3536 3.64645L62.1716 0.464471C61.9763 0.269209 61.6597 0.269209 61.4645 0.464471C61.2692 0.659734 61.2692 0.976316 61.4645 1.17158L64.2929 4.00001L61.4645 6.82843C61.2692 7.02369 61.2692 7.34028 61.4645 7.53554C61.6597 7.7308 61.9763 7.7308 62.1716 7.53554L65.3536 4.35356ZM1 4.5L65 4.50001L65 3.50001L1 3.5L1 4.5Z" fill="black"/>
+                            &lt;/svg>
+                        &lt;/span>
+                    &lt;/a>
+                &lt;/div>
+            &lt;/article>
+        &lt;/div>
+    &lt;/section>
+</code></pre>
+<pre><code class="language-js">    #cardType {
+        background-color: #f9f9f9;
+    }
+    .card__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+    .card {
+        width: 32%;
+        background: #f5f5f5;
+    }
+    .card__body {
+        padding: 24px;
+    }
+    .card__body .tit {
+        font-size: 24px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .card__body .desc {
+        font-size: 18px;
+        line-height: 1.4;
+        color: #666;
+        margin-bottom: 20px;
+        font-weight: 300;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4; 
+        -webkit-box-orient: vertical;
+    }
+
+    @media (max-width: 960px) {
+        .card__inner {
+            flex-wrap: wrap;
+        }
+        .card {
+            width: 49%;
+        }
+        .card:last-child {
+            display: none;
+        }
+    }
+    @media (max-width: 600px) {
+        .card {
+            width: 100%;
+        }
+        .card:first-child {
+            margin-bottom: 20px;
+        }
+        .card__body {
+            padding: 20px;
+        }
+        .card__body .desc {
+            font-size: 16px;
+        }
+    }
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">bannerType</h3>
+            <p class="t_box">
+                기본적인 구성으로 코드를 짜주고, 반응형 작업도 해줍니다.<br>
+                딱히 해줄게 없는 효자 타입
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">    &lt;section id="bannerType" class="banner__wrap nexon content">
+        &lt;h2 class="blind">배너 영역&lt;/h2>
+        &lt;div class="banner__inner">
+            &lt;h3 class="title">Pottery&lt;/h3>
+            &lt;p class="desc">
+                저희는 비즈니스 캐주얼을 지향하고 있으며,&lt;br>
+                언제 어디서든 편안한 룩을 지향합니다.
+            &lt;/p>
+            &lt;span class="small">Read more&lt;/span>
+        &lt;/div>
+    &lt;/section>
+</code></pre>
+<pre><code class="language-js">    .banner__inner {
+        background-image: url(../img/banner_bg01.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+        padding: 120px 0;
+        color: #fff;
+    }
+    .banner__inner .title {
+        font-size: 50px;
+        line-height: 1;
+        font-weight: 300;
+        margin-bottom: 40px;
+    }
+    .banner__inner .desc {
+        font-size: 24px;
+        line-height: 1.5;
+        font-weight: 300;
+        margin-bottom: 70px;
+    }
+    .banner__inner .desc a {
+        color: #fff;
+        display: block;
+    }
+    .banner__inner .desc a:hover {
+        text-decoration: underline;
+    }
+    .banner__inner .small {
+        font-size: 16px;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 960px) {
+        .banner__inner {
+            padding: 100px 0;
+        }
+    }
+    @media (max-width: 600px) {
+        .banner__inner {
+            padding: 80px 0;
+        }
+        .banner__inner .title {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .banner__inner .desc {
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+    }
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">textType</h3>
+            <p class="t_box">
+                기본적인 구성으로 코드를 짜주고, 반응형 작업도 해줍니다.<br>
+                또한, 아이콘의 형태를 넣을 때는 이미지 스프라이트를 사용해줍니다.
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">    &lt;section id="textType" class="text__warp nexon section content">
+        &lt;span>&lt;/span>
+        &lt;h2 class="mb70">POTTERY&lt;/h2>
+        &lt;div class="text__inner container">
+            &lt;div class="text t1">
+                &lt;h3 class="text__title">"섬세한"&lt;/h3>
+                &lt;p class="text__desc">옷의 쓰임새에 알맞게 제작된 제품들은 높은 신뢰성과 내구성을 보입니다. 옷을 입는 상황에서의 편리함, 그리고 옷을 입지 않았을 때의 외양, 소재의 성능 등 세부적인 제작 요소들을 제어하고 제품의 완결성을 높입니다.&lt;/p>
+                &lt;a class="text__btn" href="/">Read more&lt;/a>
+            &lt;/div>
+            &lt;div class="text t2">
+                &lt;h3 class="text__title">"드러내지 않는"&lt;/h3>
+                &lt;p class="text__desc">우리의 제품과 브랜드는 고객에게 본질의 형태로 자연스럽게 인식되는 것을 목표로 합니다. 외양에서 드러나는 표식과 불필요한 디테일들을 제거하고, 오랫동안 호흡하며 알 수 있는 옷의 힘에 집중합니다. 드러내지 않는 디테일과 브랜드 라벨링은 옷이 보여줄 수 있는 힘을 더 강조합니다.&lt;/p>
+                &lt;a class="text__btn" href="/">Read more&lt;/a>
+            &lt;/div>
+            &lt;div class="text t3">
+                &lt;h3 class="text__title">"기준이 되는"&lt;/h3>
+                &lt;p class="text__desc">우리의 제품은 현대 사회의 표준이 될 수 있는 유니폼의 시작으로부터 만들어집니다. 모호함과 복잡함의 연속이 되는 시대에, 하나의 완성도 높은 제품을 선보임으로써 기준이 되고자 합니다. 간결함을 바탕으로, 우리가 추구하는 ‘기준이 되는 옷’을 만드는 데는 퀄리티 높은 소재와 철저한 공정이 개입됩니다.&lt;/p>
+                &lt;a class="text__btn" href="/">Read more&lt;/a>
+            &lt;/div>
+            &lt;div class="text t4">
+                &lt;h3 class="text__title">"정돈된 편안함"&lt;/h3>
+                &lt;p class="text__desc">우리는 일련의 과정을 통해, 포터리가 생각하는 정돈된 실루엣의 완성을 목표로 합니다. 의류의 가장 기초가 되는 ‘소재’를 바탕으로 하여, 우리가 추구하는 정돈된 실루엣의 형태로 옷을 완성합니다. 정돈된 것들은 우리에게 편안함을 줍니다.&lt;/p>
+                &lt;a class="text__btn" href="/">Read more&lt;/a>
+            &lt;/div>
+            &lt;div class="text t5">
+                &lt;h3 class="text__title">"절제된 위트"&lt;/h3>
+                &lt;p class="text__desc">우리는 포터리만의 ‘해학’을 가지고, 절제된 언어로 말을 건넵니다. 문장의 말미에 걸쳐 있는 재미의 반전 요소처럼, 브랜드 곳곳에 담겨 있는 재치 있는 디테일들은 포터리가 추구하는 절제된 위트를 규정합니다. 포터리가 만들어낸 옷들의 반듯하고 절제된 이미지 속에서, 우리는 각각의 요소와 소재를 비틀어 개개인에게 여유와 재미를 전달합니다.&lt;/p>
+                &lt;a class="text__btn" href="/">Read more&lt;/a>
+            &lt;/div>
+            &lt;div class="text t6">
+                &lt;h3 class="text__title">"엄격한 기준"&lt;/h3>
+                &lt;p class="text__desc">우리에게 옷은 경험하지 못한 이상적인 세계를 엮어주는 하나의 통로입니다. 최상의 경험을 위해서는 기존에 겪지 못했던 최상의 소재를 선별해내야 합니다. 그리고 엄격한 감독을 통해 만들어내는 과정에 밀착하여 완결성을 높여야 합니다. 포터리의 옷들이 만들어지는 과정부터 고객에게 전달되는 그 순간까지, 우리는 이를 하나의 긴 여정으로 보고, 엄격한 기준으로 접근합니다.&lt;/p>
+                &lt;a class="text__btn" href="/">Read more&lt;/a>
+            &lt;/div>
+        &lt;/div>
+    &lt;/section>
+</code></pre>
+<pre><code class="language-js">    #textType {
+        background-color: #f9f9f9;
+    }
+    .text__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .text {
+        width: 32%;
+        margin-bottom: 2%;
+        padding: 20px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        transition: background 0.4s;
+    }
+    .text:hover {
+        background: #f5f5f5;
+    }
+    .text__title {
+        font-size: 24px;
+        line-height: 1;
+        margin-bottom: 10px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        position: relative;
+        padding-top: 75px;
+    }
+    .text__desc {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.4;
+        margin-bottom: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; 
+        -webkit-box-orient: vertical;
+    }
+
+    .text__title::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 60px;
+        height: 60px;
+        background: url(../img/text_icon.svg);
+    }
+    .text.t1 .text__title::before {
+        background-position: 0 0;
+    }
+    .text.t2 .text__title::before {
+        background-position: -60px 0;
+    }
+    .text.t3 .text__title::before {
+        background-position: -120px 0;
+    }
+    .text.t4 .text__title::before {
+        background-position: -180px 0;
+    }
+    .text.t5 .text__title::before {
+        background-position: -240px 0;
+    }
+    .text.t6 .text__title::before {
+        background-position: -300px 0;
+    }
+    .text__btn {
+        font-size: 16px;
+        line-height: 1;
+        text-decoration: underline;
+        text-underline-position: under;
+        color: #666;
+    }
+
+    @media (max-width: 960px) {
+        .text {
+            width: 49%;
+            background: #f5f5f5;
+        }
+    }
+    @media (max-width: 600px) {
+        .text__title {
+            font-size: 24px;
+        }
+        .text__desc {
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 480px) {
+        .text {
+            width: 100%;
+        }
+        .text .desc {
+            font-size: 16px;
+        }
+    }
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">footerType</h3>
+            <p class="t_box">
+                기본적인 구성으로 코드를 짜주고, 반응형 작업도 해줍니다.<br>
+                여러 내용이 더 필요하지만, 우선 간단한 내용만 적어줍니다~
+            </p>
+            <details>
+                <summary>코드 보기</summary>
+                <div class="t_code">
+<pre><code class="language-js">    &lt;section id="footerType" class="footer__wrap nexon section gray content">
+        &lt;h2 class="blind">푸터 영역&lt;/h2>
+        &lt;div class="footer__inner container">
+            &lt;div class="footer__menu">
+                &lt;div>
+                    &lt;h3>POTTERY&lt;/h3>
+                &lt;/div>
+                &lt;div>
+                    &lt;h3>Header&lt;/h3>
+                &lt;/div>
+                &lt;div>
+                    &lt;h3>22AW Lookbook&lt;/h3>
+                &lt;/div>
+                &lt;div>
+                    &lt;h3>NEW ARRIVALS&lt;/h3>
+                &lt;/div>
+                &lt;div>
+                    &lt;h3>HQ Service&lt;/h3>
+                &lt;/div>
+                &lt;div>
+                    &lt;h3>Pottery&lt;/h3>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="footer__right">
+                2022 Pottery.&lt;br>
+                All rights reserved.
+            &lt;/div>
+        &lt;/div>
+    &lt;/section>
+</code></pre>
+<pre><code class="language-js">    .footer__menu {
+        display: flex;
+        margin-bottom: 70px;
+        text-align: center;
+    }
+    .footer__menu > div {
+        width: 16%;
+    }
+    .footer__menu > div h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .footer__menu li {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+        display: block;
+    }
+    .footer__right {
+        border-top: 1px solid #d9d9d9;
+        text-align: center;
+        padding-top: 40px;
+        color: #666;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 960px ) {
+        .footer__menu {
+            display: none;
+        }
+        .footer__right {
+            padding-top: 0;
+            border-top: 0;
+        }
+        .footer__wrap {
+            padding: 40px 0;
+        }
+    }
+</code></pre>
+                </div>
+            </details>
+            <div class="t_link">
+                <a href="https://github.com/KDB6/ck/blob/main/site/site1/index.html" target="_blank">코드 원본 보기</a>
+            </div>
+
+            <h3 class="t_tit2">완성 사이트</h3>
+            <div class="t_iframe" style="min-height: 920px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/site/site1/index.html" frameborder="0"></iframe>
+            </div>
+    
+            <div class="t_link">
+                <a href="https://kdb6.github.io/ck/site/site1/index.html" target="_blank">원본 사이트 보기</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

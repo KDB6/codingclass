@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어 쿼리</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">미디어 쿼리</h2>
+            <p class="t_desc">
+                뷰포트의 해상도에 따라 CSS를 분기시키는 미디어 쿼리는 반응형 프로젝트에서 반드시 필요한 기법
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">&lt;link~ media=""></h3>
+            <p class="t_desc2">
+                &lt;link rel="stylesheet" type="text/css" media="all and (min-width: 1000px)" href="style_pc.css">
+            </p>
+            <p class="t_desc">
+                최소 가로폭이 1000px, 즉 1000px 보다 넓은 해상도일 때에 style pc.css를 연결 한다는 뜻
+                태블릿이나 모바일 기기마다 가로폭이 다른데, 크롬 브라우저에서 개발자 도구를 열고 Toggle de Toolbar를
+                누르면 기기 마다의 해상도도 확인할 수 있고 기기 모델도 추가할 수 있습니다
+            </p>
+
+            <h3 class="t_tit2">@media</h3>
+            <p class="t_box">
+                처음 로딩했을 시에 성능이 저하되지 않도록 CSS 파일을 하나로 만들어 CSS 내부에 조건에 따라 분기시키는 것이 일반적인 형태
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th class="ce">Media Type</th>
+                        <th class="ce">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">all</td>
+                        <td>모든 미디어 장치에 사용 (기본값)</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">print</td>
+                        <td>프린터에 사용</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">screen</td>
+                        <td>PC, 태블릿, 스마트폰에 사용</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">speech</td>
+                        <td>스크린 리더기가 페이지를 읽는데 사용</td>
+                    </tr>
+                </tbody>
+            </table><br>
+
+            <div class="t_code">
+<pre><code class="language-js">    body {color: red;}
+    @media only screen and (max-width: 768px) {
+        body { color: blue; }
+    }
+</pre></code>
+            <p class="t_box">
+                화면이 768px보다 작아졌을 때는 글씨를 빨간색으로 변경한다는 뜻이다.
+            </p><br>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">    @media only screen and (orientation: portrait) {
+        body { background: skyblue; }
+    }
+</pre></code>
+            <p class="t_box">
+                모바일 기기를 세워 세로가 가로보다 긴 세로방향이 되면 배경색을 하늘색으로 지정한다는 뜻이다.
+            </p><br>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">   @media only screen and (orientation: landscape) {
+        body { background: lightgreen; }
+    }
+</pre></code>
+            <p class="t_box">
+                모바일 기기를 눕혀 가로가 세로보다 긴 가로방향이 되면 배경색을 연두색으로 지정한다는 뜻이다.
+            </p><br>
+            </div>
+
+            <div class="t_code">
+<pre><code class="language-js">   @media screen and (max-width: 900px) and (min-width: 600px), (min-width: 1100px) {
+        body { color: red; }
+    }
+</pre></code>
+            <p class="t_box">
+                쉼표를 구분하여 조건을 추가 할 수 있으며,
+                가로 600px 에서 900xp 사이일 때. 그리고 1000px 이상일 때만 글자색을 빨간색으로 한다는 뜻이다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">기기에 따른 레이아웃 템플릿</h3>
+            </div>  
+        
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

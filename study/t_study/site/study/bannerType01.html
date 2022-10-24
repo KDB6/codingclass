@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 타입 사이트 만들기 01</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">배너 타입 구조 01</h2>
+            <p class="t_desc2">
+                사이트에 기초적인 구조를 가진 배너 타입 구조를 만들어 봤습니다.
+            </p>
+            <div class="t_iframe">
+                <iframe width="650" height="400" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FoLRt8dyA3nlh2tlGzhrd3y%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D1625%253A1811" allowfullscreen></iframe>
+            </div>
+
+            <h3 class="t_tit2">Site HTML</h3>
+            <p class="t_desc2">
+                사이트를 코딩하는 데에 필요한 HTML의 구조를 잡아줍니다.
+            </p>
+            <div class="t_code">
+<pre><code>    &lt;section id="bannerType" class="banner__wrap nexon">
+        &lt;h2 class="blind">배너 영역&lt;/h2>
+        &lt;div class="banner__inner">
+            &lt;h3 class="title">Pottery&lt;/h3>
+            &lt;p class="desc">
+                저희는 비즈니스 캐주얼을 지향하고 있으며,&lt;br>
+                언제 어디서든 편안한 룩을 지향합니다.
+            &lt;/p>
+            &lt;span class="small">배너 유형 01&lt;/span>
+        &lt;/div>
+    &lt;/section>
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">Site CSS</h3>
+            <p class="t_desc2">
+                사이트를 코딩하는 데에 필요한 css의 구조를 잡아줍니다.
+            </p>
+            <div class="t_code">
+<pre><code>    .banner__inner {
+        background-image: url(../img/banner_bg01.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+        padding: 120px 0;
+        color: #fff;
+    }
+    .banner__inner .title {
+        font-size: 50px;
+        line-height: 1;
+        font-weight: 300;
+        margin-bottom: 40px;
+    }
+    .banner__inner .desc {
+        font-size: 24px;
+        line-height: 1.5;
+        font-weight: 300;
+        margin-bottom: 70px;
+    }
+    .banner__inner .desc a {
+        color: #fff;
+        display: block;
+    }
+    .banner__inner .desc a:hover {
+        text-decoration: underline;
+    }
+    .banner__inner .small {
+        font-size: 16px;
+        text-decoration: underline;
+    }
+</code></pre>
+                <div class="t_link">
+                    <a href="https://github.com/KDB6/ck/blob/main/site/bannerType/bannerType01.html" target="_blank">코드 원본 보기</a>
+                </div>
+            </div>
+
+            <h3 class="t_tit2">결과물</h3>
+            <div class="t_iframe" style="min-height: 490px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/site/bannerType/bannerType01.html" frameborder="0"></iframe>
+            </div>
+    
+            <div class="t_link">
+                <a href="https://kdb6.github.io/ck/site/bannerType/bannerType01.html" target="_blank">원본 사이트 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

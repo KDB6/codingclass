@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트 04</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">마우스 이펙트 : 이미지 효과</h2>
+            <p class="t_desc2">
+                이번에는 마우스에 이미지 효과를 넣은 이펙트를 코딩해봤습니다.
+            </p>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc2">
+                HTML 코드는 딱히 어려운 건 없습니다.<br>
+                각 CSS로 이용할 클래스 이름 지정과 스크립트에 이용할 클래스 이름<i>mouse__cursor</i> 미리 지정해둡니다.<br>
+                또한, 현재 마우스 좌표 값을 스크립트 적용하기 위해 <i>mouse__info</i> 클래스에 각각에 좌표 값에 맞는 클래스를 따로 지정해줍니다.<br>
+                명언은..여러분이 평소에 가진 가치관을 기준으로...?
+            </p>
+            <details>
+                <summary>HTML CODE</summary>
+            <div class="t_code">
+<pre><code class="language.js">&lt;main id="main">
+    &lt;section id="mouseType">
+        &lt;div class="mouse__cursor">&lt;/div>
+        &lt;div class="mouse__wrap">
+            &lt;figure>
+                &lt;img src="../assets/img/slide05.jpg" alt="이미지">
+                &lt;figcaption>
+                    &lt;p>Look at yourself before blaming others&lt;/p>
+                    &lt;p>남 탓 하기 전에 너 자신을 봐라.&lt;/p>
+                &lt;/figcaption>
+            &lt;/figure>
+        &lt;/div>
+    &lt;/section>
+
+    &lt;div class="mouse__info">
+        &lt;ul>
+            &lt;li>mousePageX : &lt;span class="mousePageX">0&lt;/span>px&lt;/li>
+            &lt;li>mousePageY : &lt;span class="mousePageY">0&lt;/span>px&lt;/li>
+            &lt;li>centerPageX : &lt;span class="centerPageX">0&lt;/span>px&lt;/li>
+            &lt;li>centerPageY : &lt;span class="centerPageY">0&lt;/span>px&lt;/li>
+        &lt;/ul>
+    &lt;/div>
+&lt;/main>
+</code></pre>
+            </div>
+            </details>
+
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc2">
+                이번 CSS 코드는 언제나 마우스 이펙트 1~2번과 같이 크게 변화가 없으며,<br>
+                원하는 디자인으로 구성했고, 기본적인 반응형도 해주었습니다.
+            </p>
+            <details>
+                <summary>CSS CODE</summary>
+            <div class="t_code">
+<pre><code class="language.js">/* mouseType */
+.mouse__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
+    flex-direction: column;
+}
+.mouse__wrap figure {
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    transition: transform 500ms ease;
+    cursor: none;
+}
+.mouse__wrap figure img {
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+}
+.mouse__wrap figure:hover {
+    transform: scale(1.025);
+}
+.mouse__wrap figure figcaption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 16px;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1000;
+    user-select: none;
+    pointer-events: none;
+}
+.mouse__info {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+    list-style: none;
+}
+</code></pre>
+            </div>
+        </details>
+
+            <h3 class="t_tit2">SCRIPT</h3>
+            <p class="t_desc2">
+                스크립트는 언제나 비슷한 형태이며, 구성만 다르게 구조를 짜봤습니다. 이번에도 역시 gsap를 사용했습니다.<br><br>
+
+                1. 우선 첫 번째는 <i>mouse__cursor</i>를 요소로써 선택자로 잡아주고. cursor로 잡아준 요소를 전체적인<br>
+                크기와 위치를 알 수 있는 <i>getBoundingClientRect</i>메서드를 함께 사용해주어 또 다른 <i>cursorRect</i> 요소를 잡아줍니다.<br>
+                2. 이미지 안에만 마우스 이펙트 스크립트 적용을 위해 <i>.mouse__wrap figure</i>에 요소를 잡아주고 이벤트 메서드로 <i>mousemove</i> 적용해줍니다.<br>
+                3. 그리고 앞서 마우스 이펙트 : 조명 효과에서 사용한 gsap를 동일하게 사용하며, 값만 변경해줍니다.<br>
+                4. 마우스 좌표 값은 <i>e.pageX</i>와 <i>e.pageY</i>로 구해줍니다. 좌표값을 가운데로 초기화 시켜주기 위해 브라우저 가로값과 높이 값을 반으로 나눠주고<br>
+                지정해둔 요소인 <i>mousePageX</i>와 <i>mousePageY</i>로 빼줍니다.<br>
+                5. 이미지 움직이는 스크립트는 2번과 3번이랑 같은 형식으로 진행해주며, 좌표 값에 표시를 출력하기 위해 mouse__info에 지정한 각 클래스들을 출력을 해줍니다.
+            </p>
+            <details>
+                <summary>SCRIPT CODE</summary>
+            <div class="t_code">
+<pre><code class="language-js">const cursor = document.querySelector(".mouse__cursor");
+const cursorRect = cursor.getBoundingClientRect();
+
+document.querySelector(".mouse__wrap figure").addEventListener("mousemove", (e) => {
+    // 커서
+    gsap.to(cursor, {
+        duration: .5,
+        left: e.pageX - cursorRect.width/2,
+        top: e.pageY - cursorRect.height/2
+    });
+
+    // 마우스 좌표 값
+    let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
+
+    // 전체 가로
+    // window.innerWidth;      // 1920 : 브라우저 크기
+    // window.outerWidth;      // 1920 : 브라우저 크기(스크롤 바 포함)
+    // window.screen.width;    // 1920 : 화면 크기
+
+    // 마우스 좌표 값 가운테로 초기화
+    // 전체 길이/2 - 마우스 좌표값 == 0
+    let centerPageX = window.innerWidth/2 - mousePageX;
+    let centerPageY = window.innerHeight/2 - mousePageY;
+
+    // 이미지 움직이기
+    const imgMove = document.querySelector(".mouse__wrap figure img");
+    // imgMove.style.transform = "translate("+ centerPageX/20 +"px, "+ centerPageY/20 +"px)";
+
+    gsap.to(imgMove, {
+        duration: 0.3,
+        x: centerPageX/20,
+        y: centerPageY/20
+    })
+
+    // 출력
+    document.querySelector(".mousePageX").textContent = mousePageX;
+    document.querySelector(".mousePageY").textContent = mousePageY;
+    document.querySelector(".centerPageX").textContent = centerPageX;
+    document.querySelector(".centerPageY").textContent = centerPageY;
+});
+</code></pre>
+            </div>
+            </details>
+
+            <div class="t_link">
+                <a href="https://github.com/KDB6/ck/blob/main/javascript/effect/mouseEffect04.html" target="_blank">CODE GO</a>
+            </div>
+
+            <br><br>
+
+            <h3 class="t_tit2">RESULT</h3>
+            <div class="t_iframe" style="min-height: 920px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/javascript/effect/mouseEffect04.html" frameborder="0"></iframe>
+            </div>
+    
+            <div class="t_link">
+                <a href="https://kdb6.github.io/ck/javascript/effect/mouseEffect04.html" target="_blank">SITE GO</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

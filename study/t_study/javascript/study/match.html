@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>match</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <!-- main -->
+    <main id="main">
+        <div class="document">
+                    <h3 class="t_tit2">match()</h3>
+                    <p class="t_desc2">문자열(정규식)을 검색하고, 위치 값(배열)을 반환한다.</p>
+                    <div class="t_code">
+<pre><code class="language-js">    const str1 ="javascript reference"
+    const currentStr1 = str1.match("javascipt");         // javascipt
+    const currentStr2 = str1.match("reference");        // reference
+    const currentStr3 = str1.match("r");                      // r
+    const currentStr4 = str1.match(/reference/);        // reference
+    const currentStr5 = str1.match(/Reference/);       // null
+    const currentStr6 = str1.match(/Reference/i);      // Reference i는 소,대문자 구별x
+    const currentStr7 = str1.match(/r/g);                    // ['r', 'r', 'r']
+    const currentStr8 = str1.match(/e/g);                   // ['e', 'e', 'e', 'e']
+</code></pre>
+                    </div>
+        </div>
+    </main>
+
+    <!-- script -->
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

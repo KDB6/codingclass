@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조 관련 요소</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">구조 관련 요소</h2>
+            <p class="t_box">
+               이번 구조 관련 요소는 블록 레벨 요소를 알아보겠습니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">&lt;header>&lt;/header></h3>
+            <p class="t_box">
+                1. HTML 문서의 헤더 영역을 의미를 가지는 태그로써 제목이나 내비게이션, 검색 등의 내용들을 포함한다.<br>
+                2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있지만 &lt;header>,&lt;footer> 태그는 포함할 수 없다.
+            </p>
+
+            <h3 class="t_tit2">&lt;section>&lt;/section></h3>
+            <p class="t_box">
+                1. HTML 문서에서 맥락이 같은 요소들을 주제별로 그룹화해주는 태그이며 섹션 주제에 대한 제목 요소(&lt;h2>~&lt;h6>)를 포함하는 것이 좋다.<br>
+                2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있다.
+            </p>
+
+            <h3 class="t_tit2">&lt;footer>&lt;/footer></h3>
+            <p class="t_box">
+                1. HTML 문서의 푸터 영역을 의미하는 태그로 섹션 작성자나 저작권에 대한 정보, 관련된 문서의 링크를 포함할 수 있다.<br>
+                2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있지만 &lt;header>, &lt;footer> 태그는 포함할 수 없다.
+            </p>
+
+            <h3 class="t_tit2">&lt;nav>&lt;/nav></h3>
+            <p class="t_box">
+                1. HTML 문서의 메인 메뉴나 목차 등을 정의해 주는 태그이다.<br>
+                2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있다.
+            </p>
+
+            <h3 class="t_tit2">&lt;article>&lt;/article></h3>
+            <p class="t_box">
+                1. HTML 문서 내에서 독립적으로 배포 또는 재사용이 가능한 게시물, 뉴스 기사, 블로그 포스팅 등을 의미하는 태그이며 제목 요소(&lt;h2>~&lt;h6>)를 포함하는 것이 좋다.<br>
+                2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있습니다.
+            </p>
+
+            <h3 class="t_tit2">&lt;aside>&lt;/aside></h3>
+            <p class="t_box">
+                1. 메인 콘텐츠와 직접적으로 관련이 없는 영역을 의미하는 태그이며 HTML 문서의 오른쪽이나 왼쪽의 사이드 메뉴나 광고 등의 영역으로 사용됩니다.<br>
+                2. 텍스트, 인라인 요소, 블록 레벨 요소를 포함할 수 있습니다.
+            </p>
+            
+            <hr>
+
+            <h3 class="t_tit2">위 구조 요소를 이용하여 레이아웃 예시를 하나 만들어보겠습니다.</h3>
+            <p class="codepen" data-height="500" data-default-tab="css,result" data-slug-hash="MWVzaoM" data-user="kdb6" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+              <span>See the Pen <a href="https://codepen.io/kdb6/pen/MWVzaoM">
+              구조 관련 요소</a> by KDB6 (<a href="https://codepen.io/kdb6">@kdb6</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </div>    
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

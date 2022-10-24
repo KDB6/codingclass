@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블럭/인라인 요소</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        #header {
+            padding: 2vw;
+            border-bottom: 1px dashed #dedede;
+        }
+        #header h1 {
+            font-size: 4vw;
+            margin-bottom: 2vw;
+        }
+        #header nav ul li {
+            list-style: none;
+            display: inline;
+        }
+        #header nav ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            padding: 0.1vw 1vw 0.3vw 1vw;
+            display: inline-block;
+        }
+        #header nav ul li a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+        /* 컨텐츠 */
+        #contents {
+            padding: 2vw;
+        }
+        #contents .menu {
+            border-bottom: 1px dashed #dedede;
+            padding-bottom: 2vw;
+        }
+        #contents .menu ul li {
+            list-style: none;
+            display: inline;
+        }
+        #contents .menu ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            background-color: #000;
+            color: #fff;
+            padding: 0.1vw 1vw 0.3vw 1vw;
+            word-break: keep-all;
+            margin-top: 0.7vw;
+            margin-bottom: 0.7vw;
+            display: inline-block;
+        }
+        .article {
+            padding: 2vw 0;
+            line-height: 1.6;
+        }
+        .article h2 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        .article h3 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        .article p {
+            margin-bottom: 10px;
+        }
+        .article .table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+        .article .table tr th {
+            border: 1px solid #dedede;
+            padding: 10px;
+            font-weight: normal;
+            background-color: #f5f5f5;
+        }
+        .article .table tr td {
+            border: 1px solid #dedede;
+            padding: 10px;
+        }
+        .article .table .center {
+            text-align: center;
+        }
+        .article .box {
+            background-color: #ededed;
+            padding: 10px;
+        }
+
+        /* 미디어 쿼리 */
+        @media (max-width: 800) {
+            #header {
+                padding: 16px;
+            }
+            #header h1 {
+                font-size: 40px;
+            }
+            #header nav ul li a {
+                padding: 5px 10px;
+                font-size: 18px;
+            }
+            #contents {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>HTML</h1>
+        <nav>
+            <ul>
+                <li><a href="">기초</a></li>
+                <li><a href="">주제</a></li>
+                <li><a href="">알파벳</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contents">
+        <nav class="menu">
+            <ul>
+                <li><a href="alphabet.html">알파벳</a></li>
+                <li><a href="basic.html">기초 문법</a></li>
+                <li class="active"><a href="blockinline.html">블록 구조/인라인 구조</a></li>
+                <li><a href="web">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="sementic.html">시멘틱 태그</a></li>
+                <li><a href="seo">검색엔진시스템(SEO)</a></li>
+            </ul>
+        </nav>
+        <article class="article">
+            <p>태그를 배우기 전에 알아두어야 할 내용이 요소의 유형과 성질이다. 요소의 유형은 '블록 레벨 요소'와 <br>
+                '인라인 요소'로 나누어지며, 이 중 '블록 레벨 요소'에 대한 것을 먼저 알아보겠다.
+            </p> <br>
+            <h2>블록 레벨 요소(Block-level Elements)</h2>
+            <p>블록 레벨 요소는 마크업을 할 때 줄이 바뀌는 특성을 가지고 있는데, 다음 예제를 보면서 설명</p> <br>
+            <p class="box">
+                &lt;!DOCTYPE html&gt; <br>
+                &lt;html lang="ko"&gt; <br>
+                &lt;head&gt; <br>
+                &emsp;&emsp; &lt;meta charest="UFT-8"&gt; <br>
+                &emsp;&emsp; &lt;title&gt;블록 레벨 요소&lt;/title&gt; <br>
+                &lt;/head&gt; <br>
+                &lt;body&gt; <br>
+                &emsp;&emsp; &lt;h1&gt;블록 레벨 요소&lt;/h1&gt; <br>
+                &emsp;&emsp; &lt;h2&gt;블록 레벨 요소 성질&lt;/h2&gt; <br>
+                &emsp;&emsp; &lt;p&gt;줄 바꿈이 생깁니다.&lt;/p&gt; <br>
+                &lt;/body&gt; <br>
+                &lt;/html&gt; <br>
+            </p>
+            <p>결과 ▽</p>
+            <h1>블록 레벨 요소</h1>
+            <h2>블록 레벨 요소 성질</h2>
+            <p>줄 바꿈이 생깁니다.</p> <br>
+            <p>(예제 ex1-1)에서 마크업 했던 &lt;h1&gt;, &lt;h2&gt;, &lt;p&gt; 요소들은 블록의 성질을 가지고 있어 화면상 줄 바꿈
+                <br>현상이 일어나는 것을 볼 수 있습니다.
+            </p> <br> <br> <br>
+
+            <h2>인라인 요소(Inline Element)</h2>
+            <p>인라인 요소는 블록 레벨 요소와 달리 줄 바꿈 특성이 없습니다. 즉, 블록 레벨 요소처럼 행이 바뀌지 않고 한 줄로 출력</p> <br>
+            <p class="box">
+                &lt;!DOCTYPE html&gt; <br>
+                &lt;html lang="ko"&gt; <br>
+                &lt;head&gt; <br>
+                &emsp;&emsp; &lt;meta charest="UFT-8"&gt; <br>
+                &emsp;&emsp; &lt;title&gt;인라인 요소&lt;/title&gt; <br>
+                &lt;/head&gt; <br>
+                &lt;body&gt; <br>
+                &emsp;&emsp; &lt;strong&gt;인라인 요소&lt;/strong&gt; <br>
+                &emsp;&emsp; &lt;span&gt;인라인 요소는 한 줄로 출력됩니다.&lt;/span&gt; <br>
+                &lt;/body&gt; <br>
+                &lt;/html&gt; <br>
+            </p>
+            <p>결과 ▽</p>
+            <strong>인라인 요소</strong>
+            <span>인라인 요소는 한 줄로 출력됩니다.</span>
+            <br><br> <p>(예제 ex1-2)에서 마크업 했던 &lt;strong&gt;, &lt;span&gt; 요소들은 인라인 성질을 가지고 있어 행이 바뀌지 않고
+                    한 줄로 출력 된 것을 확인 가능
+                     </p>
+
+            <h2>블록 레벨 요소와 인라인 요소의 특성</h2>
+            <p>마크업을 할 때 블록 레벨 요소와 인라인 요소의 특성을 잘 알고 있어야만 문법적 오류를 방지 훌 수 있습니다.</p> <br>
+            <p>예를 들어 인라인 요소에는 일반적으로 블록 레벨 요소가 자식으로 올 수 없다</p> <br>
+            <p>예저를 통해 확인</p>
+            <p class="box">
+                &lt;!DOCTYPE html&gt; <br>
+                &lt;html lang="ko"&gt; <br>
+                &lt;head&gt; <br>
+                &emsp;&emsp; &lt;meta charest="UFT-8"&gt; <br>
+                &emsp;&emsp; &lt;title&gt;블록 레벨 요소와 인라인 요소&lt;/title&gt; <br>
+                &lt;/head&gt; <br>
+                &lt;body&gt; <br>
+                &emsp;&emsp; &lt;span&gt;&lt;h1&gt;블록 레벨 요소&lt;/h1&gt;&lt;/span&gt; <br>
+                &emsp;&emsp; &lt;span&gt;인라인 요소는 한 줄로 출력됩니다.&lt;/span&gt; <br>
+                &lt;/body&gt; <br>
+                &lt;/html&gt; <br>
+            </p> <br>
+            <p>&lt;span&gt;은 인라인 요소, &lt;h1&gt;은 블록 레벨 요소이다, 즉. 인라인 요소의 자식 요소 블록 레벨 요소를 마크업 했기에 문법 에러 발생</p>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>요소 유형</td>
+                        <td>특징</td>
+                    </tr>
+                    <tr>
+                        <td>블록 레벨 요소</td>
+                        <td>1. 블록 레벨 요소는 줄 바꿈이 일어납니다. <br>
+                            2. 블록 레벨 요소는 텍스트 (문자)와 인라인 요소를 자식 요소로 포함 <br>
+                            3. 블록 레벨 요소중에는 블록 레벨 요소를 자식 요소로 포함 할 수 있는 요소와 포함 할 수 <br>없는 요소가 있다</td>
+                    </tr>
+                    <tr>
+                        <td>인라인 요소</td>
+                        <td>1. 인라인 요소는 줄 바꿈이 일어나지 않는다. <br>
+                            2. 인라인 요소는 텍스트 (문자)와 인라인 요소를 자식 요소로 포함 할 수 없다. <br>
+                            3. 인라인 요소는 블로 레벨 요소를 자식 요소로 포함 할 수 없다.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>HTML5로 넘어오면서 블록 레벨 요소와 인라인 요소는 좀 더 복잡한 콘텐츠 카테고리 (콘텐츠 모델) <br>
+               로 대체 되었습니다. 콘텐츠의 종류와 태그들은 다음과 같습니다.</p> <br>
+            
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="center">콘텐츠 종류</td>
+                        <td class="center">내용</td>
+                        <td class="center">해당 요소</td>
+                    </tr>
+                    <tr>
+                        <td class="center">메타데이터 콘텐츠 <br>Metadata Content</td>
+                        <td><li>&lt;head&gt; 태그 안에 포함되는 요소들로 <br>콘텐츠의 표현, 동작 설정, 문서간 <br>관계를 설정, 정보 전달을 포함하는 <br>요소를 의미합니다.</li></td>
+                        <td>&lt;base&gt;, &lt;link&gt;, &lt;meta&gt;, &lt;noscript&gt;, <br>&lt;script&gt;, &lt;style&gt;, &lt;title&gt;, ...</td>
+                    </tr>
+                    <tr>
+                        <td class="center">플로우 콘텐츠 <br>Flow Content</td>
+                        <td><li>&lt;body&gt; 태그 안에 포함되는 대부분의 <br>요소들로 내용 흐름에 관한 요소를 <br>의미합니다.</td>
+                        <td>&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;, <br>&lt;address&gt; &lt;p&gt;, &lt;a&gt;, &lt;img&gt; &lt;ul&gt;, &lt;ol&gt;, <br>&lt;dl&gt; &lt;table&gt;, &lt;form&gt;, ...</li></td>
+                    </tr>
+                    <tr>
+                        <td class="center">섹션 콘첸츠 <br>Sectioning Cotent</td>
+                        <td><li>heading과 footer의 범위를 정의하는 <br>요소를 의미합니다.</li></td>
+                        <td>&lt;article&gt;, &lt;aside&gt;, &lt;anv&gt;, &lt;section&gt;</td>
+                    </tr>
+                    <tr>
+                        <td class="center">헤딩 콘텐츠 <br>Heading Content</td>
+                        <td><li>섹션의 헤더를 정의하는 요소를  <br>의미합니다.</li></td>
+                        <td>&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;</td>
+                    </tr>
+                    <tr>
+                        <td class="center">프레이징 콘텐츠 <br>Prashing Content</td>
+                        <td><li>텍스트를 마크업하는 요소를 <br>의미합니다.</li></td>
+                        <td>&lt;a&gt;, &lt;em&gt;, &lt;strong&gt;, &lt;sub&gt;, &lt;sup&gt;, &lt;label&gt;, ...</td>
+                    </tr>
+                    <tr>
+                        <td class="center">임베디드 콘텐츠 <br>Embedded Content</td>
+                        <td><li>HTML 문서에 다른 리소스를 삽입 <br>하는 요소를 의미합니다.</li></td>
+                        <td>&lt;img&gt;, &lt;audio&gt;, &lt;video&gt;, &lt;iframe&gt;, ...</td>
+                    </tr>
+                    <tr>
+                        <td class="center">인터랙티브 콘텐츠 <br>Interactive Content</td>
+                        <td><li>사용자의 상호작용 위한 요소를 <br>의미합니다.</li></td>
+                        <td>&lt;a&gt;, &lt;button&gt;, &lt;audio&gt;, &lt;video&gt;, &lt;select&gt;, ...</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>콘텐츠 모델에 관련된 내용들은 https://www.w.3.org.TR/html52/dom.html#content-models에서 더 많은 <br>정보를 볼 수 있습니다.</p>
+        </article>
+    </section>
+</body>
+</html>

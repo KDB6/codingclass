@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouseenterOver</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">mouseenter, mouseover</h2>
+            <p class="t_desc2">이번 시간에는 mouseenter와 mouseover의 차이점을 알아보도록 하겠습니다.</p>
+
+            <hr>
+
+            <h3 class="t_tit2">mouseenter, mouseover란?</h3>
+            <p class="t_desc">
+                mouseenter와 mouseover는 어떤 요소 안으로 마우스가 들어오는 순간을 감지하는 마우스 이벤트이며,<br>
+                mouseenter는 mouseleave와 짝을 이루고, mouseover는 mouseout과 짝을 이룬다.
+            </p>
+
+            <h3 class="t_tit2">mouseenter, mouseover의 차이점</h3>
+            <p class="t_desc">
+                해당 두 이벤트를 비슷하지만 이벤트 전파와 취소 가능성에 큰 차이가 있다.<br>
+                mouseenter는 이벤트가 발생 시 버블링이 일어나지 않아 자기 자신만이 이벤트르 받을 수 있고,<br>
+                mouseover는 이벤트가 발생할 때 버블링이 일어나며 상위 요소로 전파된다.
+            </p>
+            <p class="t_box">
+                mouseover/out : 지정된 태그 요소(혹은 자신)는 물론이며, 자식 요소가 있다면 해당 자식 요소의 영역까지 <i>포함</i>시킨다.<br>
+                mouseenter/leave : 지정된 태그 요소(혹은 자신)의 영역에만 해당되며, 만약 자식 요소가 있다면 해당 자식요소의 영역은 <i>제외</i>시킨다.
+            </p><br>
+
+            <p class="codepen" data-height="280" data-default-tab="result" data-slug-hash="gOzbdXB" data-user="kdb6" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+              <span>See the Pen <a href="https://codepen.io/kdb6/pen/gOzbdXB">
+              mouseenter/over</a> by KDB6 (<a href="https://codepen.io/kdb6">@kdb6</a>)
+              on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        </div>
+    </main>
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        .score {
+            font-family: 'SCoreDream';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+        .blind {
+            position:absolute;
+            clip:rect(0 0 0 0);
+            width:1px;
+            height:1px;
+            margin:-1px;
+            overflow:hidden
+        }
+
+        /* common */
+        .container {
+            width: 960px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 960px;
+        }
+        .section {
+            padding: 10px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* header */
+        .all__header {
+            display: flex;
+        }
+        .logo > img {
+            width: 150px;
+            height: 100px;
+            margin-right: 200px;
+        }
+        .h__menu {
+            margin-top: 35px;
+        }
+        .h__menu ul li {
+            display: inline;
+            padding-left: 30px;
+        }
+
+        /* slider */
+        .slider > img {
+            width: 960px;
+        }
+        .s_img {
+        position: relative;
+        width: 960px;
+        height: 360px;
+        overflow: hidden;
+        }
+        .s_inner {
+            display: flex;
+            flex-wrap: wrap;
+            width: 9600px;
+            height: 360px;
+        }
+        .slider {
+            position: relative;
+            width: 960px;
+            height: 360px;
+        }
+
+        /* banner */
+        .all_banner {
+            width: 960px;
+            height: 200px;
+            display: flex;
+        }
+        .banner01 {
+            width: 465px;
+            height: 200px;
+            border: 1px solid #666;
+        }
+        .b_desc01 {
+            display: flex;
+            padding: 20px;
+        }
+        .b_desc01 > h2 {
+            font-size: 18px;
+            font-weight: 600;
+            padding-right: 10px;
+            border-right: 2px solid #000;
+        }
+        .b_desc01 > h3 {
+            font-size: 18px;
+            margin-left: 10px;
+            font-weight: 600;
+            color: #808080;
+        }
+        .b_desc01 > span {
+            font-size: 16px;
+            padding-top: 5px;
+            margin-left: 120px;
+            font-size: 14px;
+            color: #808080;
+        }
+        .banner__sub {
+            display: flex;
+            margin-top: 4px;
+        }
+        .b_desc02 {
+            width: 232px;
+            height: 134px;
+            padding-left: 20px;
+        }
+        .b_desc02 > p {
+            padding-bottom: 10px;
+            font-size: 14px;
+        }
+        .b_desc03 {
+            width: 232px;
+            height: 134px;
+        }
+        .b_desc03 > p {
+            padding-bottom: 10px;
+            font-size: 14px;
+            text-align: right;
+            padding-right: 20px;
+            color: #808080;
+        }
+        .banner02 > img {
+            width: 465px;
+            height: 200px;
+            margin-left: 30px;
+        }
+        .b_desc01 .icon {
+            width: 15px;
+            height: 15px;
+        }
+
+        /* menu */
+        .all_menu > h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .menu__img {
+            display: flex;
+            justify-content: space-between;
+        }
+        .menu__img01 {
+            width: 220px;
+            height: 220px;
+            vertical-align: top;
+        }
+        .menu__img02 {
+            width: 220px;
+            height: 220px;
+            vertical-align: top;
+        }
+        .menu__img03 {
+            width: 220px;
+            height: 220px;
+            vertical-align: top;
+        }
+        .menu__img04 {
+            width: 220px;
+            height: 220px;
+            vertical-align: top;
+        }
+        .menu__desc{
+            margin-top: 15px;
+            font-size: 14px;
+            display: flex;
+        }
+
+        /* footer */
+        .f_desc01 {
+            font-size: 14px;
+            color: #808080;
+            margin-top: 20px;
+            border-top: 1px solid #b4b4b4;
+            padding-top: 20px;
+        }
+        .f_desc02 {
+            font-size: 14px;
+            color: #808080;
+        }
+        .f_desc03 {
+            font-size: 14px;
+            color: #808080;
+            margin-top: 20px;
+        }
+        .f_h02 {
+            margin-left: 142px;
+        }
+        .f_h03 {
+            margin-left: 152px;
+        }
+        .f_h04 {
+            margin-left: 117px;
+        }
+    </style>
+</head>
+<body>
+    <!-- header -->
+    <section id="headerType" class="header__Wrap score section">
+        <div class="all__header container">
+            <div class="logo">
+                <img src="img/logo.jpg" alt="logo">
+            </div>
+            <div class="h__menu">
+                <ul>
+                    <li><a href="#">즐길거리</a></li>
+                    <li><a href="#">요금/우대혜택</a></li>
+                    <li><a href="#">참여프로그램</a></li>
+                    <li><a href="#">이용가이드</a></li>
+                    <li><a href="#">소통서비스</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- slider -->
+    <section id="sliderType" class="slider__Wrap score section">
+        <div class="container">
+            <div class="s_img">
+                <div class="s_inner">
+                    <div class="slider"><img src="img/slider.jpg" alt="slider"></div>
+                    <div class="slider"><img src="img/slider.jpg" alt="slider"></div>
+                    <div class="slider"><img src="img/slider.jpg" alt="slider"></div>
+                    <div class="slider"><img src="img/slider.jpg" alt="slider"></div>
+                    <div class="slider"><img src="img/slider.jpg" alt="slider"></div>
+                    <div class="slider"><img src="img/slider.jpg" alt="slider"></div>
+                    <div class="slider"><img src="img/slider.jpg" alt="slider"></div>
+                    <div class="slider"><img src="img/slider.jpg" alt="slider"></div>
+                    <div class="slider"><img src="img/slider.jpg" alt="slider"></div>
+                    <div class="slider"><img src="img/slider.jpg" alt="slider"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- banner -->
+    <section id="bannerType" class="banner__Wrap score section">
+        <div class="container">
+            <div class="all_banner">
+                <div class="banner01">
+                    <div class="b_desc01">
+                        <h2>롯데월드 소식</h3>
+                        <h3>뉴스 및 공지</h3>
+                        <span>
+                            더보기
+                            <img src="img/icon.jpg" class="icon" alt="icon">
+                        </span>
+                    </div>
+                    <div class="banner__sub">
+                        <div class="b_desc02">
+                            <p>그럴싸진관 미라클</p>
+                            <p>드림스테이지 '힘내 소중한 너'</p>
+                            <p>'힘내 소중한 너' 음원 발매</p>
+                            <p>이용 요금 조정 안내</p>
+                        </div>
+                        <div class="b_desc03">
+                            <p>2018.11.19</p>
+                            <p>2018.11.20</p>
+                            <p>2018.11.13</p>
+                            <p>2018.11.12</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner02">
+                    <img src="img/banner.jpg" alt="banner">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- menu -->
+    <section id="menuType" class="menu__Wrap score section">
+        <div class="all_menu container">
+            <h2>특별한 경험</h2>
+            <div class="menu__img">
+                <div class="menu__img01"><img src="img/image01.jpg" alt="image01"></div>
+                <div class="menu__img02"><img src="img/image02.jpg" alt="image02"></div>
+                <div class="menu__img03"><img src="img/image03.jpg" alt="image03"></div>
+                <div class="menu__img04"><img src="img/image04.jpg" alt="image04"></div>
+            </div>
+            <div class="menu__desc">
+                <h3 class="f_h01">연간 회원 안내</h3>
+                <h3 class="f_h02">프리미엄투어</h3>
+                <h3 class="f_h03">공연참여 프로그램</h3>
+                <h3 class="f_h04">단체 프로그램</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <section id="footerType" class="footer__Wrap score section">
+        <div class="all_footer container">
+            <div class="f_desc01">
+                <p>서울특별시 송파구 올림픽로 240 호텔롯데 롯데월드  |  대표자 : 박동기</p>
+            </div>
+            <div class="f_desc02">
+                <p>사업자등록번호 : 219-85-00014  |  통신판매업신고번호 : 송파 제 5513호  |  전화 1661-2000</p>
+            </div>
+            <div class="f_desc03">
+                <p>COPYRIGHT 2018 LOTTEWORLD.ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const sliderInner = document.querySelector(".s_inner");
+        const slider = document.querySelectorAll(".slider");
+        let currentIndex = 0;
+
+        sliderInner.style.transition = "all 0.6s";
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slider.length;
+
+            sliderInner.style.transform = "translateX("+ -960 * currentIndex +"px)";
+        },4000)
+    </script>
+</body>
+</html>

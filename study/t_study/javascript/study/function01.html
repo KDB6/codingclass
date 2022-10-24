@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수</title>
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">함수</h2>
+            <p class="t_desc">
+                함수는 프로그램에서 반복적으로 사용되는 기능을 만들어 내기 위한 코드들의 집합
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th class="ce">분류</th>
+                        <th class="ce">종류</th>
+                        <th class="ce">설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">사용자 정의 함수</td>
+                        <td>1. 선언적 함수<br>2. 익명 함수</td>
+                        <td>프로그램에서 필요한 기능을 사용자가<br>직접 정의해서 사용하는 함수</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">내장 함수</td>
+                        <td>1. 안코딩, 디코딩 함수<br>2. 숫자 판별 함수<br>3. 유 무한 값 판별 함수<br>4. 숫자변환 함수<br>5. 문자 변환 함수<br>6. 자바스크립트 코드 변경 함수</td>
+                        <td>프로그램 개발에서 자주 사용되는 기능들을<br>자바스크립트 내부적으로 제공해주는<br>함수입니다.</td>
+                    </tr>
+                </tbody>
+            </table><br>
+
+        <hr>
+
+            <!-- 01 -->
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">선언적 함수</h3>
+                <p class="t_tit3">선언적 함수는 함수를 호출할 때 함수의 앞 또는 뒤에 호출 가능</p><br>
+                <div class="t_code">
+<pre><code class="language-js">    function func(){
+        document.write("함수가 실행되었습니다.1");
+    } 
+    func();
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample01_result">
+                            함수가 실행되었습니다.1
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- 02 -->
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">익명 함수</h3>
+                <p class="t_tit3">익명 함수는 변수에 함수 데이터를 저장하여 마지 변수처럼 사용 가능 (배열을 사용)</p><br>
+                <div class="t_code">
+<pre><code class="language-js">    const func = function(){
+        document.write("함수가 실행되었습니다.2");
+    }
+    func();
+</code></pre>
+                </div>
+
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample02_result">
+                            함수가 실행되었습니다.2
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- 03 -->
+            <div id="sample03" class="sample">
+                <h3 class="t_tit2">매개 변수 함수</h3>
+                <p class="t_tit3">함수를 호출할 때 전달하는 변수를 매개 변수라 부른다.<br>변수의 한 종류인 함수, 선언 생략 가능</p><br>
+                <div class="t_code">
+<pre><code class="language-js">    function func(str){
+        document.write(str);
+    }
+    func("함수가 실행되었습니다.3");
+</code></pre>
+                </div>
+
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample03_result">
+                            함수가 실행되었습니다.3
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- 04 -->
+            <div id="sample04" class="sample">
+                <h3 class="t_tit2">리턴값 함수</h3>
+                <p class="t_tit3">실행값 대신 결과값으로 출력</p><br>
+                <div class="t_code">
+<pre><code class="language-js">    function func(){
+        const str = "함수가 실행되었습니다.4";
+        return str;
+    }
+    document.write(func());
+</code></pre>
+                </div>
+
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample04_result">
+                            함수가 실행되었습니다.4
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <!-- 05 -->
+            <div id="sample05" class="sample">
+                <h3 class="t_tit2">화살표 함수</h3>
+                <p class="t_tit3">선언적 함수를 예시로 들며, 축약형 func 약식으로 사용
+                </p><br>
+                <div class="t_code">
+<pre><code class="language-js">    func = () => {
+        document.write("함수가 실행되었습니다.5");
+    }
+</code></pre>
+                </div>
+
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample05_result">
+                            함수가 실행되었습니다.5
+                        </div>
+                    </details>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <script>
+        // 변수(데이터 저장), 배열(데이터 저장), 객체(데이터 저장) --> 함수(실행문) (제어문)
+        // 01. 선언적 함수
+        // {
+        //     function func(){
+        //         document.write("함수가 실행되었습니다.1<br>");
+        //     }
+        //     func();
+        // }
+        
+        // 02. 익명 함수
+        // {
+        //     const func = function(){
+        //         document.write("함수가 실행되었습니다.2<br>");
+        //     }
+        //     func();
+        // }
+
+        // 03. 매개 변수 함수
+        // {
+        //     function func(str){
+        //         document.write(str);
+        //     }
+        //     func("함수가 실행되었습니다.3<br>");
+        // }
+
+        // 04. 리턴값 함수
+        // {
+        //     function func(){
+        //         const str = "함수가 실행되었습니다.4<br>";
+        //         return str;
+        //     }
+        //     document.write(func());
+        // }
+
+        // ECMAscript1
+        // ECMAscript2
+        // ECMAscript3
+        // ECMAscript4
+        // ECMAscript5
+        // ECMAscript6 (es6) 화살표 함수, let
+
+        // 05. 화살표 함수 (선언적 함수)
+        {
+            // function func(){
+            //     document.write("함수가 실행되었습니다.1<br>");
+            // }
+            // func();
+
+            // func = () => {
+            //     document.write("함수가 실행되었습니다.5<br>");
+            // }
+
+            // func = () => document.write("함수가 실행되었습니다.5<br>");
+            
+            // func();
+        }
+
+        // 01. 선언적 함수
+        // 01. 익명 함수
+        // 01. 매개변수 함수
+        // 01. 리턴값 함수
+        // 01. 화살표 함수(선언적 함수)
+    </script>
+</body>
+</html>

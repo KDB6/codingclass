@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 타입</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">데이터 타입</h2>
+            <p class="t_box">
+                데이터 타입은 변수에 저장되는 데이터 타입 유형<br>
+                Primitive(원시) 데이터 타입과 Object(객체) 데이터 타입으로 나뉜다.
+                Primitive(원시) 데이터 타입은 number, string, boolean, null 등이 있으며, Object(객체) 데이터 타입에는 function, object, arrary 등이 있다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">number(숫자) 데이터</h3>
+            <p class="t_desc">
+                정수, 소수점 , 지수를 표한 가능 
+            </p>
+            <div class="t_box">
+                <i>var num = 10;</i><br>
+                <i>var num2 = 10.5;</i><br>
+                <i>var num3 = 1e+2;</i><br>
+                console.log(num1); // <i>10</i><br>
+                console.log(num2); // <i>10.5</i><br>
+                console.log(num2); // <i>100</i>, 1e+2는 1*10의 2승을 의미
+            </div><br>
+
+            <h3 class="t_tit2">string(문자) 데이터</h3>
+            <p class="t_desc">
+                ''또는""로 표현 가능
+            </p>
+            <div class="t_box">
+                <i>var str1 = '문자';</i><br>
+                <i>var str2 = '문자';</i><br>
+                console.log(str1); // <i>문자</i><br>
+                console.log(str2); // <i>문자</i>
+            </div>
+            <p class="t_desc">
+                문자 안에 문자가 들어갈 경우 다음과 같이 표현
+            </p>
+            <div class="t_box">
+                <i>var str1 = '문자는 "문자"';</i><br>
+                <i>var str2 = '문자는 "문자"';</i><br>
+                console.log(str1); // <i>문자는 "문자"</i><br>
+                console.log(str2); // <i>문자는 '문자'</i>
+            </div><br>
+
+            <h3 class="t_tit2">이스케이프 시퀀스 (Escape Sequence)</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>이스케이프 문자</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">/n</td>
+                        <td class="ce">행 바꿈</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">/t</td>
+                        <td class="ce">탭 문자</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">//</td>
+                        <td class="ce">역슬래시</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">/'</td>
+                        <td class="ce">작은따옴표</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">/"</td>
+                        <td class="ce">큰따옴표</td>
+                    </tr>
+                </tbody>
+            </table><br>
+
+            <h3 class="t_tit2">boolean(논리) 데이터</h3>
+            <p class="t_desc">
+                boolean 데이터는 true(참)와 false(거짓)의 값을 표현
+            </p>
+            <div class="t_box">
+                <i>var temp1 = (5 > 4);</i><br>
+                <i>var temp2 = (5 &lt; 4);</i><br>
+                console.log(temp1); // <i>true</i><br>
+                console.log(temp2); // <i>false</i><br>
+            </div>
+            <p class="t_desc">
+                boolean에서 0값은 false를 의미 0값 이외의 숫자나 문자 값의 true로 의미
+            </p>
+            <div class="t_box">
+                <i>var temp1 = 0;</i> // 0의 boolean은 false를 의미<br>
+                <i>var temp2 = 1;</i> // 0의 boolean은 true를 의미<br>
+                console.log(temp1); // <i>true</i><br>
+                console.log(temp2); // <i>false</i><br>
+            </div>
+            <p>boolean() 명령어는 변수의 값을 false나 true로 변환시켜주는 명령어</p><br>
+
+            <h3 class="t_tit2">undefined 데이터</h3>
+            <p class="t_desc">
+                undefined 데이터는 변수는 선언하였으나 데이터 값을 지정하지 않았을 경우 객체의 속성값을 지정하지 않았을 경우에 자동으로 저장되는 값
+            </p>
+            <div class="t_box">
+                var temp1 = 10;<br>
+                <i>var temp2</i><br>
+                console.log(temp1); // 10<br>
+                console.log(temp2); // <i>undefined</i> → 변수에 데이터 값이 없기 때문에 undefined가 저장됩니다.
+            </div>
+            <div class="t_box">
+                var obj = {};<br>
+                obj.name = '홍길동'<br>
+                <i>obj.age;</i>
+                console.log(obj.name); // 홍길동<br>
+                console.log(obj.age); // <i>undefined</i> → 객체에 속성 값이 없기 때문에 undefined가 저장됩니다.
+            </div><br>
+
+            <h3 class="t_tit2">null 데이터</h3>
+            <p class="t_desc">
+                null 데이터는 undefined와 유사하지만 변수를 빈(empty) 상태(초기화)로 만들거나, 데이터르르 저장하였느나 값이 존재하지 않을 때 null값을 반환
+            </p>
+            <div class="t_box">
+                var obj = 10;<br>
+                <i>obj = null;</i><br>
+                console.log(obj); // <i>null</i>, 변수를 빈(empty) 상태로 만듭니다.<br>
+                <i>var obj = document.getElementByld('gnd')</i><br>
+                console.log(obj); // 변수에 데이터 값을 저장은 하였으나 값이 존재하지 않을 경우 null을 저장합니다.
+            </div>
+            <p class="t_desc">undefined와 null은 boolean은 false이다.</p>
+            <div class="t_box">
+                var obj1; // undefined<br>
+                var obj2 = null; // null<br>
+                console.log(<i>Boolean(obj1)</i>); // <i>false</i><br>
+                console.log(<i>Boolean(obj2)</i>); // <i>false</i>
+            </div><br>
+
+            <h3 class="t_tit2">typeof 명령</h3>
+            <p class="t_desc">
+                변수에 저장 되어 있는 데이터의 타입을 알아보려면 typeof명령을 사용
+            </p>
+            <div class="t_box">
+                var num = 10;<br>
+                var str = '문자';</i><br>
+                console.log(<i>typeof</i> num); // number<br>
+                console.log(<i>typeof</i> str); // str
+            </div>
+        </div>    
+    </main>
+
+    
+
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+
+    <!-- //footer -->
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

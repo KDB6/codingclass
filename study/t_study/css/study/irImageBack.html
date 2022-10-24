@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IR / 이미지 스프라이트 / 백그라운드</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">IR / 이미지 스프라이트 / 백그라운드</h2>
+            <p class="t_desc">
+                이번 시간은 IR / 이미지 스프라이트 / 백그라운드에 대해 알아 보겠습니다.
+            </p>
+
+            <hr>
+
+            <h2 class="t_tit2">IR</h2>
+            <p class="t_desc">
+                IR 기법은 이미지 대체 텍스트를 제공하기 위한 CSS 기법으로 다양한 CSS기법을 사용하여 이미지 대체 텍스트를 제공할 수 있다.
+            </p>
+            <p class="t_box">
+                <i>ir 적용 방법</i><br>
+                .ir {<br>
+                    &ensp;&ensp;&nbsp;display: block;<br>
+                    &ensp;&ensp;&nbsp;overflow: hidden;<br>
+                    &ensp;&ensp;&nbsp;font-size: 0;<br>
+                    &ensp;&ensp;&nbsp;line-height: 0;<br>
+                    &ensp;&ensp;&nbsp;text-indent: -9999px;<br>
+                }
+            </p>
+
+            <h2 class="t_tit2">이미지 스프라이트</h2>
+            <p class="t_desc2">
+                이미지 스프라이트 기법이란 여러개의 이미지를 따로 두고 코딩하는게 아닌 하나의 파일에 모아서 코딩하는 방식이다.
+            </p>
+            <p class="t_desc">
+                예시를 보여드리도록 하겠습니다.<br>
+                기본적인 구조는 아이콘 구역 별로 50px 구역을 주었습니다. svg 파일을 사용합니다.
+            </p>
+            <iframe width="800" height="300" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FoLRt8dyA3nlh2tlGzhrd3y%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D1108%253A1643" allowfullscreen></iframe>
+            <h2 class="t_tit2">사용 방법</h2>
+            <p class="t_desc">먼저 a태그 안에 구조를 잡아준 뒤 위에서 설명드린 ir를 적용해줍니다</p>
+            <p class="t_box">
+                <i>HTML</i><br>
+                &lt;div class="image__sns"><br>
+                &ensp;&ensp;&lt;a href="#" class="link">&lt;span class="ir">icon&lt;/span>&lt;/a><br>
+                &ensp;&ensp;&lt;a href="#" class="link">&lt;span class="ir">icon&lt;/span>&lt;/a><br>
+                &ensp;&ensp;&lt;a href="#" class="link">&lt;span class="ir">icon&lt;/span>&lt;/a><br>
+                &ensp;&ensp;&lt;a href="#" class="link">&lt;span class="ir">icon&lt;/span>&lt;/a><br>
+                &ensp;&ensp;&lt;a href="#" class="link">&lt;span class="ir">icon&lt;/span>&lt;/a><br>
+                &lt;/div>
+            </p><br>
+            <p class="t_desc">CSS 구조는 svg를 url로 적용을 해준뒤 nth-child()를 사용하여 각각의 위치 값을 잡아줍니다.</p>
+            <p class="t_box">
+                <i>CSS</i><br>
+                .image__sns a {<br>
+                    &ensp;&ensp;&nbsp;width: 36px;<br>
+                    &ensp;&ensp;&nbsp;height: 36px;<br>
+                    &ensp;&ensp;&nbsp;background: #fff;<br>
+                    &ensp;&ensp;&nbsp;border-radius: 50%;<br>
+                    &ensp;&ensp;&nbsp;display: block;<br>
+                    &ensp;&ensp;&nbsp;margin-bottom: 5px;<br>
+                    &ensp;&ensp;&nbsp;background: url(img/image_bg03_icon.svg) no-repeat;<br>
+                }<br>
+                .image__sns a:nth-child(1) {}<br>
+                .image__sns a:nth-child(2) {<br>
+                    &ensp;&ensp;&nbsp;background-position: -50px 0;<br>
+                }<br>
+                .image__sns a:nth-child(3) {<br>
+                    &ensp;&ensp;&nbsp;background-position: -100px 0;<br>
+                }<br>
+                .image__sns a:nth-child(4) {<br>
+                    &ensp;&ensp;&nbsp;background-position: -150px 0;<br>
+                }<br>
+                .image__sns a:nth-child(5) {<br>
+                    &ensp;&ensp;&nbsp;background-position: -200px 0;<br>
+                }<br>
+                .image:hover .image__sns {<br>
+                    &ensp;&ensp;&nbsp;right: 10px;<br>
+                }
+            </p>
+        </div>
+    </main>
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+</body>
+</html>

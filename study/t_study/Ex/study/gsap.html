@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gsap</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">GSAP</h2>
+            <p class="t_desc2">
+                GSAP란, GrennSock에서 만든 자바스크립트 <i>애니메이션</i> 라이브러리입니다.<br>
+                일반적으로 애니메이션 효과는 CSS로 처리하거나 제이쿼리(JQuery) 사용으로 구현하는 것이 일반적이지만,
+                GSAP 위 두 개에 비해 사용하기 편하며 퍼포먼스도 좋습니다.
+            </p>
+
+            <h3 class="t_tit2">사용 방법</h3>
+            <p class="t_desc">사용 방법은 GASP에서 gsap.min.js를 가져와서 사용할 수 있습니다.</p>
+            <p class="t_box">&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js">&lt;/script></p>
+
+            <div class="t_code">
+<pre><code class="language-js">    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js">&lt;/script>
+    &lt;script>
+        const slider = document.querySelectorAll(".slider");
+        
+        let currentIndex = 0;
+        
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slider.length;
+    
+            gsap.to(".slider__inner", {
+                duration : 0.6,
+                x: -800 * currentIndex
+            })
+        },1500);
+    &lt;/script>
+</code></pre>
+            </div>
+            <h3 class="t_tit2">결과물</h3>
+            <p class="t_desc">GASP를 이용해 슬라이드 애니메이션을 만든 결과물입니다.</p>
+            <div class="t_iframe" style="min-height: 920px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/javascript/effect/sliderEffect02.html" frameborder="0"></iframe>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

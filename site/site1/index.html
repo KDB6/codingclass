@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 01</title>
+
+    <!-- SEO -->
+    <meta name="author" content="kimdabin">
+    <meta name="description" content="사이트 만들기 튜토리얼입니다">
+    <meta name="keyword" content="사이트, 만들기, 튜토리얼, 김다빈">
+    <meta name="robots" content="all">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+
+    <!-- CSS(섹션별) -->
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/image.css">
+    <link rel="stylesheet" href="assets/css/imgText.css">
+    <link rel="stylesheet" href="assets/css/card.css">
+    <link rel="stylesheet" href="assets/css/banner.css">
+    <link rel="stylesheet" href="assets/css/text.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+
+    <!-- SWIPER -->
+    <link rel="stylesheet" href="assets/css/swiper.css">
+</head>
+<body>
+    <div id="skip">
+        <a href="#">헤더 영역 바로가기</a>
+        <a href="#">슬라이드 영역 바로가기</a>
+        <a href="#">이미지 영역 바로가기</a>
+        <a href="#">이미지/텍스트 영역 바로가기</a>
+        <a href="#">카드 영역 바로가기</a>
+        <a href="#">배너 영역 바로가기</a>
+        <a href="#">텍스트 영역 바로가기</a>
+        <a href="#">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <section id="headerType" class="header__wrap nexon scroll">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="#">Pottery<em></em></a>
+            </div>
+            <div class="header__menu overlay">
+                <ul>
+                    <li class="active"><a href="#headerType">Header</a></li>
+                    <li><a href="#sliderType">22AW Lookbook</a></li>
+                    <li><a href="#imgTextType">NEW ARRIVALS</a></li>
+                    <li><a href="#cardType">HQ Service</a></li>
+                    <li><a href="#bannerType">Pottery</a></li>
+                </ul>
+            </div>
+            <div class="header__member">
+                <a href="#">Login</a>
+            </div>
+            <div class="header__ham">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+    <!-- //header -->
+
+    <main id="mainType">
+    
+        <section id="sliderType" class="slider__wrap nexon content">
+            <h2 class="blind">슬라이드 영역</h2>
+            <div class="slider__inner">
+                <!-- <div class="slider">
+                    <div class="slider__img">
+                        <div class="desc">
+                            <span>Brand</span>
+                            <h3>22AW Lookbook</h3>
+                            <p>
+                                포터리는 현대사회에 알맞는 유니폼을 제안하고자 합니다.
+                            </p>
+                            <div class="btn">
+                                <a href="#">Read more</a>
+                                <a href="#" class="black">Site</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__arrow">
+                        <a href="#" class="left"><span class="ir">이전 이미지</span></a>
+                        <a href="#" class="right"><span class="ir">다음 이미지</span></a>
+                    </div>
+                    <div class="slider__dot">
+                        <a href="#" class="dot active"><span class="ir">1</span></a>
+                        <a href="#" class="dot"><span class="ir">2</span></a>
+                        <a href="#" class="dot"><span class="ir">3</span></a>
+                        <a href="#" class="play"><span class="ir">플레이</span></a>
+                        <a href="#" class="stop"><span class="ir">정지</span></a>
+                    </div>
+                </div> -->
+            
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>Brand</span>
+                                <h3>22AW Lookbook</h3>
+                                <p>
+                                    포터리는 현대사회에 알맞는 유니폼을 제안하고자 합니다.
+                                </p>
+                                <div class="btn">
+                                    <a href="#">Read more</a>
+                                    <a href="#" class="black">Site</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>Brand</span>
+                                <h3>22AW Lookbook</h3>
+                                <p>
+                                    포터리는 현대사회에 알맞는 유니폼을 제안하고자 합니다.
+                                </p>
+                                <div class="btn">
+                                    <a href="#">Read more</a>
+                                    <a href="#" class="black">Site</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="desc">
+                                <span>Brand</span>
+                                <h3>22AW Lookbook</h3>
+                                <p>
+                                    포터리는 현대사회에 알맞는 유니폼을 제안하고자 합니다.
+                                </p>
+                                <div class="btn">
+                                    <a href="#">Read more</a>
+                                    <a href="#" class="black">Site</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button">
+                        <div class="swiper-button-play"><span class="ir">play</span></div>
+                        <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+        <!-- //slider -->
+
+        <section id="imageType" class="image__wrap nexon section content">
+            <h2>POTTERY</h2>
+            <p>포터리는 좋은 옷을 통해 삶을 더 좋게 빚어 나갑니다.</p>
+            <div class="image__inner container">
+                <article class="image img1">
+                    <h3 class="image__title">우리의 목적</h3>
+                    <p class="image__desc">포터리는 현대사회에 알맞는 유니폼을 제안하고자 합니다. 과거의 유니폼은 한 집단에 소속된 특징을 보여주는 옷이었다면, 현대의 유니폼은 개개인의 라이프스타일 또한 대변할 수 있는 옷이 되었습니다.</p>
+                    <a class="image__btn" href="/" title="자세히 보기">Read more</a>
+                </article>
+                <article class="image img2">
+                    <h3 class="image__title">우리의 미션</h3>
+                    <p class="image__desc">
+                        COMPANY<br>
+                        포터리는 다양한 직군을 관찰하고 그들의 문화와 환경에 맞는 소속감과 통일성이 있는 유니폼을 제공하는 서비스를 진행합니다.
+                    </p>
+                    <a class="image__btn yellow" href="/" title="자세히 보기">Read more</a>
+                </article>
+            </div>
+        </section>
+        <!-- //image -->
+
+        <section id="imgTextType" class="imgText__wrap nexon section content">
+            <h2 class="blind">NEW ARRIVALS</h2>
+            <div class="imgText__inner container">
+                <div class="imgText__txt">
+                    <span>NEW ARRIVALS</span>
+                    <h3>NEW ARRIVALS</h3>
+                    <p>새로움의 시작</p>
+                    <ul>
+                        <li><a href="#">All</a></li>
+                        <li><a href="#">Shirt</a></li>
+                        <li><a href="#">Knit</a></li>
+                        <li><a href="#">T-Shirt</a></li>
+                        <li><a href="#">Jacket</a></li>
+                        <li><a href="#">Pants</a></li>
+                    </ul>
+                </div>
+                <div class="imgText__img img1">
+                    <a href="#">NEW ARRIVALS</a>
+                </div>
+                <div class="imgText__img img2">
+                    <a href="#" class="blue">BEST</a>
+                </div>
+            </div>
+        </section>
+        <!-- //imgText -->
+
+        <section id="cardType" class="card__wrap nexon section content">
+            <h2>HQ Service</h2>
+            <p>Headquarter, Center of POTTERY</p>
+            <div class="card__inner container">
+                <article class="card">
+                    <figure class="card__header">
+                        <img src="assets/img/card_bg01_01.jpg" alt="포터리">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">COMPANY</h3>
+                        <p class="desc">
+                            포터리는 다양한 직군을 관찰하고 그들의 문화와 환경에 맞는 소속감과 통일성이 있는 유니폼을 제공하는 서비스를 진행합니다.
+                        </p>
+                        <a class="btn" href="/">
+                            Read more
+                            <span aria-hidden="true">
+                                <svg width="66" height="8" viewBox="0 0 66 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 3.5C0.723858 3.5 0.5 3.72386 0.5 4C0.5 4.27614 0.723858 4.5 1 4.5L1 3.5ZM65.3536 4.35356C65.5488 4.1583 65.5488 3.84171 65.3536 3.64645L62.1716 0.464471C61.9763 0.269209 61.6597 0.269209 61.4645 0.464471C61.2692 0.659734 61.2692 0.976316 61.4645 1.17158L64.2929 4.00001L61.4645 6.82843C61.2692 7.02369 61.2692 7.34028 61.4645 7.53554C61.6597 7.7308 61.9763 7.7308 62.1716 7.53554L65.3536 4.35356ZM1 4.5L65 4.50001L65 3.50001L1 3.5L1 4.5Z" fill="black"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <figure class="card__header">
+                        <img src="assets/img/card_bg01_02.jpg" alt="TPO">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">HQ</h3>
+                        <p class="desc">
+                            헤드 오피스는 포터리 고유의 문화를 지향하는 사람들의 모임입니다.
+                            창의적이고 생산적인 활동을 통해 영감을 주는 이들을 위해 한정적인 아이템 서비스를 진행합니다.
+                        </p>
+                        <a class="btn" href="/">
+                            Read more
+                            <span aria-hidden="true">
+                                <svg width="66" height="8" viewBox="0 0 66 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 3.5C0.723858 3.5 0.5 3.72386 0.5 4C0.5 4.27614 0.723858 4.5 1 4.5L1 3.5ZM65.3536 4.35356C65.5488 4.1583 65.5488 3.84171 65.3536 3.64645L62.1716 0.464471C61.9763 0.269209 61.6597 0.269209 61.4645 0.464471C61.2692 0.659734 61.2692 0.976316 61.4645 1.17158L64.2929 4.00001L61.4645 6.82843C61.2692 7.02369 61.2692 7.34028 61.4645 7.53554C61.6597 7.7308 61.9763 7.7308 62.1716 7.53554L65.3536 4.35356ZM1 4.5L65 4.50001L65 3.50001L1 3.5L1 4.5Z" fill="black"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <figure class="card__header">
+                        <img src="assets/img/card_bg01_03.jpg" alt="원단">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">SHARE OFFICE</h3>
+                        <p class="desc">
+                            오피스 문화의 개선을 주도하는 포터리의 공유 오피스 프로그램입니다.
+                            창의적이고 생산적인 활동을 주도하는 이들의 커뮤니케이션과, 작업 환경의 주요 공간으로 활용됩니다.
+                        </p>
+                        <a class="btn" href="/">
+                            Read more
+                            <span aria-hidden="true">
+                                <svg width="66" height="8" viewBox="0 0 66 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 3.5C0.723858 3.5 0.5 3.72386 0.5 4C0.5 4.27614 0.723858 4.5 1 4.5L1 3.5ZM65.3536 4.35356C65.5488 4.1583 65.5488 3.84171 65.3536 3.64645L62.1716 0.464471C61.9763 0.269209 61.6597 0.269209 61.4645 0.464471C61.2692 0.659734 61.2692 0.976316 61.4645 1.17158L64.2929 4.00001L61.4645 6.82843C61.2692 7.02369 61.2692 7.34028 61.4645 7.53554C61.6597 7.7308 61.9763 7.7308 62.1716 7.53554L65.3536 4.35356ZM1 4.5L65 4.50001L65 3.50001L1 3.5L1 4.5Z" fill="black"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- //card -->
+
+        <section id="bannerType" class="banner__wrap nexon content">
+            <h2 class="blind">배너 영역</h2>
+            <div class="banner__inner">
+                <h3 class="title">Pottery</h3>
+                <p class="desc">
+                    저희는 비즈니스 캐주얼을 지향하고 있으며,<br>
+                    언제 어디서든 편안한 룩을 지향합니다.
+                </p>
+                <span class="small">Read more</span>
+            </div>
+        </section>
+        <!-- //banner -->
+
+        <section id="textType" class="text__warp nexon section content">
+            <span></span>
+            <h2 class="mb70">POTTERY</h2>
+            <div class="text__inner container">
+                <div class="text t1">
+                    <h3 class="text__title">"섬세한"</h3>
+                    <p class="text__desc">옷의 쓰임새에 알맞게 제작된 제품들은 높은 신뢰성과 내구성을 보입니다. 옷을 입는 상황에서의 편리함, 그리고 옷을 입지 않았을 때의 외양, 소재의 성능 등 세부적인 제작 요소들을 제어하고 제품의 완결성을 높입니다.</p>
+                    <a class="text__btn" href="/">Read more</a>
+                </div>
+                <div class="text t2">
+                    <h3 class="text__title">"드러내지 않는"</h3>
+                    <p class="text__desc">우리의 제품과 브랜드는 고객에게 본질의 형태로 자연스럽게 인식되는 것을 목표로 합니다. 외양에서 드러나는 표식과 불필요한 디테일들을 제거하고, 오랫동안 호흡하며 알 수 있는 옷의 힘에 집중합니다. 드러내지 않는 디테일과 브랜드 라벨링은 옷이 보여줄 수 있는 힘을 더 강조합니다.</p>
+                    <a class="text__btn" href="/">Read more</a>
+                </div>
+                <div class="text t3">
+                    <h3 class="text__title">"기준이 되는"</h3>
+                    <p class="text__desc">우리의 제품은 현대 사회의 표준이 될 수 있는 유니폼의 시작으로부터 만들어집니다. 모호함과 복잡함의 연속이 되는 시대에, 하나의 완성도 높은 제품을 선보임으로써 기준이 되고자 합니다. 간결함을 바탕으로, 우리가 추구하는 ‘기준이 되는 옷’을 만드는 데는 퀄리티 높은 소재와 철저한 공정이 개입됩니다.</p>
+                    <a class="text__btn" href="/">Read more</a>
+                </div>
+                <div class="text t4">
+                    <h3 class="text__title">"정돈된 편안함"</h3>
+                    <p class="text__desc">우리는 일련의 과정을 통해, 포터리가 생각하는 정돈된 실루엣의 완성을 목표로 합니다. 의류의 가장 기초가 되는 ‘소재’를 바탕으로 하여, 우리가 추구하는 정돈된 실루엣의 형태로 옷을 완성합니다. 정돈된 것들은 우리에게 편안함을 줍니다.</p>
+                    <a class="text__btn" href="/">Read more</a>
+                </div>
+                <div class="text t5">
+                    <h3 class="text__title">"절제된 위트"</h3>
+                    <p class="text__desc">우리는 포터리만의 ‘해학’을 가지고, 절제된 언어로 말을 건넵니다. 문장의 말미에 걸쳐 있는 재미의 반전 요소처럼, 브랜드 곳곳에 담겨 있는 재치 있는 디테일들은 포터리가 추구하는 절제된 위트를 규정합니다. 포터리가 만들어낸 옷들의 반듯하고 절제된 이미지 속에서, 우리는 각각의 요소와 소재를 비틀어 개개인에게 여유와 재미를 전달합니다.</p>
+                    <a class="text__btn" href="/">Read more</a>
+                </div>
+                <div class="text t6">
+                    <h3 class="text__title">"엄격한 기준"</h3>
+                    <p class="text__desc">우리에게 옷은 경험하지 못한 이상적인 세계를 엮어주는 하나의 통로입니다. 최상의 경험을 위해서는 기존에 겪지 못했던 최상의 소재를 선별해내야 합니다. 그리고 엄격한 감독을 통해 만들어내는 과정에 밀착하여 완결성을 높여야 합니다. 포터리의 옷들이 만들어지는 과정부터 고객에게 전달되는 그 순간까지, 우리는 이를 하나의 긴 여정으로 보고, 엄격한 기준으로 접근합니다.</p>
+                    <a class="text__btn" href="/">Read more</a>
+                </div>
+            </div>
+        </section>
+        <!-- //text -->
+
+    </main>
+    <!-- //main -->
+
+    <section id="footerType" class="footer__wrap nexon section gray content">
+        <h2 class="blind">푸터 영역</h2>
+        <div class="footer__inner container">
+            <div class="footer__menu">
+                <div>
+                    <h3>POTTERY</h3>
+                    <!-- <ul>
+                        <li><a href="#">웹표준 사이트</a></li>
+                        <li><a href="#">반응형 사이트</a></li>
+                        <li><a href="#">패럴랙스 사이트</a></li>
+                        <li><a href="#">포트폴리오 사이트</a></li>
+                    </ul> -->
+                </div>
+                <div>
+                    <h3>Header</h3>
+                    <!-- <ul>
+                        <li><a href="#">메뉴 유형01</a></li>
+                        <li><a href="#">메뉴 유형02</a></li>
+                    </ul> -->
+                </div>
+                <div>
+                    <h3>22AW Lookbook</h3>
+                    <!-- <ul>
+                        <li><a href="#">슬라이드 유형01</a></li>
+                        <li><a href="#">슬라이드 유형02</a></li>
+                    </ul> -->
+                </div>
+                <div>
+                    <h3>NEW ARRIVALS</h3>
+                    <!-- <ul>
+                        <li><a href="#">이미지 유형01</a></li>
+                        <li><a href="#">이미지 유형02</a></li>
+                        <li><a href="#">이미지/텍스트 유형01</a></li>
+                        <li><a href="#">이미지/텍스트 유형02</a></li>
+                        <li><a href="#">텍스트 유형01</a></li>
+                    </ul> -->
+                </div>
+                <div>
+                    <h3>HQ Service</h3>
+                    <!-- <ul>
+                        <li><a href="#">카드 유형01</a></li>
+                        <li><a href="#">카드 유형02</a></li>
+                        <li><a href="#">카드 유형03</a></li>
+                    </ul> -->
+                </div>
+                <div>
+                    <h3>Pottery</h3>
+                    <!-- <ul>
+                        <li><a href="#">푸터 메뉴 유형01</a></li>
+                        <li><a href="#">푸터 컨택트 유형02</a></li>
+                        <li><a href="#">푸터 이메일 유형03</a></li>
+                    </ul> -->
+                </div>
+            </div>
+            <div class="footer__right">
+                2022 Pottery.<br>
+                All rights reserved.
+            </div>
+        </div>
+    </section>
+    <!-- //footer -->
+
+    <script src="assets/js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+            },
+        });
+
+        const btnStop = document.querySelector(".swiper-button-stop");
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnHam = document.querySelector(".header__ham");
+        const btnMenu = document.querySelector(".header__menu")
+
+        btnStart.style.display = "none";
+        
+        btnStop.addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+        });
+        btnStart.addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStop.style.display = "block";
+            btnStart.style.display = "none";
+        });
+
+        btnHam.addEventListener("click", () => {
+            document.body.classList.toggle("fixed");
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("active");
+        });
+
+        // btnMenuList.forEach((list) => {
+        //     list.addEventListener("click", () => {
+        //         document.body.classList.remove("fixed");
+        //         btnMenu.classList.remove("active");;
+        //         btnHam.classList.remove("active");
+        //     });
+        // });
+
+        window.addEventListener("resize", () => {
+            let width = window.innerWidth();
+            if(width > 1300) {
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");;
+                btnHam.classList.remove("active");
+            }
+        });
+    </script>
+
+    <script>
+        // window.addEventListener("scroll", () => {
+        //     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+        //     // forEach
+        //     document.querySelectorAll("section").forEach((element, index) => {
+        //         if(scrollTop >= element.offsetTop -2) {
+        //             document.querySelectorAll(".header__menu ul li").forEach(li => {
+        //                 li.classList.remove("active");
+        //             });
+        //             document.querySelector(".header__menu ul li:nth-child("+(index+1)+")").classList.add("active");
+        //         }
+        //     });
+        // });
+
+        document.querySelectorAll("#headerType ul li a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            })
+        })
+    </script>
+</body>
+</html>

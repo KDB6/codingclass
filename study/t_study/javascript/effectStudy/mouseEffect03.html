@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트 03</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">마우스 이펙트 : 조명 효과</h2>
+            <p class="t_desc2">
+                이번에는 마우스에 조명 효과를 넣은 이펙트를 코딩해봤습니다.
+            </p>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc2">
+                HTML 코드는 딱히 어려운 건 없습니다.<br>
+                각 CSS로 이용할 클래스 이름 지정과 스크립트에 이용할 클래스 이름<i>mouse__cursor</i> 미리 지정해둡니다.<br>
+                명언은..여러분이 평소에 가진 가치관을 기준으로...?
+            </p>
+            <details>
+                <summary>HTML CODE</summary>
+            <div class="t_code">
+<pre><code class="language.js">&lt;main id="main">
+    &lt;section id="mouseType">
+        &lt;div class="mouse__cursor">&lt;/div>
+        &lt;div class="mouse__wrap">
+            &lt;p>&lt;span class="style1">Justice&lt;/span> without &lt;span class="style2">power&lt;/span> is &lt;span class="style3">incompetence.&lt;/span>&lt;/p>
+            &lt;p>&lt;span class="style4">힘&lt;/span> 없는 &lt;span class="style5">정의&lt;/span>는 &lt;span class="style6">무능&lt;/span>이다.&lt;/p>
+        &lt;/div>
+    &lt;/section>
+&lt;/main>
+</code></pre>
+            </div>
+            </details>
+
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc2">
+                이번 CSS 코드는 언제나 전과 같이 원하는 디자인으로 구성했고, 기본적인 반응형도 해주었습니다.<br>
+            </p>
+            <details>
+                <summary>CSS CODE</summary>
+            <div class="t_code">
+<pre><code class="language.js">/* mouseType */
+.mouse__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    overflow: hidden;
+    flex-direction: column;
+    cursor: none;
+}
+.mouse__wrap p {
+    font-size: 2vw;
+    line-height: 2;
+    font-weight: 300;
+}
+.mouse__wrap p:last-child {
+    font-size: 3vw;
+    font-weight: 300;
+}
+.mouse__wrap p span {
+        border-bottom: 0.15vw dashed #666;
+        color: #b0aaff;
+    }
+@media(max-width: 800px) {
+    .mouse__wrap p {
+        padding: 0 20px;
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .mouse__wrap p:last-child {
+        font-size: 40px;
+        line-height: 1.2;
+        text-align: center;
+        word-break: keep-all;
+    }
+}
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+    background-image: url(../assets/img/slide04.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    border: 5px solid #fff;
+}
+</code></pre>
+            </div>
+        </details><br>
+
+        <p class="t_desc2">
+            저번 마우스 이펙트와는 다르게 스크롤이 생기는 걸 방지해주기 위해 <i>background-attachment: fixed;</i> 사용해서 <i>고정</i>했습니다.<br>
+            그리고 이미지를 덮어씌우는 형태로 하기 때문에 위치값을 지정하기 위해 <i>background-position: center center;</i>를 사용해줬습니다.<br>
+            해당 css의 뜻은 <i>백그라운드</i>의 위치를 <i>정가운데</i>에 고정한다는 의미입니다.
+        </p>
+        <details>
+            <summary>CSS CODE</summary>
+        <div class="t_code">
+<pre><code class="language.js">.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+    background-image: url(../assets/img/slide04.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    border: 5px solid #fff;
+}
+</code></pre>
+        </div>
+    </details>
+
+            <h3 class="t_tit2">SCRIPT</h3>
+            <p class="t_desc2">
+                스크립트는 언제나 비슷한 형태이지만, 계속해서 새로운 걸 추가했습니다.<br><br>
+
+                1. 우선 첫 번째는 <i>mouse__cursor</i>를 요소로써 선택자로 잡아줍니다.<br>
+                2. cursor 요소에 움직일 때마다 전체적인 크기와 위치를 알 수 있는 <i>getBoundingClientRect</i>메서드를 사용해주어 또 다른 circle 요소를 잡아줍니다.<br>
+                3. css가 적용된 cursor의 요소를 움직여 주기 위해 <i>gsap</i>를 사용해줍니다.<br>
+                4. 마우스의 움직임을 추가하기 위해서 이벤트 메서드인 <i>addEventListener("mousemove")</i>를 사용해줍니다.<br>
+                5. 마우스 커서에 좌표 값을 중앙으로 옮겨주기 위해 2번에서 확인한 좌표 값인 circle을 각각 width와 width을 /2로 나눠줍니다.
+            </p>
+            <details>
+                <summary>SCRIPT CODE</summary>
+            <div class="t_code">
+<pre><code class="language-js">const cursor = document.querySelector(".mouse__cursor");
+
+// const circleW = cursor.offsetWidth;    // 200
+// const circleH = cursor.offsetHeight;   // 200
+// const circle1 = cursor.clientWidth;    // 190 : 보더 값 제외
+
+const circle = cursor.getBoundingClientRect();
+console.log(circle);
+    // const DOMRect = {
+    //     x: 0,
+    //     y: 0,
+    //     bottom: 200,
+    //     height: 200,
+    //     left: 0,
+    //     right: 200,
+    //     top: 0,
+    //     width: 200
+    // }
+
+window.addEventListener("mousemove", (e) => {
+    gsap.to(cursor, {
+        duration: 0.5,
+        left: e.pageX - circle.width/2,
+        top: e.pageY - circle.width/2
+    });
+});
+</code></pre>
+            </div>
+            </details>
+
+            <div class="t_link">
+                <a href="https://github.com/KDB6/ck/blob/main/javascript/effect/mouseEffect03.html" target="_blank">CODE GO</a>
+            </div>
+
+            <br><br>
+
+            <h3 class="t_tit2">결과물</h3>
+            <div class="t_iframe" style="min-height: 920px; padding-top: 0;">
+                <iframe src="https://kdb6.github.io/ck/javascript/effect/mouseEffect03.html" frameborder="0"></iframe>
+            </div>
+    
+            <div class="t_link">
+                <a href="https://kdb6.github.io/ck/javascript/effect/mouseEffect03.html" target="_blank">SITE GO</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:ipkg7210@gmail.com">ipkg7210@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

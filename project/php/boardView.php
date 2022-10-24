@@ -189,6 +189,39 @@
     <section id="boardComment" class="container">
         <h2 class="comment__h2">COMMENT</h2>
         <!-- 댓글 -->
+        <div id="boardViewComment">
+            <div class="comment__top">
+                <div class="comment__write">
+                    <div class="comment__write__msg">
+                        <label for="commentWrite" style="display: none;">댓글 쓰기</label>
+                        <input type="text" id="commentWrite" name="commentWrite" placeholder="좋은 댓글 부탁드려요!" required>
+                    </div>
+                    <div class="comment__write__info">
+                        <label for="commentName" class="blind">이름</label>
+                        <input type="text" id="commentName" name="commentName" placeholder="이름" required>
+                        <label for="commentPass" style="display: none;">비밀번호</label>
+                        <input type="text" id="commentPass" id="commentPass" placeholder="비밀번호" required>
+                        <button type="submit" id="commentBtn">댓글 쓰기</button>
+                    </div>
+                </div>
+            </div>
+            <div class="comment__bottom">
+                <div class="comment__delete" style="display: none;">
+                    <label for="commentDeletePass" style="display: none;">비밀번호</label>
+                    <input type="text" id="commentDeletePass" name="commentDeletePass" placeholder="비밀번호" required>
+                    <button id="commentDeleteCancel">취소</button>
+                    <button id="commentDeleteButton">삭제</button>
+                </div>
+                <div class="comment__modify" style="display: none;">
+                    <label for="commentModifyMsg" style="display: none;">수정 내용</label>
+                    <input type="text" id="commentModifyMsg" name="commentModifyMsg" placeholder="수정 내용" required>
+                    <label for="commentModifyMsg" style="display: none;">비밀번호</label>
+                    <input type="text" id="commentModifyPass" name="commentModifyPass" placeholder="비밀번호" required>
+                    <button id="commentModifyCancel">취소</button>
+                    <button id="commentModifyButton">수정</button>
+                </div>
+            </div>
+        </div>
         <table>
             <tbody>
                 <?php
@@ -242,39 +275,6 @@
                 </tr> -->
             </tbody>
         </table>
-        <div id="boardViewComment">
-            <div class="comment__top">
-                <div class="comment__write">
-                    <div class="comment__write__msg">
-                        <label for="commentWrite" style="display: none;">댓글 쓰기</label>
-                        <input type="text" id="commentWrite" name="commentWrite" placeholder="좋은 댓글 부탁드려요!" required>
-                    </div>
-                    <div class="comment__write__info">
-                        <label for="commentName" class="blind">이름</label>
-                        <input type="text" id="commentName" name="commentName" placeholder="이름" required>
-                        <label for="commentPass" style="display: none;">비밀번호</label>
-                        <input type="text" id="commentPass" id="commentPass" placeholder="비밀번호" required>
-                        <button type="submit" id="commentBtn">댓글 쓰기</button>
-                    </div>
-                </div>
-            </div>
-            <div class="comment__bottom">
-                <div class="comment__delete" style="display: none;">
-                    <label for="commentDeletePass" style="display: none;">비밀번호</label>
-                    <input type="text" id="commentDeletePass" name="commentDeletePass" placeholder="비밀번호" required>
-                    <button id="commentDeleteCancel">취소</button>
-                    <button id="commentDeleteButton">삭제</button>
-                </div>
-                <div class="comment__modify" style="display: none;">
-                    <label for="commentModifyMsg" style="display: none;">수정 내용</label>
-                    <input type="text" id="commentModifyMsg" name="commentModifyMsg" placeholder="수정 내용" required>
-                    <label for="commentModifyMsg" style="display: none;">비밀번호</label>
-                    <input type="text" id="commentModifyPass" name="commentModifyPass" placeholder="비밀번호" required>
-                    <button id="commentModifyCancel">취소</button>
-                    <button id="commentModifyButton">수정</button>
-                </div>
-            </div>
-        </div>
     </section>
     <!-- //boardComment -->
 
@@ -418,8 +418,6 @@
     let commentID = "";
 
 
-
-
     // 댓글 삭제 버튼 클릭시
     $(".comment__del__del").click(function(e){
         e.preventDefault();
@@ -428,6 +426,7 @@
         
         // 클릭한 ID값 가져오기
         commentID = $(this).parent().parent().attr('id');
+
     })
 
     // 댓글 삭제 버튼 --> 취소 버튼 클릭
@@ -504,6 +503,7 @@
                 success: function(data){
                     console.log(data);
                     location.reload();              //데이터 받아오고 깜빡이면서 바로 받기
+                    
                 },
                 error: function(request, status, error){
                     console.log("request" , request);
@@ -534,7 +534,7 @@
                         console.log(data);
                         location.reload();              //데이터 받아오고 깜빡이면서 바로 받기
                     },
-                    error: function(request, status, error){
+                    error: function(request, status, error){                        
                         console.log("request" + request);
                         console.log("status" + status);
                         console.log("error" + error);

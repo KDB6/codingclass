@@ -7,10 +7,11 @@
 
     
 
-    $sql = "UPDATE myComment SET commentMsg = '{$commentmsg}', commentPass = {$commentPass} WHERE myCommentID = {$commentID}";
+    $sql = "UPDATE myComment SET commentMsg = '{$commentmsg}' WHERE myCommentID = {$commentID} AND commentPass = {$commentPass}";
     $result = $connect -> query($sql);
 
     echo json_encode(array("info" => $sql));
+
 
 
 

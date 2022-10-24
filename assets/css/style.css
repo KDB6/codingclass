@@ -313,13 +313,13 @@
 .gridly .jquery a {
 	color: #8ccc3d;
 	display: block;
-	border-bottom: 3px solid #8ccc3d;
+	border-bottom: 3px solid #fff;
 	margin-right: 20px;
 }
 .gridly .reference a {
 	color: #8ccc3d;
 	display: block;
-	border-bottom: 3px solid #8ccc3d;
+	border-bottom: 3px solid #fff;
 	margin-right: 20px;
 }
 .photoshop .image-wrap .img-text h5 {
@@ -444,7 +444,6 @@
 	width: 100%;
 	height: 32px;
 	top: 50%;
-	left: 50%;
 	color: #A5D5FA;
 	font-size: 20px;
 	text-transform: uppercase;

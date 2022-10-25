@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../../asset/css/board/boardImageType.css">
     <link rel="stylesheet" href="../../asset/css/board/boardView.css">
     <link rel="stylesheet" href="../../asset/css/board/boardComment.css">
-    <link rel="stylesheet" href="../../asset/css/board/boardTypeView.css">
+    <link rel="stylesheet" href="../../asset/css/board/boardViewType.css">
     <link rel="stylesheet" href="../../asset/css/footer.css">
 </head>
 
@@ -123,6 +123,43 @@
     <!-- boardComment -->
     <section id="boardComment" class="container">
         <h2 class="comment__h2">COMMENT</h2>
+
+        <!-- 댓글 -->
+        <div id="boardViewComment">
+            <div class="comment__top">
+                <div class="comment__write">
+                    <div class="comment__write__msg">
+                        <label for="commentWrite" style="display: none;">댓글 쓰기</label>
+                        <input type="text" id="commentWrite" name="commentWrite" placeholder="좋은 댓글 부탁드려요!" required>
+                    </div>
+                    <div class="comment__write__info">
+                        <label for="commentName" class="blind">이름</label>
+                        <input type="text" id="commentName" name="commentName" placeholder="이름" required>
+                        <label for="commentPass" style="display: none;">비밀번호</label>
+                        <input type="text" id="commentPass" id="commentPass" placeholder="비밀번호" required>
+                        <button type="submit" id="commentBtn">댓글 쓰기</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comment__bottom">
+                <div class="comment__delete">
+                    <label for="commentDeletePass" style="display: none;">비밀번호</label>
+                    <input type="text" id="commentDeletePass" name="commentDeletePass" placeholder="비밀번호" required>
+                    <button id="commentDeleteCancel">취소</button>
+                    <button id="commentDeleteButton">삭제</button>
+                </div>
+                <div class="comment__modify">
+                    <label for="commentModifyMsg" style="display: none;">수정 내용</label>
+                    <input type="text" id="commentModifyMsg" name="commentModifyMsg" placeholder="수정 내용" required>
+                    <label for="commentModifyMsg" style="display: none;">비밀번호</label>
+                    <input type="text" id="commentModifyPass" name="commentModifyPass" placeholder="비밀번호" required>
+                    <button id="commentModifyCancel">취소</button>
+                    <button id="commentModifyButton">수정</button>
+                </div>
+            </div>
+        </div>
+
         <table>
             <tbody>
                 <tr>
@@ -312,5 +349,136 @@
 <!-- //footer -->
 
 <script src="../../asset/js/header_hamburger.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    const commentName = $("#commentName");      // 댓글 이름
+    const commentPass = $("#commentPass");      // 댓글 비밀번호
+    const commentWrite = $("#commentWrite");    // 댓글 내용
+
+    let commentID = "";
+    
+    // 댓글 삭제 버튼 클릭 시
+    $(".comment__del__del").click(function(e) {
+        e.preventDefault();
+        // alert("삭제")
+        $(".comment__delete").show();
+
+        // 클릭한 아이디 값
+        commentID = $(this).parent().parent().attr("id");
+    });
+
+    // 댓글 삭제 버튼 -> 취소 버튼 클릭
+    $("#commentDeleteCancel").click(function(e) {
+        e.preventDefault();
+        $(".comment__delete").hide();
+    })
+
+    // 댓글 삭제 -> 삭제 버튼 클릭
+    $("#commentDeleteButton").click(function() {
+
+        let number = commentID.replace(/[^0-9]/g,"");
+
+        if($("#commentDeletePass").val() == '') {
+            alert("댓글 작성시 비밀번호를 입력해주세요");
+            $("#commentDeletePass").focus();
+        } else {
+            $.ajax({
+                url: "blogCommentDelete.php",
+                method: "POST",
+                dataType: "json",
+                data: {
+                    "pass" : $("#commentDeletePass").val(),
+                    "commentID" : number
+                },
+                success: function(data) {
+                    console.log(data);
+                    location.reload();
+                },
+                error: function(request, status, error) {
+                    console.log("request" + request);
+                    console.log("status" + status);
+                    console.log("error" + error);
+                }
+            })
+        }
+    })
+
+    // 댓글 수정 버튼 클릭 시
+    $(".comment__del__mod").click(function(e) {
+        e.preventDefault();
+        // alert("수정")
+        $(".comment__modify").show();
+
+        commentID = $(this).parent().parent().attr("id");
+    });
+
+    // 댓글 수정 버튼 -> 취소 버튼 클릭
+    $("#commentModifyCancel").click(function(e) {
+        e.preventDefault();
+        $(".comment__modify").hide();
+    })
+
+    // 댓글 수정 버튼 -> 수정 버튼 클릭
+    $("#commentModifyButton").click(function(e) {
+    
+        e.preventDefault();
+        let number = commentID.replace(/[^0-9]/g,"");
+
+        if($("#commentModifyMsg").val() == '' || $("#commentModifyPass").val() == '') {
+            alert("수정 내용 및 비밀번호를 입력해주세요");
+            $("#commentModifyMsg").focus();
+        } else {
+            $.ajax({
+                url: "blogCommentModify.php",
+                method: "POST",
+                dataType: "json",
+                data: {
+                    "msg": $("#commentModifyMsg").val(),
+                    "pass": $("#commentModifyPass").val(),
+                    "commentID": number
+                },
+                success: function(data) {
+                    console.log(data);
+                    location.reload();
+                },
+                error: function(request, status, error) {
+                    console.log("request" , request);
+                    console.log("status" , status);
+                    console.log("error" , error);
+                }
+            })
+        }
+    })
+
+    // 댓글 쓰기 버튼
+    $("#commentBtn").click(function() {
+        if($("commentWrite").val() == "") {
+            alert("댓글을 써주세요.")
+            $("#commentWrite").focus();
+        } else {
+            $.ajax({
+                url: "blogCommentWrite.php",
+                method: "POST",
+                dataType: "json",
+                data: {
+                    // "blogID": <?=$myBlogID?>,
+                    "name": commentName.val(),
+                    "pass": commentPass.val(),
+                    "msg": commentWrite.val()
+                },
+                success: function(data) {
+                    console.log(data);
+                    location.reload();
+                },
+                error: function(request, status, error) {
+                    console.log("request" + request);
+                    console.log("status" + status);
+                    console.log("error" + error);
+                }
+            })
+        }
+    });
+</script>
 
 </html>

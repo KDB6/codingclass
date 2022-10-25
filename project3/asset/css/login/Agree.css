@@ -4,6 +4,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 10000;
 }
 
 .agree__inner {
@@ -111,21 +112,46 @@ input[id="agreeCheckAll"]:checked + label::after {
     justify-content: space-between;
     text-align: center;
 }
-.cancel_btn {
+.agree__footer .cancel_btn {
     width: 50%;
     border-right: 1px dashed #505050;
-}
-.cancel_btn a {
     font-size: 16px;
     color: #505050;
+    cursor: pointer;
 }
 .confirm_btn {
     width: 50%;
-    color: #505050;
+    color: #cecece;
+    cursor: pointer;
 }
 .confirm_btn a {
     font-size: 16px;
     color: #505050;
 }
-
+.agree_require {
+    width: 400px;
+    height: 120px;
+    border-radius: 10px;
+    border: 1px solid #6CC4B3;
+    background-color: #fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.agree_require > div {
+    transform: translateY(24px);
+}
+.agree_require > div > p {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.agree_require > div > button {
+    font-size: 18px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    background-color: #fff;
+}
 

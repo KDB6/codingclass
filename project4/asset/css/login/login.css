@@ -173,4 +173,5 @@ input::placeholder {
     box-sizing: border-box;
     padding: 10px 0 0 0;
     color: #757575;
+    cursor: pointer;
 }

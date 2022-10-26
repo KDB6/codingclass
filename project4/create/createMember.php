@@ -4,7 +4,7 @@
     $sql = "CREATE TABLE myMember (";
     $sql .= "myMemberID int(10) unsigned NOT NULL auto_increment,";
     $sql .= "youName varchar(10) NOT NULL,";
-    $sql .= "youGender enum('남자', '여자') DEFAULT NULL,";
+    $sql .= "youGender enum('male', 'female') NOT NULL,";
     $sql .= "youID varchar(20) NOT NULL,";
     $sql .= "youPass varchar(20) NOT NULL,";
     $sql .= "youEmail varchar(20) NOT NULL,";

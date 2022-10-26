@@ -56,6 +56,9 @@
 .join__box > div > input::placeholder {
     color: #757575;
 }
+#youPassC {
+    margin-bottom: 10px;
+}
 .choice_gender {
     display: flex;
     justify-content: space-between;
@@ -130,4 +133,53 @@ input:required {
     border-radius: 5px;
     cursor: pointer;
     color: #505050;
+}
+
+#youNameComment {
+    margin-left: 5px;
+    margin-top: 5px;
+    color: #505050;
+    font-size: 14px;
+}
+#youGenderMaleComment {
+    margin-left: 5px;
+    margin-top: 5px;
+    color: #505050;
+    font-size: 14px;
+}
+#youGenderFemaleComment {
+    margin-left: 5px;
+    margin-top: 5px;
+    color: #505050;
+    font-size: 14px;
+}
+#youIDComment {
+    margin-left: 5px;
+    margin-top: 5px;
+    color: #505050;
+    font-size: 14px;
+}
+#youPassComment {
+    margin-left: 5px;
+    margin-top: 5px;
+    color: #505050;
+    font-size: 14px;
+}
+#youPassCComment {
+    margin-left: 5px;
+    margin-top: 5px;
+    color: #505050;
+    font-size: 14px;
+}
+#youEmailComment {
+    margin-left: 5px;
+    margin-top: 5px;
+    color: #505050;
+    font-size: 14px;
+}
+#youPhoneComment {
+    margin-left: 5px;
+    margin-top: 5px;
+    color: #505050;
+    font-size: 14px;
 }

@@ -97,4 +97,8 @@ https://kdb6.github.io/ck/javascript/effect/sliderEffect03.html
 https://kdb6.github.io/ck/javascript/effect/sliderEffect04.html  
 https://kdb6.github.io/ck/javascript/effect/sliderEffect05.html  
 https://kdb6.github.io/ck/javascript/effect/sliderEffect06.html  
-https://kdb6.github.io/ck/javascript/effect/sliderEffect07.html
+https://kdb6.github.io/ck/javascript/effect/sliderEffect07.html   
+
+### 슬라이드 이펙트 메인 페이지
+
+https://kdb6.github.io/ck/sql/index.html  

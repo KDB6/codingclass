@@ -99,6 +99,10 @@ https://kdb6.github.io/codingclass/javascript/effect/sliderEffect05.html
 https://kdb6.github.io/codingclass/javascript/effect/sliderEffect06.html  
 https://kdb6.github.io/codingclass/javascript/effect/sliderEffect07.html   
 
+### SVG Animation 메인 페이지
+
+https://kdb6.github.io/codingclass/animation/svg.html  
+
 ### CSS Animation 메인 페이지
 
 https://kdb6.github.io/codingclass/animation/css.html  

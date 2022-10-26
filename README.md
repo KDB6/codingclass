@@ -47,6 +47,10 @@ https://kdb6.github.io/ck/site/site2/index.html
 
 https://kdb6.github.io/ck/javascript/effect/gameEffect01.html
 
+### 게임 이펙트 메인 페이지
+
+https://kdb6.github.io/ck/javascript/effect/dataEffect01.html
+
 ### 검색 이펙트 메인 페이지
 
 https://kdb6.github.io/ck/javascript/effect/searchEffect01.html  

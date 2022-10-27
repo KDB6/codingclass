@@ -18,8 +18,22 @@
 
     <link rel="stylesheet" href="../../asset/css/hospital/hospital_main.css">
     <style>
-               
-        
+        .board__pages {
+            margin: 30px 0 20px 0;
+        }
+        .board__pages ul {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .board__pages ul li a {
+            padding: 13px 10px;
+            color: #505050;
+        }
+        .board__pages ul li.active a {
+            color: #6cc4b3;
+        }
     </style>
 </head>
 
@@ -263,6 +277,17 @@
                     <span>#영어진료</span>
                 </div>
             </div>
+        </div>
+        <div class="board__pages">
+            <ul>
+                <li><a href="#">&lt;</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">&gt;</a></li>
+            </ul>
         </div>
     </section>
 

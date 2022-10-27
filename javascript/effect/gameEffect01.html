@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../assets/css/gameSearch.css">
     <link rel="stylesheet" href="../assets/css/gameSearchAni.css">
     <link rel="stylesheet" href="../assets/css/gameSearchDracula.css">
+    
+    <link rel="stylesheet" href="../assets/css/memory.css">
 
     <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/score/SCoreDream.css" rel="stylesheet">
@@ -41,7 +43,7 @@
         <div class="icon_box">
             <div class="icon01">
                 <img src="../assets/img/music/star.svg" alt="">
-                <span>STAR</span>
+                <span>SEARCH</span>
             </div>
             <div class="icon02">
                 <img src="../assets/img/music/six.svg" alt="">
@@ -164,59 +166,200 @@
     </footer>
 
     <!-- music player -->
-    <div class="muisc__wrap">
-        <div class="music__inner">
-            <div class="music__header">
-                <div></div>
-                <h2>MUSIC PALYER</h2>
-                <div></div>
-            </div>
-            <div class="music__contents">
-                <div class="music__view">
-                    <div class="img">
-                        <img src="../assets/img/music/music__bg01.png" alt="">
+    <div class="game__box">
+        <div class="muisc__wrap">
+            <div class="music__inner">
+                <div class="music__header">
+                    <div></div>
+                    <h2>MUSIC PALYER</h2>
+                    <div></div>
+                </div>
+                <div class="music__contents">
+                    <div class="music__view">
+                        <div class="img">
+                            <img src="../assets/img/music/music__bg01.png" alt="">
+                        </div>
+                        <div class="title">
+                            <h3>LAKEY INSPIRED</h3>
+                            <p>Blue Boi</p>
+                            <div>
+                                <input class="volume" type="range" id="volume-control" min="0" max="10">							
+                            </div> 
+                        </div>
                     </div>
-                    <div class="title">
-                        <h3>LAKEY INSPIRED</h3>
-                        <p>Blue Boi</p>
-                        <div>
-                            <input class="volume" type="range" id="volume-control" min="0" max="10">							
-                        </div> 
+                    <div class="music__control">
+                        <div class="progress">
+                            <div class="bar">
+                                <audio id="main__audio" src="../assets/music/music__audio01.mp3"></audio>
+                            </div>
+                            <div class="timer">
+                                <span class="current">00 : 00</span>
+                                <span class="duration">04 : 00</span>
+                            </div>
+                        </div>
+                        <div class="control">
+                            <i title="전체 반복" class="repeat" id="control__repeat"></i>
+                            <i title="이전곡 반복" class="prev" id="control__prev"></i>
+                            <i title="재생" class="play" id="control__play"></i>
+                            <i title="다음곡 재생" class="next" id="control__next"></i>
+                            <i title="재생 목록" class="list" id="control__list"></i>
+    
+                            <!-- <i title="한곡 반복" class="repeat__one"></i> -->
+                            <!-- <i title="랜덤 반복" class="shuffle"></i> -->
+                            <!-- <i title="정지" class="stop"></i> -->
+                        </div>
                     </div>
                 </div>
-                <div class="music__control">
-                    <div class="progress">
-                        <div class="bar">
-                            <audio id="main__audio" src="../assets/music/music__audio01.mp3"></audio>
-                        </div>
-                        <div class="timer">
-                            <span class="current">00 : 00</span>
-                            <span class="duration">04 : 00</span>
-                        </div>
+                <div class="music__footer">
+                    <div class="music__list">
+                        <h3><span class="list"></span>MUSIC LIST<a href="#" class="close"></a></h3>
+                        <ul class="musicList">
+                            <!-- <li>
+                                <strong>제목</strong>
+                                <em>아티스트</em>
+                                <span>재생 시간</span>
+                            </li> -->
+                        </ul>
                     </div>
-                    <div class="control">
-                        <i title="전체 반복" class="repeat" id="control__repeat"></i>
-                        <i title="이전곡 반복" class="prev" id="control__prev"></i>
-                        <i title="재생" class="play" id="control__play"></i>
-                        <i title="다음곡 재생" class="next" id="control__next"></i>
-                        <i title="재생 목록" class="list" id="control__list"></i>
+                </div>
+            </div>
+        </div>
 
-                        <!-- <i title="한곡 반복" class="repeat__one"></i> -->
-                        <!-- <i title="랜덤 반복" class="shuffle"></i> -->
-                        <!-- <i title="정지" class="stop"></i> -->
-                    </div>
-                </div>
-            </div>
-            <div class="music__footer">
-                <div class="music__list">
-                    <h3><span class="list"></span>MUSIC LIST<a href="#" class="close"></a></h3>
-                    <ul class="musicList">
-                        <!-- <li>
-                            <strong>제목</strong>
-                            <em>아티스트</em>
-                            <span>재생 시간</span>
-                        </li> -->
-                    </ul>
+        <div class="memory__wrap">
+            <div class="memory__inner">
+                
+                <!-- memory__card -->
+                <div class="memory__card">
+                    <ul class="cards">
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card01svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card01svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card02.svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card02.svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card03.svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card03.svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card04.svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card04.svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card05.svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card05.svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card06.svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card06.svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card07.svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card07.svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card08.svg" alt="">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="view front">
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div class="view back">
+                                <img src="../assets/img/card/card08.svg" alt="">
+                            </div>
+                        </li>
+                    </ul>    
                 </div>
             </div>
         </div>
@@ -439,6 +582,7 @@
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/gsap.min.js"></script>
     <script src="../assets/js/music.js"></script>
+    <script src="../assets/js/memory.js"></script>
     <script src="../assets/js/gameSearch.js"></script>
 
     <script>
@@ -456,6 +600,8 @@
         $("#searchGame").draggable();
 
         $(".muisc__wrap").draggable();
+
+        $(".memory__wrap").draggable();
 
 
         // $(".icon01").draggable({

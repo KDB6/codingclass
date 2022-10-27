@@ -1,7 +1,9 @@
+// 닫기 버튼
+const loginPopup = document.querySelector(".login__popup");
 const close_btn = document.querySelector(".close_btn");
 
-
-// <닫기 버튼>
-close_btn.innerHTML = `<a href="../board/boardMain.html">${close_btn.innerHTML}</a>`;
-
-
+close_btn.addEventListener("click", () => {
+    loginPopup.classList.add("close");
+    loginPopup.classList.remove(".show")
+    loginPopup.classList.add(".hide")
+});

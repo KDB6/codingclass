@@ -54,37 +54,6 @@
     font-style: normal;
 }
 
-.butlerNor {
+.butler {
     font-family: "Butler Stencil";
-    font-weight: normal;
-}
-
-.butlerBold {
-    font-family: "Butler Stencil";
-    font-weight: bold;
-}
-
-.butler200 {
-    font-family: "Butler Stencil";
-    font-weight: 200;
-}
-
-.butler300 {
-    font-family: "Butler Stencil";
-    font-weight: 300;
-}
-
-.butler500 {
-    font-family: "Butler Stencil";
-    font-weight: 500;
-}
-
-.butler800 {
-    font-family: "Butler Stencil";
-    font-weight: 800;
-}
-
-.butler900 {
-    font-family: "Butler Stencil";
-    font-weight: 900;
 }

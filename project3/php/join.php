@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,25 +12,14 @@
     <link rel="stylesheet" href="../asset/css/font.css">
     <link rel="stylesheet" href="../asset/css/login/idPassCommon.css">
 
-    <link rel="stylesheet" href="../asset/css/login/join.css">
-
-    <style>
-        .join__inner {
-            margin: 0 auto;
-        }
-        .join__inner > h2 {
-            margin-bottom: 20px !important;
-        }
-    </style>
-
     <!-- join -->
     <link rel="stylesheet" href="../asset/css/login/join.css">
 </head>
 <body>
-<?php include "../include/header.php"?>
-    <div class="join__inner">
+    <div class="join__popup">            
+        <div class="join__inner">
             <h2>회원 가입</h2>
-            <form action="join_complete.php" name="join" method="post" onSubmit="return joinChecks()">
+            <form action="join_complete.php" name="join" method="post">
                 <fieldset>
                         <legend class="blind">회원가입</legend>
                         <div class="join__box">
@@ -55,8 +44,8 @@
                             </div>
                             <div class="id_box">
                                 <label class="blind" for="youID">ID</label>
-                                <input type="text" id="youID" name="youID" placeholder="ID" required>
-                                <a href="#3" class="ID_confirm" onclick="IDChecking()">중복확인</a>
+                                <input type="text" id="youID" name="youEmail" placeholder="ID" required>
+                                <a href="#3" class="ID_confirm">중복확인</a>
                                 <p class="msg" id="youIDComment"><!-- * 아이디가 이미 존재합니다. --></p>
                             </div>
                             <div>
@@ -85,14 +74,28 @@
                 </fieldset>                                  
                 <button class="join__btn" type="submit">가입하기</button>
             </form>
-            <div class="close_btn"><a href="main.php">
+            <div class="close_btn">
                 <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10Z" fill="#ffffff"/>
                     <path d="M5.33334 4.66675L14.6667 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
                     <path d="M14.6667 4.66675L5.33333 15.3334" stroke="#6CC4B3" stroke-linecap="round"/>
                 </svg>
-            </a></div>
+            </div>
         </div>
+    </div>
+
+    <script>
+        // 닫기 버튼
+        const joinPopup = document.querySelector(".join__popup");
+        const close_btn = document.querySelector(".close_btn");
+
+        close_btn.addEventListener("click", () => {
+            joinPopup.classList.add("close");
+            joinPopup.classList.remove(".show")
+            joinPopup.classList.add(".hide")
+        });
+    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
 
@@ -102,14 +105,12 @@
         function IDChecking(){
             let youID = $("#youID").val();
 
-            console.log(youID)
-
             if(youID == null || youID == ''){
                 $("#youIDComment").text("아이디를 입력해주세요!!");
             } else {
                 $.ajax({
                     type : "POST",
-                    url : "joinCheck.php",
+                    url : "JoinCheck.php",
                     data : {"youID": youID, "type": "IDCheck"},
                     dataType : "json",
 
@@ -218,6 +219,12 @@
             if(!getYouEmail.test($("#youEmail").val())){
                 $("#youEmailComment").text("이메일 형식에 맞게 작성해주세요!");
                 $("#youEmail").val("");
+                return false;
+            }
+
+            // 이메일 중복 검사
+            if(emailCheck == false){
+                $("#youEmailComment").text("이메일 중복 검사를 해주세요!");
                 return false;
             }
 

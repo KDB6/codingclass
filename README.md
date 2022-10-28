@@ -37,6 +37,7 @@ https://kdb6.github.io/codingclass/css/index.html
 
 ### 사이트 제작하기01
 
+https://kdb6.github.io/codingclass/site/site1/index.html   
 https://kdb6.github.io/codingclass/site/site1_res/index.html
 
 ### 사이트 제작하기02

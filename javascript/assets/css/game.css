@@ -1,10 +1,10 @@
-@import url('https://webfontworld.github.io/NexonMabinogi/MabinogiClassic.css');
+@import url('https://webfontworld.github.io/score/SCoreDream.css');
 
 * {
     margin: 0;
     overflow: 0;
     box-sizing: border-box;
-    font-family: 'MabinogiClassic';
+    font-family: 'SCoreDream';
     cursor: none;
 }
 

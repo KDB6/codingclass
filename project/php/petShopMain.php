@@ -1,5 +1,13 @@
 <?php
     include "../connect/connect.php";
+
+
+    $petMain = $_GET['page'];
+
+    $petMainSql = "SELECT * FROM petShopMain WHERE petShopID = '{$petMain}'";
+    $petMainResult = $connect -> query($petMainSql);
+
+    $petMainInfo = $petMainResult -> fetch_array(MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -73,48 +81,48 @@
         <div class="shopBest__inner container">
             <h2 class="butler800">BEST PICKS</h2>
             <div class="best__item">
-                <div class="best__top">
-                    <div class="best__img01">
-                        <a href=""><img src="../asset/img/bestImg01.jpg" alt="베스트01"></a>
+                <div class="best__all">
+                    <div class="best__img">
+                        <a href="#"><img src="../../asset/img/bestImg01.jpg" alt="베스트01"></a>
                         <figcaption>
-                            <h2><a href="">강아지 선글라스 악세서리</a></h2>
+                            <h2><a href="#">강아지 선글라스 악세서리</a></h2>
                             <p>20,000원</p>
                         </figcaption>
                     </div>
-                    <div class="best__img02">
-                        <a href=""><img src="../asset/img/bestImg02.jpg" alt="베스트02"></a>
+                    <div class="best__img">
+                        <a href="#"><img src="../../asset/img/bestImg02.jpg" alt="베스트02"></a>
                         <figcaption>
-                            <h2><a href="">린넨 침구</a></h2>
+                            <h2><a href="#">린넨 침구</a></h2>
                             <p>175,000원</p>
                         </figcaption>
                     </div>
-                    <div class="best__img03">
-                        <a href=""><img src="../asset/img/bestImg03.jpg" alt="베스트03"></a>
+                    <div class="best__img">
+                        <a href="#"><img src="../../asset/img/bestImg03.jpg" alt="베스트03"></a>
                         <figcaption>
-                            <h2><a href="">따뜻한 겨울 후드</a></h2>
+                            <h2><a href="#">따뜻한 겨울 후드</a></h2>
                             <p>57,000원</p>
                         </figcaption>
                     </div>
                 </div>
-                <div class="best__bottom">
-                    <div class="best__img04">
-                        <a href=""><img src="../asset/img/bestImg04.jpg" alt="베스트04"></a>
+                <div class="best__all">
+                    <div class="best__img">
+                        <a href="#"><img src="../../asset/img/bestImg04.jpg" alt="베스트04"></a>
                         <figcaption>
-                            <h2><a href="">푹신푹신한 쿠션</a></h2>
+                            <h2><a href="#">푹신푹신한 쿠션</a></h2>
                             <p>66,000원</p>
                         </figcaption>
                     </div>
-                    <div class="best__img05">
-                        <a href=""><img src="../asset/img/bestImg05.jpg" alt="베스트05"></a>
+                    <div class="best__img">
+                        <a href="#"><img src="../../asset/img/bestImg05.jpg" alt="베스트05"></a>
                         <figcaption>
                             <h2><a href="">공놀이용 볼</a></h2>
                             <p>7,000원</p>
                         </figcaption>
                     </div>
-                    <div class="best__img06">
-                        <a href=""><img src="../asset/img/bestImg06.jpg" alt="베스트06"></a>
+                    <div class="best__img">
+                        <a href="#"><img src="../../asset/img/bestImg06.jpg" alt="베스트06"></a>
                         <figcaption>
-                            <h2><a href="">가죽 목줄</a></h2>
+                            <h2><a href="#">가죽 목줄</a></h2>
                             <p>18,000원</p>
                         </figcaption>
                     </div>
@@ -142,89 +150,72 @@
      </section>
      <!-- // shop categoey -->
 
-     <!-- shop item -->
-     <section id="shopItem">
+    <!-- shop item -->
+    <section id="shopItem">
         <div class="shopItem__inner container">
-            <div class="item__top">
-                <div class="item__top01">
-                    <img src="../asset/img/item__top01.jpg" alt="">
-                    <figcaption>
-                        <h3 class="butler800">Brand</h3>
-                        <h2>펫 용품</h2>
-                        <p>66,000원</p>
-                    </figcaption>
-                </div>
-                <div class="item__top01">
-                    <img src="../asset/img/item__top02.jpg" alt="">
-                    <figcaption>
-                        <h3 class="butler800">Brand</h3>
-                        <h2>펫 용품</h2>
-                        <p>66,000원</p>
-                    </figcaption>
-                </div>
-                <div class="item__top01">
-                    <img src="../asset/img/item__top03.jpg" alt="">
-                    <figcaption>
-                        <h3 class="butler800">Brand</h3>
-                        <h2>펫 용품</h2>
-                        <p>66,000원</p>
-                    </figcaption>
-                </div>
-            </div>
 
-            <div class="item__mid">
-                <div class="item__mid01">
-                    <img src="../asset/img/item__mid01.jpg" alt="">
-                    <figcaption>
-                        <h3 class="butlerBold">Brand</h3>
-                        <h2>펫 용품</h2>
-                        <p>66,000원</p>
-                    </figcaption>
-                </div>
-                <div class="item__mid01">
-                    <img src="../asset/img/item__mid02.jpg" alt="">
-                    <figcaption>
-                        <h3 class="butlerBold">Brand</h3>
-                        <h2>펫 용품</h2>
-                        <p>66,000원</p>
-                    </figcaption>
-                </div>
-                <div class="item__mid01">
-                    <img src="../asset/img/item__mid03.jpg" alt="">
-                    <figcaption>
-                        <h3 class="butlerBold">Brand</h3>
-                        <h2>펫 용품</h2>
-                        <p>66,000원</p>
-                    </figcaption>
-                </div>
-            </div>
+        <?php
+            if(isset($_GET['page'])){
+                $page = (int) $_GET['page'];
+            } else {
+                $page = 1;
+            }
 
-            <div class="item__bot">
-                <div class="item__bot01">
-                    <img src="../asset/img/item__bot01.jpg" alt="">
+            $viewNum = 9;
+            $viewLimit = ($viewNum * $page) - $viewNum;
+
+
+            $petMainSql .= " ORDER BY petShopID DESC LIMIT {$viewLimit}, {$viewNum}";
+            $petMainResult = $connect -> query($petMainSql);
+
+
+            $count = $petMainResult -> num_rows;
+
+            if($petMainSql){
+                $count = $petMainResult -> num_rows;
+
+                if($count > 0 ){
+                    for($i=1; $i <= $count; $i++){
+                        $Hos = $petMainResult -> fetch_array(MYSQLI_ASSOC);
+                        echo "<div class='item__all'>";
+                        echo "<div class='item__img'>";
+                        echo "<a href='petShopItem.php?page=".$petMainSql['petShopID']."'><img src='../asset/img/petshop/".$petMainSql['shopImgFile']."' alt=''></a>";
+                        echo "<figcaption>";
+                        echo "<h3 class='butler800'><a href='#'>".$petMainSql['categoeyBrand']."</a></h3>";
+                        echo "<h2><a href='#'>".$petMainSql['categoryName']."</a></h2>";
+                        echo "<p><a href='#'>".$petMainSql['categoryPrice']."</a></p>";
+                        echo "</figcaption></div>";
+                    }
+                }
+            }
+        ?>
+
+            <!-- <div class="item__all">
+                <div class="item__img">
+                    <a href="#"><img src="../../asset/img/item__top01.jpg" alt=""></a>
                     <figcaption>
-                        <h3 class="butlerBold">Brand</h3>
-                        <h2>펫 용품</h2>
-                        <p>66,000원</p>
+                        <h3 class="butler800"><a href="#">Brand</a></h3>
+                        <h2><a href="#">펫 용품</a></h2>
+                        <p><a href="#">66,000원</a></p>
                     </figcaption>
                 </div>
-                <div class="item__bot01">
-                    <img src="../asset/img/item__bot02.jpg" alt="">
+                <div class="item__img">
+                    <a href="#"><img src="../../asset/img/item__top02.jpg" alt=""></a>
                     <figcaption>
-                        <h3 class="butlerBold">Brand</h3>
-                        <h2>펫 용품</h2>
-                        <p>66,000원</p>
+                        <h3 class="butler800"><a href="#">Brand</a></h3>
+                        <h2><a href="#">펫 용품</a></h2>
+                        <p><a href="#">66,000원</a></p>
                     </figcaption>
                 </div>
-                <div class="item__bot01">
-                    <img src="../asset/img/item__bot03.jpg" alt="">
+                <div class="item__img">
+                    <a href="#"><img src="../../asset/img/item__top03.jpg" alt=""></a>
                     <figcaption>
-                        <h3 class="butlerBold">Brand</h3>
-                        <h2>펫 용품</h2>
-                        <p>66,000원</p>
+                        <h3 class="butler800"><a href="#">Brand</a></h3>
+                        <h2><a href="#">펫 용품</a></h2>
+                        <p><a href="#">66,000원</a></p>
                     </figcaption>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="petShop__pages">
             <ul>
@@ -238,6 +229,8 @@
             </ul>
         </div>
      </section>
+     <!-- //shop item -->
+
 
     <!-- header -->
     <?php include "../include/footer.php"?>

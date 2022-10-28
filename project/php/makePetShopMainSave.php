@@ -1,6 +1,7 @@
 <?php
     include "../connect/connect.php";
     
+    $petShopID = $_POST["petShopID"];
     $bestBrand = $_POST["bestBrand"];
     $bestName = $_POST["bestName"];
     $bestPrice = $_POST["bestPrice"];
@@ -21,17 +22,17 @@
     if($fileType == "image"){
         if($fileExtension == "jpg" || $fileExtension == "jpeg" || $fileExtension == "png" || $fileExtension == "gif"){
             $petShopImgDir = "../asset/img/petshop/";
-            $petShopImgName = "Img_".time().rand(1,99999)."."."{$fileExtension}";
+            $shopImgName = "Img_".time().rand(1,99999)."."."{$fileExtension}";
             // echo "이미지 파일이 맞네요!";
-            $sql = "INSERT INTO petshop SET bestBrand = '{$bestBrand}', bestName = '{$bestName}' , bestPrice = '{$bestPrice}',
-                categoeyBrand = '{$categoeyBrand}', categoryName = '{$categoryName}', categoryPrice = '{$categoryPrice}'
+            $sql = "INSERT INTO petShopMain SET bestBrand = '{$bestBrand}', bestName = '{$bestName}' , bestPrice = '{$bestPrice}',
+                categoeyBrand = '{$categoeyBrand}', categoryName = '{$categoryName}', categoryPrice = '{$categoryPrice}',shopImgFile = '{$shopImgName}'
                 ";
         }
     }
     echo $sql;
 
     $result = $connect -> query($sql);
-    $result = move_uploaded_file($shopImgTmp, $petShopImgDir.$petShopImgName);
+    $result = move_uploaded_file($shopImgTmp, $petShopImgDir.$shopImgName);
 
 
     // Header("Location: main.php");    

@@ -9,6 +9,7 @@
     $sql .=     "categoeyBrand varchar(150) DEFAULT NULL,";
     $sql .=     "categoryName varchar(50) DEFAULT NULL,";
     $sql .=     "categoryPrice varchar(500) DEFAULT NULL,";
+    $sql .=     "shopImgFile varchar(100) DEFAULT NULL,";
     $sql .=     "PRIMARY KEY (petShopID)";
     $sql .=     ") charset=utf8;";
 

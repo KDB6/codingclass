@@ -133,7 +133,7 @@ input[id="search"]:focus {
 #infomationType {
   width: 100%;
   /* height: 1000px; */
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 .Info_textBox {
   background: #f9fafb;

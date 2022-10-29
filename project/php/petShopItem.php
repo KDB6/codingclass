@@ -23,86 +23,16 @@
     <link rel="stylesheet" href="../asset/css/butler.css">
 
     <link rel="stylesheet" href="../asset/css/petShop/petShopItemCate.css">
-    <link rel="stylesheet" href="../asset/css/petShop/shopInfo.css">
+    <link rel="stylesheet" href="../asset/css/petShop/petShopInfo.css">
     <link rel="stylesheet" href="../asset/css/petShop/itemExplanation.css">
 
     <style>
-        .petShopInfo__inner {
-            margin-top: 10px;
-            display: flex;
-        }
-
-        .itemInfo {
-            padding-top: 60px;
-        }
-
-        .itemImg figure > img {
-            width: 100%;
-            height: 500px;
-        }
-        .itemInfo_name > h3 {
-            font-size: 24px;
-            color: #505050;
-        }
-        .itemInfo_name > h2 {
-            font-size: 40px;
-            color: #505050;
-        }
-        .itemInfo_name > p {
-            font-size: 16px;
-            color: #505050;
-        }
-        .itemInfo_name > h4 {
-            margin-top: 15px;
-            font-size: 20px;
-            color: #6CC4B3;
-        }
-
-        .itemInfo__review {
-            margin-top: 30px;
-            width: 670px;
-            border-top: 1px solid #cecece;
-            border-bottom: 1px solid #cecece;
-            display: flex;
-            padding: 15px 0;    
-        }
-        .itemInfo__review > h3 {
-            font-size: 16px;
-            color: #505050;
-            margin-left: 30px;
-        }
-        .star > img {
-            width: 100px;
-            height: 20px;
-        }
-        .itemInfo__link {
-            margin-top: 30px;
-        }
-        .itemInfo__link > h2 {
-            font-size: 16px;
-            color: #505050;
-            margin-bottom: 10px;
-        }
-        .itemInfo__link > p {
-            font-size: 14px;
-            color: #505050;
-            margin-top: 1px;
-        }
-        .item__btn {
-            display: flex;
-            margin-top: 10px;
-        }
-        .item__btn > h2 {
-            font-size: 16px;
-            color: #6CC4B3 !;
+        .line {
+            width: 1360px;
+            height: 10px;
             background: #F9FAFB;
-            padding: 10px 126px;
-        }
-        .item__btn > h2 a{
-            color: #6CC4B3;
-        }
-        .item__btn > h2:last-child {
-            margin-left: 20px;
+            margin: 0 auto;
+            margin-top: 80px;
         }
     </style>
 </head>
@@ -137,8 +67,8 @@
             </div>
             <div class="itemInfo">
                 <div class="itemInfo_name">
-                    <h3 class="butler800"><?=$shopInfo['shopBrand']?></h3>
-                    <h2 class="butler800"><?=$shopInfo['shopItemName']?></h2>
+                    <h3><?=$shopInfo['shopBrand']?></h3>
+                    <h2><?=$shopInfo['shopItemName']?></h2>
                     <p><?=$shopInfo['shopItemMainEx']?></p>
                     <h4><?=$shopInfo['shopItemSubEx']?></h4>
                 </div>

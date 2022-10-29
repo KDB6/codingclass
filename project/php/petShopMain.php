@@ -208,7 +208,7 @@
                             echo "<div class='item__img'>";
                             echo "<a href='petShopItem.php?page=".$shop['petShopID']."'><img src='../asset/img/petshop/".$shop['shopImgFile']."' alt=''></a>";
                             echo "<figcaption>";
-                            echo "<h3 class='butler800'><a href='#'>".$shop['shopBrand']."</a></h3>";
+                            echo "<h3><a href='#'>".$shop['shopBrand']."</a></h3>";
                             echo "<h2><a href='petShopItem.php?page=".$shop['petShopID']."'>".$shop['shopItemName']."</a></h2>";
                             echo "<p><a href='petShopItem.php?page=".$shop['petShopID']."'>".$shop['shopItemPrice']."</a></p>";
                             echo "</figcaption>";
@@ -285,22 +285,22 @@
                 // 이전 페이지 , 처음 페이지
                 if($page != 1){
                     $prevPage = $page - 1;
-                    echo "<li><a href='hospitalMain.php?page=1'>처음으로</li>";
-                    echo "<li><a href='hospitalMain.php?page={$prevPage}'>이전</li>";
+                    echo "<li><a href='petShopMain.php?page=1'>처음으로</li>";
+                    echo "<li><a href='petShopMain.php?page={$prevPage}'>이전</li>";
                 }
 
                 // 페이지 넘버 표시
                 for($i = $startPage; $i<=$endPage; $i++){
                     $active = "";
                     if($i == $page) $active = "active";
-                    echo"<li class='{$active}'><a href='hospitalMain.php?page={$i}'>{$i}</a></li>";
+                    echo"<li class='{$active}'><a href='petShopMain.php?page={$i}'>{$i}</a></li>";
                 }
 
                 // 다음 페이지 , 마지막 페이지
                 if($page != $endPage){
                     $nextPage = $page + 1;
-                    echo "<li><a href='hospitalMain.php?page={$nextPage}'>다음</li>";
-                    echo "<li><a href='hospitalMain.php?page={$shopCount}'>마지막으로</li>";
+                    echo "<li><a href='petShopMain.php?page={$nextPage}'><</li>";
+                    echo "<li><a href='petShopMain.php?page={$shopCount}'>></li>";
                 }
             ?>
             </ul>

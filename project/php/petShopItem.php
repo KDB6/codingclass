@@ -1,12 +1,12 @@
 <?php
     include "../connect/connect.php";
 
-    $shopID = $_GET['page'];
+    $petShopID = $_GET['page'];
 
     $shopSql = "SELECT * FROM petShop WHERE petShopID = '{$petShopID}'";
-    $ShopResult = $connect -> query($shopSql);
+    $shopResult = $connect -> query($shopSql);
 
-    $shopInfo = $ShopResult -> fetch_array(MYSQLI_ASSOC);
+    $shopInfo = $shopResult -> fetch_array(MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +25,86 @@
     <link rel="stylesheet" href="../asset/css/petShop/petShopItemCate.css">
     <link rel="stylesheet" href="../asset/css/petShop/shopInfo.css">
     <link rel="stylesheet" href="../asset/css/petShop/itemExplanation.css">
+
+    <style>
+        .petShopInfo__inner {
+            margin-top: 10px;
+            display: flex;
+        }
+
+        .itemInfo {
+            padding-top: 60px;
+        }
+
+        .itemImg figure > img {
+            width: 100%;
+            height: 500px;
+        }
+        .itemInfo_name > h3 {
+            font-size: 24px;
+            color: #505050;
+        }
+        .itemInfo_name > h2 {
+            font-size: 40px;
+            color: #505050;
+        }
+        .itemInfo_name > p {
+            font-size: 16px;
+            color: #505050;
+        }
+        .itemInfo_name > h4 {
+            margin-top: 15px;
+            font-size: 20px;
+            color: #6CC4B3;
+        }
+
+        .itemInfo__review {
+            margin-top: 30px;
+            width: 670px;
+            border-top: 1px solid #cecece;
+            border-bottom: 1px solid #cecece;
+            display: flex;
+            padding: 15px 0;    
+        }
+        .itemInfo__review > h3 {
+            font-size: 16px;
+            color: #505050;
+            margin-left: 30px;
+        }
+        .star > img {
+            width: 100px;
+            height: 20px;
+        }
+        .itemInfo__link {
+            margin-top: 30px;
+        }
+        .itemInfo__link > h2 {
+            font-size: 16px;
+            color: #505050;
+            margin-bottom: 10px;
+        }
+        .itemInfo__link > p {
+            font-size: 14px;
+            color: #505050;
+            margin-top: 1px;
+        }
+        .item__btn {
+            display: flex;
+            margin-top: 10px;
+        }
+        .item__btn > h2 {
+            font-size: 16px;
+            color: #6CC4B3 !;
+            background: #F9FAFB;
+            padding: 10px 126px;
+        }
+        .item__btn > h2 a{
+            color: #6CC4B3;
+        }
+        .item__btn > h2:last-child {
+            margin-left: 20px;
+        }
+    </style>
 </head>
 <body>
     <!-- header -->
@@ -47,12 +127,12 @@
     </section>
     <!-- //petShopItem category -->
 
-    <!-- shopInfo -->
-    <section id="shopInfo">
-        <div class="shopInfo__inner container">
+    <!-- petShopInfo -->
+    <section id="petShopInfo">
+        <div class="petShopInfo__inner container">
             <div class="itemImg">
                 <figure>
-                <img src="../asset/img/petshop/<?=$shopInfo['shopImgFile']?>" alt="상품사진">
+                    <img src="../asset/img/petshop/<?=$shopInfo['shopImgFile']?>" alt="상품사진">
                 </figure>
             </div>
             <div class="itemInfo">
@@ -60,7 +140,7 @@
                     <h3 class="butler800"><?=$shopInfo['shopBrand']?></h3>
                     <h2 class="butler800"><?=$shopInfo['shopItemName']?></h2>
                     <p><?=$shopInfo['shopItemMainEx']?></p>
-                    <h4><?=$shopInfo['shopItemPrice']?></h4>
+                    <h4><?=$shopInfo['shopItemSubEx']?></h4>
                 </div>
                 <div class="itemInfo__review">
                     <div class="star">
@@ -70,10 +150,10 @@
                 </div>
                 <div class="itemInfo__link">
                     <h2>Link</h2>
-                    <p><a href="#"><?=$shopInfo['shopItemLink01']?></a></p>
-                    <p><a href="#"><?=$shopInfo['shopItemLink02']?></a></p>
-                    <p><a href="#"><?=$shopInfo['shopItemLink03']?></a></p>
-                    <p><a href="#"><?=$shopInfo['shopItemLink04']?></a></p> 
+                    <p><em></em><?=$shopInfo['shopItemLink01']?></p>
+                    <p><?=$shopInfo['shopItemLink02']?></p>
+                    <p><?=$shopInfo['shopItemLink03']?></p>
+                    <p><?=$shopInfo['shopItemLink04']?></p> 
                 </div>
                 <div class="item__btn">
                     <h2><a href="#">장바구니</a></h2>
@@ -82,7 +162,7 @@
             </div>
         </div>
     </section>
-    <!-- //shopInfo -->
+    <!-- //petShopInfo -->
 
     <!-- itemExplanation -->
     <section id="itemExplanation">
@@ -98,10 +178,7 @@
             <div class="Explanation__info">
                     <div class="Explanation__img">
                         <div class="Explanation__desc">
-                            <h3 class="butler800"><?=$shopInfo['shopBrand']?></h3>
-                            <h2 class="butler800"><?=$shopInfo['shopItemName']?></h2>
-                            <h4><?=$shopInfo['shopItemMainEx']?></h4>
-                            <p><?=$shopInfo['shopItemSubEx']?></p>
+                            <img src="../asset/img/petshop/<?=$shopInfo['shopImgFile']?>" alt="상품사진">
                         </div>
                     </div>
                     <div class="Explanation__more">

@@ -4,7 +4,7 @@
     $shopSql = "SELECT * FROM petShop";
     $shopResult = $connect -> query($shopSql);
 
-    $shopInfo = $shopResult -> fetch_array(MYSQLI_ASSOC);
+    // $shopInfo = $shopResult -> fetch_array(MYSQLI_ASSOC);
 
     $shopCate = $_GET['category'];
 
@@ -88,10 +88,49 @@
      <!-- // shopMini -->
 
      <!-- shopBest -->
-     <section id="shopBest">
+     <!-- <section id="shopBest">
         <div class="shopBest__inner container">
             <h2 class="butler800">BEST PICKS</h2>
             <div class="best__item">
+
+            <?php
+                // if(isset($_GET['page'])){
+                //     $page = (int) $_GET['page'];
+                // } else {
+                //     $page = 1;
+                // }
+
+                // $viewNum = 9;
+                // $viewLimit = ($viewNum * $page) - $viewNum;
+
+
+                // $shopSql .= " ORDER BY petShopID DESC LIMIT {$viewLimit}, {$viewNum}";
+                // $shopResult = $connect -> query($shopSql);
+
+
+                // $count = $shopResult -> num_rows;
+
+                // if($shopSql){
+                //     $count = $shopResult -> num_rows;
+
+                //     if($count > 0 ){
+                //         for($i=1; $i <= $count; $i++){
+                //             $shop = $shopResult -> fetch_array(MYSQLI_ASSOC);
+                //             echo "<div class='best__all'>";
+                //             echo "<div class='best__img'>";
+                //             echo "<a href='petShopItem.php?page=".$shop['petShopID']."'><img src='../asset/img/petshop/".$shop['shopImgFile']."' alt=''></a>";
+                //             echo "<figcaption>";
+                //             echo "<h2><a href='petShopItem.php?page=".$shop['petShopID']."'>".$shop['shopItemName']."</a></h2>";
+                //             echo "<p>".$shop['shopItemPrice']."</p>";
+                //             echo "</figcaption>";
+                //             echo "</div>";
+                //             echo "</div>";
+                //         }
+                //     }
+                // }
+            ?>
+
+
                 <div class="best__all">
                     <div class="best__img">
                         <a href="#"><img src="../../asset/img/bestImg01.jpg" alt="베스트01"></a>
@@ -115,32 +154,9 @@
                         </figcaption>
                     </div>
                 </div>
-                <div class="best__all">
-                    <div class="best__img">
-                        <a href="#"><img src="../../asset/img/bestImg04.jpg" alt="베스트04"></a>
-                        <figcaption>
-                            <h2><a href="#">푹신푹신한 쿠션</a></h2>
-                            <p>66,000원</p>
-                        </figcaption>
-                    </div>
-                    <div class="best__img">
-                        <a href="#"><img src="../../asset/img/bestImg05.jpg" alt="베스트05"></a>
-                        <figcaption>
-                            <h2><a href="">공놀이용 볼</a></h2>
-                            <p>7,000원</p>
-                        </figcaption>
-                    </div>
-                    <div class="best__img">
-                        <a href="#"><img src="../../asset/img/bestImg06.jpg" alt="베스트06"></a>
-                        <figcaption>
-                            <h2><a href="#">가죽 목줄</a></h2>
-                            <p>18,000원</p>
-                        </figcaption>
-                    </div>
-                </div>
             </div>
         </div>
-     </section>
+     </section> -->
      <!-- //shopBest -->
 
      <!-- shop category -->
@@ -165,43 +181,45 @@
     <section id="shopItem">
         <div class="shopItem__inner container">
 
-        <?php
-            if(isset($_GET['page'])){
-                $page = (int) $_GET['page'];
-            } else {
-                $page = 1;
-            }
+            <?php
+                if(isset($_GET['page'])){
+                    $page = (int) $_GET['page'];
+                } else {
+                    $page = 1;
+                }
 
-            $viewNum = 9;
-            $viewLimit = ($viewNum * $page) - $viewNum;
-
-
-            $shopSql .= " ORDER BY petShopID DESC LIMIT {$viewLimit}, {$viewNum}";
-            $shopResult = $connect -> query($shopSql);
+                $viewNum = 9;
+                $viewLimit = ($viewNum * $page) - $viewNum;
 
 
-            $count = $shopResult -> num_rows;
+                $shopSql .= " ORDER BY petShopID DESC LIMIT {$viewLimit}, {$viewNum}";
+                $shopResult = $connect -> query($shopSql);
 
-            if($shopSql){
+
                 $count = $shopResult -> num_rows;
 
-                if($count > 0 ){
-                    for($i=1; $i <= $count; $i++){
-                        $shop = $shopResult -> fetch_array(MYSQLI_ASSOC);
-                        echo "<div class='item__all'>";
-                        echo "<div class='item__img'>";
-                        echo "<a href='petShopItem.php?page=".$shop['petShopID']."'><img src='../asset/img/petshop/".$shop['shopImgFile']."' alt=''></a>";
-                        echo "<figcaption>";
-                        echo "<h3 class='butler800'><a href='#'>".$shop['shopBrand']."</a></h3>";
-                        echo "<h2><a href='#'>".$shop['shopItemName']."</a></h2>";
-                        echo "<p><a href='#'>".$shop['shopItemPrice']."</a></p>";
-                        echo "</figcaption></div></div></div>";
+                if($shopSql){
+                    $count = $shopResult -> num_rows;
+
+                    if($count > 0 ){
+                        for($i=1; $i <= $count; $i++){
+                            $shop = $shopResult -> fetch_array(MYSQLI_ASSOC);
+                            echo "<div class='item__all'>";
+                            echo "<div class='item__img'>";
+                            echo "<a href='petShopItem.php?page=".$shop['petShopID']."'><img src='../asset/img/petshop/".$shop['shopImgFile']."' alt=''></a>";
+                            echo "<figcaption>";
+                            echo "<h3 class='butler800'><a href='#'>".$shop['shopBrand']."</a></h3>";
+                            echo "<h2><a href='petShopItem.php?page=".$shop['petShopID']."'>".$shop['shopItemName']."</a></h2>";
+                            echo "<p><a href='petShopItem.php?page=".$shop['petShopID']."'>".$shop['shopItemPrice']."</a></p>";
+                            echo "</figcaption>";
+                            echo "</div>";
+                            echo "</div>";
+                        }
                     }
                 }
-            }
-        ?>
+            ?>
 
-            <div class="item__all">
+            <!-- <div class="item__all">
                 <div class="item__img">
                     <a href="#"><img src="../asset/img/item__top01.jpg" alt=""></a>
                     <figcaption>
@@ -226,14 +244,14 @@
                         <p><a href="#">66,000원</a></p>
                     </figcaption>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="petShop__pages">
             <ul>
             <?php
                 if(isset($_GET['category'])){
-                    $sql = "SELECT count(petShopID) FROM petShop WHERE shopCate = '$category'";
+                    $sql = "SELECT count(petShopID) FROM petShop WHERE shopCate = '$shopCate'";
                     
                 } else {
                     $sql = "SELECT count(petShopID) FROM petShop";

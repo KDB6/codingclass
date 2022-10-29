@@ -1,0 +1,67 @@
+.inner_height {
+    /* min-height: 715px; */
+}
+.emailVerifi {
+    width: 100%;
+}
+.emailVerifi h5 {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.emailVerifi h6 {
+    font-size: 14px;
+    text-align: center;
+    color: #757575;
+    padding: 25px 0;
+    border-bottom: 1px dashed #6cc4b3;
+}
+.input__style {
+    display: block;
+    padding: 13px 20px;
+    width: 90.5%;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #f5f5f5;
+    border: 0;
+}
+.input__style:focus {
+    outline: 1px solid #6cc4b3;
+}
+.input__style::placeholder {
+    color: #757575;
+}
+.first_input > .input__style {
+    margin-bottom: 15px;
+}
+.second_input > .input__style {
+    margin-bottom: 35px;
+}
+.searchIdBox {
+    width: 100%;
+    border-bottom: 1px dashed #6cc4b3;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+.searchIdBox h5 {
+    font-size: 20px;
+}
+.searchIdBox > div {
+    text-align: center;
+}
+.confirm__btn {
+    display: block;
+    padding: 13px 3rem;
+    margin: 30px auto 0px auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.go_login {
+    text-align: center;
+    margin-top: -40px;
+}
+.go_login a {
+    padding: 10px 3.3rem;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}

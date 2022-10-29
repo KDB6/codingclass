@@ -205,7 +205,7 @@
                         for($i=1; $i <= $count; $i++){
                             $Hos = $HosResult -> fetch_array(MYSQLI_ASSOC);
                             echo "<div class='hospital__card'>";
-                                echo "<a href='hospitalView.php?page=".$Hos['HosID']."'><img src='../asset/img/hospital/".$Hos['HosImgFile']."' alt=''></a>";
+                            echo "<a href='hospitalView.php?page=".$Hos['HosID']."'><img src='../asset/img/hospital/".$Hos['HosImgFile']."' alt=''></a>";
                             echo "<div class='hospital__cardText'>";
                             echo "<h4>".$Hos['HosName']."</h4>";
                             echo "<address>".$Hos['HosAdress']."</address></div>";

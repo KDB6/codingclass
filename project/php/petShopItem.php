@@ -1,5 +1,12 @@
 <?php
     include "../connect/connect.php";
+
+    $shopID = $_GET['page'];
+
+    $shopSql = "SELECT * FROM petShop WHERE petShopID = '{$petShopID}'";
+    $ShopResult = $connect -> query($shopSql);
+
+    $shopInfo = $ShopResult -> fetch_array(MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +23,7 @@
     <link rel="stylesheet" href="../asset/css/butler.css">
 
     <link rel="stylesheet" href="../asset/css/petShop/petShopItemCate.css">
-    <link rel="stylesheet" href="../asset/css/petShop/petShopInfo.css">
+    <link rel="stylesheet" href="../asset/css/petShop/shopInfo.css">
     <link rel="stylesheet" href="../asset/css/petShop/itemExplanation.css">
 </head>
 <body>
@@ -40,33 +47,33 @@
     </section>
     <!-- //petShopItem category -->
 
-    <!-- petShopInfo -->
-    <section id="petShopInfo">
-        <div class="petShopInfo__inner container">
+    <!-- shopInfo -->
+    <section id="shopInfo">
+        <div class="shopInfo__inner container">
             <div class="itemImg">
                 <figure>
-                    <img src="../asset/img/shopItem.jpg" alt="상품사진">
+                <img src="../asset/img/petshop/<?=$shopInfo['shopImgFile']?>" alt="상품사진">
                 </figure>
             </div>
             <div class="itemInfo">
                 <div class="itemInfo_name">
-                    <h3 class="butler800">Brand</h3>
-                    <h2 class="butler800">DOG CUSHION</h2>
-                    <p>반려견에게 아늑함을 전해주세요.</p>
-                    <h4>78,000원</h4>
+                    <h3 class="butler800"><?=$shopInfo['shopBrand']?></h3>
+                    <h2 class="butler800"><?=$shopInfo['shopItemName']?></h2>
+                    <p><?=$shopInfo['shopItemMainEx']?></p>
+                    <h4><?=$shopInfo['shopItemPrice']?></h4>
                 </div>
                 <div class="itemInfo__review">
                     <div class="star">
                         <img src="../asset/img/star.svg" alt="별점">
                     </div>
-                    <h3>Review 3건</h3>
+                    <!-- <h3>Review 3건</h3> -->
                 </div>
                 <div class="itemInfo__link">
                     <h2>Link</h2>
-                    <p><em></em><a href="#">https://www.petitem.com/</a></p>
-                    <p><a href="#">https://www.petitem.com/</a></p>
-                    <p><a href="#">https://www.petitem.com/</a></p>
-                    <p><a href="#">https://www.petitem.com/</a></p> 
+                    <p><a href="#"><?=$shopInfo['shopItemLink01']?></a></p>
+                    <p><a href="#"><?=$shopInfo['shopItemLink02']?></a></p>
+                    <p><a href="#"><?=$shopInfo['shopItemLink03']?></a></p>
+                    <p><a href="#"><?=$shopInfo['shopItemLink04']?></a></p> 
                 </div>
                 <div class="item__btn">
                     <h2><a href="#">장바구니</a></h2>
@@ -75,7 +82,7 @@
             </div>
         </div>
     </section>
-    <!-- //petShopInfo -->
+    <!-- //shopInfo -->
 
     <!-- itemExplanation -->
     <section id="itemExplanation">
@@ -85,25 +92,23 @@
                 <ul class="">
                     <li><a href="#">Information</a></li>
                     <li><a href="#">Link</a></li>
-                    <li><a href="#">Review</a></li>
+                    <!-- <li><a href="#">Review</a></li> -->
                 </ul>
             </div>
             <div class="Explanation__info">
                     <div class="Explanation__img">
                         <div class="Explanation__desc">
-                            <h3 class="butler800">Brand</h3>
-                            <h2 class="butler800">DOG CUSHION</h2>
-                            <h4>반려견에게 아늑함을 전해주세요.</h4>
-                            <p>반려견들을 위한 푹신한 새로운 쿠션을 출시했습니다.</p>
+                            <h3 class="butler800"><?=$shopInfo['shopBrand']?></h3>
+                            <h2 class="butler800"><?=$shopInfo['shopItemName']?></h2>
+                            <h4><?=$shopInfo['shopItemMainEx']?></h4>
+                            <p><?=$shopInfo['shopItemSubEx']?></p>
                         </div>
                     </div>
                     <div class="Explanation__more">
-                        <h2>이 담요는 아이들이 덮고 자기에 부드러운 담요입니다.</h2>
-                        <h2>침대, 쇼파, 자동차 등 어디에서나 유용하게 사용할 수 있습니다.</h2>
-                        <h3>Size S <em>45 x 65</em></h3>
-                        <h3>Size M <em>60 x 80</em></h3>
-                        <h3>Size L <em>100 x 120</em></h3>
-                        <p>재질 : Viscose, polyester</p>
+                        <h2><?=$shopInfo['shopItemEx01']?></h2>
+                        <h2><?=$shopInfo['shopItemEx02']?></h2>
+                        <h3><?=$shopInfo['shopItemEx03']?></h3>
+                        <p><?=$shopInfo['shopItemEx04']?></p>
                     </div>
                 </figure>
             </div>

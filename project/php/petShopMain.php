@@ -1,13 +1,24 @@
 <?php
     include "../connect/connect.php";
 
+    $shopSql = "SELECT * FROM petShop";
+    $shopResult = $connect -> query($shopSql);
 
-    $petMain = $_GET['page'];
+    $shopInfo = $shopResult -> fetch_array(MYSQLI_ASSOC);
 
-    $petMainSql = "SELECT * FROM petShopMain WHERE petShopID = '{$petMain}'";
-    $petMainResult = $connect -> query($petMainSql);
+    $shopCate = $_GET['category'];
 
-    $petMainInfo = $petMainResult -> fetch_array(MYSQLI_ASSOC);
+
+    if(isset($_GET['category'])){
+        $shopCate = $_GET['category'];
+        $shopSql = "SELECT * FROM petShop WHERE shopCate='$shopCate'";
+        
+    } else {
+        $shopSql = "SELECT * FROM petShop";
+    }
+
+    $petShopCate = "SELECT DISTINCT shopCate FROM petShop";
+    $shopResult = $connect -> query($petShopCate);
 ?>
 
 <!DOCTYPE html>
@@ -165,34 +176,34 @@
             $viewLimit = ($viewNum * $page) - $viewNum;
 
 
-            $petMainSql .= " ORDER BY petShopID DESC LIMIT {$viewLimit}, {$viewNum}";
-            $petMainResult = $connect -> query($petMainSql);
+            $shopSql .= " ORDER BY petShopID DESC LIMIT {$viewLimit}, {$viewNum}";
+            $shopResult = $connect -> query($shopSql);
 
 
-            $count = $petMainResult -> num_rows;
+            $count = $shopResult -> num_rows;
 
-            if($petMainSql){
-                $count = $petMainResult -> num_rows;
+            if($shopSql){
+                $count = $shopResult -> num_rows;
 
                 if($count > 0 ){
                     for($i=1; $i <= $count; $i++){
-                        $Hos = $petMainResult -> fetch_array(MYSQLI_ASSOC);
+                        $shop = $shopResult -> fetch_array(MYSQLI_ASSOC);
                         echo "<div class='item__all'>";
                         echo "<div class='item__img'>";
-                        echo "<a href='petShopItem.php?page=".$petMainSql['petShopID']."'><img src='../asset/img/petshop/".$petMainSql['shopImgFile']."' alt=''></a>";
+                        echo "<a href='petShopItem.php?page=".$shop['petShopID']."'><img src='../asset/img/petshop/".$shop['shopImgFile']."' alt=''></a>";
                         echo "<figcaption>";
-                        echo "<h3 class='butler800'><a href='#'>".$petMainSql['categoeyBrand']."</a></h3>";
-                        echo "<h2><a href='#'>".$petMainSql['categoryName']."</a></h2>";
-                        echo "<p><a href='#'>".$petMainSql['categoryPrice']."</a></p>";
-                        echo "</figcaption></div>";
+                        echo "<h3 class='butler800'><a href='#'>".$shop['shopBrand']."</a></h3>";
+                        echo "<h2><a href='#'>".$shop['shopItemName']."</a></h2>";
+                        echo "<p><a href='#'>".$shop['shopItemPrice']."</a></p>";
+                        echo "</figcaption></div></div></div>";
                     }
                 }
             }
         ?>
 
-            <!-- <div class="item__all">
+            <div class="item__all">
                 <div class="item__img">
-                    <a href="#"><img src="../../asset/img/item__top01.jpg" alt=""></a>
+                    <a href="#"><img src="../asset/img/item__top01.jpg" alt=""></a>
                     <figcaption>
                         <h3 class="butler800"><a href="#">Brand</a></h3>
                         <h2><a href="#">펫 용품</a></h2>
@@ -200,7 +211,7 @@
                     </figcaption>
                 </div>
                 <div class="item__img">
-                    <a href="#"><img src="../../asset/img/item__top02.jpg" alt=""></a>
+                    <a href="#"><img src="../asset/img/item__top02.jpg" alt=""></a>
                     <figcaption>
                         <h3 class="butler800"><a href="#">Brand</a></h3>
                         <h2><a href="#">펫 용품</a></h2>
@@ -208,16 +219,75 @@
                     </figcaption>
                 </div>
                 <div class="item__img">
-                    <a href="#"><img src="../../asset/img/item__top03.jpg" alt=""></a>
+                    <a href="#"><img src="../asset/img/item__top03.jpg" alt=""></a>
                     <figcaption>
                         <h3 class="butler800"><a href="#">Brand</a></h3>
                         <h2><a href="#">펫 용품</a></h2>
                         <p><a href="#">66,000원</a></p>
                     </figcaption>
                 </div>
-            </div> -->
+            </div>
         </div>
+
         <div class="petShop__pages">
+            <ul>
+            <?php
+                if(isset($_GET['category'])){
+                    $sql = "SELECT count(petShopID) FROM petShop WHERE shopCate = '$category'";
+                    
+                } else {
+                    $sql = "SELECT count(petShopID) FROM petShop";
+                }
+
+
+                $result = $connect -> query($sql);
+
+                $shopCount = $result -> fetch_array(MYSQLI_ASSOC);
+                $shopCount = $shopCount['count(petShopID)'];
+
+                
+
+                // 총 페이지 갯수
+                $shopCount = ceil($shopCount / $viewNum);
+
+                // echo $HosCount;
+
+                // 현재 페이지 기준으로 보여주고 싶은 갯수
+                $pageCurrent = 5;
+                $startPage = $page - $pageCurrent;
+                $endPage = $page + $pageCurrent;
+
+                // 처음 페이지 초기화
+
+                if($startPage < 1) $startPage = 1;
+
+                // 마지막 페이지 초기화
+                if($endPage >= $shopCount) $endPage = $shopCount;
+
+                // 이전 페이지 , 처음 페이지
+                if($page != 1){
+                    $prevPage = $page - 1;
+                    echo "<li><a href='hospitalMain.php?page=1'>처음으로</li>";
+                    echo "<li><a href='hospitalMain.php?page={$prevPage}'>이전</li>";
+                }
+
+                // 페이지 넘버 표시
+                for($i = $startPage; $i<=$endPage; $i++){
+                    $active = "";
+                    if($i == $page) $active = "active";
+                    echo"<li class='{$active}'><a href='hospitalMain.php?page={$i}'>{$i}</a></li>";
+                }
+
+                // 다음 페이지 , 마지막 페이지
+                if($page != $endPage){
+                    $nextPage = $page + 1;
+                    echo "<li><a href='hospitalMain.php?page={$nextPage}'>다음</li>";
+                    echo "<li><a href='hospitalMain.php?page={$shopCount}'>마지막으로</li>";
+                }
+            ?>
+            </ul>
+        </div>
+        <!-- <div class="petShop__pages">
             <ul>
                 <li><a href="#">&lt;</a></li>
                 <li class="active"><a href="#">1</a></li>
@@ -227,7 +297,7 @@
                 <li><a href="#">5</a></li>
                 <li><a href="#">&gt;</a></li>
             </ul>
-        </div>
+        </div> -->
      </section>
      <!-- //shop item -->
 

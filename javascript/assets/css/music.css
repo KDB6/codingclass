@@ -224,8 +224,8 @@
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
-    height: 10px;
+    width: 4px;
+    height: 4px;
 }
 ::-webkit-scrollbar-track {
     background: #414d77;

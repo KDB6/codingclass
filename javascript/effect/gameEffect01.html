@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>game effect</title>
 
-    <!-- <link rel="stylesheet" href="../assets/css/bg.css"> -->
+    <link rel="stylesheet" href="../assets/css/bg.css">
     <link rel="stylesheet" href="../assets/css/game.css">
     <link rel="stylesheet" href="../assets/css/music.css">
-    <link rel="stylesheet" href="../assets/css/font.css">
-
+    
     <link rel="stylesheet" href="../assets/css/gameSearch.css">
     <link rel="stylesheet" href="../assets/css/gameSearchAni.css">
     <link rel="stylesheet" href="../assets/css/gameSearchDracula.css">
@@ -368,6 +367,7 @@
     <searchGame id="searchGame">
         <main id="mainSearch">
             <div class="search__wrap">
+                <h2 class="search__close">x</h2>
                 <div class="search__audio">
                     <span class="play">
                         <img src="../assets/img/search/soundOn.svg" alt="">
@@ -377,13 +377,9 @@
                     </span>
                     <audio id="audio" src="../assets/music/music__audio01.mp3" loop="loop"></audio>
                 </div>
-    
-                <span>CSS 속성 검색 이벤트</span>
-                <h1>2분동안 CSS 속성 검색하기</h1>
-                <h2 class="search__close">끄기</h2>
+                <h1>CSS GAME</h1>
                 <p class="desc">
-                    2분 동안 CSS 속성을 많이 검색하면 점수가 올라갑니다.<br>
-                    기억이 나지 않는다면 힌트보기를 세 번 이용하실 수 있습니다.
+                    제한시간 2분 내에 최대한 많은 CSS 속성을 입력해주세요.
                 </p>
     
                 <div class="time">
@@ -393,7 +389,7 @@
                 <div class="search__box">
                     <label for="search">검색하기</label>
                     <input type="text" id="search" placeholder="CSS 속성을 입력해주세요.">
-                    <div class="start">버튼을 누르면 게임이 시작됩니다.</div>
+                    <div class="start">Game start</div>
                 </div>
     
                 <div class="search__info2 center">
@@ -596,7 +592,7 @@
             cursor.style.top = e.clientY - 8 + "px";
         });
 
-        $("#searchGame").draggable();
+        $("#mainSearch").draggable();
 
         $(".muisc__wrap").draggable();
 

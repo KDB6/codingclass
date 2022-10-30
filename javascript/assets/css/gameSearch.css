@@ -6,14 +6,14 @@
 
 /* main */
 #searchGame {
-    width: 1200px;
+    width: 600px;
 }
-#searchGame #mainSearch{
+#mainSearch{
     margin: 50px 10px;
-    width: 1200px;
+    width: 600px;
 }
 .search__wrap {
-    max-width: 1200px;
+    max-width: 600px;
     margin: 0 auto;
     border: 3px solid var(--htmlColor);
     border-radius: 20px;
@@ -23,18 +23,16 @@
     display: none;
 }
 .search__wrap > span {
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 10px;
     display: inline-block;
 }
 .search__wrap > h1 {
-    font-family: 'Tmon';
     color: var(--htmlColor);
-    font-size: 4vw;
+    font-size: 2vw;
     margin-bottom: 10px;
 }
 .search__audio {
-    margin-bottom: 10px;
     cursor: pointer;
 }
 .search__audio .play {
@@ -69,10 +67,11 @@
 }
 .search__box .start {
     position: absolute;
-    left: 50%; bottom: 0;
+    left: 50%;
+    bottom: 0;
     transform: translateX(-50%);
     background: #223547;
-    width: 30%;
+    width: 50%;
     border-radius: 50px;
     font-size: 20px;
     border: 2px solid var(--htmlColor);
@@ -193,6 +192,11 @@
     margin: 0 auto;
     text-align: left;
     font-weight: 500;
+}
+.search__close {
+    width: 10px;
+    height: 1px;
+    transform: translate(5200%, -500%);
 }
 .search__click {
     margin-top: 10px;
@@ -331,12 +335,12 @@ footer a:hover {
 
 /* 모달 애니메이션 */
 .search__wrap.show {    /* 전체 배경 */
-    animation: foldOut 1s ease forwards;
+    /* animation: foldOut 1s ease forwards; */
     display: block;
 }
 .search__wrap.show.hide{     
-    animation: foldIn 0.3s 0.5s ease backwards;
-    display: none;
+    /* animation: foldIn 0.3s 0.5s ease backwards; */
+    display: block;
 }
 @keyframes foldOut {
     0%   {transform: scaleX(0) scaleY(0.001);}

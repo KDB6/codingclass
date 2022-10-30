@@ -308,3 +308,16 @@ const audioVolume = document.querySelector("#volume-control");
 audioVolume.addEventListener("change", function(e) {
     audio.volume = this.value/10;
 })
+
+// 뮤직 모달
+const musicIcon = document.querySelector(".music__icon");
+const musicClose = document.querySelector(".music__close")
+const musicPlayer = document.querySelector(".music");
+
+musicIcon.addEventListener("click", () => {
+    musicPlayer.classList.add("show");
+    musicPlayer.classList.remove("hide");
+});
+musicClose.addEventListener("click", () => {
+    musicPlayer.classList.add("hide");
+});

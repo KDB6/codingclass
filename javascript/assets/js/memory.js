@@ -4,6 +4,11 @@
 
 const memoryWrap = document.querySelector(".memory__wrap");
 const memoryCards = document.querySelectorAll(".cards li");
+const memoryTime = document.querySelector(".memoryTime span");
+const memoryStart = document.querySelector(".memory__inner .memoryStart");
+const memoryRestart = document.querySelector(".memory__inner .restart");
+const memortResultWrap = document.querySelector(".memory__restart");
+
 
 let cardOne, cardTwo;
 let disableDeck = false;    // 매치 했을 떄
@@ -17,6 +22,66 @@ let sound = [
 let soundMatch = new Array(sound[0]);
 let soundUnMatch = new Array(sound[1]);
 let soundSuccess = new Array(sound[2]);
+
+// 게임 시작하기
+function startQuiz() {
+    
+    // 시작 버튼 없애기 & 속성 리스트 없애기
+    memoryStart.style.display = "none";
+
+    // 시간 설정
+    timeInterval = setInterval(reduceTime, 1000);
+
+    // 점수 계산
+    searchNum.textContent = cssProperty.length;
+
+    // 정답 체크
+    checkAnswers();
+}
+
+let memoryTimeReamining = 120,    // 남은 시간
+    memoryTimeInterval = "",      // 시간 간격
+    memoryScore = 0               // 점수
+
+// 시간 설정하기
+function reduceTime() {
+    memoryTimeReamining--;
+
+    if(memoryTimeReamining == 0 ) endQuiz();
+
+    memoryTime.innerText = displayTime();
+}
+
+// 시간 표시하기
+function displayTime() {
+    if(memoryTimeReamining <= 0) {
+        return "0:00";
+    } else {
+        let minutes = Math.floor(memoryTimeReamining / 60);
+        let seconds = memoryTimeReamining % 60;
+
+        // 초 단위가 한 자리 일 때 0을 추가
+        if(seconds < 10 ) seconds = "0" + seconds;
+        return minutes + ":" + seconds;
+     }
+}
+
+// 게임 끝났을 때
+function endQuiz() {
+    // alert("게임 끝");
+
+    // 시작 버튼 만들기
+    memoryStart.style.display = "block";
+    memoryStart.style.pointerEvents = "none";
+
+    // 시간 정지
+    clearInterval(timeInterval);
+
+    // 메세지 출력
+    memortResultWrap.classList.add("show");
+    let point = Math.round(score/cssProperty.length * 100);
+    searchResult.innerHTML = `게임 끝<br> 총 갯수 ${cssProperty.length} 중 당신이 맞힌 갯수는 ${score}개, <br>맞춘 비율은 ${point}%입니다.`;
+}
 
 // 카드 뒤집기
 function flipCard(e) {
@@ -98,13 +163,39 @@ function shuffledCard() {
 }
 shuffledCard();
 
+// 다시 시작하기
+function restart() {
+    memortResultWrap.classList.remove("show");
+    timeReamining = 120;
+    score = 0;
+    searchTotal.innerText = "0";
+    
+    searchPlay.classList.add("playing");
+    searchAudio.play()
+
+    startQuiz();
+}
+
+// 다시 시작하기
+function restart() {
+    memortResultWrap.classList.remove("show");
+    timeReamining = 120;
+    score = 0;
+    searchTotal.innerText = "0";
+    
+    searchPlay.classList.add("playing");
+    searchAudio.play()
+
+    startQuiz();
+}
+
 // 카드 클릭
 memoryCards.forEach((card) => {
     card.addEventListener("click", flipCard);
 });
 
 // 카드 게임 모달
-const memoryIcon = document.querySelector(".icon02");
+const memoryIcon = document.querySelector(".memory__icon");
 const memoryClose = document.querySelector(".memory__close")
 const memoryGame = document.querySelector(".memory__wrap");
 

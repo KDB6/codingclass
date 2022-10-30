@@ -557,7 +557,7 @@ searchInput.addEventListener("input", checkInput);
 searchRestart.addEventListener("click", restart);
 
 // 게임 모달
-const searchIcon = document.querySelector(".icon01");
+const searchIcon = document.querySelector(".search__icon");
 const searchClose = document.querySelector(".search__close")
 const searchGame = document.querySelector(".search__wrap");
 

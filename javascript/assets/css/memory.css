@@ -1,21 +1,39 @@
-.memory__wrap {}
+.memory__wrap {
+  width: 700px;
+  height: 700px;
+}
 .memory__inner {
     width: 700px;
     height: 700px;
-    position: absolute;
     left: 300px;
     top: 100px;
     border-radius: 20px;
     /* animation: flicker 1.5s infinite alternate; */
 }
 .memory__inner .memory__close {
-  z-index: 100;
+  z-index: 1;
   text-align: center;
   position: absolute;
   margin-left: 315px;
-  margin-top: 7px;
-  color: rgb(255, 255, 255);
+  margin-top: 40px;
+  color: rgb(255, 229, 221);
   cursor: pointer;
+}
+.memoryTime {
+  color: rgb(255, 229, 221);
+  position: absolute;
+  margin-left: 320px;
+  padding-top: 15px;
+}
+.memoryStart {
+  position: absolute;
+}
+.memory__card {
+    background: rgb(255, 126, 75, 0.3);
+    backdrop-filter: blur(20px);
+    border: 2px solid rgb(255, 145, 0);
+    border-radius: 20px;
+    padding-top: 40px;
 }
 .memory__card ul {
     padding: 28px;
@@ -23,9 +41,6 @@
 .memory__card .cards {
     display: flex;
     flex-wrap: wrap;
-    background: rgb(255, 126, 75);
-    border: 2px solid rgb(255, 145, 0);
-    border-radius: 20px;
 }
 .memory__card .cards li {
     list-style: none;
@@ -76,8 +91,8 @@
     animation: shakeY all .5s;
 }
 
-/* 모달 애니메이션 */
-.memory__wrap.show {    /* 전체 배경 */
+/* 메모리 애니메이션 */
+.memory__wrap.show {
   animation: foldOut 1s ease forwards;
   display: block;
 }

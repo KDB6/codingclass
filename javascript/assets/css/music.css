@@ -19,6 +19,9 @@
     justify-content: space-between;
     color: #586BB1;
 }
+.music__header .music__close {
+    margin-right: 10px;
+}
 .music__header h2 {
     font-size: 14px;
 }
@@ -246,6 +249,26 @@
     top: 30px;
     font-size: 12px;
     color: rgb(67, 102, 255);
+}
+
+/* 뮤직 모달 애니메이션 */
+.music.show {
+    animation: foldOut 1s ease forwards;
+    display: block;
+}
+.music.hide {
+    animation: foldIn 1s ease backwards;
+    display: none;
+}
+@keyframes foldOut {
+    0%   {transform: scaleX(0) scaleY(0.001);}
+    50%  {transform: scaleX(1) scaleY(0.001);}
+    100% {transform: scaleX(1) scaleY(1);}
+}
+@keyframes foldIn {
+    0%   {transform: scaleX(1) scaleY(1);}
+    50%  {transform: scaleX(1) scaleY(0.001);}
+    100% {transform: scaleX(0) scaleY(0.001);}
 }
 
 ::-webkit-scrollbar {

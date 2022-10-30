@@ -64,12 +64,12 @@ https://kdb6.github.io/codingclass/javascript/effect/searchEffect07.html
 
 ### 퀴즈 이펙트 메인 페이지
 
-https://kdb6.github.io/codingclass/javascript/effect/quizeffect01.html  
-https://kdb6.github.io/codingclass/javascript/effect/quizeffect02.html  
-https://kdb6.github.io/codingclass/javascript/effect/quizeffect03.html  
-https://kdb6.github.io/codingclass/javascript/effect/quizeffect04.html  
-https://kdb6.github.io/codingclass/javascript/effect/quizeffect05.html  
-https://kdb6.github.io/codingclass/javascript/effect/quizeffect06.html
+https://kdb6.github.io/codingclass/javascript/effect/quizEffect01.html  
+https://kdb6.github.io/codingclass/javascript/effect/quizEffect02.html  
+https://kdb6.github.io/codingclass/javascript/effect/quizEffect03.html  
+https://kdb6.github.io/codingclass/javascript/effect/quizEffect04.html  
+https://kdb6.github.io/codingclass/javascript/effect/quizEffect05.html  
+https://kdb6.github.io/codingclass/javascript/effect/quizEffect06.html
 
 ### 마우스 이펙트 메인 페이지
 

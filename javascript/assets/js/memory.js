@@ -102,3 +102,16 @@ shuffledCard();
 memoryCards.forEach((card) => {
     card.addEventListener("click", flipCard);
 });
+
+// 카드 게임 모달
+const memoryIcon = document.querySelector(".icon02");
+const memoryClose = document.querySelector(".memory__close")
+const memoryGame = document.querySelector(".memory__wrap");
+
+memoryIcon.addEventListener("click", () => {
+    memoryGame.classList.add("show");
+    memoryGame.classList.remove("hide");
+});
+memoryClose.addEventListener("click", () => {
+    memoryGame.classList.add("hide");
+});

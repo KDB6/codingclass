@@ -1,60 +1,60 @@
 const allMusic = [
     {
-        name : "01. Blue Boi",
+        name : "Blue Boi",
         artist : "Lakey Inspired",
         img : "music__bg01",
         audio : "music__audio01"
     },
     {
-        name : "02. September Rain",
+        name : "September Rain",
         artist : "Yme Fresh",
         img : "music__bg02",
         audio : "music__audio02"
     },
     {
-        name : "03. mellow morning",
+        name : "mellow morning",
         artist : "Dixxy.",
         img : "music__bg03",
         audio : "music__audio03"
     },
     {
-        name : "04. At My Front Door",
+        name : "At My Front Door",
         artist : "DJ Quads",
         img : "music__bg04",
         audio : "music__audio04"
     },
     {
-        name : "05. Chill Noons",
+        name : "Chill Noons",
         artist : "Kronicle",
         img : "music__bg05",
         audio : "music__audio05"
     },
     {
-        name : "06. i can't tell you my love",
+        name : "i can't tell you my love",
         artist : "LucidDream.",
         img : "music__bg06",
         audio : "music__audio06"
     },
     {
-        name : "07. Every Day (Jazz Ver)",
+        name : "Every Day (Jazz Ver)",
         artist : "Lukrembo",
         img : "music__bg07",
         audio : "music__audio07"
     },
     {
-        name : "08. Sunshine",
+        name : "Sunshine",
         artist : "Joakim Karud",
         img : "music__bg08",
         audio : "music__audio08"
     },
     {
-        name : "09. Laundrette",
+        name : "Laundrette",
         artist : "MonaWonderlick",
         img : "music__bg09",
         audio : "music__audio09"
     },
     {
-        name : "10. WINTER KLOUD",
+        name : "WINTER KLOUD",
         artist : "WINYELLE",
         img : "music__bg10",
         audio : "music__audio10"

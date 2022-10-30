@@ -28,14 +28,11 @@ body {
     color: rgb(88, 107, 177);
     padding: 6px 0 5px 0;
     font-weight: normal;
-    font-family: 'Butler Stencil';
-    font-weight: 800;
+    font-weight: 600;
 }
 #header .time {
     color: rgb(88, 107, 177);
-    margin-top: 0px;
-    font-family: 'Butler Stencil';
-    font-weight: 800;
+    font-weight: 400;
 }
 /* mouseType */
 .mouse__cursor {
@@ -51,8 +48,8 @@ body {
 .icon01 {
     position: absolute;
     left: 30px;
-    top: 50px;
-    width: 54px;
+    top: 70px;
+    width: 50px;
 }
 .icon01 img {
     width: 100%;
@@ -60,11 +57,9 @@ body {
 .icon01 span {
     display: block;
     color: #586BB1;
-    font-size: 14px;
-    padding: 1px 0;
+    font-size: 12px;
     white-space: nowrap;
     text-align: center;
-    font-family: 'Butler Stencil';
     font-weight: 500;
 }
 
@@ -72,7 +67,7 @@ body {
     position: absolute;
     left: 30px;
     top: 150px;
-    width: 54px;
+    width: 50px;
 }
 .icon02 img {
     width: 100%;
@@ -80,19 +75,17 @@ body {
 .icon02 span {
     display: block;
     color: #586BB1;
-    font-size: 14px;
-    padding: 1px 0;
+    font-size: 12px;
     white-space: nowrap;
     text-align: center;
-    font-family: 'Butler Stencil';
     font-weight: 500;
 }
 
 .icon03 {
     position: absolute;
     left: 30px;
-    top: 250px;
-    width: 54px;
+    top: 230px;
+    width: 50px;
 }
 .icon03 img {
     width: 100%;
@@ -100,71 +93,9 @@ body {
 .icon03 span {
     display: block;
     color: #586BB1;
-    font-size: 14px;
-    padding: 1px 0;
+    font-size: 12px;
     white-space: nowrap;
     text-align: center;
-    font-family: 'Butler Stencil';
-    font-weight: 500;
-}
-
-.icon04 {
-    position: absolute;
-    left: 30px;
-    top: 350px;
-    width: 54px;
-}
-.icon04 img {
-    width: 100%;
-}
-.icon04 span {
-    display: block;
-    color: #586BB1;
-    font-size: 14px;
-    padding: 1px 0;
-    white-space: nowrap;
-    text-align: center;
-    font-family: 'Butler Stencil';
-    font-weight: 500;
-}
-
-.icon05 {
-    position: absolute;
-    left: 30px;
-    top: 450px;
-    width: 54px;
-}
-.icon05 img {
-    width: 100%;
-}
-.icon05 span {
-    display: block;
-    color: #586BB1;
-    font-size: 14px;
-    padding: 1px 0;
-    white-space: nowrap;
-    text-align: center;
-    font-family: 'Butler Stencil';
-    font-weight: 500;
-}
-
-.icon06 {
-    position: absolute;
-    left: 30px;
-    top: 550px;
-    width: 54px;
-}
-.icon06 img {
-    width: 100%;
-}
-.icon06 span {
-    display: block;
-    color: #586BB1;
-    font-size: 14px;
-    padding: 1px 0;
-    white-space: nowrap;
-    text-align: center;
-    font-family: 'Butler Stencil';
     font-weight: 500;
 }
 
@@ -183,8 +114,7 @@ body {
 #footer .agent {
     padding-top: 0px;
     font-size: 14px;
-    font-family: 'Butler Stencil';
-    font-weight: 800;
+    font-weight: 600;
 }
 .mac #footer {}
 .window #footer {}
@@ -202,7 +132,6 @@ body {
     bottom: 20px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
-    font-family: 'Butler Stencil';
     font-weight: 800;
 }
 .modal__btn:hover {

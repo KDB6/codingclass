@@ -2,15 +2,21 @@
 .memory__inner {
     width: 700px;
     height: 700px;
-    /* border: px solid #ff523b; */
-    background: #000;
+    /* border: 1.5px solid #ff523b; */
     position: absolute;
     left: 300px;
     top: 100px;
     border-radius: 20px;
-    animation: flicker 1.5s infinite alternate;
+    /* animation: flicker 1.5s infinite alternate; */
+    position: relative;
 }
-.memory__card {
+.memory__card .memory__close {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  z-index: 100;
+  transform: translateX(645px);
+  padding-top: 10px;
 }
 .memory__card ul {
     padding: 30px;
@@ -18,13 +24,15 @@
 .memory__card .cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    background: rgb(128, 47, 0);
+    border-radius: 20px;
 }
 .memory__card .cards li {
     list-style: none;
     width: 150px;
     height: 150px;
     position: relative;
+    margin: 5px;
 }
 .memory__card .cards li img {
     width: 100px;
@@ -48,11 +56,14 @@
 }
 .memory__card .cards li .front {
     transform: rotateY(0deg);
+    background: rgb(255, 149, 87);
+    background-position: center;
 }
 .memory__card .cards li.flip .front {
     transform: rotateY(180deg);
 }
 .memory__card .cards li .back {
+    background: rgb(255, 116, 62);
     transform: rotateY(-180deg);
 }
 .memory__card .cards li.flip .back {
@@ -63,6 +74,26 @@
 }
 .memory__card .cards li.flip.shakeY {
     animation: shakeY all .5s;
+}
+
+/* 모달 애니메이션 */
+.memory__wrap.show {    /* 전체 배경 */
+  animation: foldOut 1s ease forwards;
+  display: block;
+}
+.memory__wrap.hide {
+  animation: foldIn 1s ease backwards;
+  display: none;
+}
+@keyframes foldOut {
+  0%   {transform: scaleX(0) scaleY(0.001);}
+  50%  {transform: scaleX(1) scaleY(0.001);}
+  100% {transform: scaleX(1) scaleY(1);}
+}
+@keyframes foldIn {
+  0%   {transform: scaleX(1) scaleY(1);}
+  50%  {transform: scaleX(1) scaleY(0.001);}
+  100% {transform: scaleX(0) scaleY(0.001);}
 }
 
 @keyframes flicker {

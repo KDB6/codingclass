@@ -1,17 +1,19 @@
 .music__wrap {}
 .music__inner {
     width: 400px;
-    background: #000;
+    backdrop-filter: blur(20px);
     position: absolute;
     right: 100px;
     top: 100px;
     padding-top: 0;
-    padding: 5px;
+    padding: 0px;
+    border-radius: 10px;
+    border: 1.5px solid #000;
 }
 .music__header {
     width: 100%;
     height: 24px;
-    background: #000;
+    backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,34 +23,39 @@
     font-size: 14px;
 }
 .music__contents {
-    background: #535f8a;
     width: 100%;
 }
 .music__view {
     padding: 10px;
     display: flex;
+    background: rgb(44, 8, 68, 0.3);
+    backdrop-filter: blur(20px);
 }
 .music__view .img {
     width: 30%;
 }
 .music__view .img img {
     width: 100px;
+    
 }
 .music__view .title {
     width: 68.5%;
     text-align: center;
-    padding-top: 23px;
     /* display: flex;
     align-items: center;
     justify-content: space-between; */
     flex-direction: column;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 .music__view .title h3 {
-    font-size: 24px;
+    font-size: 20px;
+    color: rgb(67, 102, 255);
+    font-weight: 300;
 }
 .music__view .title p {
-    font-size: 18px;
+    font-size: 14px;
+    color: rgb(67, 102, 255);
+    font-weight: 300;
 }
 /* input[type="range" i] {
     color: #000;
@@ -58,17 +65,19 @@
     height: 100px;
     padding: 10px;
     padding-top: 0;
+    background: rgb(44, 8, 68, 0.3);
+    backdrop-filter: blur(20px);
 }
 .music__control .progress {
     width: 100%;
     height: 6px;
-    background: #414d77;
+    background: #000;
     border-radius: 5px;
 }
 .music__control .progress .bar {
     width: 0%;
     height: inherit;
-    background: #000;
+    background: rgb(67, 102, 255);
     border-radius: 5px;
 }
 .music__control .progress .timer {
@@ -76,6 +85,14 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 5px;
+}
+.music__control .progress .timer .current {
+    font-size: 14px;
+    color: rgb(67, 102, 255);
+}
+.music__control .progress .timer .duration {
+    font-size: 14px;
+    color: rgb(67, 102, 255);
 }
 .music__control .control {
     display: flex;
@@ -151,7 +168,8 @@
 }
 
 .music__footer {
-    background: #535f8a;
+    background: rgb(44, 8, 68, 0.3);
+    backdrop-filter: blur(20px);
     padding-top: 0px;
 }
 
@@ -176,6 +194,7 @@
     margin-bottom: 10px;
     border-top: 2px solid #000;
     padding-top: 10px;
+    color: rgb(67, 102, 255);
 }
 .music__list h3 .close {
     display: inline-block;
@@ -185,8 +204,8 @@
     background-size: cover;
     background-position: -432px 0;
     transform: scale(0.6);
-    vertical-align: -16px;
-    margin-left: 185px;
+    float: right;
+    margin-top: 5px;
 }
 .music__list h3 .list {
     display: inline-block;
@@ -206,21 +225,27 @@
     padding: 10px 0;
 }
 .music__list li.playing {
-    color: white;
+    color: #000;
 }
 .music__list li strong {
     display: block;
     font-size: 16px;
+    color: rgb(67, 102, 255);
+    font-weight: 500;
 }
 .music__list li em {
     font-style: normal;
     font-size: 14px;
+    font-weight: 300;
+    color: rgb(67, 102, 255);
 }
 .music__list li span {
     position: absolute;
+    padding-top: 7px;
     right: 0;
     top: 30px;
     font-size: 12px;
+    color: rgb(67, 102, 255);
 }
 
 ::-webkit-scrollbar {
@@ -228,13 +253,13 @@
     height: 4px;
 }
 ::-webkit-scrollbar-track {
-    background: #414d77;
+    background: #000000;
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-    background: #051655;
+    background: rgb(30, 44, 117);
     border-radius: 30px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #051655;
+    background: rgb(30, 44, 117);
 }

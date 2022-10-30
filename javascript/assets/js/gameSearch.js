@@ -557,11 +557,11 @@ searchInput.addEventListener("input", checkInput);
 searchRestart.addEventListener("click", restart);
 
 // 게임 모달
-const gameStar = document.querySelector(".icon01");
+const searchIcon = document.querySelector(".icon01");
 const searchClose = document.querySelector(".search__close")
 const searchGame = document.querySelector(".search__wrap");
 
-gameStar.addEventListener("click", () => {
+searchIcon.addEventListener("click", () => {
     searchGame.classList.add("show");
     searchGame.classList.remove("hide");
 });

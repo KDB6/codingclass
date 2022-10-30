@@ -1,5 +1,5 @@
 :root {
-    --htmlColor : #223547;
+    --htmlColor : rgb(54, 78, 143);
     --cssColor : #0e3d2e;
     --javascriptColor : #130744;
 }
@@ -15,9 +15,10 @@
 .search__wrap {
     max-width: 600px;
     margin: 0 auto;
-    border: 3px solid var(--htmlColor);
+    border: 1px solid var(--htmlColor);
     border-radius: 20px;
-    background-color: #f1f3f6;
+    background-color: #00000070;
+    backdrop-filter: blur(20px);
     padding: 30px;
     text-align: center;
     display: none;
@@ -40,13 +41,12 @@
 }
 .search__wrap .time {
     width: 140px;
-    height: 140px;
-    line-height: 140px;
+    height: 90px;
+    line-height: 0px;
     text-align: center;
     border-radius: 50%;
     margin: 0 auto;
-    background: var(--htmlColor);
-    margin-top: 20px;
+    padding-top: 55px;
 }
 .search__wrap .time span {
     color: #fff;
@@ -58,24 +58,31 @@
     position: relative;
 }
 .search__box input {
-    border: 2px solid var(--htmlColor);
-    padding: 15px 40px;
-    width: 30%;
+    font-size: 16px;
+    border: 0;
+    padding: 5px 20px;
+    width: 39%;
     border-radius: 50px;
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 20px;
+    outline: none;
+}
+.search__box input::placeholder {
+    font-size: 16px;
+    text-align: center;
 }
 .search__box .start {
+    font-size: 16px;
     position: absolute;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    background: #223547;
-    width: 50%;
-    border-radius: 50px;
-    font-size: 20px;
-    border: 2px solid var(--htmlColor);
-    padding: 15px 40px;
+    background: rgb(28, 18, 83);
+    width: 40%;
+    border-radius: 20px;
+    font-size: 16px;
+    border: 0;
+    padding: 5px 20px;
     color: #fff;
     cursor: pointer;
 }
@@ -85,11 +92,12 @@
     width:1px;
     height:1px;
     margin:-1px;
-    overflow:hidden
 }
 .search__list {
     height: 400px;
     margin-top: 50px;
+    overflow-x: scroll;
+    overflow-y: none;
 }
 .search__list li {
     text-align: left;
@@ -110,6 +118,7 @@
     margin: 5px;
     transition: all 0.3s;
     cursor: pointer;
+    color: #fff;
 }
 .search__list span:hover {
     background-color: var(--htmlColor);
@@ -152,6 +161,7 @@
     justify-content: center;
     gap: 20px;
     padding-bottom: 30px;
+    color: #fff;
 }
 .search__info .type {
     text-align: center;
@@ -172,6 +182,9 @@
     color: #fff;
     cursor: pointer;
 }
+.desc {
+    color: #fff;
+}
 .search__desc {
     border-bottom: 1px solid var(--htmlColor);
     border-bottom-style: dashed;
@@ -183,6 +196,7 @@
     margin: 0 auto;
     text-align: left;
     font-weight: 500;
+    color: var(--htmlColor);
 }
 .search__desc2 {
     border-bottom: 1px solid var(--htmlColor);
@@ -196,7 +210,10 @@
 .search__close {
     width: 10px;
     height: 1px;
-    transform: translate(5200%, -500%);
+    float: right;
+    color: #fff;
+    cursor: pointer;
+    transform: translateY(-800%);
 }
 .search__click {
     margin-top: 10px;
@@ -335,12 +352,12 @@ footer a:hover {
 
 /* 모달 애니메이션 */
 .search__wrap.show {    /* 전체 배경 */
-    /* animation: foldOut 1s ease forwards; */
+    animation: foldOut 1s ease forwards;
     display: block;
 }
-.search__wrap.show.hide{     
-    /* animation: foldIn 0.3s 0.5s ease backwards; */
-    display: block;
+.search__wrap.show.hide {
+    animation: foldIn 1s ease backwards;
+    display: none;
 }
 @keyframes foldOut {
     0%   {transform: scaleX(0) scaleY(0.001);}

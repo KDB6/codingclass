@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래머스01 : 약수의 합</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">프로그래머스 1단계 : 약수의 합</h2>
+            <p class="t_desc2">
+                정수 n을 입력받아 n의 약수를 모두 더한 값을 리턴하는 함수, solution을 완성해주세요.
+            </p>
+
+            <hr>
+
+            <h4 class="t_tit2">제한 사항</h4>
+            <p class="t_desc2">
+                n은 0 이상 3000이하인 정수입니다.
+            </p>
+
+            <h3 class="t_tit2">나의 문제 풀이</h3>
+            <p class="t_desc">
+                첫 번째. 변수 ans에다가 0을 저장해줍니다.<br>
+                두 번째. for문을 사용하며, if문 안에 나눈 값이 0이 됐을 때 점점 증가하는 방식으로 했습니다.<br>
+                세 번째. 리턴으로 출력합니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(n) {
+    let ans = 0;
+    for(let i=0; i&lt;=n; i++){
+        if(n % i == 0)
+            ans = ans + i;
+        }
+    return ans;
+}
+</code></pre>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

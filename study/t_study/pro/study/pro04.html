@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래머스01 : 자릿수 더하기</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">프로그래머스 1단계 : 자릿수 더하기</h2>
+            <p class="t_desc2">
+                자연수 N이 주어지면, N의 각 자릿수의 합을 구해서 return 하는 solution 함수를 만들어 주세요.<br>
+                예를들어 N = 123이면 1 + 2 + 3 = 6을 return 하면 됩니다.
+            </p>
+
+            <hr>
+
+            <h4 class="t_tit2">제한 사항</h4>
+            <p class="t_desc2">
+                N의 범위 : 100,000,000 이하의 자연수
+            </p>
+
+            <h3 class="t_tit2">나의 문제 풀이</h3>
+            <p class="t_desc">
+                첫 번째. 변수 answer에 0를 저장해줍니다.<br>
+                두 번째. string(), split(), map() 사용했습니다. string을 사용해 문자열로 전환 후 split를 사용해 일일이 또 나눠줍니다.<br>
+                세 번째. map을 사용해 새로운 배열로 다시 더해줍니다. (parseInt은 정수로 변환)
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(n)
+{
+    let answer = 0;
+
+    String(n).split("").map(a => answer += parseInt(a));
+
+    return answer;
+}
+</code></pre>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

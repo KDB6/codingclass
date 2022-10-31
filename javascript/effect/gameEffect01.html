@@ -343,6 +343,7 @@
             </div>
             <div class="memoryStart">Game start</div>
             <button class="restart">다시 도전하기</button>
+            <h2 class="memory__result"></h2>
             <!-- memory__card -->
             <div class="memory__card">
                 <ul class="cards">
@@ -485,9 +486,6 @@
     <code id="code">
         <div class="game__wrap">
             <div class="game__cont">
-                <div class="modal__git">
-                    <iframe style="width: 1200px; height: 800px; z-index: -50000;" src="https://github1s.com/KDB6/codingclass/blob/main/javascript/effect/gameEffect01.html"></iframe>
-                </div>
 
                 <div class="game__close">
                     <img src="../assets/img/game/closeBtn.svg" alt="">
@@ -532,12 +530,6 @@
 
         $(".memory__wrap").draggable();
 
-
-        // $(".search__icon").draggable({
-        //     drag : function() {
-        //         $(".mouse__cursor img").attr("src","../assets/img/music/star.svg")
-        //     }
-        // });
         $(".music__icon").draggable({
             drag : function() {
                 $(".mouse__cursor img").attr("src","../assets/img/game/music.svg")

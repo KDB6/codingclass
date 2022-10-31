@@ -27,6 +27,16 @@
 }
 .memoryStart {
   position: absolute;
+  margin-left: 100px;
+  color: #fff;
+}
+.memory__result {
+  font-size: 20px;
+  color: rgb(255, 145, 0);
+}
+.memory__result.show {
+  display: flex;
+  animation: rubberBand 1s 0.6s ease forwards;
 }
 .memory__card {
     background: rgb(255, 126, 75, 0.3);

@@ -7,7 +7,7 @@ const memoryCards = document.querySelectorAll(".cards li");
 const memoryTime = document.querySelector(".memoryTime span");
 const memoryStart = document.querySelector(".memory__inner .memoryStart");
 const memoryRestart = document.querySelector(".memory__inner .restart");
-const memortResultWrap = document.querySelector(".memory__restart");
+const memortResultWrap = document.querySelector(".memory__inner .memory__result");
 
 
 let cardOne, cardTwo;
@@ -23,11 +23,12 @@ let soundMatch = new Array(sound[0]);
 let soundUnMatch = new Array(sound[1]);
 let soundSuccess = new Array(sound[2]);
 
+let memoryTimeReamining = 10,    // 남은 시간
+    memoryTimeInterval = "",     // 시간 간격
+    memoryScore = 0              // 점수
+
 // 게임 시작하기
 function startQuiz() {
-    
-    // 시작 버튼 없애기 & 속성 리스트 없애기
-    memoryStart.style.display = "none";
 
     // 시간 설정
     timeInterval = setInterval(reduceTime, 1000);
@@ -38,10 +39,6 @@ function startQuiz() {
     // 정답 체크
     checkAnswers();
 }
-
-let memoryTimeReamining = 120,    // 남은 시간
-    memoryTimeInterval = "",      // 시간 간격
-    memoryScore = 0               // 점수
 
 // 시간 설정하기
 function reduceTime() {
@@ -166,25 +163,9 @@ shuffledCard();
 // 다시 시작하기
 function restart() {
     memortResultWrap.classList.remove("show");
-    timeReamining = 120;
+    timeReamining = 10;
     score = 0;
     searchTotal.innerText = "0";
-    
-    searchPlay.classList.add("playing");
-    searchAudio.play()
-
-    startQuiz();
-}
-
-// 다시 시작하기
-function restart() {
-    memortResultWrap.classList.remove("show");
-    timeReamining = 120;
-    score = 0;
-    searchTotal.innerText = "0";
-    
-    searchPlay.classList.add("playing");
-    searchAudio.play()
 
     startQuiz();
 }
@@ -193,6 +174,10 @@ function restart() {
 memoryCards.forEach((card) => {
     card.addEventListener("click", flipCard);
 });
+
+// 버튼 이벤트
+memoryStart.addEventListener("click", startQuiz);
+memoryRestart.addEventListener("click", restart);
 
 // 카드 게임 모달
 const memoryIcon = document.querySelector(".memory__icon");

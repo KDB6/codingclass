@@ -71,7 +71,7 @@ input[id="search"]:focus {
 }
 .searchTag a {
   font-size: 12px;
-  color: #6cc4b3;
+  color: #26675B;
 }
 
 /* mainSliderType */
@@ -141,6 +141,8 @@ input[id="search"]:focus {
   padding: 0;
   transform: translate(0, -50%);
   display: none;
+  padding: 10px 10px 5px 10px;
+  border-radius: 10px;
 }
 .slider__item:nth-child(2) .slider__text {
   display: block;
@@ -156,7 +158,7 @@ input[id="search"]:focus {
 }
 .slider__textName h3 {
   font-size: 32px;
-  color: #6cc4b3;
+  color: #26675B;
   /* margin-right: 5px; */
 }
 .slider__textName > span a {
@@ -170,21 +172,21 @@ input[id="search"]:focus {
 }
 .slider__textName .slider__tag {
   font-size: 16px;
-  color: #757575;
+  color: #000;
   margin-right: 10px;
 }
 .slider__text p {
   font-size: 20px;
-  color: #505050;
+  color: #000;
   line-height: 1.4;
-  font-weight: 200;
+  font-weight: 300;
   margin-bottom: 20px;
   opacity: 0;
   animation: showcontent 1s ease-in-out 0.3s 1 forwards;
 }
 .slider__text > a {
   font-size: 16px;
-  color: #6cc4b3;
+  color: #26675B;
   padding: 0 20px;
   background-color: #fff;
   border-radius: 5px;
@@ -254,32 +256,32 @@ input[id="search"]:focus {
   margin-bottom: 100px;
 }
 .Info_textBox {
-  background: #f9fafb;
+  background: #f5f5f5;
   padding: 10px 0 30px 0;
   margin-bottom: 70px;
 }
 #infomationType h2 {
   font-size: 20px;
   font-weight: 500;
-  color: #6cc4b3;
+  color: #26675B;
   text-align: center;
   width: 50%;
   padding: 6px 0 20px 0;
   margin: 0 auto 30px auto;
   line-height: 40px;
-  border-bottom: 1px dashed #6cc4b3;
+  border-bottom: 1px dashed #bbbbbb;
 }
 .category__box {
   text-align: center;
 }
 .category__title h3 {
   font-size: 16px;
-  color: #6cc4b3;
+  color: #26675B;
   margin-bottom: 10px;
 }
 .category__titleChoice {
   font-size: 20px;
-  color: #6cc4b3;
+  color: #26675B;
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
@@ -292,11 +294,11 @@ input[id="search"]:focus {
 }
 .category__titleChoice li a {
   font-size: 18px;
-  color: #757575;
+  color: #26675B;
 }
 
 .category__titleChoice li a.tapActive {
-  color: #6cc4b3;
+  color: #26675B;
 }
 .category__contents {
   margin: 0 auto;
@@ -316,15 +318,23 @@ input[id="search"]:focus {
   border-radius: 50%;
   background-color: #fff;
   margin: 0 10px;
+  transition: all 0.5s;
 }
-.category__contents div.tapActive {
-  border: 1px solid #6cc4b3;
+.category__contents div:hover {
+  background: #26675B;
 }
 .category__contents div label {
-  color: #6cc4b3;
+  color: #26675B;
   line-height: 60px;
   cursor: pointer;
   font-size: 16px;
+  transition: all 0.5s;
+}
+.category__contents div label.tapActive:hover {
+  color: #fff;
+}
+.category__contents div label:hover {
+  color: #fff;
 }
 .category__confirm {
 }
@@ -351,9 +361,14 @@ input[id="search"]:focus {
   margin-bottom: 50px;
 }
 .hospital__card img {
+  border-radius: 10px;
   width: 440px;
   height: 300px;
   margin-bottom: 10px;
+  transition: all 0.5s;
+}
+.hospital__card img:hover {
+  transform: scale(1.02);
 }
 .hospital__cardText {
   display: flex;
@@ -362,11 +377,11 @@ input[id="search"]:focus {
 }
 .hospital__cardText h4 {
   font-size: 20px;
-  color: #6cc4b3;
+  color: #26675B;
 }
 .hospital__cardText address {
   font-size: 16px;
-  color: #6cc4b3;
+  color: #26675B;
 }
 .hospital__cardText .hospital__cardTag {
   /* position: absolute;
@@ -393,5 +408,5 @@ input[id="search"]:focus {
     color: #505050;
 }
 .board__pages ul li.active a {
-    color: #6cc4b3;
+    color: #26675B;
 }

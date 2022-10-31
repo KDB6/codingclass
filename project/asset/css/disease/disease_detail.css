@@ -71,7 +71,7 @@ input[id="search"]:focus {
 }
 .searchTag a {
     font-size: 12px;
-    color: #6cc4b3;
+    color: #26675B;
 }
 
 /* TitleType */
@@ -102,13 +102,13 @@ input[id="search"]:focus {
 }
 .title__name h2 {
     font-size: 32px;
-    color: #6cc4b3;
+    color: #26675B;
 }
 
 .title__inner > span {
     display: inline-block;
     font-size: 16px;
-    color: #6cc4b3;
+    color: #26675B;
     margin-bottom: 20px;
 }
 .title__inner p {
@@ -123,11 +123,16 @@ input[id="search"]:focus {
 .title__inner a {
     font-size: 14px;
     line-height: 1.4;
-    color: #6cc4b3;
+    color: #26675B;
     padding: 3px 20px;
     background: #fff;
     border-radius: 10px;
     box-shadow: 2px 2px 8px 1px rgba(222, 222, 222, 0.25);
+    transition: all 0.5s;
+}
+.title__inner a:hover {
+    background: #26675B;
+    color: #fff;
 }
 
 /* infomationType */
@@ -137,7 +142,7 @@ input[id="search"]:focus {
 }
 #informationType h2 {
     font-size: 32px;
-    color: #6cc4b3;
+    color: #26675B;
     margin-bottom: 50px;
 }
 
@@ -172,6 +177,16 @@ input[id="search"]:focus {
     background: url(../../img/speakingboxL.png) no-repeat center / cover;
     filter: drop-shadow(3px 3px 12px rgba(206, 206, 206, 0.3));
     position: relative;
+    transition: all 0.5s;
+}
+.disease__info .text__box:hover {
+    transform: scale(1.05);
+}
+.disease__info .text__box ul li {
+    transition: all 0.5s;
+}
+.disease__info .text__box:hover ul li {
+    font-size: 14px;
 }
 .disease__info:nth-child(even) .text__box {
     background: url(../../img/speakingboxR.png) no-repeat center / cover;
@@ -191,8 +206,12 @@ input[id="search"]:focus {
 .disease__info .text__box .information h3 {
     font-size: 22px;
     font-weight: 500;
-    color: #6cc4b3;
+    color: #26675B;
     margin-bottom: 15px;
+    transition: all 0.5s;
+}
+.disease__info .text__box .information:hover {
+    font-size: 24px;
 }
 .disease__info .text__box .information ul {
     display: flex;
@@ -208,5 +227,5 @@ input[id="search"]:focus {
     margin-right: 10px;
 }
 .disease__info .text__box .information li em {
-    color: #6cc4b3;
+    color: #26675B;
 }

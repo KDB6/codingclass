@@ -3,7 +3,7 @@
     justify-content: space-between;
 }
 .allDisease__top > h2 {
-    color: #6CC4B3;
+    color: #26675B;
     margin-top: 30px;
     margin-left: 25px;
     margin-bottom: 20px;
@@ -41,7 +41,7 @@
     height: 27px;
 }
 .allDisease__text .allDisease__desc > h2 a {
-    color: #6CC4B3;
+    color: #26675B;
     font-size: 18px;
     font-weight: 500;
 }
@@ -83,7 +83,7 @@
     height: 27px;
 }
 .allDisease__text2 .allDisease__desc > h2 a {
-    color: #6CC4B3;
+    color: #26675B;
     font-size: 18px;
     font-weight: 500;
 }

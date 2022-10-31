@@ -28,7 +28,7 @@
 .itemInfo_name > h4 {
     margin-top: 15px;
     font-size: 20px;
-    color: #6CC4B3;
+    color: #26675B;
 }
 
 .itemInfo__review {
@@ -67,12 +67,12 @@
 }
 .item__btn > h2 {
     font-size: 16px;
-    color: #6CC4B3 !;
+    color: #26675B !;
     background: #F9FAFB;
     padding: 10px 126px;
 }
 .item__btn > h2 a{
-    color: #6CC4B3;
+    color: #26675B;
 }
 .item__btn > h2:last-child {
     margin-left: 20px;

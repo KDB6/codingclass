@@ -1,20 +1,20 @@
 <main id="main">
         <section id="HosWrite">
-            <h2>블로그 글쓰기</h2>
+            <h2>병원 쓰기</h2>
             <div class="container">
-                <form action="HosWriteSave.php" name="HosWrite" method="post" enctype="multipart/form-data">
+                <form action="MakeHospitalSave.php" name="HosWrite" method="post" enctype="multipart/form-data">
                     <fieldset>
-                        <legend>블로그 게시글 작성 영역</legend>
+                        <legend>병원 게시글 작성 영역</legend>
                         <div>
                             <label for="HosCategory">카테고리</label>
                             <select name="HosCategory" id="HosCategory">
                                 <option value="서울">서울</option>
                                 <option value="경기도">경기도</option>
                                 <option value="인천">인천</option>
-                                <option value="충청도">전라도</option>
+                                <option value="충청도">충청도</option>
                                 <option value="강원도">강원도</option>
                                 <option value="경상도">경상도</option>
-                                <option value="제주도">제주도</option>
+                                <option value="전라도">전라도</option>
                             </select>
                         </div>
                         <div>

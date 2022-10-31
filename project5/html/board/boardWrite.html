@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 글 쓰기</title>
+
+    <link rel="stylesheet" href="../../asset/css/reset.css">
+    <link rel="stylesheet" href="../../asset/css/common.css">
+    <link rel="stylesheet" href="../../asset/css/font.css">
+    
+    <link rel="stylesheet" href="../../asset/css/header.css">
+    <link rel="stylesheet" href="../../asset/css/board/boardLoginBanner.css">
+    <link rel="stylesheet" href="../../asset/css/board/boardImageType.css">
+    <link rel="stylesheet" href="../../asset/css/board/boardWrite.css">
+    <link rel="stylesheet" href="../../asset/css/footer.css">
+</head>
+
+<!-- header -->
+<header id="header" class="header__wrap">
+    <div class="header__inner container">
+        <div class="header__logo">
+            <a href="#">winimal</a>
+        </div>
+        <nav class="header__menu">
+            <ul>
+                <li><a href="#">A.hopsital</a></li>
+                <li><a href="#">disease</a></li>
+                <li><a href="#">community</a></li>
+                <li><a href="#">pet shop</a></li>
+                <li class="login"><a href="#">LOGOUT</a></li>
+            </ul>
+        </nav>
+        <div class="ham_menu">
+            <input type="checkbox">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>                
+    </div>
+</header>
+<!-- //header -->
+
+<body>
+
+    <!-- boardLoginBanner -->
+    <section id="boardLoginBanner" class="loginBanner">
+        <h2 class="blind">dd</h2>
+        <div class="lB__inner">
+            <figure class="MyprofileL">
+                <img src="../../asset/img/profile.png" alt="프로필">
+                <figcaption>누군가님 어서오세요!</figcaption>
+                <a href="#">LOGOUT</a>
+            </figure>            
+            <div class="Myprofile">
+                <ul>
+                    <li>최근 접속 기록 : 00/ 00/ 00</li>
+                    <li><a href="#">나의 정보</a></li>
+                    <li><a href="#">나의 반려견</a></li>
+                    <li>나의 글 : 00개</li>
+                    <li>댓글 수 : 00개</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //boardLoginBanner -->
+
+    <!-- boardImageType -->
+    <section id="boardImageType" class="imageType">
+        <div class="imageType__inner">
+            <h2>COMMUNITY</h2>
+            <p>좋은 글로 여러 정보를 나눠주세요!</p>
+        </div>
+    </section>
+    <!-- //boardImageType -->
+
+    <!-- boardWrite -->
+    <section id="boardWrite">
+        <div class="board__wrap container">
+            <h3>제목 :</h3>
+            <div class="board__write">                
+                <div class="Option">
+                    <select name="searchOption" id="searchOption1" class="Write__option">
+                        <option value="Category">CATEGORY</option>
+                    </select>
+                    <select name="searchOption" id="searchOption2" class="Write__option">
+                        <option value="Date">파일 첨부</option>
+                    </select>
+                    <select name="searchOption" id="searchOption2" class="Write__option">
+                        <option value="Date">HTML</option>
+                    </select>
+                    <select name="searchOption" id="searchOption2" class="Write__option">
+                        <option value="Date">글꼴 선택</option>
+                    </select>
+                    <select name="searchOption" id="searchOption2" class="Write__option">
+                        <option value="Date">글 불러오기</option>
+                    </select>
+                    <span class="button"><a href="#">임시저장</a></span>                            
+                </div>
+                <div class="image">
+                    <img src="../../asset/img/dogImage.jpg" alt="강아지 사진">
+                </div>   
+            </div>
+        <div class="board__contents">
+            <p>가는 투명하되 현저하게 있는가? 우리의 있을 목숨이 수 그들에게 있는가? 싹이 원질이 너의 있음으로써 이것이다. 안고, 청춘 어디 싹이 너의 가치를 가진 피다. 눈이 인생의 인생을 이상은 있으며, 하는 것이다. 공자는 열락의 피가 쓸쓸하랴? 되는 원대하고, 청춘 같이, 그것을 쓸쓸하랴? 자신과 풀밭에 눈이 그들의 못할 있으며, 소리다.이것은 같은 투명하되 이것이다. 있는 구하기 이 능히 것이다.</p>
+            <div class="button2">
+                <a href="#">작성 완료 </a>
+                <a href="#">취소</a>
+            </div>            
+        </div>
+        </div>        
+    </section>
+    <!-- //boardWrite -->
+
+</body>
+
+<!-- footer -->
+<footer id="footer" class="footer">
+    <h2>
+        winimal Copyright 2022. All Rights Reserved
+        <button><a href="">문의하기</a></button>
+    </h2>
+</footer>
+<!-- //footer -->
+
+<script src="../../asset/js/header_hamburger.js"></script>
+
+</html>

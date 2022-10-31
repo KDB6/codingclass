@@ -41,6 +41,7 @@
   cursor: pointer;
   border-right: 1px solid #757575;
 }
+
 input[id="search"] {
   position: absolute;
   left: 62px;

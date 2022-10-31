@@ -30,6 +30,18 @@ button {
     font-family: 'SCoreDream';
     font-weight: 400;
 }
+select {
+    font-family: 'SCoreDream';
+    font-weight: 400;
+}
+input {
+    font-family: 'SCoreDream';
+    font-weight: 400;
+}
+textarea {
+    font-family: 'SCoreDream';
+    font-weight: 400;
+}
 .container {
     width: 100%;
     max-width: 1360px;

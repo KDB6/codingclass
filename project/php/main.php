@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../asset/css/common.css">
     <link rel="stylesheet" href="../asset/css/font.css">
     <link rel="stylesheet" href="../asset/css/header.css">
+    <link rel="stylesheet" href="../asset/css/footer.css">
 
     <!-- 메인 CSS -->
     <link rel="stylesheet" href="../asset/css/main/mainBanner.css">
@@ -470,17 +471,6 @@
         document.querySelector("body").classList.remove("scrollStop");
     })
 
-    // 헤더바 색깔 조절
-    const headerType = document.getElementById("headerType");
-    window.addEventListener("scroll", () => {
-        let scrollTop = window.scrollY;
-
-        if(scrollTop > 0){
-            headerType.style.backgroundColor = "#fff";
-        } else {
-            headerType.style.backgroundColor = "transparent";
-        }
-    });
     </script>
 </body>
 </html>

@@ -3,19 +3,20 @@
 
     $sql = "CREATE TABLE Disease (";
     $sql .=     "DisID int(10) unsigned auto_increment,";
-    $sql .=     "DisName varchar(255) NOT NULL,";
-    $sql .=     "DisAdress longtext NOT NULL,";
-    $sql .=     "DisCon1 varchar(20) DEFAULT NULL,";
-    $sql .=     "DisCon2 varchar(20) DEFAULT NULL,";
-    $sql .=     "DisImgFile varchar(100) DEFAULT NULL,";
-    $sql .=     "DisTime varchar(20) NOT NULL,";
-    $sql .=     "DisSpecialty1 varchar(20) NOT NULL,";
-    $sql .=     "DisSpecialty2 varchar(20) NOT NULL,";
-    $sql .=     "DisParking varchar(20) NOT NULL,";
-    $sql .=     "DisService1 varchar(20) DEFAULT NULL,";
-    $sql .=     "DisService2 varchar(20) DEFAULT NULL,";
-    $sql .=     "DisPhone varchar(20) NOT NULL,";
-    $sql .=     "DisEmail varchar(20) NOT NULL,";
+    $sql .=     "DisCategory varchar(10) NOT NULL,";
+    $sql .=     "DisName varchar(30) NOT NULL,";
+    $sql .=     "DisSymptom longtext NOT NULL,";
+    $sql .=     "DisImgFile varchar(100) NOT NULL,";
+    $sql .=     "DisCurePrice int(10) NOT NULL,";
+    $sql .=     "DisPrevent1 varchar(100) NOT NULL,";
+    $sql .=     "DisPrevent2 varchar(100) DEFAULT NULL,";
+    $sql .=     "DisCause1 varchar(100) NOT NULL,";
+    $sql .=     "DisCause2 varchar(100) DEFAULT NULL,";
+    $sql .=     "DisEarlySymptom1 varchar(100) NOT NULL,";
+    $sql .=     "DisEarlySymptom2 varchar(100) DEFAULT NULL,";
+    $sql .=     "DisSurgeryReason longtext DEFAULT NULL,";
+    $sql .=     "DisAfterCare1 varchar(100) DEFAULT NULL,";
+    $sql .=     "DisAfterCare2 varchar(100) DEFAULT NULL,";
     $sql .=     "PRIMARY KEY (DisID)";
     $sql .=     ") charset=utf8;";
 

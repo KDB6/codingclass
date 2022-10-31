@@ -5,6 +5,9 @@
     border-radius: 10px;
     padding: 30px;
 }
+.view__innerCont {
+    padding: 30px;
+}
 .view__top {
     display: flex;
     justify-content: space-between;
@@ -35,6 +38,7 @@
 .like > img {
     width: 20px;
     height: 20px;
+    margin-right: 5px;
 }
 .date {
     margin-left: 30px;
@@ -45,4 +49,26 @@
 }
 .view__bot > p {
     margin-bottom: 20px;
+    font-weight: 300;
+}
+.boardView__btn {
+    margin: 0 auto;
+    width: 1360px;
+    text-align: right;
+    padding-top: 17px;
+    cursor: pointer;
+}
+.boardView__btn > button {
+    background-color: inherit;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.boardView__btn > button:last-child {
+    margin-right: 20px;
+}
+.boardView__btn > button a {
+    color: #505050;
+}
+.boardView__btn > button span {
+    padding: 0 0px 0 5px;
 }

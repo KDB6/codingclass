@@ -42,6 +42,18 @@
 }
 </code></pre>
             </div>
+
+            <h3 class="t_tit2">다른 사람 문제 풀이</h3>
+            <p class="t_desc">
+                다른 분들의 풀이를 보다가 유독 짧아 눈에 띄었습니다.<br>
+                봐도 뭐지..?하지만 재귀 + 삼향을 더하여 사용한 풀이입니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(n, a=0, b=0) {
+    return n&lt;=a/2?b:solution(n,a+1,b+=n%a?0:a);
+}
+</code></pre>
+            </div>
         </div>
     </main>
     

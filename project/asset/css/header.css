@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
 /* headerType */
 #headerType {
     width: 100%;
@@ -25,8 +27,9 @@
     z-index: 1000;
 }
 .header__logo a {
+    font-family: 'Alfa Slab One', cursive;
     color: #26675B;
-    font-weight: 200;
+    font-weight: 400;
     font-size: 30px;
 }
 .header__logo em {

@@ -383,12 +383,22 @@ input[id="search"]:focus {
   font-size: 16px;
   transition: all 0.5s;
   font-weight: 500;
+  position: relative;
 }
-.category__contents div label.tapActive:hover {
-  color: #fff;
+
+.category__contents div label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #26675B;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
 }
-.category__contents div label:hover {
-  color: #fff;
+.category__contents div label:hover::before {
+  transform: scaleX(1);
 }
 .category__confirm {
   width: 20%;
@@ -401,6 +411,10 @@ input[id="search"]:focus {
   color: #26675B;
   cursor: pointer;
   font-family: 'Alfa Slab One', cursive;
+  transition: all 0.5s;
+}
+.category__confirm button:hover {
+  transform: scale(1.1);
 }
 .category__confirm button:nth-child(1) {
   margin-right: 10px;

@@ -11,13 +11,14 @@
     border: 1.5px solid #000;
 }
 .music__header {
+    padding-top: 5px;
     width: 100%;
     height: 24px;
     backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #586BB1;
+    color: #b9c8ff;
 }
 .music__header .music__close {
     margin-right: 10px;
@@ -170,9 +171,9 @@
 }
 
 .music__footer {
-    background: rgb(44, 8, 68, 0.3);
     backdrop-filter: blur(20px);
     padding-top: 0px;
+    border-radius: 10px;
 }
 
 .music__list {

@@ -39,7 +39,7 @@
   animation: rubberBand 1s 0.6s ease forwards;
 }
 .memory__card {
-    background: rgb(255, 126, 75, 0.3);
+    background: rgb(255, 104, 45);
     backdrop-filter: blur(20px);
     border: 2px solid rgb(255, 145, 0);
     border-radius: 20px;

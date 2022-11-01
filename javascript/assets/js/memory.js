@@ -23,7 +23,7 @@ let soundMatch = new Array(sound[0]);
 let soundUnMatch = new Array(sound[1]);
 let soundSuccess = new Array(sound[2]);
 
-let memoryTimeReamining = 10,    // 남은 시간
+let memoryTimeReamining = 60,    // 남은 시간
     memoryTimeInterval = "",     // 시간 간격
     memoryScore = 0              // 점수
 

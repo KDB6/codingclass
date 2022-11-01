@@ -37,6 +37,23 @@
 }
 </code></pre>
             </div>
+
+            <h3 class="t_tit2">다른 사람 문제 풀이</h3>
+            <p class="t_desc">
+                do while문 안에 push와 n의 Math.floor(소수점을 버림)을 사용하여 만든 것 같습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(n) {
+    var arr = [];
+
+    do {
+        arr.push(n%10);
+        n = Math.floor(n/10);
+    } while (n>0);
+
+    return arr;
+}
+            </div>
         </div>
     </main>
     

@@ -43,6 +43,17 @@
 }
 </code></pre>
             </div>
+
+            <h3 class="t_tit2">다른 사람 문제 풀이</h3>
+            <p class="t_desc">
+                String과 삼향 연산자를 이용하여 푼 문제입니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(n,a=0,b=0) {
+    return String(n).length==a?b:solution(n,a+1,b+=String(n)[a]*1);
+}
+</code></pre>
+            </div>
         </div>
     </main>
     

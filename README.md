@@ -14,18 +14,18 @@ https://kdb6.github.io/codingclass/javascript/index.html
 
 ### 자바스크립트 정리 페이지
 
-https://kdb6.github.io/codingclass/javascript/javascript01.html  
-https://kdb6.github.io/codingclass/javascript/javascript02.html  
-https://kdb6.github.io/codingclass/javascript/javascript03.html  
-https://kdb6.github.io/codingclass/javascript/javascript041.html  
-https://kdb6.github.io/codingclass/javascript/javascript05.html  
-https://kdb6.github.io/codingclass/javascript/javascript06.html  
-https://kdb6.github.io/codingclass/javascript/javascript07.html  
-https://kdb6.github.io/codingclass/javascript/javascript08.html  
-https://kdb6.github.io/codingclass/javascript/javascript09.html  
-https://kdb6.github.io/codingclass/javascript/javascript10.html  
-https://kdb6.github.io/codingclass/javascript/javascript11.html  
-https://kdb6.github.io/codingclass/javascript/javascript12.html
+https://kdb6.github.io/codingclass/javascript/javaStudy/javascript01.html  
+https://kdb6.github.io/codingclass/javascript/javaStudy/javascript02.html  
+https://kdb6.github.io/codingclass/javascript/javaStudy/javascript03.html  
+https://kdb6.github.io/codingclass/javascript/javaStudy/javascript041.html  
+https://kdb6.github.io/codingclass/javascript/javaStudy/javascript05.html  
+https://kdb6.github.io/codingclass/javascript/javaStudy/javascript06.html  
+https://kdb6.github.io/codingclass/javascript/javaStudy/javascript07.html  
+https://kdb6.github.io/codingclass/javascript/javaStudy/javascript08.html  
+https://kdb6.github.io/codingclass/javascript/javaStudy/javascript09.html  
+https://kdb6.github.io/codingclass/javascript/javaStudy/javascript10.html  
+https://kdb6.github.io/codingclass/javascript/javaStudy/javascript11.html  
+https://kdb6.github.io/codingclass/javascript/javaStudy/javascript12.html
 
 ### HTML 메인 페이지
 

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페럴랙스 애플</title>
+    <link rel="stylesheet" href="../assets/css/butler.css">
+    <link rel="stylesheet" href="../assets/css/loding.css">
+
+    <style>
+        @import url('https://webfontworld.github.io/jeju/JejuMyeongjo.css');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Butler Stencil";
+            background: #FFF5EF;
+            color: #505050;
+        }
+        .bebos {
+            font-family: 'Bebas Neue', cursive;
+        }
+        .jeju {
+            font-family: "JejuMyeongjo";
+        }
+
+        .fixed {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .fixed2 {
+            position: fixed;
+            top: 49%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .scrollTop {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            /* width: 40px;
+            height: 40px; */
+            text-align: center;
+            z-index: 10000;
+            font-size: 14px;
+        }
+
+        /* layout */
+        #contents
+        #section1 {
+            height: 10000px;
+        }
+        #section2 {}
+        #section3 {}
+        #section4 {}
+        #section5 {}
+        #section6 {}
+
+        /* section1 */
+        .circle {
+            width: 100px;
+            height: 100px;
+        }
+        .loadingText {
+            font-size: 6vw;
+            white-space: nowrap;
+        }
+        .please {
+            width: 200px;
+            height: 100px;
+            position: fixed;
+            transform: translate(-5%, 60%);
+        }
+        .front {
+            font-size: 1vw;
+            color: #505050;
+            white-space: nowrap;
+            position: fixed;
+            top: 5%;
+            left: 7%;
+            transform: translate(-50%, -50%);
+            font-weight: 300;
+        }
+        .back {
+            font-size: 1vw;
+            color: #505050;
+            white-space: nowrap;
+            position: fixed;
+            bottom: 4%;
+            left: 7%;
+            transform: translate(-50%, -50%);
+            font-weight: 300;
+        }
+        .hello {
+            font-size: 6vw;
+            white-space: nowrap;
+        }
+        .dabin {
+            color: #fff;
+            text-align: center;
+            font-size: 6vw;
+            white-space: nowrap;
+        }
+        .nemo {
+            width: 600px;
+            height: 120px;
+            background: #0f2e06;
+        }
+        .image {
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.9);
+            background-image: url(../assets/img/parallax/my.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .myTextName {
+            font-size: 2vw;
+            color: #c0c0c0;
+            white-space: nowrap;
+            position: fixed;
+            top: 10%;
+            left: 9%;
+            transform: translate(-50%, -50%);
+            font-weight: 300;
+        }
+        .myTextAge {
+            font-size: 1vw;
+            color: #c0c0c0;
+            white-space: nowrap;
+            position: fixed;
+            top: 14%;
+            left: 6.7%;
+            transform: translate(-50%, -50%);
+            font-weight: 300;
+        }
+        .myTextLive {
+            font-size: 1vw;
+            color: #c0c0c0;
+            white-space: nowrap;
+            position: fixed;
+            bottom: 15%;
+            left: 7.6%;
+            transform: translate(-50%, -50%);
+            font-weight: 300;
+        }
+        .myTextDes {
+            font-size: 1vw;
+            color: #c0c0c0;
+            white-space: nowrap;
+            position: fixed;
+            bottom: 12%;
+            left: 9%;
+            transform: translate(-50%, -50%);
+            font-weight: 300;
+        }
+        .myTextmy {
+            font-size: 1vw;
+            color: #c0c0c0;
+            white-space: nowrap;
+            position: fixed;
+            bottom: 12%;
+            right: -12%;
+            transform: translate(-50%, -50%);
+            font-weight: 300;
+        }
+        </style>
+</head>
+<body>
+
+    <div class="scrollTop"></div>
+
+    <div id="contents">
+        <section id="section1">
+            <div class="sec1">
+                <div class="loding fixed2"
+                    data-0="opacity: 1; "
+                    data-550="opacity: 0; "
+                >
+                    <div class='loader'>
+                        <div class='circle'></div>
+                        <div class='circle'></div>
+                        <div class='circle'></div>
+                        <div class='circle'></div>
+                        <div class='circle'></div>
+                    </div>
+                    <div class="please">
+                        please scrollY
+                    </div>
+                </div>
+                <!-- loding -->
+
+                <div class="front"
+                    data-0="transform: translate(-50%, -50%); opacity: 1;"
+                    data-2300="transform: translate(-50%, -50%); opacity: 1;"
+                    data-2400="transform: translate(-50%, -50%); opacity: 0;"
+                >Front-end developer</div>
+
+                <div class="back"
+                    data-0="transform: translate(-50%, -50%); opacity: 1;"
+                    data-2300="transform: translate(-50%, -50%); opacity: 1;"
+                    data-2400="transform: translate(-50%, -50%); opacity: 0;"
+                >Back-end</div>
+
+                <div class="loadingText fixed"
+                    data-0 =   "transform: translate(-350%, -50%); opacity: 1;"
+                    data-550 = "transform: translate(0%, -50%); opacity: 0;"
+                >LODING</div>
+
+                <div class="hello fixed"
+                    data-500 =  "opacity: 0; top: 70%; transform: translate(-50%, -50%) scale(1)"
+                    data-1000 = "opacity: 1; top: 50%; transform: translate(-50%, -50%) scale(1)"
+                    data-1500 = "opacity: 1; top: 50%; transform: translate(-50%, -50%) scale(0)"
+                >HELLO.</div>
+
+                <div class="nemo fixed"
+                    data-1400 = "transform: translate(-350%, -50%); display: block;"
+                    data-2200 = "transform: translate(-50%, -50%)"
+                    data-2200 = "transform: translate(-50%, -50%)"
+                    data-3000 = "display: none;"
+                ></div>
+                
+                <div class="dabin fixed"
+                    data-1300 = "transform: translate(-50%, -50%) scale(0); opacity: 0"
+                    data-2300 = "transform: translate(-50%, -50%) scale(1); opacity: 1"
+                    data-2600 = "transform: translate(-50%, -50%) scale(1); opacity: 0"
+                >I'm DABIN</div>
+                
+
+                <div class="image fixed"
+                    data-2400 = "width: 0%;   transform: translate(-50%, -50%) rotate(60deg);"
+                    data-3000 = "width: 100%; transform: translate(-50%, -50%) rotate(0deg);"
+                    data-4400 = "width: 100%; transform: translate(-50%, -50%) rotate(0deg);"
+                ></div>
+
+                <div class="myTextName"
+                    data-2500 = "transform: translate(-350%, -50%);"
+                    data-3200 = "transform: translate(-20%, -50%);"
+                >Name : DaBin Kim</div>
+
+                <div class="myTextAge"
+                    data-2600 = "transform: translate(-350%, -50%);"
+                    data-3300 = "transform: translate(-20%, -50%);"
+                >Age : 26</div>
+
+                <div class="myTextLive"
+                    data-2800 = "transform: translate(-350%, -50%);"
+                    data-3600 = "transform: translate(-20%, -50%);"
+                >living place : Siheung-si</div>
+
+                <div class="myTextDes"
+                    data-2900 = "transform: translate(-350%, -50%);"
+                    data-3700 = "transform: translate(-20%, -50%);"
+                >Desired occupation : Front-end developer</div>
+
+                <div class="myTextmy"
+                    data-3200="transform: translate(350%, -50%);"
+                    data-4000="transform: translate(-50%, -50%);"
+                >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
+                incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non.
+                </div>
+
+                <div class="hobby1"
+                    data-=""
+                ></div>
+            </div>
+        </section><!-- section1 -->
+        
+        <section id="section2"></section><!-- section2 -->
+
+        <section id="section3"></section><!-- section3 -->
+
+        <section id="section4"></section><!-- section4 -->
+
+        <section id="section5"></section><!-- section5 -->
+
+        <section id="section6"></section><!-- section6 -->
+    </div>
+    <!-- contents -->
+
+    <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script>
+        const s = skrollr.init();
+
+        function scroll() {
+            let scrollTop = window.pageXOffset || document.documentElement.scrollTop;
+            
+            document.querySelector(".scrollTop").innerText = Math.ceil(scrollTop);
+
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+    </script>
+</body>
+</html>

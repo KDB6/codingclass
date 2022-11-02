@@ -1,9 +1,9 @@
 .loader {
 position: relative;
 top: 50%;
+padding-bottom: 40px;
 left: 50%;
 width: 40px;
-margin: auto;
 }
 .loader .circle {
 position: absolute;

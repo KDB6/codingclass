@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래머스01 : 문자열 내 p와 y의 개수</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">프로그래머스 1단계 : 문자열 내 p와 y의 개수</h2>
+            <p class="t_desc2">
+                대문자와 소문자가 섞여있는 문자열 s가 주어집니다. s에 'p'의 개수와 'y'의 개수를 비교해 같으면 True,<br>
+                다르면 False를 return 하는 solution를 완성하세요. 'p', 'y' 모두 하나도 없는 경우는 항상 True를 리턴합니다.<br>
+                단, 개수를 비교할 때 대문자와 소문자는 구별하지 않습니다.<br>
+                예를 들어 s가 "pPoooyY"면 true를 return하고 "Pyy"라면 false를 return합니다.
+            </p>
+
+            <hr>
+
+            <h4 class="t_tit2">제한 사항</h4>
+            <p class="t_desc2">
+                문자열 s의 길이 : 50 이하의 자연수<br>
+                문자열 s는 알파벳으로만 이루어져 있습니다.
+            </p>
+
+            <h3 class="t_tit2">나의 문제 풀이</h3>
+            <p class="t_desc">
+                일일이 변수를 하나씩 주었으며, 각각 split메서드를 사용한 뒤 서로의 값이 같을 때 리턴하도록 하였다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(s) {
+    let p = s.split(/p/i).length - 1;
+    let y = s.split(/y/i).length - 1;
+    return p === y;
+  }
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">다른 사람 문제 풀이</h3>
+            <p class="t_desc">
+                다른 사람이 간결하게 풀이한 방법.<br>
+                match라는 메서드를 사용했다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function numPY(s) {
+    return s.match(/p/ig).length == s.match(/y/ig).length;
+  }
+</code></pre>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

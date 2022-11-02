@@ -319,8 +319,17 @@
             position: fixed;
         }
 
-        /* Introduce_nemo */
-        .Introduce_nemo {
+        /* Introduce */
+        .Introduce_nemo1 {
+            width: 100%;
+            height: 1px;
+            background: #FFF5EF;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce_nemo2 {
             width: 100%;
             height: 100%;
             background: #FFF5EF;
@@ -345,7 +354,7 @@
             transform: translate(-50%, -50%);
             position: fixed;
         }
-        .Introduce1_title {
+        .Introduce1_title1 {
             width: 50%;
             font-size: 4vmax;
             top: 47%;
@@ -353,10 +362,26 @@
             transform: translate(-50%, -50%);
             position: fixed;
         }
-        .Introduce1_sub {
+        .Introduce1_sub1 {
             width: 50%;
             font-size: 2vmax;
             top: 73%;
+            left: 100%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce1_title2 {
+            width: 50%;
+            font-size: 4vmax;
+            top: 47%;
+            left: 150%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce1_sub2 {
+            width: 50%;
+            font-size: 2vmax;
+            top: 150%;
             left: 100%;
             transform: translate(-50%, -50%);
             position: fixed;
@@ -555,9 +580,13 @@
                 <!-- //hobby -->
 
                 <!-- Introduce -->
-                <div class="Introduce_nemo"
-                    data-5600="opacity: 0; height: 0%; transform: translate(-50%, -50%);"
-                    data-5900="opacity: 1; height: 100%; transform: translate(-50%, -50%);"
+                <div class="Introduce_nemo1"
+                    data-5600="opacity: 0; width: 0%; transform: translate(-50%, -50%); display: block;"
+                    data-5900="opacity: 1; width: 100%; transform: translate(-50%, -50%); display: none;"
+                ></div>
+                <div class="Introduce_nemo2"
+                    data-5900="opacity: 0; height: 0%; transform: translate(-50%, -50%);"
+                    data-6200="opacity: 1; height: 100%; transform: translate(-50%, -50%);"
                 ></div>
 
                 <div class="Introduce_line"
@@ -570,17 +599,37 @@
                     data-6300="opacity: 1; transform: translate(-50%, -50%); left: 33%"
                 >Introduce yourself</div>
 
-                <div class="Introduce1_title"
+                <div class="Introduce1_title1"
                     data-6100="opacity: 0; transform: translate(-50%, -50%); left: -50%"
                     data-6400="opacity: 1; transform: translate(-50%, -50%); left: 33%"
+                    data-6800="opacity: 1; transform: translate(-50%, -50%); left: 33%"
+                    data-7000="opacity: 0; transform: translate(-50%, -50%); left: -50%"
                 >My</div>
 
-                <div class="Introduce1_sub"
+                <div class="Introduce1_sub1"
                     data-6300="opacity: 0; transform: translate(-50%, -50%); left: -50%"
                     data-6600="opacity: 1; transform: translate(-50%, -50%); left: 33%"
+                    data-7000="opacity: 1; transform: translate(-50%, -50%); left: 33%"
+                    data-7200="opacity: 0; transform: translate(-50%, -50%); left: -50%"
                 >Senectus et netus et malesuada. Nunc pulvinar sapien et ligula ullamcorper malesuada proin. Neque convallis a cras semper auctor.
                 Libero id faucibus nisl tincidunt eget. Leo a diam sollicitudin tempor id. A lacus vestibulum sed arcu non
                 odio euismod lacinia. In tellus integer feugiat scelerisque.</div>
+
+                <div class="Introduce1_title2"
+                    data-6100="opacity: 1; transform: translate(-50%, -50%);"
+                    data-6400="opacity: 1; transform: translate(-50%, -50%);"
+                    data-6800="opacity: 1; transform: translate(-50%, -50%);"
+                    data-7000="opacity: 1; transform: translate(-50%, -50%);"
+                >Philosophy</div>
+
+                <div class="Introduce1_sub2"
+                    data-6300="opacity: 1; transform: translate(-50%, -50%);"
+                    data-6600="opacity: 1; transform: translate(-50%, -50%);"
+                    data-7000="opacity: 1; transform: translate(-50%, -50%);"
+                    data-7200="opacity: 1; transform: translate(-50%, -50%);"
+                >Feugiat in fermentum posuere urna nec tincidunt praesent. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
+                Nisi scelerisque eu ultrices vitae auctor eu augue ut lectus. Ipsum faucibus vitae
+                aliquet nec ullamcorper sit amet risus. Et malesuada fames ac turpis egestas sed.</div>
                 <!-- //Introduce -->
 
             </div>

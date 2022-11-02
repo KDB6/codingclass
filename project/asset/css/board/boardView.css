@@ -1,7 +1,8 @@
 .view__inner {
     width: 1360px;
     height: 723px;
-    background-color: #F9F9F9;
+    border: 1px solid #26675B;
+    background: #fff;
     border-radius: 10px;
     padding: 30px;
 }

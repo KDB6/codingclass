@@ -82,7 +82,7 @@
     margin-bottom: 10px;
 }
 .board_writeBox > textarea {
-    background-color: #f9f9f9;
+    border: 1px solid #26675B;
     width: inherit;
     height: 600px;
     padding: 30px;
@@ -90,7 +90,6 @@
     box-sizing: border-box;
     color: #505050;
     font-size: 18px;
-    border: none;
     resize: none;
     font-weight: 300;
 }

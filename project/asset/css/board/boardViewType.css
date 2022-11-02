@@ -184,7 +184,7 @@
 .search-btn {
     font-size: 16px;
     color: #26675B;
-    background-color: #fff;
+    background-color: inherit;
 }
 .board_write {
     position: absolute;

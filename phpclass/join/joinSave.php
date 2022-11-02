@@ -84,7 +84,7 @@
     // 회원가입 데이터 입력 --> 유효성 검사 --> 이메일주소/핸드폰(중복O) --> 로그인 페이지 유도
     // 이메일 중복 검사
     $isEmailCheck = false;
-    $sql = "SELECT youEmail FROM phpmyMember WHERE youEmail = '$youEmail'";
+    $sql = "SELECT youEmail FROM myStudyMember WHERE youEmail = '$youEmail'";
     $result = $connect -> query($sql);
     if($result){
         $count = $result -> num_rows;
@@ -102,7 +102,7 @@
     }
     // 핸드폰 중복 검사
     $isPhoneCheck = false;
-    $sql = "SELECT youPhone FROM phpmyMember WHERE youPhone = '$youPhone'";
+    $sql = "SELECT youPhone FROM myStudyMember WHERE youPhone = '$youPhone'";
     $result = $connect -> query($sql);
     if($result){
         $count = $result -> num_rows;
@@ -120,7 +120,7 @@
     }
     // 회원가입
     if($isEmailCheck == true && $isPhoneCheck == true){
-        $sql = "INSERT INTO phpmyMember(youEmail, youName, youPass, youPhone, regTime) VALUES('$youEmail', '$youName', '$youPass', '$youPhone', '$regTime')";
+        $sql = "INSERT INTO myStudyMember(youEmail, youName, youPass, youPhone, regTime) VALUES('$youEmail', '$youName', '$youPass', '$youPhone', '$regTime')";
         $result = $connect -> query($sql);
         if($result){
             msg("회원가입을 축하합니다. 로그인 해주세요!");

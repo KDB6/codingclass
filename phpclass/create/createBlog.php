@@ -1,6 +1,6 @@
 <?php
     include "../connect/connect.php";
-    $sql = "CREATE TABLE phpmyBlog (";
+    $sql = "CREATE TABLE myStudyBlog (";
     $sql .= "blogID int(10) unsigned auto_increment,";
     $sql .= "memberID int(10) unsigned NOT NULL,";
     $sql .= "blogTitle varchar(255) NOT NULL,";
@@ -17,6 +17,7 @@
     $sql .= "PRIMARY KEY (blogID)";
     $sql .= ") charset=utf8;";
     $result = $connect -> query($sql);
+    
     if($result){
         echo "create table true";
     } else {

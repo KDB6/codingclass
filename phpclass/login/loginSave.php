@@ -42,7 +42,7 @@
         echo "<a class='btn btn_style1 mt30' href='../login/login.php'>로그인</a>";
     }
     // 데이터 조회
-    $sql = "SELECT memberID, youEmail, youName, youPass FROM phpmyMember WHERE youEmail = '$youEmail' AND youPass = '$youPass'";
+    $sql = "SELECT memberID, youEmail, youName, youPass FROM myStudyMember WHERE youEmail = '$youEmail' AND youPass = '$youPass'";
     $result = $connect -> query($sql);
     if($result){
         $count = $result -> num_rows;

@@ -115,13 +115,69 @@
             background: #0f2e06;
         }
         .image {
-            width: 100%;
-            height: 100vh;
+            width: 300px;
+            height: 300px;
             background: rgba(0,0,0,0.9);
             background-image: url(../assets/img/parallax/my.jpg);
             background-size: cover;
             background-position: center;
         }
+
+        .imageTextTop {
+            color: #fff;
+            position: relative;
+            font-family: "Butler Stencil";
+            text-transform: uppercase;
+            position: fixed;
+            top: 33%;
+            left: 0%;
+            font-size: 0.5vw;
+            letter-spacing: 3px;
+            overflow: hidden;
+            background: linear-gradient(90deg, #0f2e06, #fff, #0f2e06);
+            background-repeat: no-repeat;
+            background-size: 80%;
+            animation: animate 3s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0);
+            text-align: center;
+        }
+        .imageTextBottom {
+            color: #fff;
+            position: relative;
+            font-family: "Butler Stencil";
+            text-transform: uppercase;
+            position: fixed;
+            bottom: 33%;
+            left: 0%;
+            font-size: 0.5vw;
+            letter-spacing: 3px;
+            overflow: hidden;
+            background: linear-gradient(90deg, #0f2e06, #fff, #0f2e06);
+            background-repeat: no-repeat;
+            background-size: 80%;
+            animation: animate2 3s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0);
+        }
+
+        @keyframes animate {
+            0% {
+                background-position: -500%;
+            }
+            100% {
+                background-position: 500%;
+            }
+        }
+        @keyframes animate2 {
+            0% {
+                background-position: -300%;
+            }
+            100% {
+                background-position: 600%;
+            }
+        }
+
         .myTextName {
             font-size: 2vw;
             color: #c0c0c0;
@@ -147,7 +203,7 @@
             color: #c0c0c0;
             white-space: nowrap;
             position: fixed;
-            bottom: 15%;
+            bottom: 9.5%;
             left: 7.6%;
             transform: translate(-50%, -50%);
             font-weight: 300;
@@ -157,7 +213,7 @@
             color: #c0c0c0;
             white-space: nowrap;
             position: fixed;
-            bottom: 12%;
+            bottom: 7%;
             left: 9%;
             transform: translate(-50%, -50%);
             font-weight: 300;
@@ -167,10 +223,100 @@
             color: #c0c0c0;
             white-space: nowrap;
             position: fixed;
-            bottom: 12%;
+            bottom: 6%;
             right: -12%;
             transform: translate(-50%, -50%);
             font-weight: 300;
+        }
+        .hobbyMain {
+            color: #fff;
+            font-size: 6vw;
+            white-space: nowrap;
+        }
+        .hobby1 {
+            color: #0f2e06;
+            font-size: 2vw;
+            left: 20%;
+            white-space: nowrap;
+            top: 32.5%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .hobby1_text {
+            color: #fff;
+            font-size: 1.5vw;
+            white-space: nowrap;
+            top: 32.5%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+            font-weight: 200;
+        }
+        .hobby2 {
+            color: #0f2e06;
+            font-size: 2vw;
+            left: 20.5%;
+            white-space: nowrap;
+            top: 45%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .hobby2_text {
+            color: #fff;
+            font-size: 1.5vw;
+            white-space: nowrap;
+            top: 45%;
+            left: 36.3%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+            font-weight: 200;
+        }
+        .hobby3 {
+            color: #0f2e06;
+            font-size: 2vw;
+            top: 57.5%;
+            left: 19.5%;
+            white-space: nowrap;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .hobby3_text {
+            color: #fff;
+            font-size: 1.5vw;
+            white-space: nowrap;
+            top: 57.5%;
+            left: 44.6%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+            font-weight: 200;
+        }
+        .hobby4 {
+            color: #0f2e06;
+            font-size: 2vw;
+            white-space: nowrap;
+            top: 70%;
+            left: 20.4%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .hobby4_text {
+            color: #fff;
+            font-size: 1.5vw;
+            white-space: nowrap;
+            top: 70%;
+            left: 42.5%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+            font-weight: 200;
+        }
+        .hobby_nemo {
+            background: #FFF5EF;
+            width: 400px;
+            height: 700px;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            position: fixed;
         }
         </style>
 </head>
@@ -226,7 +372,7 @@
                     data-2200 = "transform: translate(-50%, -50%); height: 110px;"
                     data-2200 = "transform: translate(-50%, -50%); height: 110px;"
                     data-2500 = "transform: translate(-50%, -50%); width:100vw; height: 100%;"
-                    data-3000 = "display: none;"
+                    data-7000 = "transform: translate(-50%, -50%); width:100vw; height: 100%;"
                 ></div>
                 
                 <div class="dabin fixed"
@@ -236,55 +382,119 @@
                 >I'm DABIN</div>
                 
 
-                <!-- <div class="image fixed"
-                    data-2400 = "width: 0%;   transform: translate(-50%, -50%) rotate(60deg);"
-                    data-3000 = "width: 100%; transform: translate(-50%, -50%) rotate(0deg);"
-                    data-4400 = "width: 100%; transform: translate(-50%, -50%) rotate(0deg);"
-                ></div> -->
+                <div class="image fixed"
+                    data-2700 = "width: 0%;   transform: translate(-50%, -50%);"
+                    data-3000 = "width: 100%; transform: translate(-50%, -50%);"
+                    data-4100 = "width: 100%; transform: translate(-50%, -50%);"
+                    data-4200 = "width: 0%; transform: translate(-50%, -50%);"
+                ></div>
+
+                <div class="imageTextTop"
+                    data-2700 = "opacity: 0;"
+                    data-4100 = "opacity: 1;"
+                    data-4200 = "opacity: 0;"
+                >Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa.
+                 Commodo odio aenean loremavs utpat odio facilisis mauris sit amet massa. Commodo odio aenean loremavs Volutpat</div>
+
+                <div class="imageTextBottom"
+                    data-2700 = "opacity: 0;"
+                    data-4100 = "opacity: 1;"
+                    data-4200 = "opacity: 0;"
+                >Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent.
+                In hac lorem ipsum cna imperdiet dui accumsan sit. Ornare arcu dui vivamus. Egestas integer aliquet nibh</div>
 
                 <div class="myTextName"
                     data-2500 = "transform: translate(-350%, -50%);"
                     data-3200 = "transform: translate(-20%, -50%);"
+                    data-4100 = "transform: translate(-20%, -50%);"
+                    data-4300 = "transform: translate(-350%, -50%);"
                 >Name : DaBin Kim</div>
 
                 <div class="myTextAge"
                     data-2600 = "transform: translate(-350%, -50%);"
                     data-3300 = "transform: translate(-20%, -50%);"
+                    data-4100 = "transform: translate(-20%, -50%);"
+                    data-4200 = "transform: translate(-350%, -50%);"
                 >Age : 26</div>
 
                 <div class="myTextLive"
                     data-2800 = "transform: translate(-350%, -50%);"
-                    data-3600 = "transform: translate(-20%, -50%);"
+                    data-3300 = "transform: translate(-20%, -50%);"
+                    data-4100 = "transform: translate(-20%, -50%);"
+                    data-4300 = "transform: translate(-350%, -50%);"
                 >living place : Siheung-si</div>
 
                 <div class="myTextDes"
                     data-2900 = "transform: translate(-350%, -50%);"
-                    data-3700 = "transform: translate(-20%, -50%);"
+                    data-3500 = "transform: translate(-20%, -50%);"
+                    data-4100 = "transform: translate(-20%, -50%);"
+                    data-4300 = "transform: translate(-350%, -50%);"
                 >Desired occupation : Front-end developer</div>
 
                 <div class="myTextmy"
                     data-3200="transform: translate(350%, -50%);"
-                    data-4000="transform: translate(-50%, -50%);"
+                    data-3800="transform: translate(-50%, -50%);"
+                    data-4100="transform: translate(-50%, -50%);"
+                    data-4300="transform: translate(350%, -50%);"
                 >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
                 incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non.
                 </div>
 
-                <div class="hobby1"
-                    data-=""
+                <div class="hobbyMain fixed"
+                    data-4200="opacity: 0;"
+                    data-4400="opacity: 1;"
+                    data-4600="opacity: 0;"
+                >What's Your Hobby?</div>
+
+                <div class="hobby_nemo"
+                    data-4550="opacity: 0; left: -50%"
+                    data-4700="opacity: 1; left: 20%"
                 ></div>
+
+                <div class="hobby1"
+                    data-4600="opacity: 0;"
+                    data-4800="opacity: 1;"
+                >Coding</div>
+                
+                <div class="hobby1_text"
+                    data-4700="opacity: 0; left: 120%;"
+                    data-4800="opacity: 1; left: 40%;"
+                >Javascript PHP React</div>
+
+                <div class="hobby2"
+                    data-4700="opacity: 0;"
+                    data-4900="opacity: 1;"
+                >Game..?</div>
+
+                <div class="hobby2_text"
+                    data-4800="opacity: 0; left: 120%;"
+                    data-5000="opacity: 1; left: 36.3%;"
+                >LostArk</div>
+
+                <div class="hobby3"
+                    data-4800="opacity: 0;"
+                    data-5000="opacity: 1;"
+                >Sleep</div>
+
+                <div class="hobby3_text"
+                    data-4900="opacity: 0; left: 120%;"
+                    data-5100="opacity: 1; left: 44.6%;"
+                >Sleeping on a good Night is the Best.</div>
+
+                <div class="hobby4"
+                    data-4900="opacity: 0;"
+                    data-5100="opacity: 1;"
+                >Fashion</div>
+                
+                <div class="hobby4_text"
+                    data-5000="opacity: 0; left: 120%;"
+                    data-5200="opacity: 1; left: 42.5%;"
+                >I'm very Interested in Clothes.</div>
+
             </div>
         </section><!-- section1 -->
-        
-        <section id="section2"></section><!-- section2 -->
 
-        <section id="section3"></section><!-- section3 -->
-
-        <section id="section4"></section><!-- section4 -->
-
-        <section id="section5"></section><!-- section5 -->
-
-        <section id="section6"></section><!-- section6 -->
     </div>
     <!-- contents -->
 

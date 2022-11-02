@@ -21,7 +21,7 @@ position: absolute;
 width: 5px;
 height: 5px;
 border-radius: 5px;
-background: #000;
+background: #505050;
 /* Pick a color */
 }
 .loader .circle:nth-child(2) {

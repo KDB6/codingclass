@@ -1,6 +1,6 @@
 <?php
     include "../connect/connect.php";
-    $sql = "CREATE TABLE myStudyBoard (";
+    $sql = "CREATE TABLE phpmyBoard (";
     $sql .= "boardID int(10) unsigned NOT NULL auto_increment,";
     $sql .= "memberID int(10) NOT NULL,";
     $sql .= "boardTitle varchar(50) NOT NULL,";

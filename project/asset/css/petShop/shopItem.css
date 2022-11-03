@@ -7,8 +7,7 @@
     margin-bottom: 30px;
 }
 .item__img a > img{
-    width: 420px;
-    height: 420px;
+    width: 95%;
     object-fit: cover;
 }
 .item__img figcaption > h3 {

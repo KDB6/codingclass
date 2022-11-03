@@ -165,12 +165,18 @@
             <h2 class="butler800">CATEGORY</h2>
             <div class="shopCate">
                 <ul>
-                    <li><a href="#">의류 / 악세서리</a></li>
+                <?php
+                    foreach($shopResult as $shop){ ?>
+                        <il>
+                            <a href="petShopMain.php?category=<?=$shop['shopCate']?>"><?=$shop['shopCate']?></a>
+                        </il>
+                <?php }?>
+                    <!-- <li><a href="#">의류 / 악세서리</a></li>
                     <li><a href="#">미용 / 케어</a></li>
                     <li><a href="#">배변 / 위생</a></li>
                     <li><a href="#">간식 / 영양제</a></li>
                     <li><a href="#">산책 / 놀이</a></li>
-                    <li><a href="#">목욕</a></li>
+                    <li><a href="#">목욕</a></li> -->
                 </ul>
             </div>
         </div>

@@ -320,4 +320,5 @@ musicIcon.addEventListener("click", () => {
 });
 musicClose.addEventListener("click", () => {
     musicPlayer.classList.add("hide");
+    musicAudio.pause();
 });

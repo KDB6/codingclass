@@ -39,7 +39,7 @@ body {
     position: absolute;
     user-select: none;
     pointer-events: none;
-    z-index: 1;
+    z-index: 5;
 }
 .mouse__cursor img {
     width: 32px;

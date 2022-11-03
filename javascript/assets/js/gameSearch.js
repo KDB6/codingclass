@@ -386,7 +386,7 @@ const cssProperty = [
 const searchTime = document.querySelector(".time span");
 const searchList = document.querySelector(".search__list");
 const searchNum = document.querySelector(".search__info2 .num")
-const searchTotal = document.querySelector(".search__info2 .total")
+const searchTotal = document.querySelector(".search__list")
 const searchAnswers = document.querySelector(".search__answers");
 const searchMissAnswers = document.querySelector(".search__missAnswers");
 const searchStart = document.querySelector(".search__box .start");
@@ -567,4 +567,5 @@ searchIcon.addEventListener("click", () => {
 });
 searchClose.addEventListener("click", () => {
     searchGame.classList.add("hide");
+    searchAudio.pause();
 });

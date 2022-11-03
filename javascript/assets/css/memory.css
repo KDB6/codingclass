@@ -26,27 +26,57 @@
     left: 300px;
     top: 100px;
     border-radius: 20px;
-    /* animation: flicker 1.5s infinite alternate; */
 }
 .memory__inner .memory__close {
-  z-index: 1;
   text-align: center;
-  position: absolute;
-  margin-left: 315px;
-  margin-top: 40px;
-  color: rgb(255, 229, 221);
+  color: #fff;
   cursor: pointer;
+  font-size: 20px;
+}
+.memory__top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 .memoryTime {
-  color: rgb(255, 229, 221);
-  position: absolute;
-  margin-left: 320px;
-  padding-top: 15px;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
 }
 .memoryStart {
-  position: absolute;
-  margin-left: 100px;
   color: #fff;
+  text-align: center;
+  font-size: 24px;
+}
+.memoryInfo {
+  width: 700px;
+  height: 700px;
+  background: #ffffff10;
+  backdrop-filter: blur(5px);
+  position: absolute;
+  z-index: 10;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  border-radius: 20px;
+}
+.memoryInfo .memoryDesc h2 {
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+}
+.memoryInfo .memoryDesc p {
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+}
+.memoryInfo.hide.show {
+	display: block;
+}
+.memoryInfo.hide {
+	display: none;
 }
 .memory__result {
   font-size: 20px;
@@ -57,15 +87,56 @@
   animation: rubberBand 1s 0.6s ease forwards;
 }
 .memoryScore {
-  font-size: 14px;
+  font-size: 20px;
   color: #fff;
+}
+.game__out {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  justify-content: center;
+  z-index: 15;
+  background: #ffffff10;
+  backdrop-filter: blur(5px);
+  margin-top: 40px;
+  width: 700px;
+  height: 700px;
+  border-radius: 20px;
+  display: none;
+}
+.game__out.show {
+  display: block;
+  align-items: center;
+  position: absolute;
+  justify-content: center;
+}
+.memoryOver {
+  font-size: 40px;
+  color: #fff;
+  font-weight: 600;
+}
+.memoryOver.show {
+  display: block;
+}
+.game__out .memoryOutScore {
+  font-size: 40px;
+  color: #fff;
+}
+.game__out .memoryOutScore span {
+  font-size: 40px;
+  color: #fff;
+}
+.restart {
+  font-size: 24px;
+  color: #fff;
+  margin-left: 20px;
+  margin-top: 15px;
 }
 .memory__card {
     background: rgb(255, 104, 45);
     backdrop-filter: blur(20px);
     border: 2px solid rgb(255, 145, 0);
     border-radius: 20px;
-    padding-top: 40px;
 }
 .memory__card ul {
     padding: 28px;

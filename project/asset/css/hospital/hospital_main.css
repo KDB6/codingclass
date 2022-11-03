@@ -283,6 +283,7 @@ input[id="search"]:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 .category__box fieldset {
   display: flex;
@@ -362,9 +363,9 @@ input[id="search"]:focus {
   margin-left: 50px;
 }
 .category__contents.tapActive {
-  display: block;
-  padding-top: 30px;
-  align-items: center;
+    display: block;
+    padding-top: 30px;
+    align-items: center;
 }
 .category__contents input[type="radio"] {
   display: none;

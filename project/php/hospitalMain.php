@@ -225,16 +225,27 @@
     <section id="infomationType" class="container">
         <!-- 카테고리 박스 -->
         <div class="Info_textBox">
-            <h2>동물병원 알아보기</h2>
             <div class="category__box">
                 <div class="category__title">
-                    <h3>Catetory</h3>
                     <nav class="category__titleChoice">
-                        <li><a href="#" class="cate1 tapActive">지역</a></li>
-                        <span>|</span>
-                        <li><a href="#" class="cate2">병명</a></li>
-                        <span>|</span>
-                        <li><a href="#" class="cate3">수술</a></li>
+                        <li>
+                            <a href="#" class="cate1 tapActive">
+                                <img src="../../asset/img/hospital/pin.svg" alt="">
+                                REGION
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="cate2">
+                                <img src="../../asset/img/hospital/disease.svg" alt="">
+                                EISEASE
+                            </a>
+                        </li>   
+                        <li>
+                            <a href="#" class="cate3">
+                                <img src="../../asset/img/hospital/surgery.svg" alt="">
+                                SURGERY
+                            </a>
+                        </li>
                     </nav>
                 </div>
                 <div>

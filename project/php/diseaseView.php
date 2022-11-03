@@ -66,7 +66,7 @@
             <h2 class="butler800">Patella Information</h2>
             <div class="disease__box">
                 <div class="disease__info">
-                    <img src="../asset/img/disease_img01.jpg" alt="질병설명1" />
+                    <img src="../asset/img/disease_img01.svg" alt="질병설명1" />
                     <div class="text__box">
                         <span class="information">
                             <h3><?=$DisInfo['DisName']?>이란?</h3>
@@ -86,10 +86,10 @@
                             </ul>
                         </span>
                     </div>
-                    <img src="../asset/img/disease_img02.jpg" alt="질병설명1" />
+                    <img src="../asset/img/disease_img02.svg" alt="질병설명1" />
                 </div>
                 <div class="disease__info">
-                    <img src="../asset/img/disease_img03.jpg" alt="질병설명1" />
+                    <img src="../asset/img/disease_img03.svg" alt="질병설명1" />
                     <div class="text__box">
                         <span class="information">
                             <h3>발생 원인</h3>
@@ -110,10 +110,10 @@
                             </ul>
                         </span>
                     </div>
-                    <img src="../asset/img/disease_img04.jpg" alt="질병설명1" />
+                    <img src="../asset/img/disease_img04.svg" alt="질병설명1" />
                 </div>
                 <div class="disease__info">
-                    <img src="../asset/img/disease_img05.jpg" alt="질병설명1" />
+                    <img src="../asset/img/disease_img05.svg" alt="질병설명1" />
                     <div class="text__box">
                         <span class="information">
                             <h3><?=$DisInfo['DisName']?> 수술이 필요한 이유는?</h3>
@@ -133,7 +133,7 @@
                             </ul>
                         </span>
                     </div>
-                    <img src="../asset/img/disease_img06.jpg" alt="질병설명1" />
+                    <img src="../asset/img/disease_img06.svg" alt="질병설명1" />
                 </div>
             </div>
         </section>

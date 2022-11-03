@@ -1,6 +1,7 @@
 <?php
 
     include "../connect/connect.php";
+    include "../connect/session.php";
 
     $DisSql = "SELECT * FROM Disease";
     $DisResult = $connect -> query($DisSql);
@@ -29,7 +30,7 @@
         <style>
             /* diseaseSlider */
             #diseaseSlider {
-                margin-bottom: 120px;
+                margin-bottom: 90px;
             }
             .diseaseSlider__inner {
                 display: flex;
@@ -49,7 +50,7 @@
             }
             .diseaseSlider__card > h3 {
                 font-size: 20px;
-                color: #6cc4b3;
+                color: #26675B;
                 margin-bottom: 20px;
             }
             .diseaseSlider__card__bottom {
@@ -63,8 +64,9 @@
             .diseaseTap__inner > h2 {
                 text-align: center;
                 font-size: 32px;
-                color: #6cc4b3;
+                color: #26675B;
                 margin-bottom: 30px;
+                font-weight: 600;
             }
             .diseaseTap__card__wrap {
                 display: flex;
@@ -79,28 +81,33 @@
                 margin-bottom: 78px;
                 box-shadow: 2px 2px 8px 2px rgba(222, 222, 222, 0.25);
                 border-radius: 30px;
+                transition: all 0.5s;
+                background: #fff;
+            }
+            .diseaseTap__card:hover {
+                transform: scale(1.02);
             }
             .diseaseTap__card:last-child {
-                margin-bottom: 40px;
+                /* margin-bottom: 40px; */
             }
             .diseaseTap__card img {
                 display: block;
                 left: 50%;
                 margin: 0 auto;
-                width: 200px;
-                height: 200px;
+                width: 80px;
+                height: 80px;
                 margin-top: 25px;
                 border-radius: 20px;
             }
             .diseaseTap__card > h3 {
                 margin-top: 15px;
                 text-align: center;
-                color: #6cc4b3;
+                color: #26675B;
             }
             .diseaseTap__card > P {
                 margin-top: 10px;
                 text-align: center;
-                color: #6cc4b3;
+                color: #26675B;
                 font-size: 12px;
                 margin-bottom: 20px;
             }
@@ -117,7 +124,7 @@
             }
 
             .board__pages {
-                margin: 70px 0 20px 0;
+                margin: 0px 0 40px 0;
             }
             .board__pages ul {
                 text-align: center;
@@ -130,7 +137,7 @@
                 color: #505050;
             }
             .board__pages ul li.active a {
-                color: #6cc4b3;
+                color: #26675B;
             }
         </style>
     </head>
@@ -161,14 +168,22 @@
 
     <section id="infomationType" class="container">
         <div class="Info_textBox">
-            <h2>질병 알아보기</h2>
+        <h3>CATEGORY</h3>
             <div class="category__box">
                 <div class="category__title">
-                    <h3>Catetory</h3>
                     <nav class="category__titleChoice">
-                        <li><a href="#" class="tapActive">부위</a></li>
-                        <span>|</span>
-                        <li><a href="#">병명</a></li>
+                        <li>
+                            <a href="#" class="cate1 tapActive">
+                                <img src="../../asset/img/hospital/pin.svg" alt="">
+                                부위
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="cate2">
+                                <img src="../../asset/img/hospital/disease.svg" alt="">
+                                병명
+                            </a>
+                        </li>
                     </nav>
                 </div>
                 <div class="category__contents body tapActive">

@@ -44,7 +44,7 @@
     </section>
 
 
-    <section id="mainSliderType" class="container">
+    <section id="mainSliderType">
         <div id="slider__inner">
             <div id="hos__slider">
             <?php

@@ -381,7 +381,7 @@ input[id="search"]:focus {
 .category__contents div:hover {
 }
 
-.category__contents {
+.category__contents > div a {
   color: #26675B;
   line-height: 60px;
   cursor: pointer;
@@ -390,7 +390,7 @@ input[id="search"]:focus {
   font-weight: 500;
   position: relative;
 }
-.category__contents::before {
+.category__contents div a::before {
   content: "";
   position: absolute;
   left: 0;
@@ -401,7 +401,7 @@ input[id="search"]:focus {
   transform: scaleX(0);
   transition: all 0.3s ease;
 }
-.category__contents:hover::before {
+.category__contents div a:hover::before {
   transform: scaleX(1);
 }
 
@@ -428,6 +428,7 @@ input[id="search"]:focus {
 .category__contents div label:hover::before {
   transform: scaleX(1);
 }
+
 .category__confirm {
   width: 20%;
   text-align: center;

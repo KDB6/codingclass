@@ -88,7 +88,8 @@ https://kdb6.github.io/codingclass/javascript/effect/parallaxEffect03.html
 https://kdb6.github.io/codingclass/javascript/effect/parallaxEffect04.html  
 https://kdb6.github.io/codingclass/javascript/effect/parallaxEffect05.html  
 https://kdb6.github.io/codingclass/javascript/effect/parallaxEffect06.html  
-https://kdb6.github.io/codingclass/javascript/effect/parallaxEffect07.html
+https://kdb6.github.io/codingclass/javascript/effect/parallaxEffect07.html   
+https://kdb6.github.io/codingclass/javascript/effect/parallax_apple.html   
 
 ### 슬라이드 이펙트 메인 페이지
 

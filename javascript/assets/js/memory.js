@@ -172,9 +172,9 @@ shuffledCard();
 // 다시 시작하기
 function restart() {
     memortResultWrap.classList.remove("show");
-    timeReamining = 10;
+    timeReamining = 120;
     score = 0;
-    searchTotal.innerText = "0";
+    memoryCardsCard.innerText = "0";
 
     startQuiz();
 }

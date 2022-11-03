@@ -8,7 +8,6 @@
 
     $shopCate = $_GET['category'];
 
-
     if(isset($_GET['category'])){
         $shopCate = $_GET['category'];
         $shopSql = "SELECT * FROM petShop WHERE shopCate='$shopCate'";

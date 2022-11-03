@@ -7,6 +7,19 @@
     $shopResult = $connect -> query($shopSql);
 
     $shopInfo = $shopResult -> fetch_array(MYSQLI_ASSOC);
+
+    $shopCate = $_GET['category'];
+
+    if(isset($_GET['category'])){
+        $shopCate = $_GET['category'];
+        $shopSql = "SELECT * FROM petShop WHERE shopCate='$shopCate'";
+        
+    } else {
+        $shopSql = "SELECT * FROM petShop";
+    }
+
+    $petShopCate = "SELECT DISTINCT shopCate FROM petShop";
+    $shopResult = $connect -> query($petShopCate);
 ?>
 
 <!DOCTYPE html>
@@ -45,13 +58,19 @@
     <section id="petShopItemCate">
         <div class="petShopItemCate__inner container">
             <ul class="itemCate">
-                <li class="butler800 cateOne"><a href="#">CATEGORY</a></li>
+                <?php
+                    foreach($shopResult as $shop){ ?>
+                        <il>
+                            <a href="petShopMain.php?category=<?=$shop['shopCate']?>"><?=$shop['shopCate']?></a>
+                        </il>
+                <?php }?>
+                <!-- <li class="butler800 cateOne"><a href="#">CATEGORY</a></li>
                 <li><a href="#">의류 / 악세서리</a></li>
                 <li><a href="#">미용 / 케어</a></li>
                 <li><a href="#">배변 / 위생</a></li>
                 <li><a href="#">간식 / 영양제</a></li>
                 <li><a href="3">산책 / 놀이</a></li>
-                <li><a href="#">목욕</a></li>
+                <li><a href="#">목욕</a></li> -->
             </ul>
         </div>
     </section>

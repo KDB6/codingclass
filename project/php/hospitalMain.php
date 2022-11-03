@@ -33,15 +33,6 @@
 
     <link rel="stylesheet" href="../asset/css/hospital/hospital_main.css">
     <style>
-        .category__contents div > a {
-            color: #6cc4b3;
-        }
-        .category__contents div {
-            color: #6cc4b3;
-            line-height: 60px;
-            cursor: pointer;
-            font-size: 16px;
-        }
                
         
     </style>
@@ -230,19 +221,19 @@
                     <nav class="category__titleChoice">
                         <li>
                             <a href="#" class="cate1 tapActive">
-                                <img src="../../asset/img/hospital/pin.svg" alt="">
+                                <img src="../asset/img/hospital/pin.svg" alt="">
                                 REGION
                             </a>
                         </li>
                         <li>
                             <a href="#" class="cate2">
-                                <img src="../../asset/img/hospital/disease.svg" alt="">
+                                <img src="../asset/img/hospital/disease.svg" alt="">
                                 EISEASE
                             </a>
                         </li>   
                         <li>
                             <a href="#" class="cate3">
-                                <img src="../../asset/img/hospital/surgery.svg" alt="">
+                                <img src="../asset/img/hospital/surgery.svg" alt="">
                                 SURGERY
                             </a>
                         </li>

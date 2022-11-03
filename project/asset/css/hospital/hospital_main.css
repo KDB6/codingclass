@@ -380,6 +380,29 @@ input[id="search"]:focus {
 }
 .category__contents div:hover {
 }
+.category__contents div a {
+  color: #26675B;
+  line-height: 60px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.5s;
+  font-weight: 500;
+  position: relative;
+}
+.category__contents div a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #26675B;
+  transform: scaleX(0);
+  transition: all 0.3s ease;
+}
+.category__contents div a:hover::before {
+  transform: scaleX(1);
+}
 .category__contents div label {
   color: #26675B;
   line-height: 60px;
@@ -389,7 +412,6 @@ input[id="search"]:focus {
   font-weight: 500;
   position: relative;
 }
-
 .category__contents div label::before {
   content: "";
   position: absolute;

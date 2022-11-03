@@ -407,7 +407,7 @@ let timeReamining = 120,    // 남은 시간
 
 function updateList() {
     cssProperty.forEach(data => {
-        searchList.innerHTML += `<span>${data.name}</span>`;
+        searchTotal.innerHTML += `<span>${data.name}</span>`;
         searchList.style.overflow = "scroll";
     });
 }

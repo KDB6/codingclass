@@ -32,10 +32,6 @@
     <title>병원 메인 페이지</title>
 
     <link rel="stylesheet" href="../asset/css/hospital/hospital_main.css">
-    <style>
-               
-        
-    </style>
 </head>
 
 <body>
@@ -243,7 +239,6 @@
                     <!-- 지역 카테고리 -->
                     <div class="category__contents regionCho tapActive">
                         <?php
-                        
                             foreach($allResult as $all){ ?>
                                 <div>
                                     <a href="hospitalMain.php?category=<?=$all['HosCategory']?>"><?=$all['HosCategory']?></a>

@@ -38,6 +38,10 @@
   display: flex;
   animation: rubberBand 1s 0.6s ease forwards;
 }
+.memoryScore {
+  font-size: 14px;
+  color: #fff;
+}
 .memory__card {
     background: rgb(255, 104, 45);
     backdrop-filter: blur(20px);

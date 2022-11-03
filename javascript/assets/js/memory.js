@@ -8,6 +8,9 @@ const memoryTime = document.querySelector(".memoryTime span");
 const memoryStart = document.querySelector(".memory__inner .memoryStart");
 const memoryRestart = document.querySelector(".memory__inner .restart");
 const memortResultWrap = document.querySelector(".memory__inner .memory__result");
+const memoryCardsCard = document.querySelector(".memory__card .cards");
+const memoryCardScore = document.querySelector(".memoryScore");
+const cardList = document.querySelector(".memory__card .cards");
 
 
 let cardOne, cardTwo;
@@ -26,6 +29,12 @@ let soundSuccess = new Array(sound[2]);
 let memoryTimeReamining = 60,    // 남은 시간
     memoryTimeInterval = "",     // 시간 간격
     memoryScore = 0              // 점수
+
+function updateList() {
+    memoryCardScore.forEach(() => {
+        matchCards();
+    });
+}
 
 // 게임 시작하기
 function startQuiz() {

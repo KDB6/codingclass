@@ -149,6 +149,8 @@ body {
     justify-content: center;
     transform: scale(0);
 }
+.game__cont iframe {
+}
 .game__close {
     position: absolute;
     right: 20px;

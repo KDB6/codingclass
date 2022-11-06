@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래머스01 : 문자열을 정수로 바꾸기</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">프로그래머스 1단계 : 문자열을 정수로 바꾸기</h2>
+            <p class="t_desc2">
+                문자열 s를 숫자로 변환한 결과를 반환하는 함수, solution을 완성하세요.
+            </p>
+
+            <hr>
+
+            <h4 class="t_tit2">제한 사항</h4>
+            <p class="t_desc2">
+                s의 길이는 1 이상 5이하입니다.<br>
+                s의 맨앞에는 부호(+, -)가 올 수 있습니다.<br>
+                s는 부호와 숫자로만 이루어져있습니다.<br>
+                s는 "0"으로 시작하지 않습니다.
+            </p>
+
+            <h3 class="t_tit2">나의 문제 풀이</h3>
+            <p class="t_desc">
+                정수로 변환해주는 parseInt을 사용했습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(s) {
+    var answer = 0;
+    return parseInt(s);
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">다른 사람 문제 풀이</h3>
+            <p class="t_desc">
+                새로 알게 된 것 str에서 /1을 하면 num으로 인식하여 정수가? 된다네요..?
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function strToInt(str){
+    return str/1
+}
+</code></pre>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

@@ -285,7 +285,7 @@ a {
 .modal__cont.show {    /* 전체 배경 */
     animation: foldOut 1s ease forwards;
 }
-.modal__cont.show.hide{     
+.modal__cont.show.hide {     
     animation: foldIn 0.3s 0.5s ease backwards;
 }
 .modal__cont.show .modal__box {    /* 스크립트 박스 */

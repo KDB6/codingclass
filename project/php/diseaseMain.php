@@ -155,8 +155,8 @@
                 display: block;
                 left: 50%;
                 margin: 0 auto;
-                width: 80px;
-                height: 80px;
+                width: 60px;
+                height: 60px;
                 margin-top: 25px;
                 border-radius: 20px;
             }

@@ -1,0 +1,21 @@
+#petShopItemCate {
+    margin-top: 80px;
+    background: #F9FAFB;
+}
+.itemCate .cateOne a {
+    font-family: 'Alfa Slab One', cursive;
+    font-weight: 400;
+}
+.cateOne {
+    margin-right: 20px;
+    padding: 0 !important;
+    font-size: 16px !important;
+    font-weight: 800 !important;
+}
+.petShopItemCate__inner ul li {
+    display: inline;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #505050;
+    font-weight: 400;
+}

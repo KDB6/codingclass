@@ -178,13 +178,13 @@ input[id="search"]:focus {
 }
 .slider__textName .slider__tag {
   font-size: 16px;
-  color: #fff;
+  color: #505050;
   margin-right: 10px;
   font-weight: 300;
 }
 .slider__text p {
   font-size: 20px;
-  color: #fff;
+  color: #505050;
   line-height: 1.4;
   font-weight: 400;
   margin-bottom: 70px;
@@ -270,10 +270,9 @@ input[id="search"]:focus {
   color: #26675B;
   text-align: center;
   width: 50%;
-  padding: 6px 0 20px 0;
   margin: 0 auto 30px auto;
   line-height: 40px;
-  border-bottom: 1px dashed #bbbbbb;
+  font-family: 'Alfa Slab One', cursive;
 }
 .category__box {
   width: 1360px;

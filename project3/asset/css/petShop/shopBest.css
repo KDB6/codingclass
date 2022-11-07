@@ -1,0 +1,38 @@
+.shopBest__inner > h2 {
+    font-size: 40px;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    color: #505050;
+    font-family: 'Alfa Slab One', cursive;
+}
+
+.best__all {
+    display: flex;
+    justify-content: space-between;
+}
+
+.best__img a > img {
+    width: 95%;
+}
+.best__img figcaption > h2 a {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #505050;
+}
+.best__img figcaption > p {
+    font-weight: 300;
+    color: #505050;
+}
+
+.best__img a > img:nth-child(4) {
+    transform: translateY(-26%);
+}
+
+.best__img05 {
+    transform: translateY(16%);
+}
+
+.best__img06 {
+    transform: translateY(-7.5%);
+}

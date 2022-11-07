@@ -1,0 +1,110 @@
+/* InfomationType */
+#infomationType {
+    width: 100%;
+    /* height: 1000px; */
+    margin-bottom: 60px;
+  }
+  .Info_textBox {
+    background: #f9fafb;
+    padding: 10px 0 30px 0;
+    margin-bottom: 70px;
+  }
+  #infomationType h2 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #26675B;
+    text-align: center;
+    width: 50%;
+    padding: 6px 0 20px 0;
+    margin: 0 auto 30px auto;
+    line-height: 40px;
+    border-bottom: 1px dashed #26675B;
+  }
+  .category__box {
+    text-align: center;
+  }
+  .category__title h3 {
+    font-size: 16px;
+    color: #26675B;
+    margin-bottom: 10px;
+  }
+  .category__titleChoice {
+    font-size: 20px;
+    color: #26675B;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .category__titleChoice li {
+    padding: 0 30px;
+  }
+  .category__titleChoice span {
+    margin-top: 1px;
+  }
+  .category__titleChoice li a {
+    font-size: 18px;
+    color: #757575;
+  }
+  
+  .category__titleChoice li a.tapActive {
+    color: #26675B;
+  }
+  .category__contents {
+    margin: 0 auto;
+    display: none;
+    margin-bottom: 30px;
+  }
+  .category__contents.tapActive {
+    display: block;
+  }
+  .category__contents input[type="radio"] {
+    display: none;
+  }
+  .category__contents div {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 10px;
+    transition: all 0.5s;
+  }
+  .category__contents div a {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 10px;
+    transition: all 0.5s;
+  }
+  .category__contents div.tapActive:hover {
+    background: #26675B;
+  }
+  .category__contents div.tapActive:hover a {
+    background: #26675B;
+  }
+  .category__contents div label {
+    color: #26675B;
+    line-height: 60px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .category__contents div.tapActive label:hover {
+    color: #fff;
+  }
+  .category__confirm  a{
+    color: #26675B;
+  }
+  .category__confirm button {
+    background: inherit;
+    font-size: 16px;
+    color: #757575;
+    cursor: pointer;
+  }
+  .category__confirm button:nth-child(1) {
+    margin-right: 10px;
+  }
+  .category__confirm span {
+    margin-left: 8px;
+  }

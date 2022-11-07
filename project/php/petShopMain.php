@@ -166,9 +166,9 @@
                 <ul>
                 <?php
                     foreach($shopResult as $shop){ ?>
-                        <il>
+                        <li>
                             <a href="petShopMain.php?category=<?=$shop['shopCate']?>"><?=$shop['shopCate']?></a>
-                        </il>
+                        </li>
                 <?php }?>
                     <!-- <li><a href="#">의류 / 악세서리</a></li>
                     <li><a href="#">미용 / 케어</a></li>

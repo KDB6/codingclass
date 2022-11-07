@@ -1,0 +1,48 @@
+#allSearchCate {
+    margin-top: 120px;
+}
+.allSearchCate__inner {
+    border-bottom: 1px solid #26675B;
+}
+.allSearchCate__inner h3 {
+    font-size: 20px;
+  font-family: 'Alfa Slab One', cursive;
+  text-align: center;
+  color: #26675B;
+  margin-bottom: 20px;
+}
+.allSearchCate__inner ul li > img {
+    padding-top: 5px;
+    padding-left: 10px;
+    width: 17px;
+    height: 13px;
+}
+.allSearchCate__inner ul {
+    text-align: center;
+}
+.allSearchCate__inner ul li {
+    display: inline;
+}
+.allSearchCate__inner ul li a{
+    color: #505050;
+    font-size: 16px;
+    padding: 6px 35px;
+    background: #fff;
+    border: 1px solid #26675B;
+    border-radius: 30px;
+    margin: 0 10px;
+    transition: all 0.5s;
+}
+.allSearchCate__inner ul li.active a {
+    color: #26675B;
+}
+.allSearchCate__inner ul li.active a:hover {
+    color: #fff;
+    background: #26675B;
+}
+.allSearchCate__inner ul li img {
+    transition: all 0.5s;
+}
+.allSearchCate__inner ul li img:hover {
+    transform: scale(1.2);
+}

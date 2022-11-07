@@ -5,6 +5,10 @@
     $HosSql = "SELECT * FROM Hospital";
     $HosResult = $connect -> query($HosSql);
 
+    
+    $HosSql2 = "SELECT * FROM Hospital";
+    $HosResult2 = $connect -> query($HosSql2);
+
     $HosInfo = $HosResult -> fetch_array(MYSQLI_ASSOC);
 
     $hosCategory = $_GET['category'];
@@ -22,7 +26,6 @@
     $allResult = $connect -> query($allCategory);
 ?>
 
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -32,6 +35,19 @@
     <title>병원 메인 페이지</title>
 
     <link rel="stylesheet" href="../asset/css/hospital/hospital_main.css">
+    <style>
+        .category__contents div > a {
+            color: #26675B;
+        }
+        .category__contents div {
+            color: #26675B;
+            line-height: 60px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+               
+        
+    </style>
 </head>
 
 <body>
@@ -58,12 +74,12 @@
                 $sliviewLimit = ($sliviewNum * $slipage) - $sliviewNum;
 
 
-                $HosSql .= " ORDER BY HosID DESC LIMIT {$sliviewLimit}, {$sliviewNum}";
-                $sliHosResult = $connect -> query($HosSql);
+                $HosSql2 .= " ORDER BY HosID DESC LIMIT {$sliviewLimit}, {$sliviewNum}";
+                $sliHosResult = $connect -> query($HosSql2);
 
                 $slicount = $sliHosResult -> num_rows;
 
-                if($HosSql){
+                if($HosSql2){
                     $slicount = $HosResult -> num_rows;
         
                     if($slicount > 0 ){
@@ -72,6 +88,7 @@
                             echo "<div class='slider__item' style='background-image: url(../asset/img/hospital/".$sliHos['HosImgFile'].")'>";
                                 echo "<div class='slider__text'>";
                                     echo "<div class='slider__textName'>";
+                                        echo "<h2>".$hosCategory."</h2>";
                                         echo "<h3>".$sliHos['HosName']."</h3>";
                                         echo "<span><a href='hospitalView.php?page=".$sliHos['HosID']."' class='blind'>버튼</a></span>";
                                         echo "<div class='slider__tag'>";
@@ -212,25 +229,26 @@
     <section id="infomationType" class="container">
         <!-- 카테고리 박스 -->
         <div class="Info_textBox">
+            <h2>A.Hospital</h2>
             <div class="category__box">
                 <div class="category__title">
                     <nav class="category__titleChoice">
                         <li>
                             <a href="#" class="cate1 tapActive">
                                 <img src="../asset/img/hospital/pin.svg" alt="">
-                                REGION
+                                지역
                             </a>
                         </li>
                         <li>
                             <a href="#" class="cate2">
                                 <img src="../asset/img/hospital/disease.svg" alt="">
-                                EISEASE
+                                병명
                             </a>
                         </li>   
                         <li>
                             <a href="#" class="cate3">
                                 <img src="../asset/img/hospital/surgery.svg" alt="">
-                                SURGERY
+                                수술
                             </a>
                         </li>
                     </nav>
@@ -239,8 +257,9 @@
                     <!-- 지역 카테고리 -->
                     <div class="category__contents regionCho tapActive">
                         <?php
+                        
                             foreach($allResult as $all){ ?>
-                                <div>
+                                <div>                                    
                                     <a href="hospitalMain.php?category=<?=$all['HosCategory']?>"><?=$all['HosCategory']?></a>
                                 </div>
                         <?php }
@@ -305,7 +324,7 @@
                                 <input type="radio" id="Operation3" name="Operation3" value="내시경">
                             </div>
                         </div>
-                </div>
+                    </div>
             </div>
         </div>
 
@@ -319,7 +338,7 @@
                     $page = 1;
                 }
 
-                $viewNum = 9;
+                $viewNum = 8;
                 $viewLimit = ($viewNum * $page) - $viewNum;
 
 
@@ -525,7 +544,6 @@
     document.getElementById("next").onclick = function(){
         let lists = document.querySelectorAll(".slider__item");
         document.getElementById("hos__slider").appendChild(lists[0]);
-        console.log(document.getElementById("hos__slider"))
     }
 
     document.getElementById("prev").onclick = function(){
@@ -545,6 +563,8 @@
     const surgeryChoice = document.querySelector(".surgeryCho");
     const categoryCircle = document.querySelectorAll(".category__contents > div");
     const categoryCircleLab = document.querySelectorAll(".category__contents > div > label");
+
+    const ContentsActive = document.querySelectorAll(".category__contents a");
 
 
 
@@ -570,12 +590,22 @@
     //카테고리 내용 선택
     categoryCircleLab.forEach((e, i) => {
         e.addEventListener("click", ()=>{
+            e.preventDefault();
             categoryCircle.forEach(rem => {
                 rem.classList.remove("tapActive");
             })
             categoryCircle[i].classList.add("tapActive");
         });
     });
+
+    ContentsActive.forEach((e, i)=> {
+        e.addEventListener("click", (el, index)=> {
+            ContentsActive.forEach((arr) => {
+                arr.classList.remove("red")
+            })
+            ContentsActive[i].classList.add("red");
+        })
+    })
 
 
 

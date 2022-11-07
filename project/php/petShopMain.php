@@ -31,7 +31,6 @@
     <link rel="stylesheet" href="../asset/css/common.css">
     <link rel="stylesheet" href="../asset/css/font.css">
     <link rel="stylesheet" href="../asset/css/reset.css">
-    <link rel="stylesheet" href="../asset/css/butler.css">
 
     <link rel="stylesheet" href="../asset/css/petShop/shopSlider.css">
     <link rel="stylesheet" href="../asset/css/petShop/shopMini.css">
@@ -51,7 +50,7 @@
                 <div class="shopSlider__inner">
                     <div class="shopSlider"><a href=""><img src="../asset/img/shopSlider01.jpg" alt="펫슬라이드01"></a>
                         <figcaption>
-                            <h2 class="butler800">DOG CUSHION</h2>
+                            <h2>DOG CUSHION</h2>
                             <p>반려견에게 아늑함을 전해주세요.</p>
                         </figcaption>
                     </div>
@@ -89,7 +88,7 @@
      <!-- shopBest -->
      <!-- <section id="shopBest">
         <div class="shopBest__inner container">
-            <h2 class="butler800">BEST PICKS</h2>
+            <h2>BEST PICKS</h2>
             <div class="best__item">
 
             <?php
@@ -161,7 +160,7 @@
      <!-- shop category -->
      <section id="shopCategory">
         <div class="shopCate__inner container">
-            <h2 class="butler800">CATEGORY</h2>
+            <h2>CATEGORY</h2>
             <div class="shopCate">
                 <ul>
                 <?php
@@ -228,7 +227,7 @@
                 <div class="item__img">
                     <a href="#"><img src="../asset/img/item__top01.jpg" alt=""></a>
                     <figcaption>
-                        <h3 class="butler800"><a href="#">Brand</a></h3>
+                        <h3><a href="#">Brand</a></h3>
                         <h2><a href="#">펫 용품</a></h2>
                         <p><a href="#">66,000원</a></p>
                     </figcaption>
@@ -236,7 +235,7 @@
                 <div class="item__img">
                     <a href="#"><img src="../asset/img/item__top02.jpg" alt=""></a>
                     <figcaption>
-                        <h3 class="butler800"><a href="#">Brand</a></h3>
+                        <h3><a href="#">Brand</a></h3>
                         <h2><a href="#">펫 용품</a></h2>
                         <p><a href="#">66,000원</a></p>
                     </figcaption>
@@ -244,7 +243,7 @@
                 <div class="item__img">
                     <a href="#"><img src="../asset/img/item__top03.jpg" alt=""></a>
                     <figcaption>
-                        <h3 class="butler800"><a href="#">Brand</a></h3>
+                        <h3><a href="#">Brand</a></h3>
                         <h2><a href="#">펫 용품</a></h2>
                         <p><a href="#">66,000원</a></p>
                     </figcaption>

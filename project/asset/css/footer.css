@@ -6,7 +6,7 @@
     display: flex;
     justify-content: space-between;
     border-top: 1px solid #d3d3d3;
-    padding-top: 30px;
+    padding-top: 25px;
 }
 .footer__left > h2 {
     color: #A0A0A0;

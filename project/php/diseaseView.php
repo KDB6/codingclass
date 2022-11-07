@@ -64,7 +64,7 @@
     </section>
 
     <section id="informationType" class="container">
-            <h2 class="butler800">Patella Information</h2>
+            <h2>Patella Information</h2>
             <div class="disease__box">
                 <div class="disease__info">
                     <img src="../asset/img/disease_img01.svg" alt="질병설명1" />

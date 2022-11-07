@@ -530,9 +530,9 @@
         </div> -->
     </section>
 
-    <!-- header -->
+    <!-- footer -->
     <?php include "../include/footer.php"?>
-    <!-- //header -->
+    <!-- //footer -->
 
 
 </body>

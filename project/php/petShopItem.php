@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="../asset/css/common.css">
     <link rel="stylesheet" href="../asset/css/font.css">
     <link rel="stylesheet" href="../asset/css/reset.css">
-    <link rel="stylesheet" href="../asset/css/butler.css">
 
     <link rel="stylesheet" href="../asset/css/petShop/petShopItemCate.css">
     <link rel="stylesheet" href="../asset/css/petShop/petShopInfo.css">
@@ -64,7 +63,7 @@
                             <a href="petShopMain.php?category=<?=$shop['shopCate']?>"><?=$shop['shopCate']?></a>
                         </il>
                 <?php }?>
-                <!-- <li class="butler800 cateOne"><a href="#">CATEGORY</a></li>
+                <!-- <li class="cateOne"><a href="#">CATEGORY</a></li>
                 <li><a href="#">의류 / 악세서리</a></li>
                 <li><a href="#">미용 / 케어</a></li>
                 <li><a href="#">배변 / 위생</a></li>

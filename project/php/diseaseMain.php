@@ -192,6 +192,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                margin-bottom: 70px;
             }
             .board__pages ul li a {
                 padding: 13px 10px;
@@ -236,13 +237,13 @@
                         <nav class="category__titleChoice">
                             <li>
                                 <a href="#" class="cate1 tapActive">
-                                    <img src="../asset/img/hospital/pin.svg" alt="">
+                                    <img src="../asset/img/pin.svg" alt="">
                                     부위
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="cate2">
-                                    <img src="../asset/img/hospital/disease.svg" alt="">
+                                    <img src="../asset/img/disease.svg" alt="">
                                     병명
                                 </a>
                             </li>

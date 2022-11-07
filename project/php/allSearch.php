@@ -69,7 +69,7 @@
 
     <!-- allHospital -->
     <section id="allHospital">
-        <div class="allHospital__inner container">
+        <div class="allHospital__inner container" style="padding: 0px !important;">
             <div class="allHospital__top">
                 <h2>A.Hsospital</h2>
                 <p>

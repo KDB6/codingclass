@@ -25,13 +25,13 @@ body {
 }
 #header h1 {
     font-size: 20px;
-    color: rgb(88, 107, 177);
+    color: rgba(88, 107, 177);
     padding: 6px 0 5px 0;
     font-weight: normal;
     font-weight: 600;
 }
 #header .time {
-    color: rgb(88, 107, 177);
+    color: rgba(88, 107, 177);
     font-weight: 400;
 }
 /* mouseType */
@@ -39,7 +39,7 @@ body {
     position: absolute;
     user-select: none;
     pointer-events: none;
-    z-index: 5;
+    z-index: 10;
 }
 .mouse__cursor img {
     width: 32px;
@@ -126,7 +126,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 5px 10px;
-    color: rgb(88, 107, 177);
+    color: rgba(88, 107, 177);
 }
 #footer .agent {
     padding-top: 0px;
@@ -148,6 +148,7 @@ body {
     align-items: center;
     justify-content: center;
     transform: scale(0);
+    z-index: 5;
 }
 .game__cont iframe {
 }

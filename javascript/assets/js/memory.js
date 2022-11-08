@@ -148,7 +148,7 @@ function matchCards(img1, img2) {
             memoryOutScore.innerHTML = `<span>${memoryScore}</span>`;
         }
 
-        memoryCardScore.innerText = memoryScore;
+        memoryCardScore.innerText = "게임 점수" + " " + ":" + " " +memoryScore;
 
         soundUnMatch.play();
     }
@@ -195,7 +195,7 @@ function memoryReset() {
     disableDeck = false;
     cardOne = cardTwo = "";
 
-    memoryCardScore.innerText = "100";
+    memoryCardScore.innerText = "게임 점수" + memoryScore;
     memoryCards.forEach((card) => {
         card.classList.remove("flip");
     });

@@ -78,6 +78,7 @@ const musicListBtn = musicWrap.querySelector("#control__list");
 const musicList = musicWrap.querySelector(".music__list");
 const musicListUl = musicWrap.querySelector(".music__list ul");
 
+
 let musicIndex = 1;     // 현재 음악 인덱스
 
 // 음악 재생

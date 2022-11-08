@@ -252,6 +252,9 @@
 }
 
 /* 뮤직 모달 애니메이션 */
+.music {
+    display: none;
+}
 .music.show {
     animation: foldOut 1s ease forwards;
     display: block;

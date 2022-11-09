@@ -19,6 +19,8 @@
 
     <link rel="stylesheet" href="../assets/css/tetris.css" />
     <link rel="stylesheet" href="../assets/css/tetrisBat.css" />
+    <link rel="stylesheet" href="../assets/css/tetrisBg.css" />
+    <link rel="stylesheet" href="../assets/css/tetrisStar.css" />
 
     <link rel="icon" href="data:," />
 
@@ -33,6 +35,22 @@
     </style>
   </head>
   <body>
+    <!-- background -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div id='title'>
+        <span>
+            GAME
+        </span>
+        <br>
+        <span>
+            EFFECT
+        </span>
+    </div>
+    <!-- //background -->
+
     <!-- header -->
     <header id="header">
       <h1>GAME</h1>
@@ -59,13 +77,13 @@
           <img src="../assets/img/game/joystick02.svg" alt="" />
           <span>MEMORY</span>
         </div>
-        <div class="code__icon">
-          <img src="../assets/img/game/joystick03.svg" alt="" />
-          <span>CODE</span>
-        </div>
         <div class="tetris__icon">
             <img src="../assets/img/game/joystick03.svg" alt="" />
             <span>TETRIS</span>
+        </div>
+        <div class="code__icon">
+          <img src="../assets/img/game/joystick04.svg" alt="" />
+          <span>CODE</span>
         </div>
       </div>
     </main>
@@ -1129,6 +1147,17 @@
 
     <!-- tetris -->
     <div class="tetris__wrap">
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+        <div id='tetrisStars'></div>
+        <div id='tetrisStars2'></div>
+        <div id='tetrisStars3'></div>
+        <div id='tetrisTitle'>
+            <span>
+            </span>
+            <br>
+            <span>
+            </span>
+        </div>
         <div class="tetris__mino">
             <div class="TminoView">
                 <img src="../assets/img/tetris/Tmino.svg" alt="Tmino">
@@ -1152,7 +1181,7 @@
         <div class="tetris__bg">
             <div class="tetris__loding">
                 <div class="bat"></div>
-                <h2>GAME START</h2>
+                <h2 class="tetris__start">GAME START</h2>
             </div>
         </div>
         <div class="tetris_text">
@@ -1170,12 +1199,16 @@
             </div>
         </div>
         <div class="tetris__inner">
-            <div class="tetris__start"></div>
             <div class="tetris__restart"></div>
             <div class="tetris__play">
                 <div class="playground">
                     <ul></ul>
                 </div>
+            </div>
+        </div>
+        <div class="tetris__star">
+            <div class="tetris__star__bg">
+                <div class="soldier"></div>
             </div>
         </div>
     </div>
@@ -1248,6 +1281,8 @@
 
       $(".tetris__wrap").draggable();
 
+      $(".code__wrap").draggable();
+      
       $(".music__icon").draggable({
         drag: function () {
           $(".mouse__cursor img").attr("src", "../assets/img/game/music.svg");
@@ -1269,7 +1304,7 @@
           );
         },
       });
-      $(".code__icon").draggable({
+      $(".tetris__icon").draggable({
         drag: function () {
           $(".mouse__cursor img").attr(
             "src",
@@ -1277,11 +1312,11 @@
           );
         },
       });
-      $(".tetris__icon").draggable({
+      $(".code__icon").draggable({
         drag: function () {
           $(".mouse__cursor img").attr(
             "src",
-            "../assets/img/game/joystick03.svg"
+            "../assets/img/game/joystick04.svg"
           );
         },
       });

@@ -27,7 +27,7 @@ body {
 #header {
     /* position: fixed; */
     width: 100%;
-    background: rgba(33, 34, 39, 0.4);
+    /* background: rgba(33, 34, 39, 0.4); */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -117,16 +117,16 @@ body {
     padding: 7px 0 5px 0;
 }
 
-.code__icon {
+.tetris__icon {
     position: absolute;
     left: 30px;
     top: 430px;
     width: 70px;
 }
-.code__icon img {
+.tetris__icon img {
     width: 100%;
 }
-.code__icon span {
+.tetris__icon span {
     margin-top: 3px;
     display: block;
     color: #8998ce;
@@ -138,16 +138,16 @@ body {
     padding: 7px 0 5px 0;
 }
 
-.tetris__icon {
+.code__icon {
     position: absolute;
     left: 30px;
     top: 535px;
     width: 70px;
 }
-.tetris__icon img {
+.code__icon img {
     width: 100%;
 }
-.tetris__icon span {
+.code__icon span {
     margin-top: 3px;
     display: block;
     color: #8998ce;

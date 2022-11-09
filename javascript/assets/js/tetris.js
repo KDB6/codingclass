@@ -1,5 +1,8 @@
 const TetrisWrap = document.querySelector(".tetris__wrap");
 const playground = TetrisWrap.querySelector(".playground > ul");
+const tetrisStart = document.querySelector(".tetris__start");
+const tetrisBg = document.querySelector(".tetris__bg");
+const tetrisScore = document.querySelector(".tetris__score");
 
 // variables
 let rows = 20;
@@ -16,6 +19,19 @@ const movingItem = {
     top: 0,
     left: 4,
 }
+
+let tetrisSound = [
+    "../assets/music/tetris/tetrisStart.mp3",
+    "../assets/music/tetris/tetrisBgm.mp3",
+    "../assets/music/tetris/tetrisBlock.mp3",
+    "../assets/music/tetris/tetrisClear.mp3",
+]
+let tetrisStartSound = new Audio(tetrisSound[0]),
+    tetrisBgm = new Audio(tetrisSound[1]),
+    tetrisBlock = new Audio(tetrisSound[2]),
+    tetrisClear = new Audio(tetrisSound[3]);
+
+let tetScore = 0
 
 // 블럭 좌표값
 const blocks = {
@@ -73,6 +89,13 @@ function init() {
 
     generateNewBlock();    // 블럭 만들기
 }
+
+// 게임 시작 버튼 클릭
+tetrisStart.addEventListener("click", () => {
+    tetrisBg.classList.add("hide");
+
+    tetrisStartSound.play();
+});
 
 // 블럭 만들기
 function prependNewLine() {
@@ -147,17 +170,21 @@ function checkMatch() {
     childNodes.forEach(child => {
         let matched = true;
         child.children[0].childNodes.forEach(li => {
-            if(li.classList.contains("seized")) {
+            if(!li.classList.contains("seized")) {
                 matched = false;
+                tetrisBlock.play()
             }
         })
 
         if(matched) {
-            child.remove("seized");
+            child.remove();
             prependNewLine();
-            Tetscore++;
+            tetScore++;
+            tetrisClear.play()
         }
     })
+
+    tetScore = tetScore + 5;
 
     generateNewBlock()
 }
@@ -239,10 +266,18 @@ document.addEventListener("keydown", e => {
 
 init()
 
-// 카드 게임 모달
+// 테트리스 게임 모달
 const tetrisIcon = document.querySelector(".tetris__icon");
 const tetrisClose = document.querySelector(".tetris__close")
 const tetrisGame = document.querySelector(".tetris__wrap");
+
+tetrisIcon.addEventListener("click", () => {
+    tetrisBgm.play()
+})
+
+tetrisClose.addEventListener("click", () => {
+    tetrisBgm.pause()
+})
 
 tetrisIcon.addEventListener("click", () => {
     tetrisGame.classList.add("show");

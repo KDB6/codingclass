@@ -1,0 +1,60 @@
+.tetris_wrap {}
+.tetris__inner {
+    width: 500px;
+    height: 820px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.4);
+    border: 3px solid #fff;
+}
+.tetris__start {}
+.tetris__restart {}
+.tetris__restart {}
+.playground {
+}
+.playground > ul {
+    padding: 0;
+    align-items: center;
+    margin-top: 7.5px;
+    margin-left: 7.5px;
+}
+.playground > ul > li{
+    list-style: none;
+}
+.playground > ul > li > ul{
+    display: flex;
+    padding: 0;
+}
+.playground > ul > li > ul > li{
+    list-style: none;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+}
+
+.Tmino {
+    background: #952D98;
+    border: 6px #a042a2 outset !important;
+}
+.Jmino {
+    border: 6px #1a74c4 outset !important;
+    background-color: #0065bd;
+}
+.Zmino {
+    border: 6px #ef3e4d outset !important;
+    background-color: #ed2939;
+}
+.Smino {
+    border: 6px #78c53e outset !important;
+    background-color: #69be28;
+}
+.Omino {
+    border: 6px #fed01a outset !important;
+    background-color: #fecb00;
+}
+.Imino {
+    border: 6px #1aa9de outset !important;
+    background-color: #009fda;
+}

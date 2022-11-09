@@ -1,3 +1,6 @@
+@import url('https://webfontworld.github.io/score/SCoreDream.css');
+.music {
+}
 .music__wrap {}
 .music__inner {
     width: 400px;
@@ -24,7 +27,10 @@
     margin-right: 10px;
 }
 .music__header h2 {
+    font-family: "SCoreDream";
     font-size: 14px;
+    font-weight: 400;
+    padding-left: 20px;
 }
 .music__contents {
     width: 100%;
@@ -51,11 +57,13 @@
     margin-top: 15px;
 }
 .music__view .title h3 {
+    font-family: "SCoreDream";
     font-size: 20px;
     color: rgb(67, 102, 255);
     font-weight: 300;
 }
 .music__view .title p {
+    font-family: "SCoreDream";
     font-size: 14px;
     color: rgb(67, 102, 255);
     font-weight: 300;
@@ -90,10 +98,12 @@
     margin-top: 5px;
 }
 .music__control .progress .timer .current {
+    font-family: "SCoreDream";
     font-size: 14px;
     color: rgb(67, 102, 255);
 }
 .music__control .progress .timer .duration {
+    font-family: "SCoreDream";
     font-size: 14px;
     color: rgb(67, 102, 255);
 }
@@ -193,6 +203,7 @@
     padding-right: 10px;
 }
 .music__list h3 {
+    font-family: "SCoreDream";
     font-size: 16px;
     margin-bottom: 10px;
     border-top: 2px solid #000;
@@ -231,18 +242,21 @@
     color: #000;
 }
 .music__list li strong {
+    font-family: "SCoreDream";
     display: block;
     font-size: 16px;
     color: rgb(67, 102, 255);
     font-weight: 500;
 }
 .music__list li em {
+    font-family: "SCoreDream";
     font-style: normal;
     font-size: 14px;
     font-weight: 300;
     color: rgb(67, 102, 255);
 }
 .music__list li span {
+    font-family: "SCoreDream";
     position: absolute;
     padding-top: 7px;
     right: 0;

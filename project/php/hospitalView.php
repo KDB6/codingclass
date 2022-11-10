@@ -250,6 +250,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../../asset/js/header_hamburger.js"></script>
     <script>
+        const comlike = document.querySelector(".com__like");
+
+        comlike.addEventListener("click", () => {
+            alert("추천은 관리자 마음입니다..")
+        })
+
         //카테고리 선택 선택자
         const category = document.querySelectorAll(".category__titleChoice li a");
         const categoryRegtion = document.querySelector(".cate1");

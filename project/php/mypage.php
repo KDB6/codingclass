@@ -170,6 +170,8 @@
         .button_yes {
             background: #fff;
             cursor: pointer;
+            color: #6cc4b3;
+            font-size: 16px;
         }
 
         /* sliderType */

@@ -39,7 +39,7 @@
 
             <div class="footer__right">
                 <ul>
-                    <li>문의하기</li>
+                    <li class="customer">문의하기</li>
                     <li>Privacy Policy</li>
                     <li>Agreement</li>
                 </ul>
@@ -47,7 +47,13 @@
         </div>
     </footer>
 
+    <script>
+        const customer = document.querySelector(".customer");
 
+        customer.addEventListener("click", () => {
+            
+        })
+    </script>
 </body>
 </html>
 

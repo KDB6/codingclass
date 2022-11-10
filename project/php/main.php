@@ -101,13 +101,13 @@
                     </div>
                     <div class="hospi__map">
                         <!-- 나중에 api로 처리할 것 -->
-                        <img src="../asset/img/temporary_map1.jpg" alt="">
+                        <a href="hospitalMain.php"><img src="../asset/img/temporary_map1.jpg" alt=""></a>
                     </div>
                 </div>
                 <div class="hospi__card">
                     <div class="hospi__map">
                         <!-- 나중에 api로 처리할 것 -->
-                        <img src="../asset/img/temporary_map2.jpg" alt="">
+                        <a href="hospitalMain.php"><img src="../asset/img/temporary_map2.jpg" alt=""></a>
                     </div>
                     <div class="hospi__text">
                         <div class="hospi__textCont">
@@ -137,13 +137,13 @@
                     </div>
                     <div class="hospi__map">
                         <!-- 나중에 api로 처리할 것 -->
-                        <img src="../asset/img/temporary_map3.jpg" alt="">
+                        <a href="hospitalMain.php"><img src="../asset/img/temporary_map3.jpg" alt=""></a>
                     </div>
                 </div>
                 <div class="hospi__card">
                     <div class="hospi__map">
                         <!-- 나중에 api로 처리할 것 -->
-                        <img src="../asset/img/temporary_map4.jpg" alt="">
+                        <a href="hospitalMain.php"><img src="../asset/img/temporary_map4.jpg" alt=""></a>
                     </div>
                     <div class="hospi__text">
                         <div class="hospi__textCont">
@@ -173,7 +173,7 @@
                     </div>
                     <div class="hospi__map">
                         <!-- 나중에 api로 처리할 것 -->
-                        <img src="../asset/img/temporary_map5.jpg" alt="">
+                        <a href="hospitalMain.php"><img src="../asset/img/temporary_map5.jpg" alt=""></a>
                     </div>
                 </div>
             </div>

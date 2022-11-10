@@ -249,44 +249,44 @@
                         <div class="slider__inner">
                             <div class="slider">
                                 <div class="slider__contents">
-                                    <div>CATEGORY</div>
-                                    <p>Disease</p>
-                                    <a href="diseaseMain.php">MORE</a>
+                                    <div>Disease</div>
+                                    <p>중이염</p>
+                                    <a href="diseaseView.php?page=16">MORE</a>
                                 </div>
                             </div>
                             <div class="slider">
                                 <div class="slider__contents">
-                                    <div>CATEGORY</div>
-                                    <p>Disease</p>
-                                    <a href="diseaseMain.php">MORE</a>
+                                    <div>Disease</div>
+                                    <p>십자인대 파열</p>
+                                    <a href="diseaseView.php?page=12">MORE</a>
                                 </div>
                             </div>
                             <div class="slider">
                                 <div class="slider__contents">
-                                    <div>CATEGORY</div>
-                                    <p>Disease</p>
-                                    <a href="diseaseMain.php">MORE</a>
+                                    <div>Disease</div>
+                                    <p>치주염</p>
+                                    <a href="diseaseView.php?page=10">MORE</a>
                                 </div>
                             </div>
                             <div class="slider">
                                 <div class="slider__contents">
-                                    <div>CATEGORY</div>
-                                    <p>Disease</p>
-                                    <a href="diseaseMain.php">MORE</a>
+                                    <div>Disease</div>
+                                    <p>특발성 발작</p>
+                                    <a href="diseaseView.php?page=9">MORE</a>
                                 </div>
                             </div>
                             <div class="slider">
                                 <div class="slider__contents">
-                                    <div>CATEGORY</div>
-                                    <p>Disease</p>
-                                    <a href="diseaseMain.php">MORE</a>
+                                    <div>Disease</div>
+                                    <p>백내장</p>
+                                    <a href="diseaseView.php?page=7">MORE</a>
                                 </div>
                             </div>
                             <div class="slider">
                                 <div class="slider__contents">
-                                    <div>CATEGORY</div>
-                                    <p>Disease</p>
-                                    <a href="diseaseMain.php">MORE</a>
+                                    <div>Disease</div>
+                                    <p>뇌수두증</p>
+                                    <a href="diseaseView.php?page=4">MORE</a>
                                 </div>
                             </div>
                         </div>

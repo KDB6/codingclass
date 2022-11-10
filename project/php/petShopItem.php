@@ -42,9 +42,27 @@
         .line {
             width: 1360px;
             height: 10px;
-            background: #F9FAFB;
+            background: #efefefss;
             margin: 0 auto;
             margin-top: 80px;
+        }
+        .ItemMiniCate {
+            display: flex;
+
+        }
+        .ItemMiniCate > h2 {
+            margin-right: 20px;
+            font-size: 14px;
+        }
+        .itemInfo__link > a {
+            font-size: 14px;
+            color: #505050;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1; 
+            -webkit-box-orient: vertical;
+            margin-bottom: 3.5px;
         }
     </style>
 </head>
@@ -55,13 +73,14 @@
 
     <!-- petShopItem category -->
     <section id="petShopItemCate">
-        <div class="petShopItemCate__inner container">
-            <ul class="itemCate">
+        <div class="petShopItemCate__inner container" style="padding: 20px 0 !important;">
+            <ul class="itemCate" style="padding: 0pxss !important;">
                 <?php
                     foreach($shopResult as $shop){ ?>
-                        <il>
+                        <li class="ItemMiniCate">
+                            <h2>카테고리</h2>
                             <a href="petShopMain.php?category=<?=$shop['shopCate']?>"><?=$shop['shopCate']?></a>
-                        </il>
+                        </li>
                 <?php }?>
                 <!-- <li class="cateOne"><a href="#">CATEGORY</a></li>
                 <li><a href="#">의류 / 악세서리</a></li>

@@ -31,9 +31,9 @@
     display: flex;
 }
 .like {
-    border-right: 1px solid #26675B;
+    /* border-right: 1px solid #26675B; */
     height: 24px;
-    width: 155px;
+    width: 135px;
     margin-right: 10px;
 }
 .like > img {

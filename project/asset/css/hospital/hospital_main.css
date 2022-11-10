@@ -473,6 +473,7 @@ input[id="search"]:focus {
   height: 200px;
   margin-bottom: 10px;
   transition: all 0.5s;
+  object-fit: cover;
 }
 .hospital__card img:hover {
   transform: scale(1.02);

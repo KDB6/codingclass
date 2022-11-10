@@ -535,7 +535,11 @@
             }
         })
 
+        const comlike = document.querySelector(".com__like");
 
+        comlike.addEventListener("click", () => {
+            alert("추천은 관리자 마음입니다..")
+        })
 </script>
 
 </html>

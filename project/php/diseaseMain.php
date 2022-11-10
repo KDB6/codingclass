@@ -237,7 +237,7 @@
                         <nav class="category__titleChoice">
                             <li>
                                 <a href="#" class="cate1 tapActive">
-                                    <img src="../asset/img/pin.svg" alt="">
+                                    <img src="../asset/img/surgery.svg" alt="">
                                     부위
                                 </a>
                             </li>
@@ -252,7 +252,7 @@
                 <div class="category__contents body tapActive">
                     <?php                        
                         foreach($allResult as $all){ ?>
-                            <div>
+                            <div class="disease__surgery">
                                 <a href="diseaseMain.php?category=<?=$all['DisCategory']?>"><?=$all['DisCategory']?></a>
                             </div>
                     <?php }

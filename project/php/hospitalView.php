@@ -53,7 +53,7 @@
 
     <!-- 슬라이드 -->
     <section id="mainSliderType">
-        <img src="../asset/img/hospital_mainBanner.jpg" alt="">
+        <img src="../asset/img/hospitalView.jpg" alt="">
     </section>
 
     <!-- 병원 정보 -->

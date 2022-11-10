@@ -151,6 +151,7 @@ input[id="search"]:focus {
   width: 555px;
   height: 400px;
   border-radius: 30px;
+  object-fit: cover;
 }
 
 .hospital__text {

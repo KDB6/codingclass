@@ -101,7 +101,7 @@ input[type="checkbox"] + label {
 input[type="checkbox"] + label::after {
     content: "✔";
     font-size: 15px;
-    color: #757575;
+    color: #c5c5c5;
     width: 30px;
     height: 30px;
     text-align: center;

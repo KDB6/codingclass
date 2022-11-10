@@ -121,7 +121,7 @@ input[id="agreeCheckAll"]:checked + label::after {
 }
 .confirm_btn {
     width: 50%;
-    color: #cecece;
+    color: #dbdbdb;
     cursor: pointer;
 }
 .confirm_btn a {

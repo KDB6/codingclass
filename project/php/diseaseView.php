@@ -24,6 +24,23 @@
     <link rel="stylesheet" href="../asset/css/disease/disease_detail.css" />
     <link rel="stylesheet" href="../asset/css//footer.css" />
 
+    <style>
+        #TitleType {
+            margin-top: 30px;
+        }
+        .disH2 {
+            font-size: 20px;
+            font-weight: 500;
+            color: #26675B;
+            text-align: center;
+            width: 50%;
+            margin: 0 auto 30px auto;
+            line-height: 40px;
+            font-family: 'Alfa Slab One', cursive;
+            margin-top: 151px;
+            padding-left: 9px;
+        }
+    </style>
 <body>
 
     <!-- header -->
@@ -31,7 +48,7 @@
     <!-- //header -->
 
     <!-- 검색창 -->
-    <section id="searchType" class="container">
+    <!-- <section id="searchType" class="container">
         <div class="searchBox">
             <form action="" method="POST" class="searchBox__form">
             <div class="searchBox_inner">
@@ -48,9 +65,10 @@
             </ul>
             </form>
         </div>
-    </section>
+    </section> -->
 
     <!-- 타이틀 -->
+    <h2 class="disH2">Disease</h2>
     <section id="TitleType">
         <div class="title__inner">
             <div class="title__name">

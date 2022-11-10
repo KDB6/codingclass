@@ -107,7 +107,7 @@
                 <div class="hospi__card">
                     <div class="hospi__map">
                         <!-- 나중에 api로 처리할 것 -->
-                        <a href="hospitalMain.php"><img src="../asset/img/temporary_map2.jpg" alt=""></a>
+                        <a href="hospitalView.php?page=2"><img src="../asset/img/temporary_map2.jpg" alt=""></a>
                     </div>
                     <div class="hospi__text">
                         <div class="hospi__textCont">

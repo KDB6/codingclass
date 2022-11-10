@@ -13,8 +13,7 @@
     font-weight: 800 !important;
 }
 .petShopItemCate__inner ul li {
-    display: flex;
-    margin-right: 20px;
+    margin-right: 35px;
     font-size: 14px;
     color: #505050;
     font-weight: 400;

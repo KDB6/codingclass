@@ -44,6 +44,15 @@
 #commentPass:required {
     color: #505050;
 }
+.comment__write__info input::placeholder {
+    font-size: 14px;
+}
+.comment__modify input::placeholder {
+    font-size: 14px;
+}
+.comment__delete input::placeholder {
+    font-size: 14px;
+}
 
 .comment__write__msg input {
     /* background: #ccc; */
@@ -175,6 +184,10 @@
 }
 .com__table__p {
     font-weight: 300;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #505050;
+    margin-bottom: 1px;
 }
 .com__like {
     margin-top: 3px;
@@ -198,9 +211,4 @@
     font-size: 16px;
     margin-bottom: 10px;
     padding-right: 5px;
-}
-.com__table__p {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #505050;
 }

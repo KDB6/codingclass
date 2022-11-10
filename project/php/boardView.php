@@ -59,6 +59,26 @@
             text-align: center;
             line-height: 1.5;
         }
+        .comment__del__del {
+            font-size: 12px;
+            background: #fff;
+            color: #757575;
+            box-shadow: 3px 3px 6px 2px rgb(222 222 222 / 25%);
+            border-radius: 20px;
+            padding: 1px 10px;
+            cursor: pointer;
+        }
+        .comment__del__mod {
+            font-size: 12px;
+            font-size: 12px;
+            background: #fff;
+            color: #757575;
+            box-shadow: 3px 3px 6px 2px rgb(222 222 222 / 25%);
+            border-radius: 20px;
+            padding: 1px 10px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
     </style>
 </head>
 

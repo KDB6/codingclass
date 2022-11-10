@@ -201,6 +201,9 @@
             .board__pages ul li.active a {
                 color: #26675B;
             }
+            #infomationType {
+                margin-top: 150px;
+            }
         </style>
     </head>
 
@@ -209,8 +212,8 @@
     <?php include "../include/header.php"?>
     <!-- //header -->
 
-    <section id="searchType" class="container">
-        <!-- <div class="searchBox">
+    <!-- <section id="searchType" class="container">
+        <div class="searchBox">
             <form action="" method="POST" class="searchBox__form">
                 <div class="searchBox_inner">
                     <button class="searchBtn">
@@ -225,9 +228,8 @@
                     <li class="searchTag"><a href="#">#동물병원</a></li>
                 </ul>
             </form>
-        </div> -->
-        <?php include "../include/disSearchBox.php"?>
-    </section>
+        </div>
+    </section> -->
 
     <section id="infomationType" class="container">
         <div class="Info_textBox">

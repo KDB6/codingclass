@@ -64,6 +64,20 @@
             -webkit-box-orient: vertical;
             margin-bottom: 3.5px;
         }
+        .itemCate {
+            display: flex;
+        }
+        .item__btn__ex {
+            margin-top: 9px;
+        }
+        .item__btn__ex > h2 {
+            font-size: 16px;
+            color: #26675B;
+            background: #fff;
+            padding: 10px 90px;
+            border-radius: 5px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -78,7 +92,6 @@
                 <?php
                     foreach($shopResult as $shop){ ?>
                         <li class="ItemMiniCate">
-                            <h2>카테고리</h2>
                             <a href="petShopMain.php?category=<?=$shop['shopCate']?>"><?=$shop['shopCate']?></a>
                         </li>
                 <?php }?>
@@ -122,9 +135,9 @@
                     <a href="<?=$shopInfo['shopItemLink03']?>"><p><?=$shopInfo['shopItemLink03']?></p></a>
                     <a href="<?=$shopInfo['shopItemLink04']?>"><p><?=$shopInfo['shopItemLink04']?></p></a> 
                 </div>
-                <div class="item__btn">
-                    <h2><a href="#">장바구니</a></h2>
-                    <h2><a href="#">최저가 이동</a></h2>
+                <div class="item__btn__ex">
+                    <!-- <h2><a href="#">장바구니</a></h2> -->
+                    <h2><a href="<?=$shopInfo['shopItemLink01']?>">최저가 이동</a></h2>
                 </div>
             </div>
         </div>

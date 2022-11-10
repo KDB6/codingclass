@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="../asset/css/font.css">
     <link rel="stylesheet" href="../asset/css/footer.css">
 
+    <style>
+        .customer {
+            cursor: pointer;
+        }
+    </style>
+
 </head>
 <body>
     
@@ -50,8 +56,9 @@
     <script>
         const customer = document.querySelector(".customer");
 
-        customer.addEventListener("click", () => {
-            
+        customer.addEventListener("click", (e) => {
+            e.preventDefault();
+            alert("전화해주세요..ㅎㅎ")
         })
     </script>
 </body>

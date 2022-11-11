@@ -278,7 +278,6 @@ tetrisIcon.addEventListener("click", () => {
 
 tetrisClose.addEventListener("click", () => {
     tetrisBgm.pause()
-    tetrisBlock.pause()
 });
 
 tetrisIcon.addEventListener("click", () => {

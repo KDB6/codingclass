@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://webfontworld.github.io/score/SCoreDream.css');
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "SCoreDream";
+        }
+
+        a {
+            
+        }
+
+        /* 컨테이너 */
+        .container {
+            width: 100%;
+            max-width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+        
+        /* header */
+        .header__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .header__inner > h2 {
+            font-size: 20px;
+            color: brown;
+        }
+        .header__inner > ul li {
+            display: inline;
+            list-style: none;
+            padding: 10px;
+        }
+        .meun {
+            right: 607px;
+            position: fixed;
+            z-index: 1;
+        }
+        .meun1 > li {
+            font-size: 14px;
+            color: #000;
+        }
+
+        /* slider */
+        .slider__img {
+            position: relative;
+            width: 1120px;
+            height: 380px;
+            overflow: hidden;
+        }
+        .slider > img {
+            width: 1120px;
+            object-fit: cover;
+            height: 380px;
+        }
+        .slider__inner {
+            display: flex;
+            flex-wrap: wrap;
+            width: 1120px;
+            height: 1900px;
+        }
+        .slider {
+            position: relative;
+            width: 1160px;
+            height: 380px;
+        }
+
+        /* banner */
+        #bannerType {
+            margin-top: -5px;
+        }
+        .banner__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner__cate {
+            background: #ccc;
+            width: 373px;
+            display: flex;
+            height: 40px;   
+        }
+        .banner__cate ul {
+            display: flex;
+            align-items: center;
+        }
+        .banner__cate ul li {
+            font-size: 16px;
+        }
+        .banner__cate ul li:last-child {
+            margin-left: 20px;
+        }
+        .banner__cate > h2:last-child {
+            margin-left: 20px;
+        }
+        .tab__cont ul {
+            padding: 0;
+        }
+        .tab__cont ul li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 32px;
+        }
+        .banner__02 > img {
+            width: 373px;
+        }
+        .banner__02 > h2 {
+            position: absolute;
+            color: #fff;
+            background: #ddd;
+            padding: 8px 20px;
+            margin: 0;
+            margin-top: 120px;
+            margin-left: 135px;
+        }
+        .banner__03 > img {
+            width: 373px;
+        }
+        .banner__03 h2 a {
+            position: absolute;
+            color: #fff;
+            background: #ddd;
+            padding: 8px 20px;
+            margin-top: 120px;
+            margin-left: 115px;
+        }
+        .tab li.on {
+            background: 0;
+            font-weight: 600;
+        }
+        .tab__cont ul {
+            display: none;
+        }
+        .tab__cont ul.on {
+            display: block;
+        }
+
+        /* footer */
+        .footer__inner {
+            display: flex;
+            justify-content: space-between;
+            background: #ccc;
+            align-items: center;
+            width: 1120px;
+            margin-top: -5px;
+            height: 60px;
+        }
+        .footer__img > img {
+            width: 25px;
+            height: 25px;
+            object-fit: cover;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header" class="container">
+        <div class="header__inner">
+            <h2>JUST쇼핑몰</h2>
+            <ul>
+                <li class="top">탑</li>
+                <li class="outer">아우터</li>
+                <li class="pants">팬츠</li>
+                <li class="acc">악세서리</li>
+            </ul>
+        </div>
+        <div class="meun">
+            <ul class="meun1" style="display: none;">
+                <li><a href="#">meun</a></li>
+                <li><a href="#">meun</a></li>
+                <li><a href="#">meun</a></li>
+                <li><a href="#">meun</a></li>
+            </ul>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <section id="sliderType" class="container">
+        <div class="slider__img">
+            <div class="slider__inner">
+                <div class="slider"><img src="img/main.jpg" alt=""></div>
+                <div class="slider"><img src="img/main.jpg" alt=""></div>
+                <div class="slider"><img src="img/main.jpg" alt=""></div>
+                <div class="slider"><img src="img/main.jpg" alt=""></div>
+                <div class="slider"><img src="img/main.jpg" alt=""></div>
+            </div>
+        </div>
+    </section>
+    <!-- //sliderType -->
+
+    <section id="bannerType">
+        <div class="banner__inner container">
+            <div class="banner__01">
+                <div class="banner__cate">
+                    <ul class="tab">
+                        <li class="on">공지사항</li>
+                        <li>갤러리</li>
+                    </ul>
+                </div>
+                <div class="tab__cont">
+                    <ul class="on">
+                        <li>
+                            공지사항
+                            <p>
+                                날짜
+                            </p>
+                        </li>
+                        <li>
+                            공지사항
+                            <p>
+                                날짜
+                            </p>
+                        </li>
+                        <li>
+                            공지사항
+                            <p>
+                                날짜
+                            </p>
+                        </li>
+                        <li>
+                            공지사항
+                            <p>
+                                날짜
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab__cont">
+                    <ul>
+                        <li>
+                            공지사항2
+                            <p>
+                                날짜
+                            </p>
+                        </li>
+                        <li>
+                            공지사항
+                            <p>
+                                날짜
+                            </p>
+                        </li>
+                        <li>
+                            공지사항
+                            <p>
+                                날짜
+                            </p>
+                        </li>
+                        <li>
+                            공지사항
+                            <p>
+                                날짜
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /banner__01 -->
+
+            <div class="banner__02">
+                <h2>배너</h2>
+                <img src="img/banner.jpg" alt="">
+            </div>
+            <!-- /banner__02 -->
+
+            <div class="banner__03">
+                <h2><a href="#">바로가기</a></h2>
+                <img src="img/banner2.jpg" alt="">
+            </div>
+            <!-- /banner__03 -->
+        </div>
+    </section>
+    <!-- //bannerType -->
+
+    <footer id="footer">
+        <div class="footer__inner container">
+            <h2>JUST쇼핑몰</h2>
+            <h3>Copyright All reserved JUST 쇼핑몰</h3>
+            <div class="footer__img">
+                <img src="img/banner.jpg" alt="">
+                <img src="img/banner.jpg" alt="">
+                <img src="img/banner.jpg" alt="">
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <script>
+        // meun
+        const toptop = document.querySelector(".header__inner .top")
+        const meun = document.querySelector(".meun .meun1")
+
+        toptop.addEventListener("mouseover", () => {
+            meun.style.display = "block";
+        })
+
+        // slider
+        const slider = document.querySelectorAll(".slider");             // 이미지
+        const sliderInner = document.querySelector(".slider__inner");    // 움직이는 영역
+        let currentIndex = 0;
+
+        sliderInner.style.transition = "all 0.6s";
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % slider.length;
+            sliderInner.style.transform = "translateY("+ -380 * currentIndex +"px)";
+        },2000)
+
+        // tab
+        $(document).ready(function() {
+            $(".tab li").click(function() {
+                var idx = $(this).index();
+                $(".tab li").removeClass("on");
+                $(".tab li").eq(idx).addClass("on");
+                $(".tab__cont > ul").hide();
+                $(".tab__cont > ul").eq(idx).show();
+            })
+        });
+    </script>
+</body>
+</html>

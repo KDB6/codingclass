@@ -60,7 +60,7 @@ html {
     top: 50%;
     left: 0;
     right: 0;
-    color: #FFF;
+    color: #fff;
     text-align: center;
     font-family: "lato", sans-serif;
     font-weight: 300;
@@ -70,7 +70,7 @@ html {
     padding-left: 10px;
   }
   #title span {
-    background: -webkit-linear-gradient(white, #38495a);
+    background: -webkit-linear-gradient(#000, #551278);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

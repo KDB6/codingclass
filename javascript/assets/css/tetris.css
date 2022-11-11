@@ -8,6 +8,7 @@
     position: fixed;
     top: 9%;
     left: 32%;
+    z-index: 9;
 }
 canvas{
 	position:absolute;

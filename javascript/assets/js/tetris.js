@@ -7,10 +7,10 @@ const tetrisScore = document.querySelector(".tetris__score");
 // variables
 let rows = 20;
 let cols = 12;
-let Tetscore = 0;
 let duration = 500;
 let downInterval;
 let tempMovingItem;
+let tetScore = 0;
 
 // 블럭
 const movingItem = {
@@ -30,8 +30,6 @@ let tetrisStartSound = new Audio(tetrisSound[0]),
     tetrisBgm = new Audio(tetrisSound[1]),
     tetrisBlock = new Audio(tetrisSound[2]),
     tetrisClear = new Audio(tetrisSound[3]);
-
-let tetScore = 0
 
 // 블럭 좌표값
 const blocks = {
@@ -89,13 +87,6 @@ function init() {
 
     generateNewBlock();    // 블럭 만들기
 }
-
-// 게임 시작 버튼 클릭
-tetrisStart.addEventListener("click", () => {
-    tetrisBg.classList.add("hide");
-
-    tetrisStartSound.play();
-});
 
 // 블럭 만들기
 function prependNewLine() {
@@ -170,21 +161,20 @@ function checkMatch() {
     childNodes.forEach(child => {
         let matched = true;
         child.children[0].childNodes.forEach(li => {
-            if(!li.classList.contains("seized")) {
+            if(!li.classList.contains("")) {
                 matched = false;
                 tetrisBlock.play()
             }
         })
 
         if(matched) {
+            tetScore = tetScore + 10;
             child.remove();
             prependNewLine();
-            tetScore++;
-            tetrisClear.play()
+            tetrisClear.play();
+            tetrisScore.innerText = "SCORE" + " " + tetScore;
         }
     })
-
-    tetScore = tetScore + 5;
 
     generateNewBlock()
 }
@@ -236,6 +226,11 @@ function dropBlock() {
     }, 10);
 }
 
+// 게임 리셋
+function tetrisReset() {
+    
+}
+
 // 이벤트
 document.addEventListener("keydown", e => {
     switch(e.keyCode) {
@@ -264,7 +259,13 @@ document.addEventListener("keydown", e => {
     }
 })
 
-init()
+// 게임 시작 버튼 클릭
+tetrisStart.addEventListener("click", () => {
+    tetrisBg.classList.add("hide");
+    tetrisStartSound.play();
+
+    init()
+});
 
 // 테트리스 게임 모달
 const tetrisIcon = document.querySelector(".tetris__icon");
@@ -273,11 +274,12 @@ const tetrisGame = document.querySelector(".tetris__wrap");
 
 tetrisIcon.addEventListener("click", () => {
     tetrisBgm.play()
-})
+});
 
 tetrisClose.addEventListener("click", () => {
     tetrisBgm.pause()
-})
+    tetrisBlock.pause()
+});
 
 tetrisIcon.addEventListener("click", () => {
     tetrisGame.classList.add("show");

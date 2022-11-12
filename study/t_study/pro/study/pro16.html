@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래머스01 : 핸드폰 번호 가리기</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">프로그래머스 1단계 : 핸드폰 번호 가리기</h2>
+            <p class="t_desc2">
+                프로그래머스 모바일은 개인정보 보호를 위해 고지서를 보낼 때 고객들의 전화번호의 일부를 가립니다.<br>
+                전화번호가 문자열 phone_number로 주어졌을 때, 전화번호의 뒷 4자리를 제외한 나머지 숫자를 전부 *으로 가린 문자열을 리턴하는 함수, solution을 완성해주세요.
+            </p>
+
+            <hr>
+
+            <h4 class="t_tit2">제한 사항</h4>
+            <p class="t_desc2">
+                phone_number는 길이 4 이상, 20이하인 문자열입니다.
+            </p>
+
+            <h3 class="t_tit2">나의 문제 풀이</h3>
+            <p class="t_desc">
+                우선 num 갯수의 뒷 자리를 빼고 바꾸는 거기에 -4로 빼줍니다.<br>
+                그 음은 *를 사용하여 가려야하기 때문에 repeat를 사용하여 *를 반복 또한 뒷자리는 substring사용하여 추출합니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(num) {
+    const aa = num.length - 4
+    return "*".repeat(aa) + num.substring(aa)
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">다른 사람 문제 풀이</h3>
+            <p class="t_desc">
+                맨 위에 있던 코드 입니다. 해당 분은 replace를 사용하여 문자열을 변경한 것 같습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function hide_numbers(s) {
+    return s.replace(/\d(?=\d{4})/g, "*");
+  }
+</code></pre>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

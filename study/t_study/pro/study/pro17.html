@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래머스01 : 나누어 떨어지는 숫자 배열</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">프로그래머스 1단계 : 나누어 떨어지는 숫자 배열</h2>
+            <p class="t_desc2">
+                array의 각 element 중 divisor로 나누어 떨어지는 값을 오름차순으로 정렬한 배열을 반환하는 함수, solution을 작성해주세요.<br>
+                divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을 담아 반환하세요.
+            </p>
+
+            <hr>
+
+            <h4 class="t_tit2">제한 사항</h4>
+            <p class="t_desc2">
+                arr은 자연수를 담은 배열입니다.<br>
+                정수 i, j에 대해 i ≠ j 이면 arr[i] ≠ arr[j] 입니다.<br>
+                divisor는 자연수입니다.<br>
+                array는 길이 1 이상인 배열입니다.
+            </p>
+
+            <h3 class="t_tit2">나의 문제 풀이</h3>
+            <p class="t_desc">
+                filter와 sort메서드를 사용해줬으며, filter를 통해 해당 배열에서 조건에 맞게 반환해주고,<br>
+                바로 sort를 사용하여 정렬 후 두 값을 뻅니다.<br>
+                문제에서 divisor로 나누어 떨어지는 element가 하나도 없다면 배열에 -1을 담아 반환하세요. 이랬으니 마지막에<br>
+                if문을 사용하여 -1을 리턴해줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(arr, divisor) {
+    arr = arr.filter(function(n){
+        return n % divisor === 0;
+    })
+    arr.sort(function(a,b){
+        return a - b;
+    });
+
+    if (arr.length === 0) {
+        return [-1];
+    }
+
+    return arr;
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">다른 사람 문제 풀이</h3>
+            <p class="t_desc">
+                이 분도 마찬가지로 filter와 sort를 사용했습니다. 더 깔끔하게~
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(arr, divisor) {
+    var answer = arr.filter(v => v%divisor == 0);
+    return answer.length == 0 ? [-1] : answer.sort((a,b) => a-b);
+}
+</code></pre>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

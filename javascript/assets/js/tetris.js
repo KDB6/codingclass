@@ -2,7 +2,8 @@ const TetrisWrap = document.querySelector(".tetris__wrap");
 const playground = TetrisWrap.querySelector(".playground > ul");
 const tetrisStart = document.querySelector(".tetris__start");
 const tetrisBg = document.querySelector(".tetris__bg");
-const tetrisScore = document.querySelector(".tetris__score");
+const tetrisScore = document.querySelector(".tetris__score > h2 span");
+const tetrisOver = document.querySelector(".tetris__over");
 
 // variables
 let rows = 20;
@@ -17,7 +18,7 @@ const movingItem = {
     type: "Imino",
     direction: 0,       // 블럭 모양
     top: 0,
-    left: 4,
+    left: 5,
 }
 
 let tetrisSound = [
@@ -77,13 +78,13 @@ const blocks = {
     ]
 }
 
+for(let i=0; i<rows; i++) {
+    prependNewLine();   // 블럭 라인 만들기
+}
+
 // 시작하기
 function init() {
     tempMovingItem = {...movingItem};
-
-    for(let i=0; i<rows; i++) {
-        prependNewLine();   // 블럭 라인 만들기
-    }
 
     generateNewBlock();    // 블럭 만들기
 }
@@ -109,46 +110,46 @@ function renderBlocks(moveType = "") {
     // const to = tempMovingItem.top;
     // const le = tempMovingItem.left;
 
-    const {type, direction, top, left} = tempMovingItem;
+        const {type, direction, top, left} = tempMovingItem;
+        const movingBlocks = document.querySelectorAll(".moving");
+        movingBlocks.forEach((moving) => {
+            moving.classList.remove(type, "moving")
+        });
 
-    const movingBlocks = document.querySelectorAll(".moving");
-    movingBlocks.forEach((moving) => {
-        moving.classList.remove(type, "moving")
-    });
+        blocks[type][direction].some((block) => {    // 좌표 값
+            const x = block[0] + left;    // 2 0 1 1
+            const y = block[1] + top;     // 1 1 0 1
 
-    blocks[type][direction].some(block => {    // 좌표 값
-        const x = block[0] + left;    // 2 0 1 1
-        const y = block[1] + top;     // 1 1 0 1
+            const target = playground.childNodes[y] ? playground.childNodes[y].childNodes[0].childNodes[x] : null;
+            const isAvailable = checkEmpty(target);
+            
+            if(isAvailable) {
+                target.classList.add(type, "moving");
+            } else {
+                tempMovingItem = {...movingItem};
 
-        const target = playground.childNodes[y] ? playground.childNodes[y].childNodes[0].childNodes[x] : null;
-        const isAvailable = checkEmpty(target);
-        
-        if(isAvailable) {
-            target.classList.add(type, "moving");
-        } else {
-            tempMovingItem = {...movingItem};
+                setTimeout(() => {
+                    renderBlocks();
+                    if(moveType === "top") {
+                        seizeBlock();
+                    }
+                },0)
 
-            setTimeout(() => {
-                renderBlocks();
-                if(moveType === "top") {
-                    seizeBlock();
-                }
-            },0)
+                return true;
+            }
+            
+            // console.log({playground});
+        });
+        movingItem.left = left;
+        movingItem.top = top;
+        movingItem.direction = direction;
+    }
 
-            return true;
-        }
-        
-        // console.log({playground});
-    });
-    movingItem.left = left;
-    movingItem.top = top;
-    movingItem.direction = direction;
-}
 
 // 블럭 감지하기
 function seizeBlock() {
     const movingBlocks = document.querySelectorAll(".moving");
-    movingBlocks.forEach(moving => {
+    movingBlocks.forEach((moving) => {
         moving.classList.remove("moving")
         moving.classList.add("seized")
     })
@@ -158,22 +159,23 @@ function seizeBlock() {
 // 한 줄 제거
 function checkMatch() {
     const childNodes = playground.childNodes;
-    childNodes.forEach(child => {
+
+    childNodes.forEach((child) => {
         let matched = true;
-        child.children[0].childNodes.forEach(li => {
-            if(!li.classList.contains("")) {
+        child.children[0].childNodes.forEach((li) => {
+            if(!li.classList.contains("seized")) {
                 matched = false;
-                tetrisBlock.play()
+                // tetrisBlock.play()
             }
         })
-
+        
         if(matched) {
-            tetScore = tetScore + 10;
+            tetScore = tetScore + 1;
             child.remove();
             prependNewLine();
             tetrisClear.play();
-            tetrisScore.innerText = "SCORE" + " " + tetScore;
         }
+        tetrisScore.innerText = "" + "0" + tetScore;
     })
 
     generateNewBlock()
@@ -189,9 +191,9 @@ function generateNewBlock() {
 
     const blockArray = Object.entries(blocks);
     const randomIndex = Math.floor(Math.random() * blockArray.length)
-    movingItem.type = blockArray[randomIndex] [0];
+    movingItem.type = blockArray[randomIndex][0];
     movingItem.top = 0;
-    movingItem.left =  6;
+    movingItem.left =  5;
     movingItem.direction = 0,
     tempMovingItem = {...movingItem};
     renderBlocks()
@@ -214,7 +216,7 @@ function moveBlock(moveType, amount) {
 // 모양 바꾸기
 function changeDirection() {
     const direction = tempMovingItem.direction;
-    direction === 3 ? tempMovingItem.direction = 0 : tempMovingItem.direction += 1;
+    direction === 3 ? (tempMovingItem.direction = 0) : (tempMovingItem.direction += 1);
     renderBlocks();
 }
 
@@ -226,13 +228,17 @@ function dropBlock() {
     }, 10);
 }
 
-// 게임 리셋
-function tetrisReset() {
-    
+function tetrisMesOver() {
+    tetrisOver.style.display = "block";
 }
 
+// // 게임 리셋
+// function tetrisReset() {
+    
+// }
+
 // 이벤트
-document.addEventListener("keydown", e => {
+document.addEventListener("keydown", (e) => {
     switch(e.keyCode) {
         case 39 :
             moveBlock("left", 1);
@@ -263,8 +269,7 @@ document.addEventListener("keydown", e => {
 tetrisStart.addEventListener("click", () => {
     tetrisBg.classList.add("hide");
     tetrisStartSound.play();
-
-    init()
+    renderBlocks()
 });
 
 // 테트리스 게임 모달
@@ -273,17 +278,13 @@ const tetrisClose = document.querySelector(".tetris__close")
 const tetrisGame = document.querySelector(".tetris__wrap");
 
 tetrisIcon.addEventListener("click", () => {
-    tetrisBgm.play()
-});
-
-tetrisClose.addEventListener("click", () => {
-    tetrisBgm.pause()
-});
-
-tetrisIcon.addEventListener("click", () => {
     tetrisGame.classList.add("show");
     tetrisGame.classList.remove("hide");
+    // tetrisBgm.play()
 });
 tetrisClose.addEventListener("click", () => {
     tetrisGame.classList.add("hide");
+    // tetrisBgm.pause()
 });
+
+init()

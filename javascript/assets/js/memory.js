@@ -148,7 +148,7 @@ function matchCards(img1, img2) {
             memoryOutScore.innerHTML = `<span>${memoryScore}</span>`;
         }
 
-        memoryCardScore.innerText = "게임 점수" + " " + ":" + " " +memoryScore;
+        memoryCardScore.innerText = "게임 점수" + " " + ":" + " " + memoryScore;
 
         soundUnMatch.play();
     }

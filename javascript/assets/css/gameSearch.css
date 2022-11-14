@@ -37,7 +37,7 @@
     margin-bottom: 10px;
 }
 .search__audio {
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 .search__audio .play {
     display: none;
@@ -215,7 +215,6 @@
     height: 1px;
     float: right;
     color: #fff;
-    cursor: pointer;
     transform: translateY(-800%);
 }
 .search__click {

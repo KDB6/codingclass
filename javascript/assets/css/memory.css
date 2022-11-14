@@ -36,11 +36,10 @@
 .memory__inner .memory__close {
   text-align: center;
   color: #fff;
-  cursor: pointer;
   font-size: 20px;
   padding: 5px 10px;
   user-select: none;
-  pointer-events: none;
+  /* pointer-events: none; */
   /* background: rgba(255, 145, 0, 0.9);
   backdrop-filter: blur(10px);
   border-radius: 10px; */

@@ -4,30 +4,31 @@
 .music__wrap {}
 .music__inner {
     width: 400px;
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px); */
     position: absolute;
     right: 100px;
     top: 100px;
     padding-top: 0;
     padding: 0px;
-    border-radius: 10px;
-    border: 1.5px solid #000;
+    /* border-radius: 10px; */
+    background: #0e0220;
 }
 .music__header {
     padding-top: 5px;
     width: 100%;
     height: 24px;
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px); */
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: #b9c8ff;
+    margin-bottom: 10px;
 }
 .music__header .music__close {
     margin-right: 10px;
 }
 .music__header h2 {
-    font-family: "SCoreDream";
+    /* font-family: "SCoreDream"; */
     font-size: 14px;
     font-weight: 400;
     padding-left: 20px;
@@ -38,14 +39,14 @@
 .music__view {
     padding: 10px;
     display: flex;
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px); */
 }
 .music__view .img {
     width: 30%;
+    filter: grayscale(60%);
 }
 .music__view .img img {
     width: 100px;
-    
 }
 .music__view .title {
     width: 68.5%;
@@ -57,26 +58,32 @@
     margin-top: 15px;
 }
 .music__view .title h3 {
-    font-family: "SCoreDream";
+    /* font-family: "SCoreDream"; */
+    margin-top: 8px;
     font-size: 20px;
     color: rgb(67, 102, 255);
     font-weight: 300;
 }
 .music__view .title p {
-    font-family: "SCoreDream";
+    margin-top: 5px;
+    /* font-family: "SCoreDream"; */
     font-size: 14px;
     color: rgb(67, 102, 255);
     font-weight: 300;
 }
-/* input[type="range" i] {
-    color: #000;
-} */
+input[id="volume-control" i] {
+    background: #000;
+    height: 3px;
+    width: 100px;
+    margin-top: 5px;
+}
+
 .music__control {
     width: 100%;
     height: 100px;
     padding: 10px;
     padding-top: 0;
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px); */
     border-radius: 0 0 10px 10px;
 }
 .music__control .progress {
@@ -98,12 +105,12 @@
     margin-top: 5px;
 }
 .music__control .progress .timer .current {
-    font-family: "SCoreDream";
+    /* font-family: "SCoreDream"; */
     font-size: 14px;
     color: rgb(67, 102, 255);
 }
 .music__control .progress .timer .duration {
-    font-family: "SCoreDream";
+    /* font-family: "SCoreDream"; */
     font-size: 14px;
     color: rgb(67, 102, 255);
 }
@@ -121,7 +128,7 @@
     background-image: url(../img/music/music__icon.svg);
     background-size: cover;
     background-position: -336px 0;
-    transform: scale(0.6);
+    transform: scale(0.8);
 }
 .music__control .control .repeat__one {
     width: 48px;
@@ -129,7 +136,7 @@
     background-image: url(../img/music/music__icon.svg);
     background-size: cover;
     background-position: -288px 0;
-    transform: scale(0.6);
+    transform: scale(0.8);
 }
 .music__control .control .shuffle {
     width: 48px;
@@ -137,7 +144,7 @@
     background-image: url(../img/music/music__icon.svg);
     background-size: cover;
     background-position: -384px 0;
-    transform: scale(0.6);
+    transform: scale(0.8);
 }
 .music__control .control .prev {
     width: 48px;
@@ -145,7 +152,7 @@
     background-image: url(../img/music/music__icon.svg);
     background-size: cover;
     background-position: -96px 0;
-    transform: scale(0.6);
+    transform: scale(0.8);
 }
 .music__control .control .next {
     width: 48px;
@@ -153,7 +160,7 @@
     background-image: url(../img/music/music__icon.svg);
     background-size: cover;
     background-position: -144px 0;
-    transform: scale(0.6);
+    transform: scale(0.8);
 }
 .music__control .control .play {
     width: 48px;
@@ -161,7 +168,7 @@
     background-image: url(../img/music/music__icon.svg);
     background-size: cover;
     background-position: 0 0;
-    transform: scale(0.6);
+    transform: scale(0.8);
 }
 .music__control .control .stop {
     width: 48px;
@@ -169,7 +176,7 @@
     background-image: url(../img/music/music__icon.svg);
     background-size: cover;
     background-position: -48px 0;
-    transform: scale(0.6);
+    transform: scale(0.8);
 }
 .music__control .control .list {
     width: 48px;
@@ -177,15 +184,14 @@
     background-image: url(../img/music/music__icon.svg);
     background-size: cover;
     background-position: -192px 0;
-    transform: scale(0.6);
+    transform: scale(0.8);
 }
 
 .music__footer {
-    backdrop-filter: blur(20px);
+    /* backdrop-filter: blur(20px); */
     padding-top: 0px;
     border-radius: 10px;
 }
-
 .music__list {
     padding: 0px 20px 20px 20px;
     display: none;
@@ -203,7 +209,7 @@
     padding-right: 10px;
 }
 .music__list h3 {
-    font-family: "SCoreDream";
+    /* font-family: "SCoreDream"; */
     font-size: 16px;
     margin-bottom: 10px;
     border-top: 2px solid #000;
@@ -230,10 +236,10 @@
     background-size: cover;
     transform: scale(0.6);
     margin-right: -5px;
-    vertical-align: -16px;
+    vertical-align: -18.5px;
 }
 .music__list li {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid rgb(24, 35, 90);
     list-style: none;
     position: relative;
     padding: 10px 0;
@@ -242,23 +248,23 @@
     color: #000;
 }
 .music__list li strong {
-    font-family: "SCoreDream";
+    /* font-family: "SCoreDream"; */
     display: block;
     font-size: 16px;
     color: rgb(67, 102, 255);
     font-weight: 500;
 }
 .music__list li em {
-    font-family: "SCoreDream";
+    /* font-family: "SCoreDream"; */
     font-style: normal;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 300;
     color: rgb(67, 102, 255);
 }
 .music__list li span {
-    font-family: "SCoreDream";
+    /* font-family: "SCoreDream"; */
     position: absolute;
-    padding-top: 7px;
+    /* padding-top: 7px; */
     right: 0;
     top: 30px;
     font-size: 12px;

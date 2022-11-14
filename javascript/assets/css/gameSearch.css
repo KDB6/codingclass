@@ -18,10 +18,8 @@
 .search__wrap {
     max-width: 600px;
     margin: 0 auto;
-    border: 1px solid var(--htmlColor);
-    border-radius: 20px;
-    background-color: #ffffff50;
-    backdrop-filter: blur(20px);
+    border-radius: 0px;
+    background-color: #160530;
     padding: 30px;
     text-align: center;
     display: none;
@@ -120,7 +118,6 @@
     border-radius: 50px;
     margin: 5px;
     transition: all 0.3s;
-    cursor: pointer;
     color: #fff;
 }
 .search__list span:hover {
@@ -156,7 +153,7 @@
     margin-bottom: 30px;
     padding-bottom: 10px;
     text-align: right;
-    border-bottom: 2px solid var(--htmlColor);
+    border-bottom: 1px solid var(--htmlColor);
 }
 .search__info2.center {
     display: flex;

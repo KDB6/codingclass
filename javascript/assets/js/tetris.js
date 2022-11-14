@@ -146,7 +146,7 @@ function renderBlocks(moveType = "") {
     }
 
 
-// 블럭 감지하기
+// 블럭 감지하기 
 function seizeBlock() {
     const movingBlocks = document.querySelectorAll(".moving");
     movingBlocks.forEach((moving) => {

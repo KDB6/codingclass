@@ -209,11 +209,11 @@
     font-weight: 500;
 }
 .search__close {
-    width: 10px;
-    height: 1px;
+    width: 20px;
+    height: 20px;
     float: right;
     color: #fff;
-    transform: translateY(-800%);
+    transform: translateY(0%);
 }
 .search__click {
     margin-top: 10px;

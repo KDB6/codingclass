@@ -15,7 +15,7 @@ let tetScore = 0;
 
 // 블럭
 const movingItem = {
-    type: "Imino",
+    type: "Tmino",
     direction: 0,       // 블럭 모양
     top: 0,
     left: 5,
@@ -165,7 +165,7 @@ function checkMatch() {
         child.children[0].childNodes.forEach((li) => {
             if(!li.classList.contains("seized")) {
                 matched = false;
-                // tetrisBlock.play()
+                tetrisBlock.play()
             }
         })
         

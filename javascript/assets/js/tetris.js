@@ -280,11 +280,11 @@ const tetrisGame = document.querySelector(".tetris__wrap");
 tetrisIcon.addEventListener("click", () => {
     tetrisGame.classList.add("show");
     tetrisGame.classList.remove("hide");
-    // tetrisBgm.play()
+    tetrisBgm.play()
 });
 tetrisClose.addEventListener("click", () => {
     tetrisGame.classList.add("hide");
-    // tetrisBgm.pause()
+    tetrisBgm.pause()
 });
 
 init()

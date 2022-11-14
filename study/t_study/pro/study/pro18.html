@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래머스01 : 제일 작은 수 제거하기</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">프로그래머스 1단계 : 제일 작은 수 제거하기</h2>
+            <p class="t_desc2">
+                정수를 저장한 배열, arr 에서 가장 작은 수를 제거한 배열을 리턴하는 함수, solution을 완성해주세요.<br>
+                단, 리턴하려는 배열이 빈 배열인 경우엔 배열에 -1을 채워 리턴하세요.<br>
+                예를들어 arr이 [4,3,2,1]인 경우는 [4,3,2]를 리턴 하고, [10]면 [-1]을 리턴 합니다.
+            </p>
+
+            <hr>
+
+            <h4 class="t_tit2">제한 사항</h4>
+            <p class="t_desc2">
+                arr은 길이 1 이상인 배열입니다.<br>
+                인덱스 i, j에 대해 i ≠ j이면 arr[i] ≠ arr[j] 입니다.
+            </p>
+
+            <h3 class="t_tit2">나의 문제 풀이</h3>
+            <p class="t_desc">
+                변수를 지정 해준 뒤, 최소 값을 찾아줍니다. apply 메서드는 구글에서 찾아봤습니다.<br>
+                apply() 메소드의 대표적인 용도는 arguments 객체와 같은, 유사 배열 객체에 배열 메소드를 사용하는 경우입니다.<br>
+                또한 제거하기 위해 filter() 메서드를 사용하여 제거 해주고  길이에 따른 리턴값을 정해줍니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(arr) {
+    var answer = [];
+    
+    let min = Math.min.apply(null, arr);   //최소값 찾기
+    
+    arr = arr.filter((el) => el > min);    //최소값 제거
+
+    answer = arr.length === 0 ? [-1] : arr    //길이에 따라 -1 or arr 리턴
+    return answer;
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">다른 사람 문제 풀이</h3>
+            <p class="t_desc">
+                splice 메서드 안에 indexOf에서 펼침연산자로 최소 값을 찾아 준 것 같고,<br>
+                if문을 사용하여 만약 길이 값이 1이 더 크면 리턴으로 -1을 해준 것 같습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(arr) {
+    arr.splice(arr.indexOf(Math.min(...arr)),1);
+    if(arr.length&lt;1)return[-1];
+    return arr;
+}
+</code></pre>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

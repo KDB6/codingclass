@@ -20,6 +20,7 @@
     margin: 0 auto;
     border-radius: 0px;
     background-color: #160530;
+    border: 2px solid rgb(48, 34, 112);
     padding: 30px;
     text-align: center;
     display: none;

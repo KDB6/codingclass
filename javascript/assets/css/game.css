@@ -78,7 +78,7 @@ body {
 .search__icon {
     position: absolute;
     left: 30px;
-    top: 220px;
+    top: 190px;
     width: 70px;
 }
 .search__icon img {
@@ -99,7 +99,7 @@ body {
 .memory__icon {
     position: absolute;
     left: 30px;
-    top: 325px;
+    top: 310px;
     width: 70px;
 }
 .memory__icon img {
@@ -141,7 +141,7 @@ body {
 .code__icon {
     position: absolute;
     left: 30px;
-    top: 535px;
+    top: 550px;
     width: 70px;
 }
 .code__icon img {

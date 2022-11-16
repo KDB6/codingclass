@@ -97,6 +97,20 @@
         // .to(".square", {x: 0, duration: 2, width: 400, skewY: 1, ease:"elastic", rotation: 0})
         // .to(".square", {y: 0, duration: 2, ease:"elastic", width: 200})
         // 세미클론 없으면 이어서, 있으면 따로
+
+        const tl = gsap.timeline({
+            scrollTrigger : {
+                trigger: ".square",
+                markers: true,
+                start: "top 80%",
+                end: "top 30%"
+            }
+        })
+
+        tl.to(".square", {x: 1000, duration: 2, borderRadius: 0, skewY: 1, ease:"elastic", rotation: 100})
+        .to(".square", {y: 500, duration: 2, borderRadius: 100, skewY: 3, ease:"elastic", rotation: 300}, "-=1")    // "-=1" 딜레이 추가
+        .to(".square", {x: 0, duration: 2, width: 400, skewY: 1, ease:"elastic", rotation: 0})
+        .to(".square", {y: 0, duration: 2, ease:"elastic", width: 200})
     </script>
 
     <script>

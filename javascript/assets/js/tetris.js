@@ -1,25 +1,9 @@
 const TetrisWrap = document.querySelector(".tetris__wrap");
 const playground = TetrisWrap.querySelector(".playground > ul");
-const tetrisStart = document.querySelector(".tetris__start");
 const tetrisBg = document.querySelector(".tetris__bg");
 const tetrisScore = document.querySelector(".tetris__score > h2 span");
 const tetrisOver = document.querySelector(".tetris__over");
-
-// variables
-let rows = 20;
-let cols = 12;
-let duration = 500;
-let downInterval;
-let tempMovingItem;
-let tetScore = 0;
-
-// 블럭
-const movingItem = {
-    type: "",
-    direction: 0,       // 블럭 모양
-    top: 0,
-    left: 5,
-}
+const tetrisOverScore = document.querySelector(".tetris__over > p > span");
 
 let tetrisSound = [
     "../assets/music/tetris/tetrisStart.mp3",
@@ -31,6 +15,24 @@ let tetrisStartSound = new Audio(tetrisSound[0]),
     tetrisBgm = new Audio(tetrisSound[1]),
     tetrisBlock = new Audio(tetrisSound[2]),
     tetrisClear = new Audio(tetrisSound[3]);
+
+// variables
+let rows = 20;
+let cols = 12;
+let duration = 500;
+let gameover = false;
+let downInterval;
+let tempMovingItem;
+let tetScore = 0;
+let tetrisCle = 0;
+
+// 블럭
+const movingItem = {
+    type: "",
+    direction: 0,       // 블럭 모양
+    top: 0,
+    left: 5,
+}
 
 // 블럭 좌표값
 const blocks = {
@@ -78,17 +80,20 @@ const blocks = {
     ]
 }
 
-for(let i=0; i<rows; i++) {
-    prependNewLine();   // 블럭 라인 만들기
-}
-
 // 시작하기
 function init() {
+    gameover = false;
+    duration = 500;
+    tetrisCle = 0;
+    playground.innerHTML = "";
     tempMovingItem = {...movingItem};
-
+    
     generateNewBlock();    // 블럭 만들기
+    
+    for(let i=0; i<rows; i++) {
+        prependNewLine();   // 블럭 라인 만들기
+    }   
 }
-
 // 블럭 만들기
 function prependNewLine() {
         const li = document.createElement("li")
@@ -105,6 +110,7 @@ function prependNewLine() {
 
 // 블럭 출력하기
 function renderBlocks(moveType = "") {
+    if(gameover) return;
     // const ty = tempMovingItem.type;
     // const di = tempMovingItem.direction;
     // const to = tempMovingItem.top;
@@ -133,7 +139,7 @@ function renderBlocks(moveType = "") {
                     if(moveType === "top") {
                         seizeBlock();
                     }
-                },0)
+                }, 0)
 
                 return true;
             }
@@ -153,7 +159,18 @@ function seizeBlock() {
         moving.classList.remove("moving")
         moving.classList.add("seized")
     })
+    checkOver();
     checkMatch();
+  }
+  
+function checkOver() {
+    const childNodes = Array.from(playground.children)[1].querySelectorAll("ul li");
+    childNodes.forEach((over) => {
+        if (over.classList.contains("seized")) {
+            gameover = true;
+            tetScore = 0;
+        }
+    });
 }
 
 // 한 줄 제거
@@ -173,9 +190,20 @@ function checkMatch() {
             tetScore = tetScore + 1;
             child.remove();
             prependNewLine();
+            tetrisCle++;
+            if(tetrisCle >= 1) {
+                duration = 400;
+            }
+            if(tetrisCle >= 3) {
+                duration = 250;
+            }
+            if(tetrisCle >= 5) {
+                duration = 150;
+            }
+            if(tetrisCle >= 7) {
+                duration = 80;
+            }
             tetrisClear.play();
-        } else if(tetScore==1) {
-            prependNewLine().style.opacity = "0.5";
         }
         tetrisScore.innerText = "" + "0" + tetScore;
     })
@@ -183,15 +211,15 @@ function checkMatch() {
     generateNewBlock()
 }
 
-// function speedOpa() {
-//     if(tetScore===1) {
-//         prependNewLine().style.opacity = "0.5";
-//     }
-// }
-// speedOpa()
-
 // 새로운 블럭 만들기
 function generateNewBlock() {
+    if (gameover) {
+        setTimeout(() => {
+            tetrisOver.style.display = "block";
+        }, 500);
+        tetrisOverScore.innerHTML = tetScore;
+        return;
+    }
     clearInterval(downInterval);
 
     downInterval = setInterval(() => {
@@ -200,11 +228,13 @@ function generateNewBlock() {
 
     const blockArray = Object.entries(blocks);
     const randomIndex = Math.floor(Math.random() * blockArray.length)
+    
     movingItem.type = blockArray[randomIndex][0];
     movingItem.top = 0;
     movingItem.left =  5;
     movingItem.direction = 0,
     tempMovingItem = {...movingItem};
+
     renderBlocks()
 }
 
@@ -241,11 +271,6 @@ function tetrisMesOver() {
     tetrisOver.style.display = "block";
 }
 
-// // 게임 리셋
-// function tetrisReset() {
-    
-// }
-
 // 이벤트
 document.addEventListener("keydown", (e) => {
     switch(e.keyCode) {
@@ -274,24 +299,39 @@ document.addEventListener("keydown", (e) => {
     }
 })
 
+const tetrisStart = document.querySelector(".tetris__start");
+const tetrisReStart = document.querySelector(".tetris__restart");
+const tetrisIcon = document.querySelector(".tetris__icon");
+
 // 게임 시작 버튼 클릭
 tetrisStart.addEventListener("click", () => {
     tetrisBg.classList.add("hide");
     tetrisStartSound.play();
+    tetrisBg.style.display = "none"
     init()
 });
 
+tetrisReStart.addEventListener("click", () => {
+    tetrisOver.style.display="none"
+    init()
+})
+
 // 테트리스 게임 모달
-const tetrisIcon = document.querySelector(".tetris__icon");
-const tetrisClose = document.querySelector(".tetris__close")
+const tetrisClose = document.querySelector(".tetris__close");
 const tetrisGame = document.querySelector(".tetris__wrap");
+
 
 tetrisIcon.addEventListener("click", () => {
     tetrisGame.classList.add("show");
     tetrisGame.classList.remove("hide");
+    tetrisBg.style.display = "block"
+    tetrisBgm.load()
     tetrisBgm.play()
 });
 tetrisClose.addEventListener("click", () => {
     tetrisGame.classList.add("hide");
+    tetrisBg.style.display = "block"
+    tetrisOver.style.display = "none"
     tetrisBgm.pause()
+    tetrisBlock.pause()
 });

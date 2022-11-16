@@ -2,9 +2,7 @@
     width: 716px;
     height: 756px;
     display: none;
-    /* background: rgb(0, 0, 0); */
     border-radius: 10px;
-    border: 8px rgb(165, 165, 165) outset !important;
     position: fixed;
     top: 9%;
     left: 32%;
@@ -31,25 +29,25 @@ canvas{
     font-weight: 500;
     color: #fff;
     text-align: center;
-    padding-top: 13px;
+    padding-top: 15.5px;
     position: absolute;
     margin-left: 270px;
 }
 .tetris__mino {
     position: absolute;
-    margin-left: 43px;
-    margin-top: 105px;
+    margin-left: 53px;
+    margin-top: 90px;
 }
 .TminoView {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 10px;
     background: #ffffff30;
-    border: 4px #6e0870 outset !important;
 }
 .TminoView > img {
     width: 40px;
     height: 40px;
+    margin-top: 3px;
     margin-left: 8px;
 }
 
@@ -58,7 +56,6 @@ canvas{
     margin-bottom: 10px;
     border-radius: 10px;
     background: #ffffff30;
-    border: 4px #0f5e7a outset !important;
 }
 .IminoView > img {
     width: 55px;
@@ -72,7 +69,6 @@ canvas{
     margin-bottom: 10px;
     border-radius: 10px;
     background: #ffffff30;
-    border: 4px #705f19 outset !important;
 }
 .OminoView > img {
     width: 29px;
@@ -86,7 +82,6 @@ canvas{
     margin-bottom: 10px;
     border-radius: 10px;
     background: #ffffff30;
-    border: 4px #9c000d outset !important;
 }
 .ZminoView > img {
     width: 40px;
@@ -100,25 +95,36 @@ canvas{
     margin-bottom: 10px;
     border-radius: 10px;
     background: #ffffff30;
-    border: 4px #39770a outset !important;
 }
 .SminoView > img {
     width: 40px;
     height: 40px;
     margin-left: 10px;
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 .JminoView {
     padding: 10px;
+    margin-bottom: 10px;
     border-radius: 10px;
     background: #ffffff30;
-    border: 4px #074c88 outset !important;
 }
 .JminoView > img {
     width: 40px;
     height: 40px;
     margin-left: 7px;
+    margin-top: 5px;
+}
+
+.LminoView {
+    padding: 10px;
+    border-radius: 10px;
+    background: #ffffff30;
+}
+.LminoView > img {
+    width: 40px;
+    height: 40px;
+    margin-left: 9px;
     margin-top: 5px;
 }
 
@@ -160,7 +166,7 @@ canvas{
     font-size: 24px;
     color: #ccc;
     right: 0;
-    margin-top: 16px;
+    margin-top: 17px;
     width: 100px;
     height: 20px;
     text-align: center;
@@ -171,7 +177,7 @@ canvas{
     /* background-image: url(../../assets/img/tetris/score.jpg); */
     /* background: #fff; */
     top: 20%;
-    right: 37px;
+    right: 43px;
     padding-bottom: 2px;
     border-bottom: 2px solid #fff;
     /* width: 150px;
@@ -239,33 +245,31 @@ canvas{
     height: 400px;
     background: #fff;
     position: absolute;
-    right: 33px;
-    bottom: 65px;
+    right: 41px;
+    bottom: 70px;
 }
 
 .Tmino {
-    background: #540057;
-    border: 8px #6e0870 outset !important;
+    background: #60009B;
+    /* border: 8px #6e0870 outset !important; */
 }
 .Jmino {
-    border: 8px #074c88 outset !important;
-    background-color: #060058;
+    background-color: #074C88;
 }
 .Zmino {
-    border: 8px #9c000d outset !important;
-    background-color: #660008;
+    background-color: #930023;
 }
 .Smino {
-    border: 8px #39770a outset !important;
-    background-color: #2a6100;
+    background-color: #337600;
 }
 .Omino {
-    border: 8px #705f19 outset !important;
-    background-color: #4d4700;
+    background-color: #878200;
 }
 .Imino {
-    border: 8px #0f5e7a outset !important;
-    background-color: #00455e;
+    background-color: #00759E;
+}
+.Lmino {
+    background-color: #009B76;
 }
 
 /* 테트리스 애니메이션 */

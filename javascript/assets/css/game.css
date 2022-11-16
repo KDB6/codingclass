@@ -204,6 +204,7 @@ body {
     box-shadow: 0 2px 4px -5px hsl(180deg 0% 10%);
     cursor: none;
     transition: all 0.3s;
+    color: #fff;
 }
 .game__close:hover {
     background-color: #282936;

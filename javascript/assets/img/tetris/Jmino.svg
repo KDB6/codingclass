@@ -1,14 +1,6 @@
 <svg width="60" height="90" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="30" y="60" width="30" height="30" fill="#074C88"/>
-<path d="M45 75L60 60V90H30L45 75Z" fill="#021D34"/>
-<rect x="37" y="67" width="16" height="16" fill="#060058"/>
 <rect y="60" width="30" height="30" fill="#074C88"/>
-<path d="M15 75L30 60V90H0L15 75Z" fill="#021D34"/>
-<rect x="7" y="67" width="16" height="16" fill="#060058"/>
 <rect x="30" y="30" width="30" height="30" fill="#074C88"/>
-<path d="M45 45L60 30V60H30L45 45Z" fill="#021D34"/>
-<rect x="37" y="37" width="16" height="16" fill="#060058"/>
 <rect x="30" width="30" height="30" fill="#074C88"/>
-<path d="M45 15L60 0V30H30L45 15Z" fill="#021D34"/>
-<rect x="37" y="7" width="16" height="16" fill="#060058"/>
 </svg>

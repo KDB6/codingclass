@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../assets/css/tetris.css" />
     <link rel="stylesheet" href="../assets/css/tetrisBat.css" />
     <link rel="stylesheet" href="../assets/css/tetrisBg.css" />
-    <link rel="stylesheet" href="../assets/css/tetrisStar.css" />
+    <link rel="stylesheet" href="../assets/css/tetrisStarwars.css" />
 
     <link rel="icon" href="data:," />
 
@@ -1174,6 +1174,9 @@
             <div class="JminoView">
                 <img src="../assets/img/tetris/Jmino.svg" alt="Jmino">
             </div>
+            <div class="LminoView">
+              <img src="../assets/img/tetris/Lmino.svg" alt="Lmino">
+          </div>
         </div>
         <div class="tetris__bg">
             <div class="tetris__loding">
@@ -1195,9 +1198,9 @@
                 <h2>SOCRE <span>00</span></h2>
             </div>
         </div>
-        <div class="tetris__over">
+        <div class="tetris__over" style="display: none;">
           <h2>GAME OVER</h2>
-          <p>SOCRE : 00</p>
+          <p>SOCRE : 0<span>0</span></p>
           <div class="tetris__restart">
             <h2>다시하기</h2>
           </div>
@@ -1228,7 +1231,7 @@
             frameborder="0"
           ></iframe>
           <div class="game__close">
-            <img src="../assets/img/game/closeBtn.svg" alt="" />
+            X
           </div>
         </div>
       </div>
@@ -1258,6 +1261,31 @@
     </script>
 
     <script>
+      // const searchFront = document.querySelector(".search__icon");
+      // const memoryFront = document.querySelector(".memory__icon");
+      // const tetrisFront = document.querySelector(".tetris__icon");
+      // const searchWin = document.querySelector(".search__wrap");
+      // const memorywin = document.querySelector(".memory__wrap");
+      // const tetrisWin = document.querySelector(".tetris__wrap");
+
+      // searchFront.addEventListener("click", () => {
+      //   searchWin.style.display = "block"
+      //   memorywin.style.display = "none"
+      //   tetrisWin.style.display = "none"
+      // })
+
+      // memoryFront.addEventListener("click", () => {
+      //   memorywin.style.display = "block"
+      //   searchWin.style.display = "none"
+      //   tetrisWin.style.display = "none"
+      // })
+
+      // tetrisFront.addEventListener("click", () => {
+      //   tetrisWin.style.display = "block"
+      //   searchWin.style.display = "none"
+      //   memorywin.style.display = "none"
+      // })
+
       const codeB = document.querySelector(".code__icon");
       const iframe = document.querySelector("iframe");
       const gameC = document.querySelector(".game__close");

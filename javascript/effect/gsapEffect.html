@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gsap</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #contents > section {
+            min-height: 100vh;
+        }
+        #section1 {
+            background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+        }
+        #section2 {
+            background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+        }
+        #section3 {
+            background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+        }
+        #section4 {
+            background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+        }
+        #section5 {
+            background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+        }
+        #section6 {
+            background-image: linear-gradient(120deg, #9795f0 0%, #fbc8d4 100%);
+        }
+        .square {
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(120deg, #9795f0 0%, #fbc8d4 100%);
+        }
+        .square.red {
+            background: red;
+        }
+        .square2 {
+            width: 200px;
+            height: 200px;
+            background-image: linear-gradient(120deg, #9795f0 0%, #fbc8d4 100%);
+        }
+        .square2.red {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <main id="contents">
+        <section id="section1"></section>
+        <section id="section2">
+            <div class="square"></div>
+            <div class="square2"></div>
+        </section>
+        <section id="section3"></section>
+        <section id="section4"></section>
+        <section id="section5"></section>
+        <section id="section6"></section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // gsap.to(".square", {
+        //     x: 1000,
+        //     duration: 3,
+        //     scrollTrigger: {
+        //         trigger: ".square",
+        //         start: "top 70%",
+        //         end: "top 30%",
+        //         markers: {
+        //             startColor: "blue",
+        //             endColor: "purple",
+        //             fontSize: "14px"
+        //         },
+        //         toggleClass: "red",
+        //         toggleActions: "restart none none none",
+        //     }
+        // })
+
+        // gsap.to(".square", {x: 1000, duration: 2, borderRadius: 0, skewY: 1, rotation: 100})
+        // gsap.to(".square", {y: 500, duration: 2, delay: 2, borderRadius: 100, skewY: 3, rotation: 300})
+        // gsap.to(".square", {x: 0, duration: 2, delay: 4, width: 400, skewY: 1, rotation: 0})
+        // gsap.to(".square", {y: 0, duration: 2, delay: 6, width: 200})
+
+        // const tl = gsap.timeline({repeat: 2});    // 타임라인 설정    // {repeat: 2} 콜백함수 추가하여 반복
+        // tl.to(".square", {x: 1000, duration: 2, borderRadius: 0, skewY: 1, ease:"elastic", rotation: 100})
+        // .to(".square", {y: 500, duration: 2, borderRadius: 100, skewY: 3, ease:"elastic", rotation: 300}, "-=1")    // "-=1" 딜레이 추가
+        // .to(".square", {x: 0, duration: 2, width: 400, skewY: 1, ease:"elastic", rotation: 0})
+        // .to(".square", {y: 0, duration: 2, ease:"elastic", width: 200})
+        // 세미클론 없으면 이어서, 있으면 따로
+    </script>
+
+    <script>
+        // gsap.registerPlugin(ScrollTrigger);
+
+        // gsap.to(".square", {
+        //     x: 1000,
+        //     duration: 3,
+        //     scrollTrigger: {
+        //         trigger: ".square",
+        //         start: "top 20%",
+        //         end: () => `+=${document.querySelector(".square").offsetHeight}`,
+        //         markers: true,
+        //         toggleClass: "red",
+        //     }
+        // })
+
+        // toggleActions: "restart pause reset none",
+        //             onEnter onLeave onEnterBack onLeaveBack
+        // play, pause, resume, reset, restart, complete, reverse, none
+
+        // scrub: true,         // 스크롤 할 때마다 움직이기
+        // scrub: 4,
+
+        // pin: true,           // 대상을 고정
+        // pinSpacing: false,   // 다음 대상을 무시
+    </script>
+</body>
+
+</html>

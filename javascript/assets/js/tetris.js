@@ -15,7 +15,7 @@ let tetScore = 0;
 
 // 블럭
 const movingItem = {
-    type: "Tmino",
+    type: "",
     direction: 0,       // 블럭 모양
     top: 0,
     left: 5,
@@ -174,12 +174,21 @@ function checkMatch() {
             child.remove();
             prependNewLine();
             tetrisClear.play();
+        } else if(tetScore==1) {
+            prependNewLine().style.opacity = "0.5";
         }
         tetrisScore.innerText = "" + "0" + tetScore;
     })
 
     generateNewBlock()
 }
+
+// function speedOpa() {
+//     if(tetScore===1) {
+//         prependNewLine().style.opacity = "0.5";
+//     }
+// }
+// speedOpa()
 
 // 새로운 블럭 만들기
 function generateNewBlock() {
@@ -269,7 +278,7 @@ document.addEventListener("keydown", (e) => {
 tetrisStart.addEventListener("click", () => {
     tetrisBg.classList.add("hide");
     tetrisStartSound.play();
-    renderBlocks()
+    init()
 });
 
 // 테트리스 게임 모달
@@ -286,5 +295,3 @@ tetrisClose.addEventListener("click", () => {
     tetrisGame.classList.add("hide");
     tetrisBgm.pause()
 });
-
-init()

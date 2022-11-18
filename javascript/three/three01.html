@@ -32,9 +32,31 @@
         // 렌더링 설정
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio)
+        renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1)
 
-        console.log(window.devicePixelRatio)
+        document.body.appendChild(renderer.domElement);
+
+        // 카메라 설정
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
+        camera.position.set(0, 0, 7);
+
+        // 메쉬 설정(geometry + material)
+        const geometry = new THREE.TorusGeometry(2, .5, 16, 100);
+        const material = new THREE.MeshLambertMaterial({color: 0xff0000});
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        // 조명 설정
+        const light = new THREE.DirectionalLight(0xffffff, 1.5);
+        scene.add(light)
+
+        // 업데이트 설정
+        function update() {
+            requestAnimationFrame(update);
+
+            renderer.render(scene, camera);
+        }
+        update();
     </script>
 </head>
 <body>

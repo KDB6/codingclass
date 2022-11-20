@@ -149,7 +149,7 @@ canvas{
     height: 300px;
     /* display: flex;
     align-items: flex-end; */
-    transform: translate(67%,70%);
+    transform: translate(69.5%,70%);
     z-index: 10;
     position: fixed;
     background: #000;

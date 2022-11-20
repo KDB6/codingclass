@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래머스01 : 내적</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">프로그래머스 1단계 : 내적</h2>
+            <p class="t_desc2">
+                길이가 같은 두 1차원 정수 배열 a, b가 매개변수로 주어집니다. a와 b의 내적을 return 하도록 solution 함수를 완성해주세요.<br>
+                이때, a와 b의 내적은 a[0]*b[0] + a[1]*b[1] + ... + a[n-1]*b[n-1] 입니다. (n은 a, b의 길이)
+            </p>
+
+            <hr>
+
+            <h4 class="t_tit2">제한 사항</h4>
+            <p class="t_desc2">
+                a, b의 길이는 1 이상 1,000 이하입니다.<br>
+                a, b의 모든 수는 -1,000 이상 1,000 이하입니다.
+            </p>
+
+            <h3 class="t_tit2">나의 문제 풀이</h3>
+            <p class="t_desc">
+                이 문제는 뭔소리인지 몰라 다른 분들꺼를 참고했습니다..<br>
+                for문으로 a의 갯수만큼 뽑아주고, 거기에 a와 b의 i값을 서로 점점 곱하여 더한 것으로 보입니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(a, b) {
+    var answer = 0;
+    for (let i = 0; i&lt;a.length; i++) {
+        answer += a[i]*b[i];
+    }
+    return answer;
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">다른 사람 문제 풀이</h3>
+            <p class="t_desc">
+                이 분은 reduce 메서드를 사용하여 점점 서로 곱한 것으로 보입니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(a, b) {
+    return a.reduce((acc, _, i) => acc += a[i] * b[i], 0);
+}
+</code></pre>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

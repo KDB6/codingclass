@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래머스01 : 가운데 글자 가져오기</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">프로그래머스 1단계 : 가운데 글자 가져오기</h2>
+            <p class="t_desc2">
+                단어 s의 가운데 글자를 반환하는 함수, solution을 만들어 보세요.<br>
+                단어의 길이가 짝수라면 가운데 두글자를 반환하면 됩니다.
+            </p>
+
+            <hr>
+
+            <h4 class="t_tit2">제한 사항</h4>
+            <p class="t_desc2">
+                s는 길이가 1 이상, 100이하인 스트링입니다.
+            </p>
+
+            <h3 class="t_tit2">나의 문제 풀이</h3>
+            <p class="t_desc">
+                n의 값에 parseInt를 사용하여 문자열을 숫자로 변환해줍니다. 또한 s의 갯수만큼의 2를 나눠주며,<br>
+                if문을 사용하여 2를 나누어 1이 남는 값이 됐을 때, s의 n값만 아니면 s의 substr을 사용하여 가운데 값을 추출해줍니다.<br>
+                substr() 메서드는 원하는 값을 추출하는 메서드입니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(s) {
+    var answer = '';
+    var n = parseInt(s.length/2);
+
+    if(s.length%2 == 1) {
+        answer = s[n];
+    } else {
+        answer = s.substr(n-1, 2)
+    }
+
+    return answer;
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">다른 사람 문제 풀이</h3>
+            <p class="t_desc">
+                이분은 깔끔하게 s의 substr를 사용해주고 그 다음 수학 객체인 Math.ceil하여 소수점을 반올림 또 거기 안에서 삼향연산자로 추출한 것 같습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(s) {
+    return s.substr(Math.ceil(s.length / 2) - 1, s.length % 2 === 0 ? 2 : 1);
+}
+</code></pre>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

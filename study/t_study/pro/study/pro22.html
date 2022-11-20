@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래머스01 : 수박수박수박수박수박수?</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">프로그래머스 1단계 : 수박수박수박수박수박수?</h2>
+            <p class="t_desc2">
+                길이가 n이고, "수박수박수박수...."와 같은 패턴을 유지하는 문자열을 리턴하는 함수, solution을 완성하세요.
+                예를들어 n이 4이면 "수박수박"을 리턴하고 3이라면 "수박수"를 리턴하면 됩니다.
+            </p>
+
+            <hr>
+
+            <h4 class="t_tit2">제한 사항</h4>
+            <p class="t_desc2">
+                n은 길이 10,000이하인 자연수입니다.
+            </p>
+
+            <h3 class="t_tit2">나의 문제 풀이</h3>
+            <p class="t_desc">
+                for문을 사용하여 뭐 i값에 2를 나눴을때 0이 되는 값 즉 짝수에는 박을 뽑고 else로 나머지 값들은 수를 뽑았습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(n){
+    var result = '';
+  for(var i=1;i&lt;=n;i++){
+    if(i%2 == 0){
+        result += '박';
+    }else{
+        result += '수';
+    }
+  }
+  return result;
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">다른 사람 문제 풀이</h3>
+            <p class="t_desc">
+                이분은 수박을 엄청 나열하고 substring로 원하는 값을 추출한 것 같습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function waterMelon(n){
+    var result = "수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박수박"
+  
+    return result.substring(0,n);
+  }
+</code></pre>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

@@ -4,21 +4,411 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>서브페이지</title>
+    <title>서브 페이지</title>
 
-    <link rel="stylesheet" href="assets/css/sub/category.css">
-    <link rel="stylesheet" href="assets/css/sub/subTag.css">
-    <link rel="stylesheet" href="assets/css/sub/subMain.css">
-    <link rel="stylesheet" href="assets/css/sub/subList.css">
+    <link rel="stylesheet" href="assets/css/sub/main.css">
+    <link rel="stylesheet" href="assets/css/sub/aside.css">
+    <link rel="stylesheet" href="assets/css/sub/contents.css">
 
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/font.css">
     <link rel="stylesheet" href="assets/css/reset.css">
 </head>
 <body>
-    <section id="category"></section>
-    <section id="subTag"></section>
-    <section id="subMain"></section>
-    <section id="subList"></section>
+    <main id="main">
+        <aside id="aside">
+            <h2>UMzzzzal..</h2>
+            <input type="text" id="searchInput" placeholder="원하는 움짤 태그를 검색해주세요." title="검색" required>
+            <h3>카테고리</h3>
+
+            <div class="category">
+                <ul>
+                    <li>
+                        <img src="assets/img/popular.svg" alt="popular">
+                        인기
+                    </li>
+                    <li>
+                        <img src="assets/img/emotion.svg" alt="emotion">
+                        감정
+                    </li>
+                    <li>
+                        <img src="assets/img/famous.svg" alt="famous">
+                        유명
+                    </li>
+                    <li>
+                        <img src="assets/img/mim.svg" alt="mim">
+                        밈
+                    </li>
+                </ul>
+            </div>
+
+            <div id="footer">
+                <h2>UMzzzzal..</h2>
+                <div class="img">
+                    <img src="assets/img/insta.svg" alt="insta">
+                    <img src="assets/img/face.svg" alt="face">
+                    <img src="assets/img/twitter.svg" alt="twitter">
+                </div>
+                <div class="footer__desc">
+                    <p>@2022 copyright</p>
+                    <p>Privacy Policy</p>
+                    <p>Agreement</p>
+                </div>
+            </div>
+        </aside>
+
+        <section id="contents">
+            <!-- subTag -->
+            <div id="subTag">
+                <div class="sliderType">
+                    <div class="slider__wrap">
+                        <div class="slider__img">
+                            <div class="slider__inner">
+                                <div class="slider">
+                                    <img src="assets/img/sub/tag_joy.svg" alt="기쁨">
+                                    <h2>#기쁨</h2>
+                                </div>
+                                <div class="slider">
+                                    <img src="assets/img/sub/tag_happy.svg" alt="행복">
+                                    <h2>#행복</h2>
+                                </div>
+                                <div class="slider">
+                                    <img src="assets/img/sub/tag_fear.svg" alt="행복">
+                                    <h2>#행복</h2>
+                                </div>
+                                <div class="slider">
+                                    <img src="assets/img/sub/tag_anger.svg" alt="행복">
+                                    <h2>#행복</h2>
+                                </div>
+                                <div class="slider">
+                                    <img src="assets/img/sub/tag_sad.svg" alt="슬픔">
+                                    <h2>#슬픔</h2>
+                                </div>
+                                <div class="slider">
+                                    <img src="assets/img/sub/tag_sup.svg" alt="깜짝">
+                                    <h2>#깜짝</h2>
+                                </div>
+                                <div class="slider">
+                                    <img src="assets/img/sub/tag_pain.svg" alt="아픔">
+                                    <h2>#아픔</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // subTag -->
+
+            <!-- subView -->
+            <div id="subView">
+                <div class="sub__main">
+                    <div class="sub__main__img">
+                        <img src="assets/img/sub/horse.jpg" alt="움짤사진">
+                    </div>
+                    <div class="sub__main__desc">
+                        <h2>제목 : 말이 미친듯이 웃는다..</h2>
+                        <div class="good__share">
+                            <div class="good">
+                                <img src="assets/img/sub/good.svg" alt="좋아요">
+                                <p>좋아요! : <span>00</span>개</p>
+                            </div>
+                            <div class="share">
+                                <img src="assets/img/sub/share.svg" alt="공유하기">
+                                <p>공유하기!</p>
+                            </div>
+                        </div>
+                        <div class="sub__main__tag">
+                        <h2>TAG!</h2>
+                            <ul>
+                                <li>#웃음</li>
+                                <li>#웃음</li>
+                                <li>#웃음</li>
+                                <li>#웃음</li>
+                                <li>#웃음</li>
+                            </ul>
+                            <ul>
+                                <li>#웃음</li>
+                                <li>#웃음</li>
+                                <li>#웃음</li>
+                                <li>#웃음</li>
+                                <li>#웃음</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // subView -->
+
+            <!-- subList -->
+            <div id="subList">
+                <div class="subList">
+                    <div class="subList__list">
+                        <div class="list__img">
+                            <img src="assets/img/sub/horse.jpg" alt="리스트 움짤">
+                        </div>
+                        <div class="list__desc">
+                            <h2>제목 : 말이 미친듯이 웃는다..</h2>
+                            <div class="list__tag">
+                                <h2>TAG!</h2>
+                                <ul>
+                                    <li>#미친</li>
+                                    <li>#웃음</li>
+                                </ul>
+                            </div>
+                            <div class="list__good__share">
+                                <div class="list__good">
+                                    <img src="assets/img/sub/good.svg" alt="좋아요">
+                                    <p>좋아요! : <span>00</span>개</p>
+                                </div>
+                                <div class="list__share">
+                                    <img src="assets/img/sub/share.svg" alt="공유하기">
+                                    <p>공유하기!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subList__list">
+                        <div class="list__img">
+                            <img src="assets/img/sub/horse.jpg" alt="리스트 움짤">
+                        </div>
+                        <div class="list__desc">
+                            <h2>제목 : 말이 미친듯이 웃는다..</h2>
+                            <div class="list__tag">
+                                <h2>TAG!</h2>
+                                <ul>
+                                    <li>#미친</li>
+                                    <li>#웃음</li>
+                                </ul>
+                            </div>
+                            <div class="list__good__share">
+                                <div class="list__good">
+                                    <img src="assets/img/sub/good.svg" alt="좋아요">
+                                    <p>좋아요! : <span>00</span>개</p>
+                                </div>
+                                <div class="list__share">
+                                    <img src="assets/img/sub/share.svg" alt="공유하기">
+                                    <p>공유하기!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subList">
+                    <div class="subList__list">
+                        <div class="list__img">
+                            <img src="assets/img/sub/horse.jpg" alt="리스트 움짤">
+                        </div>
+                        <div class="list__desc">
+                            <h2>제목 : 말이 미친듯이 웃는다..</h2>
+                            <div class="list__tag">
+                                <h2>TAG!</h2>
+                                <ul>
+                                    <li>#미친</li>
+                                    <li>#웃음</li>
+                                </ul>
+                            </div>
+                            <div class="list__good__share">
+                                <div class="list__good">
+                                    <img src="assets/img/sub/good.svg" alt="좋아요">
+                                    <p>좋아요! : <span>00</span>개</p>
+                                </div>
+                                <div class="list__share">
+                                    <img src="assets/img/sub/share.svg" alt="공유하기">
+                                    <p>공유하기!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subList__list">
+                        <div class="list__img">
+                            <img src="assets/img/sub/horse.jpg" alt="리스트 움짤">
+                        </div>
+                        <div class="list__desc">
+                            <h2>제목 : 말이 미친듯이 웃는다..</h2>
+                            <div class="list__tag">
+                                <h2>TAG!</h2>
+                                <ul>
+                                    <li>#미친</li>
+                                    <li>#웃음</li>
+                                </ul>
+                            </div>
+                            <div class="list__good__share">
+                                <div class="list__good">
+                                    <img src="assets/img/sub/good.svg" alt="좋아요">
+                                    <p>좋아요! : <span>00</span>개</p>
+                                </div>
+                                <div class="list__share">
+                                    <img src="assets/img/sub/share.svg" alt="공유하기">
+                                    <p>공유하기!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subList">
+                    <div class="subList__list">
+                        <div class="list__img">
+                            <img src="assets/img/sub/horse.jpg" alt="리스트 움짤">
+                        </div>
+                        <div class="list__desc">
+                            <h2>제목 : 말이 미친듯이 웃는다..</h2>
+                            <div class="list__tag">
+                                <h2>TAG!</h2>
+                                <ul>
+                                    <li>#미친</li>
+                                    <li>#웃음</li>
+                                </ul>
+                            </div>
+                            <div class="list__good__share">
+                                <div class="list__good">
+                                    <img src="assets/img/sub/good.svg" alt="좋아요">
+                                    <p>좋아요! : <span>00</span>개</p>
+                                </div>
+                                <div class="list__share">
+                                    <img src="assets/img/sub/share.svg" alt="공유하기">
+                                    <p>공유하기!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subList__list">
+                        <div class="list__img">
+                            <img src="assets/img/sub/horse.jpg" alt="리스트 움짤">
+                        </div>
+                        <div class="list__desc">
+                            <h2>제목 : 말이 미친듯이 웃는다..</h2>
+                            <div class="list__tag">
+                                <h2>TAG!</h2>
+                                <ul>
+                                    <li>#미친</li>
+                                    <li>#웃음</li>
+                                </ul>
+                            </div>
+                            <div class="list__good__share">
+                                <div class="list__good">
+                                    <img src="assets/img/sub/good.svg" alt="좋아요">
+                                    <p>좋아요! : <span>00</span>개</p>
+                                </div>
+                                <div class="list__share">
+                                    <img src="assets/img/sub/share.svg" alt="공유하기">
+                                    <p>공유하기!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subList">
+                    <div class="subList__list">
+                        <div class="list__img">
+                            <img src="assets/img/sub/horse.jpg" alt="리스트 움짤">
+                        </div>
+                        <div class="list__desc">
+                            <h2>제목 : 말이 미친듯이 웃는다..</h2>
+                            <div class="list__tag">
+                                <h2>TAG!</h2>
+                                <ul>
+                                    <li>#미친</li>
+                                    <li>#웃음</li>
+                                </ul>
+                            </div>
+                            <div class="list__good__share">
+                                <div class="list__good">
+                                    <img src="assets/img/sub/good.svg" alt="좋아요">
+                                    <p>좋아요! : <span>00</span>개</p>
+                                </div>
+                                <div class="list__share">
+                                    <img src="assets/img/sub/share.svg" alt="공유하기">
+                                    <p>공유하기!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subList__list">
+                        <div class="list__img">
+                            <img src="assets/img/sub/horse.jpg" alt="리스트 움짤">
+                        </div>
+                        <div class="list__desc">
+                            <h2>제목 : 말이 미친듯이 웃는다..</h2>
+                            <div class="list__tag">
+                                <h2>TAG!</h2>
+                                <ul>
+                                    <li>#미친</li>
+                                    <li>#웃음</li>
+                                </ul>
+                            </div>
+                            <div class="list__good__share">
+                                <div class="list__good">
+                                    <img src="assets/img/sub/good.svg" alt="좋아요">
+                                    <p>좋아요! : <span>00</span>개</p>
+                                </div>
+                                <div class="list__share">
+                                    <img src="assets/img/sub/share.svg" alt="공유하기">
+                                    <p>공유하기!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subList">
+                    <div class="subList__list">
+                        <div class="list__img">
+                            <img src="assets/img/sub/horse.jpg" alt="리스트 움짤">
+                        </div>
+                        <div class="list__desc">
+                            <h2>제목 : 말이 미친듯이 웃는다..</h2>
+                            <div class="list__tag">
+                                <h2>TAG!</h2>
+                                <ul>
+                                    <li>#미친</li>
+                                    <li>#웃음</li>
+                                </ul>
+                            </div>
+                            <div class="list__good__share">
+                                <div class="list__good">
+                                    <img src="assets/img/sub/good.svg" alt="좋아요">
+                                    <p>좋아요! : <span>00</span>개</p>
+                                </div>
+                                <div class="list__share">
+                                    <img src="assets/img/sub/share.svg" alt="공유하기">
+                                    <p>공유하기!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="subList__list">
+                        <div class="list__img">
+                            <img src="assets/img/sub/horse.jpg" alt="리스트 움짤">
+                        </div>
+                        <div class="list__desc">
+                            <h2>제목 : 말이 미친듯이 웃는다..</h2>
+                            <div class="list__tag">
+                                <h2>TAG!</h2>
+                                <ul>
+                                    <li>#미친</li>
+                                    <li>#웃음</li>
+                                </ul>
+                            </div>
+                            <div class="list__good__share">
+                                <div class="list__good">
+                                    <img src="assets/img/sub/good.svg" alt="좋아요">
+                                    <p>좋아요! : <span>00</span>개</p>
+                                </div>
+                                <div class="list__share">
+                                    <img src="assets/img/sub/share.svg" alt="공유하기">
+                                    <p>공유하기!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- // subList -->
+        </section>
+    </main>
+
 </body>
 </html>

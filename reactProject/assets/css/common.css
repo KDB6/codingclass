@@ -23,16 +23,15 @@
 
     --font-size: 16px;
     --font-height: 1.4;
-    --font-main: "-SBAggro";
+    --font-main: "SBAggro";
 }
 
 /* 컨테이너 */
 
-body {
-    font-family: 'SBAggro';
+#main {
+    font-family: "SBAggro";
     font-weight: 400;
     overflow-x: hidden;
-    background: #F9FAFB;
 }
 input::placeholder {
     font-family: 'SBAggro';

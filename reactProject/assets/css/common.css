@@ -16,8 +16,15 @@
     left: 5px;
 }
 
-/* 컬러 */
+/* 변수 */
+:root {
+    --bg-main: #FFFCFA;
+    --bg-cate: #FFD5BD;
 
+    --font-size: 16px;
+    --font-height: 1.4;
+    --font-main: "-SBAggro";
+}
 
 /* 컨테이너 */
 

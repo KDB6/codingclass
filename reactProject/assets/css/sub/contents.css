@@ -30,13 +30,14 @@
 
 /* subView */
 #subView {
-    width: 73%;
+    width: 70.5%;
     background: #fff;
     border-radius: 70px;
     position: absolute;
     top: 17%;
     margin: 0 2%;
     padding: 50px;
+    margin: 50px;
 }
 .sub__main {
     display: flex;
@@ -57,7 +58,6 @@
     margin-bottom: 20px;
 }
 .good__share {
-    width: 240%;
     display: flex;
     border-bottom: 1px solid #FFA959;
     padding-bottom: 15px;

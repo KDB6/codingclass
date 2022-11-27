@@ -35,14 +35,17 @@
 
             <h3 class="t_tit2">나의 문제 풀이</h3>
             <p class="t_desc">
-
+                answer에 변수를 미리 선언해주고 for문을 사용하여 풀었습니다<br>
+                또한, for문 안에 if문을 사용하여 arr[i] != arr[i-1] 서로가 같지 않다면<br>
+                push메서드를 사용하여 출력했습니다.<br>
+                push() 배열의 끝에 하나 이상의 요소를 추가 후 배열의 새로운 길이를 반환
             </p>
             <div class="t_code">
 <pre><code class="language-js">function solution(arr)
 {
     var answer = [arr[0]];
     for(var i=1;i&lt;arr.length;i++){
-        if (arr[i] != arr[i-1]) {          
+        if (arr[i] != arr[i-1]) {         
             answer.push(arr[i]);
         }
     }
@@ -53,7 +56,7 @@
 
             <h3 class="t_tit2">다른 사람 문제 풀이</h3>
             <p class="t_desc">
-
+                이분은 filter() 메서드를 사용하여 푼 것 같습니다.
             </p>
             <div class="t_code">
 <pre><code class="language-js">function solution(arr)

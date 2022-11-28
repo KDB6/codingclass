@@ -1,15 +1,14 @@
 /* subTag */
 #subTag {
     background: #FFE4D6;
-    padding: 20px 50px 200px 50px;
+    padding: 20px 50px 20px 50px;
 }
 #subTag .slider__inner {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
 }
 #subTag .slider {
-    width: 186px;
+    width: 186px !important;
     height: 70px;
     display: flex;
     align-items: center;
@@ -102,7 +101,7 @@
 
 /* subList */
 #subList {
-    margin-top: 27%;
+    margin-top: 23%;
     padding: 50px;
 }
 .subList {
@@ -112,7 +111,7 @@
 }
 .subList__list {
     background: #fff;
-    width: 46.5%;
+    width: 47%;
     padding: 20px;
     display: flex;
     align-items: flex-end;

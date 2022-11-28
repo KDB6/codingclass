@@ -1,0 +1,135 @@
+
+
+
+/* banner */
+#banner {
+    margin:100px 0;
+}
+.banner__inner {
+    margin: 0 auto;
+    width: 90%;
+    text-align: center;
+    background: #ffe9dc;
+    border-radius: 10px;
+}
+.banner__inner h2 {
+    font-size: 70px;
+    font-weight: 700;
+    padding: 120px 0;
+    color: #fff;
+    -webkit-text-stroke: 1px #FFA959;
+}
+
+/* tag_gif */
+.gif__section {
+    padding: 75px;
+}
+.mytag__inner {
+    margin-left: 70px;
+}
+
+.mytag__inner, .tag__inner{
+    margin-bottom: 50px;
+    margin-left: 70px;
+
+}
+
+.tagpop__inner {
+    margin: 70px;
+}
+.mytag__inner, .tagpop__inner, .tag__inner h3{
+    color:#FFA959;
+    font-size: 20px;
+}
+.mytag__cont {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.mytag__gif img, .tag__gif img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.tagpop__gif img {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.tagpop__cont{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.tag__cont {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+
+
+/* sideBar */
+/* .sideBar__inner {
+    width: 15%;
+    height: 100vh;
+    background: #ffd5bd;
+}
+.sideBar__logo h2{
+    font-size: 30px;
+    font-weight: 500;
+    padding: 20px;
+}
+.sideBar__logo h2 a {
+    color: #FFA959;
+}
+
+.sideBar__search {
+    padding: 10px;
+}
+
+.sideBar__category {
+    margin: 15px;
+}
+
+.sideBar__category h3 {
+    -webkit-text-stroke: 1px #FFA959;
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #FFA959;
+}
+
+.sideBar__category ul {}
+.sideBar__category ul li{
+    padding: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.sideBar__category ul li a {
+    color: #fff;
+}
+
+input[type=text] {
+    width: 260px;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+}
+input::placeholder {
+    color: #bbb;
+    padding: 10px;
+  } */

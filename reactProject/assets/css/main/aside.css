@@ -1,0 +1,76 @@
+#aside {
+    position: relative; 
+}
+#aside > h2 {
+    font-weight: 700;
+    font-size: 30px;
+    margin: 20px;
+    color: #FFA959;
+}
+#aside > input {
+    padding: 13px 71px 12px 10px;
+    border-radius: 5px;
+    border: 0;
+    margin-left: 20px;
+}
+input:focus {
+    font-family: "SBAggro";
+    color: #303030;
+    outline: none;
+}
+input::placeholder {
+    color: #BBBBBB;
+    font-size: 12px;
+}
+input:required {
+    font-family: "SBAggro";
+}
+#aside > h3 {
+    font-size: 32px;
+    color: #fff;
+    text-shadow: -1px 0 #FFA959, 0 1px #FFA959, 1px 0 #FFA959, 0 -1px #FFA959;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+#aside .category ul {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#aside .category ul li {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+#aside .category ul li > img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+#footer {
+    position: absolute;
+    bottom: 2%;
+    margin-left: 20px;
+}
+#footer > h2 {
+    color: #FFA959;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+#footer .img {
+    margin-bottom: 10px;
+}
+#footer .img > img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+.footer__desc {
+    display: flex;
+}
+.footer__desc > p {
+    margin-right: 10px;
+    font-size: 10px;
+    color: #FFA959;
+}

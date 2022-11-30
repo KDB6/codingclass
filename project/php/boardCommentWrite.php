@@ -10,7 +10,7 @@
     $commentMsg = $_POST["msg"];
     $regTime = time();
 
-    $sql = "INSERT INTO myComment (myMemberID, myBoardID, commentName, commentMsg, commentPass, commentDelete, regTime) VALUES ('1','$myBoardID','$commentName','$commentMsg','$commentPass','0','$regTime')";
+    $sql = "INSERT INTO myComment (myMemberID, myBoardID, commentName, commentMsg, commentPass, commentDelete, regTime)VALUES ('1','$myBoardID','$commentName','$commentMsg','$commentPass','0','$regTime')";
     $result = $connect -> query($sql);
 
     echo json_encode(array("info" => $sql));

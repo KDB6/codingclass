@@ -131,7 +131,7 @@ canvas{
 .tetris__bg {
     background: #00000080;
     position: absolute;
-    width: 700px;
+    width: 715px;
     height: 740px;
     border-radius: 3px;
     z-index: 8;

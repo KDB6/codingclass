@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래머스01 : 삼총사</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">프로그래머스 1단계 : 삼총사</h2>
+            <p class="t_desc2">
+                한국중학교에 다니는 학생들은 각자 정수 번호를 갖고 있습니다.<br>
+                이 학교 학생 3명의 정수 번호를 더했을 때 0이 되면 3명의 학생은 삼총사라고 합니다.<br>
+                예를 들어, 5명의 학생이 있고, 각각의 정수 번호가 순서대로 -2, 3, 0, 2, -5일 때,<br>
+                첫 번째, 세 번째, 네 번째 학생의 정수 번호를 더하면 0이므로 세 학생은 삼총사입니다.<br>
+                또한, 두 번째, 네 번째, 다섯 번째 학생의 정수 번호를 더해도 0이므로 세 학생도 삼총사입니다.<br>
+                따라서 이 경우 한국중학교에서는 두 가지 방법으로 삼총사를 만들 수 있습니다.<br><br>
+
+                한국중학교 학생들의 번호를 나타내는 정수 배열 number가 매개변수로 주어질 때,<br>
+                학생들 중 삼총사를 만들 수 있는 방법의 수를 return 하도록 solution 함수를 완성하세요.
+            </p>
+
+            <hr>
+
+            <h4 class="t_tit2">제한 사항</h4>
+            <p class="t_desc2">
+                3 ≤ number의 길이 ≤ 13<br>
+                -1,000 ≤ number의 각 원소 ≤ 1,000<br>
+                서로 다른 학생의 정수 번호가 같을 수 있습니다.
+            </p>
+
+            <h3 class="t_tit2">나의 문제 풀이</h3>
+            <p class="t_desc">
+                이 문제는 풀다가 도저히 몰라서 다른 분의 코드를 참고했습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(number) {
+    let result = 0;
+    let length = number.length;
+
+    if(length === 3) {
+        return number.reduce((a, b) => a + b) === 0 ? 1 : 0
+    }
+
+    for(let i = 0; i &lt; length - 2; i++) {
+        for(let j = i + 1; j &lt;  length - 1; j++) {
+            for(let k = j + 1; k &lt; length; k++) {
+                if(number[i] + number[j] + number[k] === 0) {
+                    result++;
+                }
+            }
+        }
+    }
+    return result;
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">다른 사람 문제 풀이</h3>
+            <p class="t_desc">
+
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(number) {
+    let result = 0;
+
+    const combination = (current, start) => {
+        if (current.length === 3) {
+            result += current.reduce((acc, cur) => acc + cur, 0) === 0 ? 1 : 0;
+            return;
+        }
+
+        for (let i = start; i &lt; number.length; i++) {
+            combination([...current, number[i]], i + 1);
+        }
+    }
+    combination([], 0);
+    return result;
+}
+</code></pre>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

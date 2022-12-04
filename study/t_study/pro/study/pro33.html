@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로그래머스01 : 3진법 뒤집기</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dracula.css">
+</head>
+<body>
+    
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">프로그래머스 1단계 : 3진법 뒤집기</h2>
+            <p class="t_desc2">
+                자연수 n이 매개변수로 주어집니다. n을 3진법 상에서 앞뒤로 뒤집은 후,<br>
+                이를 다시 10진법으로 표현한 수를 return 하도록 solution 함수를 완성해주세요.
+            </p>
+
+            <hr>
+
+            <h4 class="t_tit2">제한 사항</h4>
+            <p class="t_desc2">
+                n은 1 이상 100,000,000 이하인 자연수입니다.
+            </p>
+
+            <h3 class="t_tit2">나의 문제 풀이</h3>
+            <p class="t_desc">
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">function solution(n) {
+    var answer = 0;
+    //10진 -> 3진수
+    let tmp = n.toString(3);
+    tmp = tmp.split("").reverse().join("");
+    //3진수를 10진수로 변환 parseInt(변수, 현재진수값);
+    answer = parseInt(tmp,3);
+    return answer;
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">다른 사람 문제 풀이</h3>
+            <p class="t_desc">
+                위 코드를 더욱 편하게 한줄로 푼 것 같습니다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">const solution = (n) => {
+    return parseInt([...n.toString(3)].reverse().join(""), 3);
+}
+</code></pre>
+            </div>
+        </div>
+    </main>
+    
+    <script src="../css/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

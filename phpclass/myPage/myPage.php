@@ -2,18 +2,24 @@
     include "../connect/connect.php";
     include "../connect/session.php";
     include "../connect/sessionCheck.php";
-?>
 
+    $MemberID = $_SESSION['myMemberID'];
+    $sql = "SELECT * FROM myMember WHERE myMemberID = $MemberID";
+    $result = $connect -> query($sql);
+    $info = $result -> fetch_array(MYSQLI_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP 사이트 만들기</title>
 
-    <?php include "../include/head.php"?>
+    <?php include "../include/link.php" ?>
 </head>
+
 <body>
     <div id="skip">
         <a href="#header">헤더 영역 바로가기</a>
@@ -22,8 +28,8 @@
     </div>
     <!-- //skip -->
 
-    <?php include "../include/header.php"?>
-    <!-- //header -->
+    <?php include "../include/header.php" ?>
+    <!-- header -->
 
     <main id="main">
         <section id="join" class="container section">
@@ -35,53 +41,42 @@
                         <img src="../assets/img/imgDefault.svg" alt="s">
                     </div>
                     <div class="intro">
-                        웹과 코딩에 관심이 많은 웹스토리보이입니다.
+                        웹과 코딩에 관심이 많은 <?=$info['youName']?>입니다.
                     </div>
                     <div class="info">
                         <ul>
                             <li>
                                 <strong>이메일</strong>
-                                <span>webstoryboy@naver.com</span>
+                                <span><?=$info['youEmail']?></span>
                             </li>
                             <li>
                                 <strong>이름</strong>
-                                <span>황상연</span>
+                                <span><?=$info['youName']?></span>
                             </li>
                             <li>
                                 <strong>닉네임</strong>
-                                <span>리치클럽</span>
-                            </li>
-                            <li>
-                                <strong>생일</strong>
-                                <span>1999-09-03</span>
+                                <span><?=$info['youNickName']?></span>
                             </li>
                             <li>
                                 <strong>연락처</strong>
-                                <span>010-0333-0444</span>
-                            </li>
-                            <li>
-                                <strong>성별</strong>
-                                <span>남자</span>
-                            </li>
-                            <li>
-                                <strong>웹 사이트</strong>
-                                <span></span>
+                                <span><?=$info['youPhone']?></span>
                             </li>
                         </ul>
                     </div>
                     <div class="btn">
-                        <a href="mypageModify.php">수정하기</a>   
-                        <a href="mypageRemove.php">탈퇴하기</a>   
-                        <a href="mypageRemove.php">로그아웃</a>   
+                        <a href="mypageModify.php">수정하기</a>
+                        <a href="mypageRemove.php">탈퇴하기</a>
+                        <a href="../login/logout.php">로그아웃</a>
                     </div>
-                   
+
                 </div>
             </div>
         </section>
     </main>
-    <!-- //main -->
+    <!-- main -->
 
-    <?php include "../include/footer.php"?>
-    <!-- //footer -->
+    <?php include "../include/footer.php" ?>
+    <!-- footer -->
 </body>
+
 </html>

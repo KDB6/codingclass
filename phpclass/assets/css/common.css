@@ -1,6 +1,7 @@
 /* body */
 body {
-    background: var(--bg_basic);
+    background: var(--bg-basic);
+    font-family: var(--font-basic);
 }
 
 /* skip */

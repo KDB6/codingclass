@@ -1,6 +1,10 @@
 /* ==================================================
    Info Block
 ================================================== */
+#customizing {
+	background-color: #fffaf5;
+	padding-bottom: 80px;
+}
 .info-block {
     border-left: 4px solid #DE5E60;
     overflow: hidden;
@@ -221,9 +225,10 @@
 #contents_tit p {
 	padding:35px 0; 
 	font-family: 'Gaegu', cursive; font-size: 40px;
+	background-color: #FFEDDC;
 }
 #contents_tit p a {
-	color:#2c94c4; 
+	color:#ce6a00; 
 }
 
 
@@ -274,15 +279,15 @@
 }
 .gridly li a {
 	text-decoration: none; 
-	color:#494e51; 
+	color:#ce6a00; 
 	display: block; 
 	margin-right: 20px; 
 }
 
 .gridly .webstandard a {
-	color: #157ed3;
+	color: #ce6a00;
 	display: block;
-	border-bottom: 3px solid #a5d5fa;
+	border-bottom: 3px solid #ffc281;
 	margin-right: 20px;
 } 
 .gridly .html5 a {
@@ -334,6 +339,8 @@
 	overflow: hidden;
 	cursor: pointer;
 	height: 100%;
+	background-color: #ffeedc;
+	border-radius: 10px;
 }
 
 .image-wrap img {
@@ -342,6 +349,7 @@
     display: block;
     margin: 0 auto;
 	height: 100px;
+	border-radius: 10px;
 }
 
 .image-wrap .hover-wrap {
@@ -384,7 +392,7 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: #ceedff;
+	background: #ffdab3;
 	color: #FFFFFF;
 	font-size: 25px;
 	font-weight: 300;
@@ -402,7 +410,7 @@
 }
 .image-wrap .hover-wrap .overlay-text-thumb-donut.bts {
     background: #fff;
-	color: #A5D5FA;
+	color: #ce6a00;
     width: auto;
     left: 50%;
     top: 50%;
@@ -418,12 +426,12 @@
 	transition: all 0.3s;
 }
 .image-wrap .hover-wrap .overlay-text-thumb-donut.bts:hover {
-    background: #A5D5FA;
+    background: #ffbd77;
 	color: #fff;
 }
 .image-wrap .hover-wrap .overlay-text-thumb1-donut.bts {
     background: #fff;
-	color: #A5D5FA;
+	color: #ce6a00;
     width: auto;
     left: 50%;
     top: 54%;
@@ -436,7 +444,7 @@
 	transition: all 0.3s;
 }
 .image-wrap .hover-wrap .overlay-text-thumb1-donut.bts:hover {
-    background: #A5D5FA;
+    background: #ffbd77;
 	color: #fff;
 }
 .image-wrap .hover-wrap .overlay-text-thumb-donut {
@@ -1978,9 +1986,9 @@
 
 
 .donutImg {text-align: center; }
-.donutImg h5 {color: #A5D5FA; font-size: 23px; padding-top: 22px; text-transform: uppercase;}
-.donutImg p {color: #565656; font-size: 18px; }
-.donutImg span {color: #999; font-size: 12px; text-transform: uppercase;}
+.donutImg h5 {color: #ce6a00; font-size: 23px; padding-top: 22px; text-transform: uppercase;}
+.donutImg p {color: #ffbd77; font-size: 18px; }
+.donutImg span {color: #ffbd77; font-size: 12px; text-transform: uppercase;}
 
 .appleImg {text-align: center; }
 .appleImg h5 {color: #51b224; font-size: 22px; padding-top: 22px; text-transform: uppercase;}

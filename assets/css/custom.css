@@ -6,7 +6,7 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 
 /* Header Navigation */
 #top-nav{
-	border-bottom: 1px solid #e1e6dd;
+	border-bottom: 1px solid #FFD3A3;
 	background: #FFF;
 	-webkit-transform: translateZ(0)
 
@@ -24,7 +24,7 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 	margin: 0px;
 	font-weight: 400;
     font-size: 20px;
-    color: #222;
+    color: #ce6a00;
     font-family: Abel;
 	-webkit-transition: background-color 200ms ease;
 	-moz-transition: background-color 200ms ease;
@@ -52,7 +52,7 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 /* Header  */
 
 #header{
-	background:#a5d5fa center 57px;
+	background:#FFEDDC center 57px;
 	padding: 10px 0 10px 0px;
 }
 #header.sub {
@@ -75,7 +75,7 @@ body {background:#f1f4fb url(../img/body_bg.gif)}
 #header img {width: 190px; display: block; margin: 0 auto; padding-right: 50px;}
 
 #header h1{
-	color: #fff;
+	color: #ce6a00;
 	margin-bottom: 0px;
 	margin-top: 20px;
 	font-weight: 500;
@@ -128,8 +128,8 @@ pre.pre-show{
 .header_tit {margin-top:70px; }
 .header_tit h1 {display:inline-block; font-size: 45px; text-transform:uppercase; color:#fff;}
 .header_tit h2 {margin-top:4px;}
-.header_tit h2 a {font-size:30px; font-family: 'Abel'; color:#fff; b}
-.header_icon {margin: 20px 0; }
+.header_tit h2 a {font-size:30px; font-family: 'Abel'; color:#fff;}
+.header_icon {margin: 20px 0;}
 .header_icon ul {margin:20px 0;}
 
 .header_icon {text-align: center;}
@@ -172,9 +172,9 @@ padding: 8px 12px;
 /* Footer */
 
 #footer{
-	margin-top: 80px;
+	/* margin-top: 80px; */
 	padding: 20px;
-	background: #f3f3f3;
+	background: #FFEDDC;
 	text-align: center
 }
 .twitter-share-button{
@@ -462,11 +462,8 @@ background: url('../img/AjaxLoader.gif') no-repeat center center #aebab6;
 	}
 	#header h1{
 	color: #3692b8;
-	
-	
-
+	}
 }
-
 /*NO MORE TABLES!! ;) 
 */
 @media (max-width: 767px) {
@@ -487,14 +484,5 @@ background: url('../img/AjaxLoader.gif') no-repeat center center #aebab6;
 	}
 
 	td:nth-of-type(2):before { content: "" ;font-weight: bold;}
-    
-   
+	}  
 }
-
-
-
-
-
-
-
-

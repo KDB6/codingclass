@@ -79,13 +79,13 @@
 }
 
 /*  폰트 */
-.nexon {
-    font-family: "NexonLv1Gothic";
-    font-weight: 400;
-}
 .gmark {
     font-family: "GmarketSans";
-    font-weight: 500;
+    font-weight: 400;
+}
+.nexon {
+    font-family: 'NexonLv1Gothic';
+    font-weight: 400;
 }
 
 /* 배경 */
@@ -94,9 +94,6 @@
 }
 body {
     overflow: overlay;
-}
-.skyblue {
-    background-color: #F6F8FD;
 }
 
 /* fixed */

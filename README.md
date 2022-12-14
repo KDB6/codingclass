@@ -43,6 +43,7 @@ https://kdb6.github.io/codingclass/site/site1_res/index.html
 ### 사이트 제작하기02
 
 https://kdb6.github.io/codingclass/site/site2/index.html
+https://kdb6.github.io/codingclass/site/site2my/index.html
 
 ### 게임 이펙트 메인 페이지
 

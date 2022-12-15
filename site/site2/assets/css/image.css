@@ -3,55 +3,73 @@
     display: flex;
     justify-content: space-between;
 }
+
 .image {
-    width: 32%;
-    overflow: hidden;
-    position: relative;
-}
-.image__box {}
-.image__box img {
-    vertical-align: top;
-    width: 100%;
-    height: 100%;
-}
-.image__desc {
-    position: absolute;
-    left: 0;
-    bottom: -100px;
-    width: 100%;
-    padding: 23px 20px;
-    text-align: center;
-    backdrop-filter: blur(10px);
-    box-sizing: border-box;
-    background: #514E6751;
+    width: 49%;
+    height: 370px;
     color: #fff;
-    transition: all 0.3s ease-in;
+    padding: 200px 30px 30px 30px;
+    box-sizing: border-box;
 }
-.image:hover .image__desc {
-    bottom: 0;
-}
-.image:hover .image__box img {
-    transform: scale(1.05);
-    transition: all 0.3s ease-in;
-}
-.img01 .image__desc {background: rgba(235, 77, 74, 0.5);}
-.img02 .image__desc {background: rgba(255, 208, 89, 0.5);}
-.img03 .image__desc {background: rgba(188, 181, 215, 0.5);}
 
-.img01 .image__desc h3 {color: #6c0506;}
-.img02 .image__desc h3 {color: #745a00}
-.img03 .image__desc h3 {color: #d0c8ff;}
+.image.img1 {
+    background: url(../img/w_img_bg01_01.jpg) no-repeat center;
+}
 
-.img01 .image__desc .more {color: #6c0506;}
-.img02 .image__desc .more {color: #745a00}
-.img03 .image__desc .more {color: #d0c8ff;}
-.image__desc h3 {
-    font-size: 24px;
+.image.img2 {
+    background: url(../img/w_img_bg01_02.jpg) no-repeat center;
+}
+
+.image__tit {
+    font-size: 32px;
     margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-.image__desc .more {
+
+.image__desc {
     font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
-.image__desc .more:hover {
-    text-decoration: underline;
+
+.image__btn {
+    font-size: 16px;
+    color: #fff;
+    background-color: #20b6a4;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.image__btn.yellow {
+    background-color: #386caa;
+}
+
+/* medie */
+@media (max-width: 960px) {}
+
+@media (max-width: 600px) {
+    .image__inner {
+        flex-direction: column;
+    }
+
+    .image {
+        width: 100%;
+        padding: 210px 20px 20px 20px;
+    }
+
+    .image:first-child {
+        margin-bottom: 20px;
+    }
+
+    .image__tit {
+        font-size: 24px;
+    }
 }

@@ -28,9 +28,10 @@ figure,
 figcaption {
     margin: 0;
     padding: 0;
+    -webkit-text-size-adjust: 100%;
 }
 
-/* 시멘틱 태그 초기화 */
+/* 시멘트 태그 */
 article,
 aside,
 details,
@@ -53,10 +54,10 @@ select,
 table,
 textarea {
     color: #000;
-    font-family: 'GmarketSans', 'NexonLv1Gothic', 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕';
+    font-family: 'NexonLv1Gothic', 'ScoreDream';
 }
 
-/* 가로모드 초기화 */
+/* 가로 모드 초기화 */
 html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -72,7 +73,7 @@ a {
 li,
 ol,
 ul {
-    list-style: none;
+    /* list-style: none; */
 }
 
 /* 제목 초기화 */
@@ -86,8 +87,7 @@ h6 {
 }
 
 /* 폰트 스타일 초기화 */
-em,
-address {
+em, address {
     font-style: normal;
 }
 
@@ -98,9 +98,7 @@ img {
 }
 
 /* 보더 초기화 */
-img,
-fieldset,
-button {
+img, fieldset, button {
     border: 0;
 }
 
@@ -108,29 +106,27 @@ button {
 .clearfix {
     zoom: 1;
 }
-
 .clearfix::before,
 .clearfix::after {
     content: '';
     display: block;
     line-height: 0;
 }
-
 .clearfix::after {
     clear: both;
 }
 
 /* 블라인드 효과 */
 .blind {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden
+    position:absolute;
+    clip:rect(0 0 0 0);
+    width:1px;
+    height:1px;
+    margin:-1px;
+    overflow:hidden
 }
 
-/* 이미지 대체(ir) 효과 */
+/* 이미지 대체 (ir) */
 .ir {
     display: block;
     overflow: hidden;

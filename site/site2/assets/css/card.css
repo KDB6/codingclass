@@ -1,49 +1,69 @@
-/* cardType02 */
-#cardType {
-        background-color: #f6f8fd;
-}
-img {
-        width: 100%;
-}
+/* cardType */
 .card__inner {
-        display: flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    width: 32%;
+    background: #f5f5f5;
+}
+
+.card__body {
+    padding: 24px;
+}
+
+.card__body .tit {
+    font-size: 24px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 20px;
+}
+
+.card__body .desc {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+/* media */
+@media (max-width:960px) {
+    .card__inner {
         flex-wrap: wrap;
-        justify-content: space-between;
+    }
+
+    .card {
+        width: 49%;
+    }
+
+    .card:last-child {
+        display: none;
+    }
 }
-.card__inner .card {
-        width: 24%;
-        position: relative;
-}
-.card__inner .card:first-child {
-        margin-bottom: 50px;
-}
-.card__inner .card .tit {
-        font-size: 28px;
-        margin-top: 20px;
-        margin-bottom: 10px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        padding-right: 20px;
-}
-.card__inner .card .desc {
-        font-size: 18px;
-        font-weight: 300;
-        color: #666;
-        line-height: 1.4;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 3; 
-        -webkit-box-orient: vertical;
-}
-.card__inner .card .more {
-        width: 24px;
-        height: 24px;
-        background-image: url(assets/img/arrow.svg);
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 230px;
-        border-radius: 5px;
+
+@media (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+
+    .card:first-child {
+        margin-bottom: 20px;
+    }
+
+    .card__body {
+        padding: 20px;
+    }
+
+    .card__body .desc {
+        font-size: 16px;
+    }
 }

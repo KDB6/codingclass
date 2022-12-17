@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>패럴랙스 이펙트 04</title>
+    <link rel="stylesheet" href="../../assets/css/parallax.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+
+    <link href="https://webfontworld.github.io/score/SCoreDream.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+    <style>
+        /* parallax__nav */
+        #parallax__nav {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 2000;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 20px 30px;
+            border-radius: 50px;
+            transition: top, .4s ease;
+        }
+        #parallax__nav li {
+            display: inline;
+            margin: 0 5px;
+        }
+        #parallax__nav li a {
+            display: inline-block;
+            height: 30px;
+            padding: 5px 20px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #parallax__nav li.active a {
+            background: #fff;
+            color: #000;
+            border-radius: 20px;
+            box-sizing: content-box;
+        }
+        #parallax__cont {
+            max-width: 1600px;
+            width: 98%;
+            margin: 0 auto;
+            /* background-color: rgba(255, 255, 255, 0.1); */
+        }
+        .content__item {
+            width: 1000px;
+            max-width: 70vw;
+            margin: 30vw auto;
+            /* background-color: rgba(255, 255, 255, 0.3); */
+            text-align: left;
+            margin-right: 0;
+            position: relative;
+            padding-top: 14vw;
+        }
+        .content__item:nth-child(even) {
+            margin-left: 0;
+            text-align: right;
+        }
+        .content__item__num {
+            font-size: 35vw;
+            font-family: "Lato";
+            font-weight: 100;
+            position: absolute;
+            left: -5vw;
+            top: -10vw;
+            opacity: 0.2;
+            z-index: -2;
+        }
+        .content__item:nth-child(even) .content__item__num {
+            left: auto;
+            right: -5vw;
+        }
+        .content__item__title {
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+        .content__item__imgWrap {
+            width: 100%;
+            padding-bottom: 56.25%;
+            background-color: #fff;
+            position: relative;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .content__item__img {
+            position: absolute;
+            background: url(../../assets/img/slide10.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            width: 110%;
+            height: 110%;
+            left: -5%;
+            top: -5%;
+            filter: saturate(0%);
+            transition: all 1s;
+        }
+        .content__item:nth-child(1) .content__item__img {
+            background-image: url(../../assets/img/slide01.jpg);
+        }
+        .content__item:nth-child(2) .content__item__img {
+            background-image: url(../../assets/img/slide02.jpg);
+        }
+        .content__item:nth-child(3) .content__item__img {
+            background-image: url(../../assets/img/slide03.jpg);
+        }
+        .content__item:nth-child(4) .content__item__img {
+            background-image: url(../../assets/img/slide04.jpg);
+        }
+        .content__item:nth-child(5) .content__item__img {
+            background-image: url(../../assets/img/slide05.jpg);
+        }
+        .content__item:nth-child(6) .content__item__img {
+            background-image: url(../../assets/img/slide06.jpg);
+        }
+        .content__item:nth-child(7) .content__item__img {
+            background-image: url(../../assets/img/slide07.jpg);
+        }
+        .content__item:nth-child(8) .content__item__img {
+            background-image: url(../../assets/img/slide08.jpg);
+        }
+        .content__item:nth-child(9) .content__item__img {
+            background-image: url(../../assets/img/slide09.jpg);
+        }
+        .content__item__desc {
+            font-size: 4vw;
+            line-height: 1.4;
+            margin-top: -5vw;
+            margin-left: -4vw;
+            word-break: keep-all;
+        }
+        .content__item:nth-child(even) .content__item__desc {
+            margin-left: auto;
+            margin-right: -4vw;
+        }
+
+        @media (max-width: 800px) {
+            #parallax__cont {
+                margin-top: 70vw;
+            }
+            #parallax__nav {
+                padding: 10px;
+                right: auto;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 5px;
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+            #parallax__nav li {
+                display: block;
+                margin: 5px;
+            }
+            #parallax__nav li a {
+                font-size: 14px;
+                padding: 5px;
+                border-radius: 5px;
+                height: auto;
+                line-height: 1.4;
+            }
+            #parallax__nav li.active a {
+                border-radius: 10px;
+            }
+            #parallax__info {
+                left: 10px;
+                bottom: 10px;
+            }
+        }
+
+        /* 한 번에 나타나기 */
+        /* #contents > section {
+            opacity: 0;
+            transition: all 1s;
+        }
+        #contents > section {
+            opacity: 1;
+        } */
+
+        /* 개별적으로 나타나기 */
+        #contents > section .content__item__num {
+            opacity: 0;
+            transform: translateY(200px);
+            transition: all 1s 0.1s cubic-bezier(0.46, 0.03, 0.51, 0.94);
+        }
+        #contents > section .content__item__title {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 1s 0.3s cubic-bezier(0.42, 0, 0.59, 1.02);
+        }
+        #contents > section .content__item__imgWrap {
+            opacity: 0;
+            transform: translateY(200px) rotate(30deg) skew(20deg);
+            transition: all 1s 0.6s cubic-bezier(0.42, 0, 0.55, 0.99);
+        }
+        #contents > section .content__item__desc {
+            opacity: 0;
+            transform: translateX(-200px);
+            transition: all 1s 0.9s cubic-bezier(0.42, 0, 0.57, 0.98);
+        }
+
+        #contents > section.show .content__item__num {
+            opacity: 0.07;
+            transform: translateY(0);
+        }
+        #contents > section.show .content__item__title {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        #contents > section.show .content__item__imgWrap {
+            opacity: 1;
+            transform: translateY(0) rotate(0) skew(0);
+        }
+        #contents > section.show .content__item__desc {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        #contents > section:nth-child(even) .content__item__title {
+            transform: translateX(100px);
+        }
+        #contents > section:nth-child(even).show .content__item__title {
+            transform: translateX(0);
+        }
+        #contents > section:nth-child(even) .content__item__desc {
+            transform: translateX(200px);
+        }
+        #contents > section:nth-child(even).show .content__item__desc {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1><a href="parallaxEffect.html">Javascript Mouse Effect 04</a></h1>
+        <p>패럴렉스 이펙트 - 나타나기</p>
+        <ul>
+            <li><a href="parallaxEffect01.html">1</a></li>
+            <li><a href="parallaxEffect02.html">2</a></li>
+            <li><a href="parallaxEffect03.html">3</a></li>
+            <li class="active"><a href="parallaxEffect04.html">4</a></li>
+            <li><a href="parallaxEffect05.html">5</a></li>
+            <li><a href="parallaxEffect06.html">6</a></li>
+            <li><a href="parallaxEffect07.html">7</a></li>
+        </ul>
+    </header>
+    <!-- //header -->
+
+    <main id="parallax__cont">
+        <div id="contents">
+            <!-- section1 -->
+            <section id="section1" class="content__item">
+                <span class="content__item__num">01</span>
+                <h2 class="content__item__title">section1</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">니 인생은 너가 바꾸는거다.</p>
+            </section>
+
+            <!-- section2 -->
+            <section id="section2" class="content__item">
+                <span class="content__item__num">02</span>
+                <h2 class="content__item__title">section2</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">남 탓 하기 전에 너 자신을 봐라.</p>
+            </section>
+
+            <!-- section3 -->
+            <section id="section3" class="content__item">
+                <span class="content__item__num">03</span>
+                <h2 class="content__item__title">section3</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">알면서도 안하고 가만히 있으면 거지가 되면 된다.</p>
+            </section>
+
+            <!-- section4 -->
+            <section id="section4" class="content__item">
+                <span class="content__item__num">04</span>
+                <h2 class="content__item__title">section4</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">남들은 너한테 큰 관심이 없다.</p>
+            </section>
+
+            <!-- section5 -->
+            <section id="section5" class="content__item">
+                <span class="content__item__num">05</span>
+                <h2 class="content__item__title">section5</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">너 혼자 알아서 해라.</p>
+            </section>
+
+            <!-- section6 -->
+            <section id="section6" class="content__item">
+                <span class="content__item__num">06</span>
+                <h2 class="content__item__title">section6</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">돈이 세상에 다는 아니지만 세상은 돈으로 굴러간다.</p>
+            </section>
+
+            <!-- section7 -->
+            <section id="section7" class="content__item">
+                <span class="content__item__num">07</span>
+                <h2 class="content__item__title">section7</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">사회는 널 기다려주지 않는다.</p>
+            </section>
+
+            <!-- section8 -->
+            <section id="section8" class="content__item">
+                <span class="content__item__num">08</span>
+                <h2 class="content__item__title">section8</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">힘 없는 정의는 무능이다.</p>
+            </section>
+
+            <!-- section9 -->
+            <section id="section9" class="content__item">
+                <span class="content__item__num">09</span>
+                <h2 class="content__item__title">section9</h2>
+                <figure class="content__item__imgWrap">
+                    <div class="content__item__img"></div>
+                </figure>
+                <p class="content__item__desc">객관적으로 너 자신을 봐라</p>
+            </section>
+        </div>
+        <section id="parallaxType">
+        </section>
+    </main>
+    <!-- //main -->
+
+    <!-- aside -->
+
+    <footer id="footer">
+        <div class="modal__wrap">
+            <div class="modal__btn">소스 보기</div>
+            <div class="modal__cont">
+                <iframe style="width: 1400px; height:800px; display: none;" src="https://github1s.com/KDB6/codingclass/blob/main/javascript/effect/parallaxEffect04.html" frameborder="0"></iframe>
+                <div class="modal__close">
+                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/iframe.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        // 재귀함수
+        function scroll() {
+            let scrollTop = window.pageXOffset || document.documentElement.scrollTop || window.scrollY
+            
+            document.querySelectorAll(".content__item").forEach(item => {
+                if(scrollTop > item.offsetTop - window.innerHeight/2) {
+                    item.classList.add("show");
+                }
+            });
+
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+    </script>
+</body>
+</html>

@@ -85,9 +85,9 @@ let musicIndex = 1;     // 현재 음악 인덱스
 function loadMusic(num) {
     musicName.innerText = allMusic[num-1].name;                             // 뮤직 이름 로드
     musicArtist.innerText = allMusic[num-1].artist;                         // 뮤직 아티스트 로드
-    musicView.src = `../assets/img/music/${allMusic[num-1].img}.png`;       // 뮤직 이미지 로드
+    musicView.src = `../../assets/img/music/${allMusic[num-1].img}.png`;       // 뮤직 이미지 로드
     musicView.alt = allMusic[num-1].name;                                   // 뮤직 이미지 alt 로드
-    musicAudio.src = `../assets/music/${allMusic[num-1].audio}.mp3`;        // 뮤직 로드
+    musicAudio.src = `../../assets/music/${allMusic[num-1].audio}.mp3`;        // 뮤직 로드
 }
 
 // 재생 버튼
@@ -228,7 +228,7 @@ for(let i=0; i<allMusic.length; i++) {
             <li data-index="${i+1}">
                 <strong>${allMusic[i].name}</strong>
                 <em>${allMusic[i].artist}</em>
-                <audio class="${allMusic[i].audio}" src="../assets/music/${allMusic[i].audio}.mp3"></audio>
+                <audio class="${allMusic[i].audio}" src="../../assets/music/${allMusic[i].audio}.mp3"></audio>
                 <span class="audio__duration" id="${allMusic[i].audio}">재생 시간</span>
             </li>
     `;

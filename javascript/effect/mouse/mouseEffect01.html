@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트01</title>
+    <link rel="stylesheet" href="../../assets/css/mouse.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+
+    <style>
+        /* mouseType */
+        .mouse__cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+            user-select: none;
+            pointer-events: none;
+            transition: 
+                background-color 0.25s,
+                border-color 0.25s,
+                transform 0.6s,
+                border-radius 0.6s
+            ;
+        }
+        .mouse__cursor.style1 {
+            background-color: #dddddd30;
+            border-color: #b0aaff;
+        }
+        .mouse__cursor.style2 {
+            background-color: #dddddd30;
+            border-color: #7671c5;
+            transform: scale(1.3) rotateY(720deg);
+        }
+        .mouse__cursor.style3 {
+            background-color: #dddddd30;
+            border-color: #514c91;
+            transform: scale(1.3) rotateX(720deg);
+        }
+        .mouse__cursor.style4 {
+            background-color: #dddddd30;
+            border-color: #5e5b88;
+            transform: scale(5);
+        }
+        .mouse__cursor.style5 {
+            background-color: #dddddd30;
+            border-color: #352f88;
+            transform: scale(0.5);
+        }
+        .mouse__cursor.style6 {
+            background-color: #dddddd30;
+            border-color: #554af0;
+            border-radius: 0;
+            transform: scale(3);
+        }
+        .mouse__wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            overflow: hidden;
+            flex-direction: column;
+            cursor: none;
+        }
+        .mouse__wrap p {
+            font-size: 2vw;
+            line-height: 2;
+            font-weight: 300;
+        }
+        .mouse__wrap p:last-child {
+            font-size: 3vw;
+            font-weight: 300;
+        }
+        .mouse__wrap p span {
+                border-bottom: 0.15vw dashed #666;
+                color: #b0aaff;
+            }
+        @media(max-width: 800px) {
+            .mouse__wrap p {
+                padding: 0 20px;
+                font-size: 20px;
+                line-height: 1.5;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .mouse__wrap p:last-child {
+                font-size: 40px;
+                line-height: 1.2;
+                text-align: center;
+                word-break: keep-all;
+            }
+        }
+
+        .mouse__info {
+            position: absolute;
+            left: 20px;
+            bottom: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #fff;
+            list-style: none;
+        }
+    </style>
+</head>
+<body class="jeju img04">
+    <header id="header">
+        <h1>Javascript Mouse Effect01</h1>
+        <p>마우스 이펙트 - 마우스 따라다니기</p>
+        <ul>
+            <li class="active"><a href="mouseEffect01.html">1</a></li>
+            <li><a href="mouseEffect02.html">2</a></li>
+            <li><a href="mouseEffect03.html">3</a></li>
+            <li><a href="mouseEffect04.html">4</a></li>
+            <li><a href="mouseEffect05.html">5</a></li>
+            <li><a href="mouseEffect06.html">6</a></li>
+        </ul>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <section id="mouseType">
+            <div class="mouse__cursor"></div>
+            <div class="mouse__wrap">
+                <p>There's no <span class="style1">more</span> <span class="style2">excuse</span> than what you <span class="style3">don't do.</span></p>
+                <p>니가 <span class="style4">안하는 것 뿐</span> 그 <span class="style5">이상</span>의 <span class="style6">핑계</span>는 없다.</p>
+            </div>
+        </section>
+
+        <div class="mouse__info">
+            <ul>
+                <li>clientX : <span class="clientX">0</span>px</li>
+                <li>clientY : <span class="clientY">0</span>px</li>
+                <li>offsetX : <span class="offsetX">0</span>px</li>
+                <li>offsetY : <span class="offsetY">0</span>px</li>
+                <li>pageX : <span class="pageX">0</span>px</li>
+                <li>pageY : <span class="pageY">0</span>px</li>
+                <li>screenX : <span class="screenX">0</span>px</li>
+                <li>screenY : <span class="screenY">0</span>px</li>
+            </ul>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <div class="modal__wrap">
+            <div class="modal__btn">소스 보기</div>
+            <div class="modal__cont">
+                <iframe style="width: 1400px; height:800px; display: none;" src="https://github1s.com/KDB6/codingclass/blob/main/javascript/effect/mouseEffect01.html" frameborder="0"></iframe>
+                <div class="modal__close">
+                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/iframe.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        window.addEventListener("mousemove", (event) => {
+            document.querySelector(".clientX").innerText = event.clientX;
+            document.querySelector(".clientY").innerText = event.clientY;
+            document.querySelector(".offsetX").innerText = event.offsetX;
+            document.querySelector(".offsetY").innerText = event.offsetY;
+            document.querySelector(".pageX").innerText = event.pageX;
+            document.querySelector(".pageY").innerText = event.pageY;
+            document.querySelector(".screenX").innerText = event.screenX;
+            document.querySelector(".screenY").innerText = event.screenY;
+        });
+        
+        const cursor = document.querySelector(".mouse__cursor");
+
+        window.addEventListener("mousemove", (e) => {
+            cursor.style.left = e.clientX - 25 + "px";
+            cursor.style.top = e.clientY - 25 + "px";
+        });
+
+        // document.querySelector(".style1").addEventListener("mouseover", () => {
+        //     cursor.classList.add("style1");
+        // });
+        // document.querySelector(".style1").addEventListener("mouseout", () => {
+        //     cursor.classList.remove("style1");
+        // });
+
+        // document.querySelector(".style2").addEventListener("mouseover", () => {
+        //     cursor.classList.add("style2");
+        // });
+        // document.querySelector(".style2").addEventListener("mouseout", () => {
+        //     cursor.classList.remove("style2");
+        // });
+
+        // document.querySelector(".style3").addEventListener("mouseover", () => {
+        //     cursor.classList.add("style3");
+        // });
+        // document.querySelector(".style3").addEventListener("mouseout", () => {
+        //     cursor.classList.remove("style3");
+        // });
+
+        // document.querySelector(".style4").addEventListener("mouseover", () => {
+        //     cursor.classList.add("style4");
+        // });
+        // document.querySelector(".style4").addEventListener("mouseout", () => {
+        //     cursor.classList.remove("style4");
+        // });
+
+        // document.querySelector(".style5").addEventListener("mouseover", () => {
+        //     cursor.classList.add("style5");
+        // });mouseouts
+        // document.querySelector(".style5").addEventListener("mouseout", () => {
+        //     cursor.classList.remove("style5");
+        // });
+
+        // document.querySelector(".style6").addEventListener("mouseover", () => {
+        //     cursor.classList.add("style6");
+        // });
+        // document.querySelector(".style6").addEventListener("mouseout", () => {
+        //     cursor.classList.remove("style6");
+        // });
+
+        // // for문
+        // for(let i=1; i<=6; i++) {
+        //     document.querySelector(".style" + i).addEventListener("mouseover", () => {
+        //         cursor.classList.add("style" + i);
+        //     });
+        //     document.querySelector(".style" + i).addEventListener("mouseout", () => {
+        //         cursor.classList.remove("style" + i);
+        //     });
+        // }
+
+        // // forEach문
+        // document.querySelectorAll(".mouse__wrap span").forEach((span, num) => {
+        //     span.addEventListener("mouseover", () => {
+        //         cursor.classList.add("style" + (num + 1));
+        //     });
+        //     span.addEventListener("mouseout", () => {
+        //         cursor.classList.add("style" + (num + 1));
+        //     });
+        // });
+
+        // getAttribute
+        document.querySelectorAll(".mouse__wrap span").forEach(span => {
+            let attr = span.getAttribute("class");
+
+            span.addEventListener("mouseover", () => {
+                cursor.classList.add(attr);
+            });
+            span.addEventListener("mouseout", () => {
+                cursor.classList.remove(attr);
+            });
+        });
+    </script>
+</body>
+</html>

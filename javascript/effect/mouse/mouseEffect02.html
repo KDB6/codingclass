@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이펙트 02</title>
+    <link rel="stylesheet" href="../../assets/css/mouse.css">
+    <link rel="stylesheet" href="../../assets/css/dracula.css">
+
+    <style>
+        /* mouseType */
+        .mouse__wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            overflow: hidden;
+            flex-direction: column;
+            cursor: none;
+        }
+        .mouse__wrap p {
+            font-size: 2vw;
+            line-height: 2;
+            font-weight: 300;
+        }
+        .mouse__wrap p:last-child {
+            font-size: 3vw;
+            font-weight: 300;
+        }
+        .mouse__wrap p span {
+            border-bottom: 0.15vw dashed #666;
+            color: #b0aaff;
+        }
+        @media(max-width: 800px) {
+            .mouse__wrap p {
+                padding: 0 20px;
+                font-size: 20px;
+                line-height: 1.5;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .mouse__wrap p:last-child {
+                font-size: 40px;
+                line-height: 1.2;
+                text-align: center;
+                word-break: keep-all;
+            }
+        }
+        .mouse__cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            z-index: 9999;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.3s, opacity 0.2s;
+        }
+        .mouse__cursor2 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            z-index: 9998;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.5s, opacity 0.2s;
+        }
+        .mouse__cursor.active {
+            transform: scale(0);
+        }
+        .mouse__cursor2.active {
+            transform: scale(2);
+            background: #3b3d6350;
+        }
+    </style>
+</head>
+<body class="jeju img04">
+    <header id="header">
+        <h1>Javascript Mouse Effect02</h1>
+        <p>마우스 이펙트 - 마우스 따라다니기(GSAP)</p>
+        <ul>
+            <li><a href="mouseEffect01.html">1</a></li>
+            <li class="active"><a href="mouseEffect02.html">2</a></li>
+            <li><a href="mouseEffect03.html">3</a></li>
+            <li><a href="mouseEffect04.html">4</a></li>
+            <li><a href="mouseEffect05.html">5</a></li>
+            <li><a href="mouseEffect06.html">6</a></li>
+        </ul>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <section id="mouseType">
+            <div class="mouse__cursor"></div>
+            <div class="mouse__cursor2"></div>
+            <div class="mouse__wrap">
+                <p>Money is not everything in the <span class="style1">world,</span> <span class="style2">but the world</span><span class="style3"> runs on money.</span></p>
+                <p>돈이 <span class="style4">세상에</span> 다는 아니지만<span class="style5">세상은</span> <span class="style6">돈으로</span> 굴러간다.</p>
+            </div>
+        </section>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <div class="modal__wrap">
+            <div class="modal__btn">소스 보기</div>
+            <div class="modal__cont">
+                <iframe style="width: 1400px; height:800px; display: none;" src="https://github1s.com/KDB6/codingclass/blob/main/javascript/effect/mouseEffect02.html" frameborder="0"></iframe>
+                <div class="modal__close">
+                    <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <script src="../../assets/js/highlight.min.js"></script>
+    <script src="../../assets/js/common.js"></script>
+    <script src="../../assets/js/gsap.min.js"></script>
+    <script src="../../assets/js/iframe.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <script>
+        const cursor = document.querySelector(".mouse__cursor");
+        const cursor2 = document.querySelector(".mouse__cursor2");
+        const span = document.querySelectorAll(".mouse__wrap span")
+
+        window.addEventListener("mousemove", e => {
+            // 커서 좌표값 할당
+            // cursor.style.left = e.pageX -5+ "px";
+            // cursor.style.top = e.pageY -5+ "px";
+            // cursor2.style.left = e.pageX -15+ "px";
+            // cursor2.style.top = e.pageY -15+ "px";
+
+            // GSAP
+            gsap.to(cursor, {duration: 0.3, left: e.pageX -5, top:e.pageY -5});
+            gsap.to(cursor2, {duration: 0.8, left: e.pageX -15, top:e.pageY -15});
+
+            // 오버 효과
+            // mouseenter / mouseover / 이벤트 버블링
+            span.forEach(span => {
+                span.addEventListener("mouseenter", () => {
+                    cursor.classList.add("active");
+                    cursor2.classList.add("active");
+                });
+                span.addEventListener("mouseleave", () => {
+                    cursor.classList.remove("active");
+                    cursor2.classList.remove("active");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

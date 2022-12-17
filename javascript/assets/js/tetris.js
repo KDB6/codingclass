@@ -6,10 +6,10 @@ const tetrisOver = document.querySelector(".tetris__over");
 const tetrisOverScore = document.querySelector(".tetris__over > p > span");
 
 let tetrisSound = [
-    "../assets/music/tetris/tetrisStart.mp3",
-    "../assets/music/tetris/tetrisBgm.mp3",
-    "../assets/music/tetris/tetrisBlock.mp3",
-    "../assets/music/tetris/tetrisClear.mp3",
+    "../../assets/music/tetris/tetrisStart.mp3",
+    "../../assets/music/tetris/tetrisBgm.mp3",
+    "../../assets/music/tetris/tetrisBlock.mp3",
+    "../../assets/music/tetris/tetrisClear.mp3",
 ]
 let tetrisStartSound = new Audio(tetrisSound[0]),
     tetrisBgm = new Audio(tetrisSound[1]),

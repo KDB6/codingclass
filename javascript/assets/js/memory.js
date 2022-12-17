@@ -22,9 +22,9 @@ let disableDeck = false;    // 매치 했을 떄
 let matchedCard = 0;
 
 let sound = [
-    "../assets/music/audio/match.mp3",
-    "../assets/music/audio/unmatch.mp3",
-    "../assets/music/audio/success.mp3"
+    "../../assets/music/audio/match.mp3",
+    "../../assets/music/audio/unmatch.mp3",
+    "../../assets/music/audio/success.mp3"
 ]
 let soundMatch = new Audio(sound[0]);
 let soundUnMatch = new Audio(sound[1]);
@@ -175,7 +175,7 @@ function shuffledCard() {
         },4000)
 
         let imgTag = card.querySelector(".back img");
-        imgTag.src = `../assets/img/card/card0${arr[index]}.svg`;
+        imgTag.src = `../../assets/img/card/card0${arr[index]}.svg`;
     })
 }
 

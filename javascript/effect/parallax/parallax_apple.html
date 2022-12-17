@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페럴랙스 애플</title>
+    <link rel="stylesheet" href="../../assets/css/butler/butler.css">
+    <link rel="stylesheet" href="../../assets/css/loding.css">
+
+    <style>
+        @import url('https://webfontworld.github.io/jeju/JejuMyeongjo.css');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Butler Stencil";
+            background: #FFF5EF;
+            color: #505050;
+        }
+        .bebos {
+            font-family: 'Bebas Neue', cursive;
+        }
+        .jeju {
+            font-family: "JejuMyeongjo";
+        }
+
+        .fixed {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .fixed2 {
+            position: fixed;
+            top: 49%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .scrollTop {
+            width: 10px;
+            height: 10px;
+            position: fixed;
+            left: 3%;
+            top: 50%;
+            text-align: center;
+            z-index: 10000;
+            font-size: 14px;
+        }
+
+        /* layout */
+        #contents
+        #section1 {
+            height: 10000px;
+        }
+        #section2 {}
+        #section3 {}
+        #section4 {}
+        #section5 {}
+        #section6 {}
+
+        /* section1 */
+        .circle {
+            width: 100px;
+            height: 100px;
+        }
+        .loadingText {
+            font-size: 6vw;
+            white-space: nowrap;
+        }
+        .please {
+            width: 200px;
+            height: 100px;
+            position: fixed;
+            transform: translate(-5%, 10%);
+        }
+        .front {
+            font-size: 1vw;
+            color: #505050;
+            white-space: nowrap;
+            position: fixed;
+            top: 5%;
+            left: 7%;
+            transform: translate(-50%, -50%);
+            font-weight: 300;
+        }
+        .back {
+            font-size: 1vw;
+            color: #505050;
+            white-space: nowrap;
+            position: fixed;
+            bottom: 4%;
+            left: 4.5%;
+            transform: translate(-50%, -50%);
+            font-weight: 300;
+        }
+        .hello {
+            font-size: 6vw;
+            white-space: nowrap;
+        }
+        .dabin {
+            color: #fff;
+            text-align: center;
+            font-size: 6vw;
+            white-space: nowrap;
+        }
+        .nemo {
+            width: 600px;
+            height: 120px;
+            background: #0f2e06;
+        }
+        .image {
+            width: 300px;
+            height: 300px;
+            background: rgba(0,0,0,0.9);
+            background-image: url(../../assets/img/parallax/my.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .imageTextTop {
+            color: #fff;
+            position: relative;
+            font-family: "Butler Stencil";
+            text-transform: uppercase;
+            position: fixed;
+            top: 33%;
+            left: 0%;
+            font-size: 0.5vw;
+            letter-spacing: 3px;
+            overflow: hidden;
+            background: linear-gradient(90deg, #0f2e06, #fff, #0f2e06);
+            background-repeat: no-repeat;
+            background-size: 80%;
+            animation: animate 3s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0);
+            text-align: center;
+        }
+        .imageTextBottom {
+            color: #fff;
+            position: relative;
+            font-family: "Butler Stencil";
+            text-transform: uppercase;
+            position: fixed;
+            bottom: 33%;
+            left: 0%;
+            font-size: 0.5vw;
+            letter-spacing: 3px;
+            overflow: hidden;
+            background: linear-gradient(90deg, #0f2e06, #fff, #0f2e06);
+            background-repeat: no-repeat;
+            background-size: 80%;
+            animation: animate2 3s linear infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0);
+        }
+
+        @keyframes animate {
+            0% {
+                background-position: -500%;
+            }
+            100% {
+                background-position: 500%;
+            }
+        }
+        @keyframes animate2 {
+            0% {
+                background-position: -300%;
+            }
+            100% {
+                background-position: 600%;
+            }
+        }
+
+        .myTextName {
+            font-size: 2vw;
+            color: #c0c0c0;
+            white-space: nowrap;
+            position: fixed;
+            top: 10%;
+            left: 9%;
+            transform: translate(-50%, -50%);
+            font-weight: 300;
+        }
+        .myTextAge {
+            font-size: 1vw;
+            color: #c0c0c0;
+            white-space: nowrap;
+            position: fixed;
+            top: 14%;
+            left: 6.7%;
+            transform: translate(-50%, -50%);
+            font-weight: 300;
+        }
+        .myTextLive {
+            font-size: 1vw;
+            color: #c0c0c0;
+            white-space: nowrap;
+            position: fixed;
+            bottom: 9.5%;
+            left: 7.6%;
+            transform: translate(-50%, -50%);
+            font-weight: 300;
+        }
+        .myTextDes {
+            font-size: 1vw;
+            color: #c0c0c0;
+            white-space: nowrap;
+            position: fixed;
+            bottom: 7%;
+            left: 9%;
+            transform: translate(-50%, -50%);
+            font-weight: 300;
+        }
+        .myTextmy {
+            font-size: 1vw;
+            color: #c0c0c0;
+            white-space: nowrap;
+            position: fixed;
+            bottom: 6%;
+            right: -12%;
+            transform: translate(-50%, -50%);
+            font-weight: 300;
+        }
+        .hobbyMain {
+            color: #fff;
+            font-size: 6vw;
+            white-space: nowrap;
+        }
+        .hobby1 {
+            color: #0f2e06;
+            font-size: 2vw;
+            left: 20%;
+            white-space: nowrap;
+            top: 32.5%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .hobby1_text {
+            color: #fff;
+            font-size: 1.5vw;
+            white-space: nowrap;
+            top: 32.5%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+            font-weight: 200;
+        }
+        .hobby2 {
+            color: #0f2e06;
+            font-size: 2vw;
+            left: 20.5%;
+            white-space: nowrap;
+            top: 45%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .hobby2_text {
+            color: #fff;
+            font-size: 1.5vw;
+            white-space: nowrap;
+            top: 45%;
+            left: 36.3%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+            font-weight: 200;
+        }
+        .hobby3 {
+            color: #0f2e06;
+            font-size: 2vw;
+            top: 57.5%;
+            left: 19.5%;
+            white-space: nowrap;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .hobby3_text {
+            color: #fff;
+            font-size: 1.5vw;
+            white-space: nowrap;
+            top: 57.5%;
+            left: 44.6%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+            font-weight: 200;
+        }
+        .hobby4 {
+            color: #0f2e06;
+            font-size: 2vw;
+            white-space: nowrap;
+            top: 70%;
+            left: 20.4%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .hobby4_text {
+            color: #fff;
+            font-size: 1.5vw;
+            white-space: nowrap;
+            top: 70%;
+            left: 42.5%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+            font-weight: 200;
+        }
+        .hobby_nemo {
+            background: #FFF5EF;
+            width: 400px;
+            height: 700px;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+
+        /* Introduce */
+        .Introduce_nemo1 {
+            width: 100%;
+            height: 1px;
+            background: #FFF5EF;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce_nemo2 {
+            width: 100%;
+            height: 100%;
+            background: #FFF5EF;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce_line {
+            width: 100%;
+            height: 1px;
+            background: #505050;
+            top: 32%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce_main {
+            font-size: 7vmax;
+            top: 15%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce1_title {
+            width: 50%;
+            font-size: 4vmax;
+            top: 47%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce1_sub {
+            width: 50%;
+            font-size: 2vmax;
+            top: 73%;
+            left: 100%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce1_line {
+            width: 1px;
+            height: 80%;
+            top:72%;
+            right: 20%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+            background: #505050;
+        }
+        .Introduce1_line_text {
+            font-size: 1vw;
+            top: 35.5%;
+            right: 21%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce2_title {
+            width: 50%;
+            font-size: 4vmax;
+            top: 47%;
+            left: 33%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce2_sub {
+            width: 50%;
+            font-size: 2vmax;
+            top: 73%;
+            left: 33%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce2_line {
+            width: 1px;
+            height: 80%;
+            top: 72%;
+            right: 19%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+            background: #505050;
+        }
+        .Introduce2_line_text {
+            font-size: 1vw;
+            top: 35.5%;
+            right: 21%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce3_title {
+            width: 50%;
+            font-size: 4vmax;
+            bottom: 44%;
+            left: 33%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce3_sub {
+            width: 50%;
+            font-size: 2vmax;
+            bottom: -0.049%;
+            left: 33%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .Introduce3_line {
+            width: 1px;
+            height: 80%;
+            top: 72%;
+            right: 18%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+            background: #505050;
+        }
+        .Introduce3_line_text {
+            font-size: 1vw;
+            top: 35.5%;
+            right: 21%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+
+        /* end */
+        .end_line {
+            width: 100%;
+            height: 1px;
+            background: #0f2e06;
+            top: 32%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .end_text_left {
+            color: #fff;
+            font-size: 4vw;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        .end_text_right {
+            color: #fff;
+            font-size: 4vw;
+            bottom: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+        </style>
+</head>
+<body>
+
+    <div class="scrollTop"></div>
+
+    <div id="contents">
+        <section id="section1">
+            <div class="sec1">
+                <div class="loding fixed2"
+                    data-0="opacity: 1; "
+                    data-550="opacity: 0; "
+                >
+                    <div class='loader'>
+                        <div class='circle'></div>
+                        <div class='circle'></div>
+                        <div class='circle'></div>
+                        <div class='circle'></div>
+                        <div class='circle'></div>
+                    </div>
+                    <div class="please">
+                        please scrollY
+                    </div>
+                </div>
+                <!-- loding -->
+
+                <div class="front"
+                    data-0="transform: translate(-50%, -50%); opacity: 1;"
+                    data-2300="transform: translate(-50%, -50%); opacity: 1;"
+                    data-2400="transform: translate(-50%, -50%); opacity: 0;"
+                >Front-end developer</div>
+
+                <div class="back"
+                    data-0="transform: translate(-50%, -50%); opacity: 1;"
+                    data-2300="transform: translate(-50%, -50%); opacity: 1;"
+                    data-2400="transform: translate(-50%, -50%); opacity: 0;"
+                >Back-end</div>
+
+                <div class="loadingText fixed"
+                    data-0 =   "transform: translate(-350%, -50%); opacity: 1;"
+                    data-550 = "transform: translate(0%, -50%); opacity: 0;"
+                >LODING</div>
+
+                <div class="hello fixed"
+                    data-500 =  "opacity: 0; top: 70%; transform: translate(-50%, -50%) scale(1)"
+                    data-1000 = "opacity: 1; top: 50%; transform: translate(-50%, -50%) scale(1)"
+                    data-1500 = "opacity: 1; top: 50%; transform: translate(-50%, -50%) scale(0)"
+                >HELLO.</div>
+
+                <div class="nemo fixed"
+                    data-1400 = "transform: translate(-350%, -50%); height: 110px; display: block;"
+                    data-2200 = "transform: translate(-50%, -50%); height: 110px;"
+                    data-2200 = "transform: translate(-50%, -50%); height: 110px;"
+                    data-2500 = "transform: translate(-50%, -50%); width:100vw; height: 100%;"
+                    data-7000 = "transform: translate(-50%, -50%); width:100vw; height: 100%;"
+                ></div>
+                
+                <div class="dabin fixed"
+                    data-1300 = "transform: translate(-50%, -50%) scale(0); opacity: 0"
+                    data-2300 = "transform: translate(-50%, -50%) scale(1); opacity: 1"
+                    data-2600 = "transform: translate(-50%, -50%) scale(1); opacity: 0"
+                >I'm DABIN</div>
+                
+                <div class="image fixed"
+                    data-2700 = "width: 0%;   transform: translate(-50%, -50%);"
+                    data-3000 = "width: 100%; transform: translate(-50%, -50%);"
+                    data-4100 = "width: 100%; transform: translate(-50%, -50%);"
+                    data-4200 = "width: 0%; transform: translate(-50%, -50%);"
+                ></div>
+
+                <div class="imageTextTop"
+                    data-2700 = "opacity: 0;"
+                    data-4100 = "opacity: 1;"
+                    data-4200 = "opacity: 0;"
+                >Quis hendrerit dolor magna eget est lorem ipsum dolor sit. Volutpat odio facilisis mauris sit amet massa.
+                 Commodo odio aenean loremavs utpat odio facilisis mauris sit amet massa. Commodo odio aenean loremavs Volutpat</div>
+
+                <div class="imageTextBottom"
+                    data-2700 = "opacity: 0;"
+                    data-4100 = "opacity: 1;"
+                    data-4200 = "opacity: 0;"
+                >Elit at imperdiet dui accumsan sit. Ornare arcu dui vivamus arcu felis. Egestas integer eget aliquet nibh praesent.
+                In hac lorem ipsum cna imperdiet dui accumsan sit. Ornare arcu dui vivamus. Egestas integer aliquet nibh</div>
+
+                <div class="myTextName"
+                    data-2500 = "transform: translate(-350%, -50%);"
+                    data-3200 = "transform: translate(-20%, -50%);"
+                    data-4100 = "transform: translate(-20%, -50%);"
+                    data-4300 = "transform: translate(-350%, -50%);"
+                >Name : DaBin Kim</div>
+
+                <div class="myTextAge"
+                    data-2600 = "transform: translate(-350%, -50%);"
+                    data-3300 = "transform: translate(-20%, -50%);"
+                    data-4100 = "transform: translate(-20%, -50%);"
+                    data-4200 = "transform: translate(-350%, -50%);"
+                >Age : 26</div>
+
+                <div class="myTextLive"
+                    data-2800 = "transform: translate(-350%, -50%);"
+                    data-3300 = "transform: translate(-20%, -50%);"
+                    data-4100 = "transform: translate(-20%, -50%);"
+                    data-4300 = "transform: translate(-350%, -50%);"
+                >living place : Siheung-si</div>
+
+                <div class="myTextDes"
+                    data-2900 = "transform: translate(-350%, -50%);"
+                    data-3500 = "transform: translate(-20%, -50%);"
+                    data-4100 = "transform: translate(-20%, -50%);"
+                    data-4300 = "transform: translate(-350%, -50%);"
+                >Desired occupation : Front-end developer</div>
+
+                <div class="myTextmy"
+                    data-3200="transform: translate(350%, -50%);"
+                    data-3800="transform: translate(-50%, -50%);"
+                    data-4100="transform: translate(-50%, -50%);"
+                    data-4300="transform: translate(350%, -50%);"
+                >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
+                incididunt ut labore et dolore magna aliqua. Nisl tincidunt eget nullam non.
+                </div>
+
+                <!-- hobby -->
+                <div class="hobbyMain fixed"
+                    data-4200="opacity: 0;"
+                    data-4400="opacity: 1;"
+                    data-4600="opacity: 0;"
+                >What's Your Hobby?</div>
+
+                <div class="hobby_nemo"
+                    data-4550="opacity: 0; left: -50%"
+                    data-4700="opacity: 1; left: 20%"
+                    data-5500="opacity: 1; left: 20%"
+                    data-5600="opacity: 0; left: 20%"
+                ></div>
+
+                <div class="hobby1"
+                    data-4600="opacity: 0;"
+                    data-4800="opacity: 1;"
+                    data-5500="opacity: 1;"
+                    data-5600="opacity: 0;"
+                >Coding</div>
+                
+                <div class="hobby1_text"
+                    data-4700="opacity: 0; left: 120%;"
+                    data-4800="opacity: 1; left: 40%;"
+                    data-5500="opacity: 1; left: 40%;"
+                    data-5600="opacity: 0; left: 40%;"
+                >Javascript PHP React</div>
+
+                <div class="hobby2"
+                    data-4700="opacity: 0;"
+                    data-4900="opacity: 1;"
+                    data-5500="opacity: 1;"
+                    data-5600="opacity: 0;"
+                >Game..?</div>
+
+                <div class="hobby2_text"
+                    data-4800="opacity: 0; left: 120%;"
+                    data-5000="opacity: 1; left: 36.3%;"
+                    data-5500="opacity: 1; left: 36.3%;"
+                    data-5600="opacity: 0; left: 36.3%;"
+                >LostArk</div>
+
+                <div class="hobby3"
+                    data-4800="opacity: 0;"
+                    data-5000="opacity: 1;"
+                    data-5500="opacity: 1;"
+                    data-5600="opacity: 0;"
+                >Sleep</div>
+
+                <div class="hobby3_text"
+                    data-4900="opacity: 0; left: 120%;"
+                    data-5100="opacity: 1; left: 44.6%;"
+                    data-5500="opacity: 1; left: 44.6%;"
+                    data-5600="opacity: 0; left: 44.6%;"
+                >Sleeping on a good Night is the Best.</div>
+
+                <div class="hobby4"
+                    data-4900="opacity: 0;"
+                    data-5100="opacity: 1;"
+                    data-5500="opacity: 1;"
+                    data-5600="opacity: 0;"
+                >Fashion</div>
+                
+                <div class="hobby4_text"
+                    data-5000="opacity: 0; left: 120%;"
+                    data-5200="opacity: 1; left: 42.5%;"
+                    data-5500="opacity: 1; left: 42.5%;"
+                    data-5600="opacity: 0; left: 42.5%;"
+                >I'm very Interested in Clothes.</div>
+                <!-- //hobby -->
+
+                <!-- Introduce -->
+                <div class="Introduce_nemo1"
+                    data-5600="opacity: 0; width: 0%; transform: translate(-50%, -50%); display: block;"
+                    data-5900="opacity: 1; width: 100%; transform: translate(-50%, -50%); display: none;"
+                ></div>
+                
+                <div class="Introduce_nemo2"
+                    data-5900="opacity: 0; height: 0%; transform: translate(-50%, -50%);"
+                    data-6200="opacity: 1; height: 100%; transform: translate(-50%, -50%);"
+                ></div>
+
+                <div class="Introduce_line"
+                    data-6300="opacity: 0; width: 0%; transform: translate(-50%, -50%);"
+                    data-6800="opacity: 1; width: 100%; transform: translate(-50%, -50%);"
+                ></div>
+
+                <div class="Introduce_main"
+                    data-6400="opacity: 0; transform: translate(-50%, -50%); left: -50%"
+                    data-6700="opacity: 1; transform: translate(-50%, -50%); left: 33%"
+                    data-9500="opacity: 1; transform: translate(-50%, -50%); left: 33%"
+                    data-9700="opacity: 1; transform: translate(-50%, -50%); left: -50%"
+                >Introduce yourself</div>
+
+                <!-- 01 -->
+                <div class="Introduce1_title"
+                    data-6600="opacity: 0; transform: translate(-50%, -50%); left: -50%"
+                    data-6900="opacity: 1; transform: translate(-50%, -50%); left: 33%"
+                    data-7300="opacity: 1; transform: translate(-50%, -50%); left: 33%"
+                    data-7500="opacity: 0; transform: translate(-50%, -50%); left: -50%"
+                >My</div>
+
+                <div class="Introduce1_sub"
+                    data-6700="opacity: 0; transform: translate(-50%, -50%); left: -50%"
+                    data-7000="opacity: 1; transform: translate(-50%, -50%); left: 33%"
+                    data-7400="opacity: 1; transform: translate(-50%, -50%); left: 33%"
+                    data-7600="opacity: 0; transform: translate(-50%, -50%); left: -50%"
+                >Senectus et netus et malesuada. Nunc pulvinar sapien et ligula ullamcorper malesuada proin. Neque convallis a cras semper auctor.
+                Libero id faucibus nisl tincidunt eget. Leo a diam sollicitudin tempor id. A lacus vestibulum sed arcu non
+                odio euismod lacinia. In tellus integer feugiat scelerisque.</div>
+
+                <div class="Introduce1_line"
+                    data-6700="opacity: 0; transform: translate(-50%, -50%); height: 0%;"
+                    data-6900="opacity: 1; transform: translate(-50%, -50%); height: 80%;"
+                    data-9500="opacity: 1; transform: translate(-50%, -50%); height: 80%;"
+                    data-9700="opacity: 0; transform: translate(-50%, -50%); height: 0%;"
+                ></div>
+
+                <div class="Introduce1_line_text"
+                    data-6700="opacity: 0; transform: translate(-50%, -50%);"
+                    data-6900="opacity: 1; transform: translate(-50%, -50%);"
+                    data-7300="opacity: 1; transform: translate(-50%, -50%);"
+                    data-7500="opacity: 0; transform: translate(-50%, -50%);"
+                >One</div>
+                <!-- //01 -->
+
+                <!-- 02 -->
+                <div class="Introduce2_title"
+                    data-7500="opacity: 1; transform: translate(-50%, -50%); left: 150%"
+                    data-7800="opacity: 1; transform: translate(-50%, -50%); left: 33%"
+                    data-8200="opacity: 1; transform: translate(-50%, -50%); left: 33%"
+                    data-8400="opacity: 1; transform: translate(-50%, -50%); left: 150%"
+                >Philosophy</div>
+
+                <div class="Introduce2_sub"
+                    data-7600="opacity: 1; transform: translate(-50%, -50%); left: 150%"
+                    data-7900="opacity: 1; transform: translate(-50%, -50%); left: 33%"
+                    data-8300="opacity: 1; transform: translate(-50%, -50%); left: 33%"
+                    data-8500="opacity: 1; transform: translate(-50%, -50%); left: 150%"
+                >Feugiat in fermentum posuere urna nec tincidunt praesent. Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
+                Nisi scelerisque eu ultrices vitae auctor eu augue ut lectus. Ipsum faucibus vitae
+                aliquet nec ullamcorper sit amet risus. Et malesuada fames ac turpis egestas sed.</div>
+
+                <div class="Introduce2_line"
+                    data-7600="opacity: 0; transform: translate(-50%, -50%); height: 0%;"
+                    data-7800="opacity: 1; transform: translate(-50%, -50%); height: 80%;"
+                    data-9700="opacity: 1; transform: translate(-50%, -50%); height: 80%;"
+                    data-9900="opacity: 0; transform: translate(-50%, -50%); height: 0%;"
+                ></div>
+
+                <div class="Introduce2_line_text"
+                    data-7600="opacity: 0; transform: translate(-50%, -50%);"
+                    data-7800="opacity: 1; transform: translate(-50%, -50%);"
+                    data-8200="opacity: 1; transform: translate(-50%, -50%);"
+                    data-8400="opacity: 0; transform: translate(-50%, -50%);"
+                >Two</div>
+                <!-- //02 -->
+
+                <!-- 03 -->
+                <div class="Introduce3_title"
+                    data-8400="opacity: 1; transform: translate(-50%, -50%); bottom: -50%"
+                    data-8700="opacity: 1; transform: translate(-50%, -50%); bottom: 44%"
+                    data-9200="opacity: 1; transform: translate(-50%, -50%); bottom: 44%"
+                    data-9400="opacity: 1; transform: translate(-50%, -50%); bottom: -50%"
+                >Coding</div>
+
+                <div class="Introduce3_sub"
+                    data-8500="opacity: 1; transform: translate(-50%, -50%); bottom: -50%"
+                    data-8800="opacity: 1; transform: translate(-50%, -50%); bottom: 0.049%"
+                    data-9100="opacity: 1; transform: translate(-50%, -50%); bottom: 0.049%"
+                    data-9300="opacity: 1; transform: translate(-50%, -50%); bottom: -50%"
+                >Sit amet nulla facilisi morbi tempus. Nulla facilisi cras fermentum odio eu. Etiam erat velit scelerisque in dictum non consectetur a erat.
+                Enim nulla aliquet porttitor lacus luctus accumsan tortor posuere. Ut sem nulla pharetra diam.
+                Fames ac turpis egestas maecenas. Bibendum neque egestas congue quisque egestas diam.</div>
+
+                <div class="Introduce3_line"
+                    data-8500="opacity: 0; transform: translate(-50%, -50%); height: 0%;"
+                    data-8700="opacity: 1; transform: translate(-50%, -50%); height: 80%;"
+                    data-10100="opacity: 1; transform: translate(-50%, -50%); height: 80%;"
+                    data-10300="opacity: 0; transform: translate(-50%, -50%); height: 0%;"
+                ></div>
+
+                <div class="Introduce3_line_text"
+                    data-8500="opacity: 0; transform: translate(-50%, -50%);"
+                    data-8700="opacity: 1; transform: translate(-50%, -50%);"
+                    data-9100="opacity: 1; transform: translate(-50%, -50%);"
+                    data-9300="opacity: 0; transform: translate(-50%, -50%);"
+                >Three</div>
+                <!-- //03 -->
+                <!-- //Introduce -->
+
+                <!-- end -->
+                <div class="end_line"
+                    data-10200="opacity: 1; height: 0%; transform: translate(-50%, -50%);"
+                    data-10500="opacity: 1; height: 150%; transform: translate(-50%, -50%);"
+                ></div>
+
+                <div class="end_text_left"
+                    data-10500="opacity: 1;transform: translate(-50%, -50%); left: -100%;"
+                    data-10800="opacity: 1;transform: translate(-50%, -50%); left: 50%;"
+                >Thank you For watching</div>
+
+                <div class="end_text_right"
+                    data-10600="opacity: 1; transform: translate(-50%, -50%); left: 150%;"
+                    data-10900="opacity: 1; transform: translate(-50%, -50%); left: 50%;"
+                >My mini Self-Introduction.</div>
+                <!-- //end -->
+
+            </div>
+        </section><!-- section1 -->
+
+    </div>
+    <!-- contents -->
+
+    <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script>
+        const s = skrollr.init();
+
+        function scroll() {
+            let scrollTop = window.pageXOffset || document.documentElement.scrollTop;
+            
+            document.querySelector(".scrollTop").innerText = Math.ceil(scrollTop);
+
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+    </script>
+</body>
+</html>

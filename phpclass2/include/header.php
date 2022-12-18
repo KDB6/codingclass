@@ -1,18 +1,9 @@
-<!-- CSS -->
-<link rel="stylesheet" href="../html/assets/css/style.css">
-<!-- META -->
-<meta name="author" content="webstoryboy">
-<meta name="description" content="PHP 사이트 만들기입니다.">
-<meta name="keyword" content="사이트, 만들기, 튜토리얼, 웹스토리보이">
-<meta name="robots" content="all">
-<!-- ICON -->
-<link rel="icon" href="../html/assets/img/icon_256.png" />
-<link rel="shortcut icon" href="../html/assets/img/icon_256.png" />
-<link rel="icon" type="image/png" sizes="256x256" href="../html/assets/img/icon_256.png" />
-<link rel="icon" type="image/png" sizes="192x192" href="../html/assets/img/icon_192.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="../html/assets/img/icon_32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="../html/assets/img/icon_16.png" />
-3:19
+<?php
+    include "../connect/connect.php";
+    include "../connect/session.php";
+?>
+
+
 <header id="header">
     <div class="header__inner container">
         <div class="left">
@@ -22,16 +13,16 @@
             <a href="../main/main.php">PHP BLOG</a>
         </h1>
         <div class="right">
-            <?php if(isset($_SESSION['memberID'])){ ?>
-                <ul>
-                    <li><a href="../mypage/mypage.php" class="black"><?=$_SESSION['youName']?>님 환영합니다.</a></li>
-                    <li><a href="../login/logout.php">로그아웃</a></li>
-                </ul>
+            <?php if(isset($_SESSION['myMemberID'])){ ?>
+            <ul>
+                <li><a href="../mypage/mypage.php" class="black"><?=$_SESSION['youName']?>님 환영합니다.</a></li>
+                <li><a href="../login/logout.php">로그아웃</a></li>
+            </ul>
             <?php } else { ?>
-                <ul>
-                    <li><a href="../login/login.php">로그인</a></li>
-                    <li><a href="../join/join.php">회원가입</a></li>
-                </ul>
+            <ul>
+                <li><a href="../login/login.php">로그인</a></li>
+                <li><a href="../join/join.php">회원가입</a></li>
+            </ul>
             <?php } ?>
         </div>
         <nav class="nav">

@@ -1,6 +1,3 @@
-body {
-    font-family: var(--font-basic);
-}
 .banner__inner {
     display: flex;
     flex-wrap: wrap;
@@ -8,6 +5,8 @@ body {
     justify-content: space-between;
     height: inherit;
     position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .banner__inner.under {
     border-bottom: 3px solid #000;

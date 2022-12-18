@@ -52,16 +52,16 @@ input,
 select,
 table,
 textarea {
-    color: var(--color_basic);
+    color: var(--color-basic);
     line-height: 1.4;
-    font-family: var(--font_basic), "AppleSDGothicNeo-Regular", "Malgun Gothic",
+    font-family: var(--font-basic), "AppleSDGothicNeo-Regular", "Malgun Gothic",
         "맑은 고딕", dotum, 돋움;
 }
 
 /* 링크 초기화 */
 a {
     text-decoration: none;
-    color: var(--color_basic);
+    color: var(--color-basic);
 }
 
 /* 목록 초기화  */

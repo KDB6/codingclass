@@ -1,7 +1,7 @@
 <!-- CSS -->
 <link rel="stylesheet" href="../assets/css/style.css">
 <!-- META -->
-<meta name="author" content="webstoryboy">
+<meta name="author" content="KDB6">
 <meta name="description" content="PHP 사이트 만들기입니다.">
 <meta name="keyword" content="사이트, 만들기, 튜토리얼, 웹스토리보이">
 <meta name="robots" content="all">

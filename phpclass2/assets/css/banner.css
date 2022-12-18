@@ -1,3 +1,6 @@
+body {
+    font-family: var(--font-basic);
+}
 .banner__inner {
     display: flex;
     flex-wrap: wrap;

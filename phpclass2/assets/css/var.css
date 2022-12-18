@@ -1,10 +1,10 @@
 :root {
     /* 기본색 */
-    --color_basic: #000; 
+    --color-basic: #000; 
 
     /* 배경색 */
-    --bg_basic: #eee;
+    --bg-basic: #eee;
 
     /* 폰트 */
-    --font_basic : "GmarketSans";
+    --font-basic : "SCoreDream";
 }

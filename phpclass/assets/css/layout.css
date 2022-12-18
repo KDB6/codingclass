@@ -6,15 +6,12 @@
     #footer
 */
 
-body {
-    font-family: var(--font-basic);
-}
 
 /* header */
 #header .header__inner {
     position: relative;
     text-align: center;
-    border-bottom: 3px solid var(--color-basic);
+    border-bottom: 3px solid var(--color_basic);
 }
 
 #header .header__inner:hover .star {
@@ -29,7 +26,7 @@ body {
 }
 
 #header .header__inner h1 a {
-    background: var(--bg-basic);
+    background: var(--bg_basic);
     display: inline-block;
     padding: 0 10px;
 }
@@ -38,7 +35,7 @@ body {
     content: "";
     width: 100%;
     height: 1px;
-    background-color: var(--color-basic);
+    background-color: var(--color_basic);
     position: absolute;
     left: 0;
     top: 30px;
@@ -62,7 +59,7 @@ body {
     border-radius: 50px;
     width: 30px;
     height: 30px;
-    border: 1px solid var(--color-basic);
+    border: 1px solid var(--color_basic);
     display: inline-block;
 }
 
@@ -78,7 +75,7 @@ body {
 
 #header .header__inner .right li a {
     background: #eee;
-    border: 1px solid var(--color-basic);
+    border: 1px solid var(--color_basic);
     padding: 5px 10px;
     border-radius: 50px;
     font-size: 0.8rem;
@@ -95,12 +92,12 @@ body {
 }
 
 #header .header__inner .right li a.black {
-    background: var(--color-basic);
+    background: var(--color_basic);
     color: #fff;
 }
 
 #header .header__inner .right li.active a {
-    background: var(--color-basic);
+    background: var(--color_basic);
     color: #fff;
 }
 
@@ -126,7 +123,7 @@ body {
     display: inline-block;
     background: #eee;
     padding: 0 6px;
-    border: 1px solid var(--color-basic);
+    border: 1px solid var(--color_basic);
     margin: 0 1px;
     position: relative;
     z-index: 10;
@@ -134,7 +131,7 @@ body {
 
 #header .header__inner .nav li a::before {
     content: "";
-    background: var(--color-basic);
+    background: var(--color_basic);
     width: 100%;
     height: 0%;
     position: absolute;

@@ -4,13 +4,15 @@
 ?>
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP 사이트 만들기</title>
-    <?php include "../include/head.php" ?>
+    <?php include "../include/link.php" ?>
 </head>
+
 <body>
     <div id="skip">
         <a href="#header">헤더 영역 바로가기</a>
@@ -48,7 +50,8 @@
                             </div>
                             <div>
                                 <label for="blogImgFile">파일</label>
-                                <input type="file" accept="image/jpeg, image/png, image/jpg, image/png, image/gif" name="blogImgFile" id="blogImgFile">
+                                <input type="file" accept="image/jpeg, image/png, image/jpg, image/png, image/gif"
+                                    name="blogImgFile" id="blogImgFile">
                             </div>
                             <button type="submit" class="btn">저장하기</button>
                         </fieldset>
@@ -61,4 +64,5 @@
     <?php include "../include/footer.php" ?>
     <!-- //footer -->
 </body>
+
 </html>

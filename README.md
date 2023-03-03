@@ -4,6 +4,8 @@
 
 https://kdb6.github.io/codingclass/index.html
 
+https://kdb6.github.io/codingclass/ex/index.html
+
 ### php 페이지
 
 https://kdb6.github.io/codingclass/php/index.html

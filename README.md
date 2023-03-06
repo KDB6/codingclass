@@ -2,7 +2,9 @@
 
 ### 메인 페이지 github
 
-https://kdb6.github.io/codingclass/index.html
+https://kdb6.github.io/codingclass/index.html   
+
+https://kdb6.github.io/codingclass/test/index.html
 
 ### php 페이지
 
